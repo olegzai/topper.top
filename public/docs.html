@@ -226,9 +226,7 @@ fetch('/api/health').then(r => r.json()).then(console.log)</pre
                   </button>
                 </div>
               </div>
-              <div id="res-/api/health" class="result" aria-live="polite">
-                —
-              </div>
+              <div id="res-api-health" class="result" aria-live="polite">—</div>
             </div>
 
             <div
@@ -259,7 +257,7 @@ fetch('/api/health').then(r => r.json()).then(console.log)</pre
                   </button>
                 </div>
               </div>
-              <div id="res-/api/version" class="result">—</div>
+              <div id="res-api-version" class="result">—</div>
             </div>
 
             <div
@@ -286,7 +284,7 @@ fetch('/api/health').then(r => r.json()).then(console.log)</pre
                   <button class="btn" onclick="copy('/api/info')">Copy</button>
                 </div>
               </div>
-              <div id="res-/api/info" class="result">—</div>
+              <div id="res-api-info" class="result">—</div>
             </div>
 
             <hr style="opacity: 0.06; margin: 12px 0" />
@@ -350,11 +348,18 @@ curl -s http://localhost:3000/api/info</pre
 
     <script>
       async function callApi(path) {
-        const outEl = document.getElementById("res-" + path);
+        // Clean the path to create a valid element ID (replace / with -)
+        const cleanPath = path.replace(/\//g, "-").substring(1); // Remove leading slash and replace others with hyphens
+        const outEl = document.getElementById("res-" + cleanPath);
         if (!outEl) return;
         outEl.textContent = "Loading...";
         try {
-          const res = await fetch(path, { cache: "no-store" });
+          const res = await fetch(path, {
+            cache: "no-store",
+            headers: {
+              Accept: "application/json",
+            },
+          });
           const ct = res.headers.get("content-type") || "";
           if (ct.includes("application/json")) {
             const data = await res.json();
@@ -366,6 +371,7 @@ curl -s http://localhost:3000/api/info</pre
         } catch (err) {
           outEl.textContent =
             "Error: " + (err && err.message ? err.message : String(err));
+          console.error("API call error:", err);
         }
       }
 
@@ -388,7 +394,9 @@ curl -s http://localhost:3000/api/info</pre
           setTimeout(() => {
             try {
               callApi(p.trim());
-            } catch (e) {}
+            } catch (e) {
+              console.error("Load error:", e);
+            }
           }, 200);
         });
       });
