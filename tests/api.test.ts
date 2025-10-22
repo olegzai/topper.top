@@ -8,13 +8,66 @@ const DATA_DIR = path.resolve(process.cwd(), "data");
 let server: any = null;
 let baseUrl = "http://localhost:3000";
 
+/**
+ * Helper: write JSON file
+ */
 async function writeJson(file: string, obj: unknown) {
   await fs.mkdir(DATA_DIR, { recursive: true });
   const p = path.join(DATA_DIR, file);
   await fs.writeFile(p, JSON.stringify(obj, null, 2), "utf8");
 }
 
+/**
+ * fetch wrapper with timeout and logging so tests don't hang silently.
+ * - timeoutMs: how long to wait before aborting (ms)
+ * - logs start/end/status/errors to console
+ */
+async function fetchWithTimeout(
+  input: string,
+  init: RequestInit = {},
+  timeoutMs = 5000
+) {
+  const method = (init.method || "GET").toUpperCase();
+  console.log(`[TEST] FETCH START ${method} ${input} (timeout=${timeoutMs}ms)`);
+  const controller = new AbortController();
+  const id = setTimeout(() => {
+    controller.abort();
+  }, timeoutMs);
+
+  try {
+    const res = await fetch(input, { ...init, signal: controller.signal });
+    console.log(`[TEST] FETCH OK ${method} ${input} -> ${res.status}`);
+    return res;
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.log(`[TEST] FETCH ERROR ${method} ${input} -> ${msg}`);
+    throw err;
+  } finally {
+    clearTimeout(id);
+  }
+}
+
+/**
+ * Helper: read JSON response with a short timeout and log progress.
+ */
+async function readJsonWithLog(res: Response) {
+  try {
+    const txt = await res.text();
+    try {
+      const parsed = JSON.parse(txt);
+      return parsed;
+    } catch {
+      console.log("[TEST] Failed to parse JSON body:", txt);
+      throw new Error("invalid_json_response");
+    }
+  } catch (err) {
+    console.log("[TEST] Error reading response body:", err);
+    throw err;
+  }
+}
+
 beforeAll(async () => {
+  console.log("[TEST] beforeAll: seeding minimal test data");
   // Prepare minimal test data (idempotent)
   const users = [
     {
@@ -65,7 +118,11 @@ beforeAll(async () => {
   const settings = {
     version: "0.0.1-test",
     seededAt: new Date().toISOString(),
-    counts: { users: users.length, items: items.length, ratings: ratings.length },
+    counts: {
+      users: users.length,
+      items: items.length,
+      ratings: ratings.length,
+    },
   };
 
   // Write files before starting server so server endpoints read them
@@ -75,21 +132,32 @@ beforeAll(async () => {
   await writeJson("ratings.json", ratings);
   await writeJson("settings.json", settings);
 
+  console.log("[TEST] starting server on ephemeral port");
   // Start server on ephemeral port
   server = await startServer(0);
   const addr = server.address();
   const port =
-    typeof addr === "object" && addr && "port" in addr ? (addr as any).port : 3000;
+    typeof addr === "object" && addr && "port" in addr
+      ? (addr as any).port
+      : 3000;
   baseUrl = `http://localhost:${port}`;
+  console.log(`[TEST] server running at ${baseUrl}`);
 });
 
 afterAll(async () => {
+  console.log("[TEST] afterAll: stopping server and cleaning test files");
   if (server) {
     await stopServer(server);
   }
 
   // cleanup test files we created (do not remove entire data dir in case of other files)
-  const files = ["users.json", "categories.json", "items.json", "ratings.json", "settings.json"];
+  const files = [
+    "users.json",
+    "categories.json",
+    "items.json",
+    "ratings.json",
+    "settings.json",
+  ];
   for (const f of files) {
     try {
       await fs.unlink(path.join(DATA_DIR, f));
@@ -97,19 +165,25 @@ afterAll(async () => {
       // ignore
     }
   }
+  console.log("[TEST] cleanup finished");
 });
 
+/**
+ * Each test uses fetchWithTimeout to avoid hanging.
+ * Default timeout used: 5000ms. If a request may take longer, increase the timeout on that call.
+ */
+
 test("GET /api/health returns ok", async () => {
-  const res = await fetch(`${baseUrl}/api/health`);
+  const res = await fetchWithTimeout(`${baseUrl}/api/health`, {}, 3000);
   expect(res.status).toBe(200);
-  const body = await res.json();
+  const body = await readJsonWithLog(res);
   expect(body).toEqual({ status: "ok" });
 });
 
 test("GET /api/items returns list with test item", async () => {
-  const res = await fetch(`${baseUrl}/api/items?limit=10`);
+  const res = await fetchWithTimeout(`${baseUrl}/api/items?limit=10`, {}, 5000);
   expect(res.status).toBe(200);
-  const body = await res.json();
+  const body = await readJsonWithLog(res);
   expect(typeof body.total).toBe("number");
   expect(Array.isArray(body.items)).toBeTruthy();
   const found = body.items.find((it: any) => it.id === "item_test_1");
@@ -118,9 +192,9 @@ test("GET /api/items returns list with test item", async () => {
 });
 
 test("GET /api/random returns an item", async () => {
-  const res = await fetch(`${baseUrl}/api/random`);
+  const res = await fetchWithTimeout(`${baseUrl}/api/random`, {}, 4000);
   expect(res.status).toBe(200);
-  const body = await res.json();
+  const body = await readJsonWithLog(res);
   expect(body).toHaveProperty("item");
   expect(body.item).toHaveProperty("id");
 });
@@ -133,13 +207,17 @@ test("POST /api/ratings creates rating and updates item score and returns nextIt
     userId: "user_test_1",
     currentItemId: "item_test_1",
   };
-  const res = await fetch(`${baseUrl}/api/ratings`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
+  const res = await fetchWithTimeout(
+    `${baseUrl}/api/ratings`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    },
+    6000
+  );
   expect(res.status).toBe(200);
-  const body = await res.json();
+  const body = await readJsonWithLog(res);
   expect(body).toHaveProperty("rating");
   expect(body.rating.itemId).toBe("item_test_1");
   expect(body.rating.value).toBe(1);
@@ -153,9 +231,13 @@ test("POST /api/ratings creates rating and updates item score and returns nextIt
 });
 
 test("GET /api/leaderboard includes our voted item at top", async () => {
-  const res = await fetch(`${baseUrl}/api/leaderboard?limit=5`);
+  const res = await fetchWithTimeout(
+    `${baseUrl}/api/leaderboard?limit=5`,
+    {},
+    5000
+  );
   expect(res.status).toBe(200);
-  const body = await res.json();
+  const body = await readJsonWithLog(res);
   expect(Array.isArray(body.items)).toBeTruthy();
   // Our item_test_1 has score 1, so it should be present
   const found = body.items.find((it: any) => it.id === "item_test_1");

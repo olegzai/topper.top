@@ -13,7 +13,8 @@
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "lint": "eslint \"src/**/*.{ts,js}\" --fix",
     "format": "prettier --write \"**/*.{ts,js,json,md}\"",
-    "test": "vitest",
+    "test": "vitest --run --reporter verbose",
+    "test:watch": "vitest",
     "seed": "ts-node scripts/seed.ts",
     "clean": "rm -rf dist",
     "prepare": "husky install"
