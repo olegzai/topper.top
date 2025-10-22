@@ -1,7 +1,7 @@
-<<<<<<< HEAD
-# TOPPER.top — Backend (MVP scaffold)
+# TOPPER.top — Version 0.0.1
 
 Welcome — this is the beginner-friendly backend scaffold for TOPPER.top (Universal Rating Platform).
+
 I created a minimal Node + TypeScript server with simple demo endpoints, linting/formatting, tests, a seed script and a dev Docker setup so you can get started quickly.
 
 If you're new to this — read the sections below step by step. If anything is unclear, tell me the line number or the section name and I will explain it more slowly.
@@ -20,6 +20,11 @@ If you're new to this — read the sections below step by step. If anything is u
 - CI workflow template (`.github/workflows/ci.yml`) — lint, format check, build, test, audit
 - Dev Docker: `docker/Dockerfile.dev` and `docker/docker-compose.yml`
 - Basic CONTRIBUTING, CODE_OF_CONDUCT and CHANGELOG templates
+
+---
+
+## Current Development Version: 0.0.1
+> **Note**: We are currently working on version 0.0.1. Only Oleg Zai specifies which version we're developing. This version serves as the initial development milestone.
 
 ---
 
@@ -95,7 +100,7 @@ Run tests:
 npm test
 ```
 
-If you want to run tests in isolation (without requiring the server to run manually), we can add a test helper later — tell me and I’ll include it.
+If you want to run tests in isolation (without requiring the server to run manually), we can add a test helper later — tell me and I'll include it.
 
 ---
 
@@ -136,7 +141,7 @@ If we add CI steps that need keys (e.g., Sentry DSN or Docker registry credentia
 Demo data lives in `data/` and is created by `npm run seed`. Seed content includes:
 - `users.json`
 - `ratings.json`
-- `content.json`
+- `items.json`
 - `settings.json`
 
 These are small JSON files to let you run and test the app without a database. Later, we can replace them with a real DB (Postgres/SQLite) and migration tooling.
@@ -154,6 +159,13 @@ These are small JSON files to let you run and test the app without a database. L
 
 ---
 
+## Version Development Control
+> **Development Version**: We are currently developing version 0.0.1  
+> **Version Control**: Only Oleg Zai specifies which version we're developing  
+> **Release Authority**: Only Oleg Zai determines when a version is complete and can be released
+
+---
+
 ## Next steps (what I can do for you)
 - Create branch `setup/initial` with the scaffold and open a PR — I can do that now.  
 - Or, I can show you any generated file (for example `package.json` or `src/server.ts`) and explain it line by line before committing.  
@@ -168,7 +180,3 @@ If you'd rather inspect files first, reply: `show package.json` or `show server.
 If anything is unclear, tell me which line/section or write the number from `Q.md` and `объясни` (for example: `14 объясни`) — I'll explain step-by-step with commands and examples made just for beginners.
 
 Thanks — I'm ready when you are.
-=======
-# TOPPER.top
-
->>>>>>> origin/main

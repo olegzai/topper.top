@@ -1,1052 +1,1052 @@
 [
   {
-    "id": "30d70c1b-8034-4814-b724-d098fd247d63",
-    "userId": "441005d4-2321-44b8-8b1c-0baa4488cdd7",
-    "itemId": "7a76e75b-73bd-46d8-ba5f-410634c6d6e9",
+    "id": "77463508-36d5-40e8-9d16-b6a2f2d24bf9",
+    "userId": "90e2323c-0bdb-4355-a7d7-f32f8cc47a46",
+    "itemId": "72359c6b-7724-4895-99ca-8da116bb0e6d",
+    "value": -1,
+    "createdAt": "2025-02-02T07:49:40.506Z"
+  },
+  {
+    "id": "1d221f14-d901-4472-ae6b-279b022d16d1",
+    "userId": "c490534c-9d38-4944-9c9c-1a0fd41e3577",
+    "itemId": "d1a5ac9b-15e3-47ce-8c90-16c0d7f692cd",
+    "value": -1,
+    "createdAt": "2025-02-18T07:49:40.507Z"
+  },
+  {
+    "id": "eecb7f41-b45a-4f8c-8298-1cc2d52fd7ae",
+    "userId": "90e2323c-0bdb-4355-a7d7-f32f8cc47a46",
+    "itemId": "210478de-7e9c-4dd0-b6a8-9f5c6dbb47d6",
     "value": 1,
-    "createdAt": "2025-08-10T06:25:54.767Z"
+    "createdAt": "2025-08-05T06:49:40.507Z"
   },
   {
-    "id": "f7e6ba38-741d-479c-b870-8571fb66e32e",
-    "userId": "f55eec44-c049-4682-a36f-ee0005855faf",
-    "itemId": "b3128c3e-d7c5-402b-9236-85c0830ed2f6",
+    "id": "5a4ae1cc-2777-4aa5-9c08-627e2b93416c",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "aef9ec6f-9b08-49ac-afb6-4f802b4ac045",
     "value": 1,
-    "createdAt": "2025-02-13T07:25:54.768Z"
+    "createdAt": "2025-01-01T07:49:40.507Z"
   },
   {
-    "id": "b1d5ed46-1fec-4f4e-a5db-9f2b4c8d3cbc",
-    "userId": "46364c6e-1bbc-4995-8275-584ad2a09169",
-    "itemId": "a5d7cbc2-f325-4838-890a-671cefbb12dd",
-    "value": -1,
-    "createdAt": "2025-01-25T07:25:54.768Z"
-  },
-  {
-    "id": "3b61ce53-d44a-47ea-b248-628e8d9e6019",
-    "userId": "4a105ccc-f505-4057-95ee-ddf32491b04c",
-    "itemId": "1f58363f-3161-4957-bc87-b174e9729f03",
-    "value": -1,
-    "createdAt": "2025-05-10T06:25:54.768Z"
-  },
-  {
-    "id": "718cc24f-29f8-463a-aec2-f69b0301bb55",
-    "userId": "f6501e52-758e-47bc-b0a0-2c3f6e6e196b",
-    "itemId": "e581c4ab-6663-43ef-af17-a2c36296656f",
-    "value": -1,
-    "createdAt": "2025-05-13T06:25:54.768Z"
-  },
-  {
-    "id": "1a2dd5a4-78a6-49d6-9333-71a3199dc143",
-    "userId": "f55eec44-c049-4682-a36f-ee0005855faf",
-    "itemId": "a1ea79c4-d0fc-431c-9c71-78d15a11115d",
-    "value": -1,
-    "createdAt": "2025-07-01T06:25:54.768Z"
-  },
-  {
-    "id": "a0ab4203-9b2f-48c5-b806-adaa01dd5d80",
-    "userId": "f55eec44-c049-4682-a36f-ee0005855faf",
-    "itemId": "ec517fa5-3537-4cbd-91e7-02575df50d49",
-    "value": -1,
-    "createdAt": "2025-06-07T06:25:54.768Z"
-  },
-  {
-    "id": "d5d05496-684a-41eb-a625-26a1984fb16a",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "18c6b3d5-447d-472c-8090-882a5743fe55",
+    "id": "15fa8650-ec66-4eec-896f-dff08071db8a",
+    "userId": "04b67e5a-b097-4b3b-adcd-8f8c3b6f9fba",
+    "itemId": "7ac5c6a3-3b8f-45f5-8e21-653953ce036a",
     "value": 1,
-    "createdAt": "2024-11-23T07:25:54.768Z"
+    "createdAt": "2025-03-15T07:49:40.507Z"
   },
   {
-    "id": "5a75420d-efff-42ff-b3b1-7cd192754e29",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "80dd7d78-8aea-414e-81f3-8c24292406dd",
+    "id": "1e3f1293-5c40-4948-87f5-ffeea104d9ed",
+    "userId": "77242366-b445-42a8-a358-1553786f2e10",
+    "itemId": "3dab42c7-89ad-40aa-95e5-c84ba147c243",
     "value": -1,
-    "createdAt": "2025-07-31T06:25:54.768Z"
+    "createdAt": "2025-04-28T06:49:40.507Z"
   },
   {
-    "id": "972ad69c-f486-4d6c-b3fb-70ee36941078",
+    "id": "4c9744f5-1994-4cf0-960b-73113d8c4486",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "18f91ac9-4c4c-4155-8fcb-788d4b4fce5e",
+    "value": 1,
+    "createdAt": "2025-05-02T06:49:40.507Z"
+  },
+  {
+    "id": "33f22be3-b67d-4b73-b46a-57477e039b7a",
     "userId": null,
-    "itemId": "59db25c8-3210-4326-9013-5d06f00f3e85",
-    "value": 1,
-    "createdAt": "2024-10-25T06:25:54.768Z"
-  },
-  {
-    "id": "2643b5c1-1eff-408c-94c4-89d31289e6e4",
-    "userId": "46364c6e-1bbc-4995-8275-584ad2a09169",
-    "itemId": "e521f926-dbb8-40fe-a54e-f02e77d8c95f",
+    "itemId": "a9cbed5a-4b2c-4f56-b98d-b229bebf3fee",
     "value": -1,
-    "createdAt": "2024-11-21T07:25:54.768Z"
+    "createdAt": "2025-04-07T06:49:40.507Z"
   },
   {
-    "id": "e70c24c0-7be1-47ed-b250-c1d515deabc7",
-    "userId": "f6501e52-758e-47bc-b0a0-2c3f6e6e196b",
-    "itemId": "b3128c3e-d7c5-402b-9236-85c0830ed2f6",
-    "value": 1,
-    "createdAt": "2025-02-04T07:25:54.768Z"
-  },
-  {
-    "id": "65156b0a-a198-4c12-a09c-4cc9b886d236",
-    "userId": "f6501e52-758e-47bc-b0a0-2c3f6e6e196b",
-    "itemId": "a1ea79c4-d0fc-431c-9c71-78d15a11115d",
-    "value": 1,
-    "createdAt": "2024-12-08T07:25:54.768Z"
-  },
-  {
-    "id": "ecc4ae21-ab80-4dc2-89f3-071e6cf404d4",
-    "userId": "f55eec44-c049-4682-a36f-ee0005855faf",
-    "itemId": "fb353239-aa23-4c22-9a83-c0664cfa53df",
-    "value": 1,
-    "createdAt": "2025-06-28T06:25:54.768Z"
-  },
-  {
-    "id": "b54b6a65-31e8-4c30-9dcf-8e765c800a40",
-    "userId": "f6501e52-758e-47bc-b0a0-2c3f6e6e196b",
-    "itemId": "a08c87b5-c456-44d9-854d-1ded61aa5283",
+    "id": "ba6a9694-9fe9-4dac-b45c-1210bacd5bcf",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "8df4eb2e-f4b4-4b49-a14e-1cd87d0e4ddd",
     "value": -1,
-    "createdAt": "2025-06-07T06:25:54.768Z"
+    "createdAt": "2024-11-09T07:49:40.507Z"
   },
   {
-    "id": "1589fefc-1dc2-468a-8750-9f8b210c9a3b",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "59db25c8-3210-4326-9013-5d06f00f3e85",
+    "id": "6f5aef00-e182-4368-9fd4-06a0d81334c6",
+    "userId": "77242366-b445-42a8-a358-1553786f2e10",
+    "itemId": "72359c6b-7724-4895-99ca-8da116bb0e6d",
     "value": -1,
-    "createdAt": "2025-08-22T06:25:54.768Z"
+    "createdAt": "2025-04-22T06:49:40.507Z"
   },
   {
-    "id": "d36ef790-5466-4bc9-9ed3-9b9d749e5d1e",
-    "userId": "4a105ccc-f505-4057-95ee-ddf32491b04c",
-    "itemId": "3c475b10-e8ca-409e-8520-ebbc84f4acc7",
-    "value": -1,
-    "createdAt": "2024-12-05T07:25:54.768Z"
-  },
-  {
-    "id": "627169a7-6c6a-43a6-b23a-7a97371e9133",
+    "id": "8c69e831-7fd3-484a-9278-9d215227fd20",
     "userId": null,
-    "itemId": "e581c4ab-6663-43ef-af17-a2c36296656f",
-    "value": -1,
-    "createdAt": "2024-12-07T07:25:54.768Z"
-  },
-  {
-    "id": "950ef18b-e434-4a1d-8ba2-2698c06b3808",
-    "userId": "4abaa3a9-cbc0-424b-98e6-f1839a086f59",
-    "itemId": "956aaf8d-ca7d-4b8b-99b3-3444bfb10aa7",
+    "itemId": "98a767ac-bea9-4aaf-870b-b15e3245af12",
     "value": 1,
-    "createdAt": "2025-04-05T06:25:54.768Z"
+    "createdAt": "2025-10-14T06:49:40.507Z"
   },
   {
-    "id": "cd619ad2-269e-4520-bf32-6de8dd7b8ad3",
-    "userId": "4a105ccc-f505-4057-95ee-ddf32491b04c",
-    "itemId": "d9d669cf-9a4e-4273-8b22-184c717828e0",
-    "value": -1,
-    "createdAt": "2025-01-22T07:25:54.768Z"
-  },
-  {
-    "id": "7ddda54c-edaf-40ce-9576-9ee7b0c51f2e",
-    "userId": "4a480d61-0552-4ab4-a708-e39c12686e78",
-    "itemId": "a1ea79c4-d0fc-431c-9c71-78d15a11115d",
-    "value": -1,
-    "createdAt": "2025-03-17T07:25:54.768Z"
-  },
-  {
-    "id": "d7626659-3163-4074-bcd6-57ae03436179",
-    "userId": "441005d4-2321-44b8-8b1c-0baa4488cdd7",
-    "itemId": "1f58363f-3161-4957-bc87-b174e9729f03",
+    "id": "44c95aa4-3a00-4407-87a6-56b7bb3b5719",
+    "userId": "8e1ec2ec-9c1e-40da-9cf4-50cd7a4bc847",
+    "itemId": "d3dc763d-db6b-4c43-b085-864598d1d639",
     "value": 1,
-    "createdAt": "2025-10-03T06:25:54.768Z"
+    "createdAt": "2025-09-05T06:49:40.507Z"
   },
   {
-    "id": "87d2c8de-8c53-4513-a5bd-2ac40b68ac6b",
-    "userId": "4a105ccc-f505-4057-95ee-ddf32491b04c",
-    "itemId": "1f58363f-3161-4957-bc87-b174e9729f03",
+    "id": "c2b32ded-7f84-4d29-ac2c-f34b3b047e57",
+    "userId": "77242366-b445-42a8-a358-1553786f2e10",
+    "itemId": "ae179039-d5c7-4727-b028-6d90c985c035",
     "value": -1,
-    "createdAt": "2024-12-22T07:25:54.768Z"
+    "createdAt": "2024-11-25T07:49:40.507Z"
   },
   {
-    "id": "182086e2-3a99-4747-b3af-26524bec6536",
+    "id": "34670ee1-4db3-4597-ad4f-baded6ef3f0d",
+    "userId": "990d0ee8-e4bf-4a29-adcd-29b051426c4a",
+    "itemId": "73779ca3-19fd-4022-8eb5-0f3c26d3ae42",
+    "value": 1,
+    "createdAt": "2025-06-09T06:49:40.507Z"
+  },
+  {
+    "id": "6427a790-7dba-40e0-a781-22e84b09a042",
+    "userId": "f77623bb-ea52-4de7-a14a-21c4ed178dcf",
+    "itemId": "84f5c9de-2c0d-4325-a19a-3174ca5c0a02",
+    "value": -1,
+    "createdAt": "2025-07-26T06:49:40.507Z"
+  },
+  {
+    "id": "6c651851-62df-47dd-9b8c-b2082a899a44",
+    "userId": "8e1ec2ec-9c1e-40da-9cf4-50cd7a4bc847",
+    "itemId": "4390edc7-a3e3-49f3-b5c5-ca02a1940321",
+    "value": -1,
+    "createdAt": "2025-05-29T06:49:40.507Z"
+  },
+  {
+    "id": "ca682526-a33f-4611-82ac-e1c0033857e1",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "4390edc7-a3e3-49f3-b5c5-ca02a1940321",
+    "value": -1,
+    "createdAt": "2025-09-11T06:49:40.507Z"
+  },
+  {
+    "id": "c1fdba0b-6639-496e-a9be-c81d5ad35c81",
+    "userId": "8e1ec2ec-9c1e-40da-9cf4-50cd7a4bc847",
+    "itemId": "8495dabd-deb2-48e2-95f1-ec6d74bf9558",
+    "value": 1,
+    "createdAt": "2024-12-25T07:49:40.507Z"
+  },
+  {
+    "id": "30bb8699-94a4-4f7b-ab74-f4b902e04785",
     "userId": null,
-    "itemId": "7a76e75b-73bd-46d8-ba5f-410634c6d6e9",
+    "itemId": "98a767ac-bea9-4aaf-870b-b15e3245af12",
     "value": -1,
-    "createdAt": "2025-03-27T07:25:54.768Z"
+    "createdAt": "2024-12-16T07:49:40.507Z"
   },
   {
-    "id": "6b4ffd5d-ef79-432a-8f43-8662c2d84b0f",
+    "id": "531c2592-c292-40d1-92fc-8ef1ef27a005",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "10fe2dfe-ae30-4eac-b8f4-1caaadc26534",
+    "value": 1,
+    "createdAt": "2025-02-19T07:49:40.507Z"
+  },
+  {
+    "id": "24dd9c6d-8687-4ac2-9465-e9f17b32fe28",
     "userId": null,
-    "itemId": "a08c87b5-c456-44d9-854d-1ded61aa5283",
+    "itemId": "aef9ec6f-9b08-49ac-afb6-4f802b4ac045",
     "value": 1,
-    "createdAt": "2025-09-02T06:25:54.768Z"
+    "createdAt": "2025-02-04T07:49:40.507Z"
   },
   {
-    "id": "de844ed2-3876-40cf-9dfb-233b19640888",
+    "id": "f9010c76-a853-4a64-a042-5bdf7687623d",
+    "userId": "502fa6d6-7a44-4daf-b04c-948cd3a0564a",
+    "itemId": "4390edc7-a3e3-49f3-b5c5-ca02a1940321",
+    "value": 1,
+    "createdAt": "2025-01-15T07:49:40.507Z"
+  },
+  {
+    "id": "e7c061a8-8878-48f6-9808-c65c70f80640",
+    "userId": "90e2323c-0bdb-4355-a7d7-f32f8cc47a46",
+    "itemId": "0767ea28-f76d-4768-bb8d-9e10d0da7558",
+    "value": 1,
+    "createdAt": "2025-01-21T07:49:40.507Z"
+  },
+  {
+    "id": "d3cb860d-9b0f-4ecb-a36a-78c349294895",
     "userId": null,
-    "itemId": "1f58363f-3161-4957-bc87-b174e9729f03",
+    "itemId": "a9cbed5a-4b2c-4f56-b98d-b229bebf3fee",
     "value": -1,
-    "createdAt": "2024-11-03T07:25:54.768Z"
+    "createdAt": "2025-06-27T06:49:40.507Z"
   },
   {
-    "id": "6163c3bb-30eb-4ea2-ba19-928ee02ffb14",
-    "userId": "dc30c10e-5c9d-48fc-933f-89d79a3ec5ba",
-    "itemId": "a5d7cbc2-f325-4838-890a-671cefbb12dd",
+    "id": "973b3b90-e911-4a7d-8ad7-57d43450e23f",
+    "userId": "5643cd80-4db6-4c56-830a-7bea73300cf5",
+    "itemId": "d1a5ac9b-15e3-47ce-8c90-16c0d7f692cd",
     "value": 1,
-    "createdAt": "2025-03-26T07:25:54.768Z"
+    "createdAt": "2025-09-25T06:49:40.507Z"
   },
   {
-    "id": "f5aeed89-b9e3-4866-bbc1-980c4923fe02",
-    "userId": "46364c6e-1bbc-4995-8275-584ad2a09169",
-    "itemId": "e208be8c-70ad-412a-b6a4-41a315e218f1",
-    "value": 1,
-    "createdAt": "2025-04-09T06:25:54.768Z"
-  },
-  {
-    "id": "b27aaa4f-651e-4a8e-8f3a-2b043bba97d3",
-    "userId": "43417659-10dd-40e2-ab1d-72d5f71caf3c",
-    "itemId": "d9d669cf-9a4e-4273-8b22-184c717828e0",
-    "value": 1,
-    "createdAt": "2025-05-25T06:25:54.768Z"
-  },
-  {
-    "id": "ef478a1b-b248-4db4-a5ba-b5660bafd19f",
-    "userId": "46364c6e-1bbc-4995-8275-584ad2a09169",
-    "itemId": "fb353239-aa23-4c22-9a83-c0664cfa53df",
-    "value": -1,
-    "createdAt": "2025-06-15T06:25:54.768Z"
-  },
-  {
-    "id": "ae6dbe39-d1ba-4e0f-b2fb-d088e9389640",
-    "userId": "46364c6e-1bbc-4995-8275-584ad2a09169",
-    "itemId": "72bc51a1-a782-4c9c-9c8c-06fed5233441",
-    "value": 1,
-    "createdAt": "2025-08-23T06:25:54.768Z"
-  },
-  {
-    "id": "7e3919d0-ce9e-4d6b-aa34-d8aafef02658",
-    "userId": "43417659-10dd-40e2-ab1d-72d5f71caf3c",
-    "itemId": "2e6a9dca-31e2-44ce-972b-8fa3e4c79d99",
-    "value": 1,
-    "createdAt": "2025-10-19T06:25:54.768Z"
-  },
-  {
-    "id": "55fba2c1-7d79-4dc6-82f2-a52dd47b7e5c",
+    "id": "ee93846e-1ed5-493c-b0fa-61da13d0d809",
     "userId": null,
-    "itemId": "a08c87b5-c456-44d9-854d-1ded61aa5283",
+    "itemId": "7fbf4df9-c626-45eb-9057-c3cc4fceb681",
     "value": 1,
-    "createdAt": "2025-03-30T06:25:54.768Z"
+    "createdAt": "2025-05-07T06:49:40.507Z"
   },
   {
-    "id": "c245cbcc-a9b2-4a30-917a-1cdacd1b1413",
-    "userId": "4abaa3a9-cbc0-424b-98e6-f1839a086f59",
-    "itemId": "956aaf8d-ca7d-4b8b-99b3-3444bfb10aa7",
+    "id": "53ccd919-f044-4609-a49f-e3b790c2cbe4",
+    "userId": "8e1ec2ec-9c1e-40da-9cf4-50cd7a4bc847",
+    "itemId": "0767ea28-f76d-4768-bb8d-9e10d0da7558",
+    "value": 1,
+    "createdAt": "2024-12-17T07:49:40.507Z"
+  },
+  {
+    "id": "a29e1ea2-5e4f-429b-887b-943d6644cb57",
+    "userId": "990d0ee8-e4bf-4a29-adcd-29b051426c4a",
+    "itemId": "383df30b-8711-4d61-92ae-9b84605333cd",
     "value": -1,
-    "createdAt": "2025-06-15T06:25:54.768Z"
+    "createdAt": "2024-11-18T07:49:40.507Z"
   },
   {
-    "id": "ca03b45b-6614-4ca0-b5f3-46843d5b4031",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "e581c4ab-6663-43ef-af17-a2c36296656f",
+    "id": "9ef6ba46-0a3c-4d24-b128-acd64d9c74e3",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "84f5c9de-2c0d-4325-a19a-3174ca5c0a02",
+    "value": -1,
+    "createdAt": "2025-08-02T06:49:40.507Z"
+  },
+  {
+    "id": "073d9988-3421-4ff9-ad3d-c014423f6702",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "5539dff3-dbe6-4530-90fd-7c7b317d1286",
     "value": 1,
-    "createdAt": "2025-02-06T07:25:54.768Z"
+    "createdAt": "2025-05-17T06:49:40.507Z"
   },
   {
-    "id": "ead8bc4d-2a21-441a-b9ed-6be42763d043",
+    "id": "f59cdfaf-9509-4253-be53-84164e521db7",
+    "userId": "990d0ee8-e4bf-4a29-adcd-29b051426c4a",
+    "itemId": "98a767ac-bea9-4aaf-870b-b15e3245af12",
+    "value": 1,
+    "createdAt": "2024-11-24T07:49:40.507Z"
+  },
+  {
+    "id": "4cb7e6a3-40b8-430c-9c8c-c178ff0601d1",
     "userId": null,
-    "itemId": "6357cc7f-4961-4c90-89fe-f188f3c0b63e",
-    "value": 1,
-    "createdAt": "2024-12-19T07:25:54.768Z"
-  },
-  {
-    "id": "4b596b3a-6346-44ee-8031-e70913cd504b",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "e6133feb-e8ef-4d95-a158-2a07577f22aa",
+    "itemId": "73779ca3-19fd-4022-8eb5-0f3c26d3ae42",
     "value": -1,
-    "createdAt": "2025-04-27T06:25:54.768Z"
+    "createdAt": "2025-05-22T06:49:40.507Z"
   },
   {
-    "id": "c5bca96e-f12f-4d48-8007-6a3d615e6684",
-    "userId": "dc30c10e-5c9d-48fc-933f-89d79a3ec5ba",
-    "itemId": "e6133feb-e8ef-4d95-a158-2a07577f22aa",
+    "id": "18a5a290-a13c-45ba-a795-c67677a2f798",
+    "userId": "90e2323c-0bdb-4355-a7d7-f32f8cc47a46",
+    "itemId": "4390edc7-a3e3-49f3-b5c5-ca02a1940321",
     "value": 1,
-    "createdAt": "2025-01-02T07:25:54.768Z"
+    "createdAt": "2025-01-07T07:49:40.507Z"
   },
   {
-    "id": "d7b7fcfa-1743-400b-85fe-ab4c5ea3d840",
-    "userId": "4a480d61-0552-4ab4-a708-e39c12686e78",
-    "itemId": "80dd7d78-8aea-414e-81f3-8c24292406dd",
-    "value": 1,
-    "createdAt": "2025-05-22T06:25:54.768Z"
-  },
-  {
-    "id": "c23fbda9-dc0f-4a49-838f-0a71177c92f2",
-    "userId": "f55eec44-c049-4682-a36f-ee0005855faf",
-    "itemId": "18c6b3d5-447d-472c-8090-882a5743fe55",
+    "id": "812fb6fb-8954-4505-8729-a757c95b0cc2",
+    "userId": "990d0ee8-e4bf-4a29-adcd-29b051426c4a",
+    "itemId": "ada4067d-0fa3-4105-bb54-a86e537fd776",
     "value": -1,
-    "createdAt": "2025-06-14T06:25:54.768Z"
+    "createdAt": "2025-01-30T07:49:40.507Z"
   },
   {
-    "id": "b07b7de2-c814-4ae5-aa6c-43a68e7442ae",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "80dd7d78-8aea-414e-81f3-8c24292406dd",
+    "id": "c74b88ca-27dc-4af4-a9ac-959c7599239b",
+    "userId": "990d0ee8-e4bf-4a29-adcd-29b051426c4a",
+    "itemId": "d3dc763d-db6b-4c43-b085-864598d1d639",
     "value": 1,
-    "createdAt": "2024-11-25T07:25:54.768Z"
+    "createdAt": "2024-11-14T07:49:40.507Z"
   },
   {
-    "id": "7f994703-615b-4cb6-8b37-a692ac49e7b6",
-    "userId": "f6501e52-758e-47bc-b0a0-2c3f6e6e196b",
-    "itemId": "00555057-c331-4cbc-b6a7-5551e3cf196f",
-    "value": 1,
-    "createdAt": "2024-12-18T07:25:54.768Z"
-  },
-  {
-    "id": "9a63c3c9-f7a5-4d0e-822b-dc03496e74b4",
-    "userId": "441005d4-2321-44b8-8b1c-0baa4488cdd7",
-    "itemId": "ec517fa5-3537-4cbd-91e7-02575df50d49",
+    "id": "ff4da6ba-1bbe-40bb-b970-6a17abab6683",
+    "userId": "77242366-b445-42a8-a358-1553786f2e10",
+    "itemId": "84786b6d-d025-4c99-b564-48eeec5623e4",
     "value": -1,
-    "createdAt": "2025-07-27T06:25:54.768Z"
+    "createdAt": "2024-12-14T07:49:40.507Z"
   },
   {
-    "id": "c6e1dee4-8f0a-4567-b09e-ad4735045372",
-    "userId": "4a480d61-0552-4ab4-a708-e39c12686e78",
-    "itemId": "d9d669cf-9a4e-4273-8b22-184c717828e0",
-    "value": 1,
-    "createdAt": "2024-10-26T06:25:54.768Z"
-  },
-  {
-    "id": "56f2eca6-e90f-4d29-984d-ecf7af194245",
-    "userId": "f6501e52-758e-47bc-b0a0-2c3f6e6e196b",
-    "itemId": "73342018-0b6e-41fe-a0db-0dbaa28e9cf8",
+    "id": "c381ba05-a8c1-4e69-add8-6e688be71901",
+    "userId": "04b67e5a-b097-4b3b-adcd-8f8c3b6f9fba",
+    "itemId": "ec2f3e0c-de1b-4aed-b2a2-f8739de0e152",
     "value": -1,
-    "createdAt": "2025-06-27T06:25:54.768Z"
+    "createdAt": "2025-08-25T06:49:40.507Z"
   },
   {
-    "id": "8f5b44ae-e741-4239-8751-2d1f8be33feb",
-    "userId": "f55eec44-c049-4682-a36f-ee0005855faf",
-    "itemId": "2e6a9dca-31e2-44ce-972b-8fa3e4c79d99",
-    "value": -1,
-    "createdAt": "2025-07-09T06:25:54.768Z"
-  },
-  {
-    "id": "3495dbc6-0439-4939-ba0e-3f91959c8047",
-    "userId": "4abaa3a9-cbc0-424b-98e6-f1839a086f59",
-    "itemId": "2e6a9dca-31e2-44ce-972b-8fa3e4c79d99",
-    "value": -1,
-    "createdAt": "2025-07-02T06:25:54.768Z"
-  },
-  {
-    "id": "cbd1d8c8-8eb2-4505-b708-807d28a90ac1",
-    "userId": "4a105ccc-f505-4057-95ee-ddf32491b04c",
-    "itemId": "e208be8c-70ad-412a-b6a4-41a315e218f1",
+    "id": "8042117d-5ad2-4d04-8fa1-ee815c1dc99d",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "01fcd328-2c2c-446c-9398-ee620c873d8f",
     "value": 1,
-    "createdAt": "2025-06-17T06:25:54.768Z"
+    "createdAt": "2025-04-10T06:49:40.507Z"
   },
   {
-    "id": "e0110357-75d4-4c04-893f-ebab161ca3a4",
-    "userId": "4a105ccc-f505-4057-95ee-ddf32491b04c",
-    "itemId": "6d90d99e-8534-46f2-b0c3-89f1125fe058",
+    "id": "7a877033-1090-4490-9da1-6c6a1bd08bf9",
+    "userId": "5643cd80-4db6-4c56-830a-7bea73300cf5",
+    "itemId": "7ac5c6a3-3b8f-45f5-8e21-653953ce036a",
     "value": 1,
-    "createdAt": "2025-03-19T07:25:54.769Z"
+    "createdAt": "2025-09-05T06:49:40.507Z"
   },
   {
-    "id": "816bb36e-a576-40eb-ab40-87ebd9a86fb3",
+    "id": "a3b0d8c2-f0d2-4efb-b61a-ba243079ca5a",
+    "userId": "990d0ee8-e4bf-4a29-adcd-29b051426c4a",
+    "itemId": "10fe2dfe-ae30-4eac-b8f4-1caaadc26534",
+    "value": -1,
+    "createdAt": "2025-05-11T06:49:40.507Z"
+  },
+  {
+    "id": "6c739306-c9bc-433d-ac48-bb42ab7f326d",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "72359c6b-7724-4895-99ca-8da116bb0e6d",
+    "value": -1,
+    "createdAt": "2025-02-15T07:49:40.507Z"
+  },
+  {
+    "id": "10d7ee26-e794-4115-b1f0-98b1c89c5328",
     "userId": null,
-    "itemId": "00555057-c331-4cbc-b6a7-5551e3cf196f",
+    "itemId": "98a767ac-bea9-4aaf-870b-b15e3245af12",
+    "value": 1,
+    "createdAt": "2025-07-06T06:49:40.507Z"
+  },
+  {
+    "id": "dd18cb3e-3386-4acc-8adb-eea41921deeb",
+    "userId": "90e2323c-0bdb-4355-a7d7-f32f8cc47a46",
+    "itemId": "3dab42c7-89ad-40aa-95e5-c84ba147c243",
+    "value": 1,
+    "createdAt": "2025-07-02T06:49:40.507Z"
+  },
+  {
+    "id": "cb2233d2-1cd7-4b4e-b915-df1997448228",
+    "userId": "8e1ec2ec-9c1e-40da-9cf4-50cd7a4bc847",
+    "itemId": "a9cbed5a-4b2c-4f56-b98d-b229bebf3fee",
+    "value": 1,
+    "createdAt": "2025-04-21T06:49:40.507Z"
+  },
+  {
+    "id": "dc6169bc-c6c3-4c9c-bf10-135bbdd4d03e",
+    "userId": "c490534c-9d38-4944-9c9c-1a0fd41e3577",
+    "itemId": "73779ca3-19fd-4022-8eb5-0f3c26d3ae42",
     "value": -1,
-    "createdAt": "2025-03-26T07:25:54.769Z"
+    "createdAt": "2024-11-27T07:49:40.507Z"
   },
   {
-    "id": "384ea51a-33e3-4cd5-9089-a22abce85fb6",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "cb563f7a-2b02-41b3-9af3-86e215725f60",
+    "id": "5f0f4d0c-5636-4450-bf88-59d15fa0278f",
+    "userId": "8e1ec2ec-9c1e-40da-9cf4-50cd7a4bc847",
+    "itemId": "c0bc2f11-b31a-48b2-984b-cb9c805acff0",
     "value": 1,
-    "createdAt": "2025-06-21T06:25:54.769Z"
+    "createdAt": "2025-03-06T07:49:40.507Z"
   },
   {
-    "id": "e96dc8ac-e05e-4c27-bb4b-b18bd2b5207e",
-    "userId": "46364c6e-1bbc-4995-8275-584ad2a09169",
-    "itemId": "e208be8c-70ad-412a-b6a4-41a315e218f1",
+    "id": "daaae89e-0d23-473d-9dda-37a94ee574c0",
+    "userId": "990d0ee8-e4bf-4a29-adcd-29b051426c4a",
+    "itemId": "10fe2dfe-ae30-4eac-b8f4-1caaadc26534",
     "value": -1,
-    "createdAt": "2024-10-28T07:25:54.769Z"
+    "createdAt": "2025-03-14T07:49:40.507Z"
   },
   {
-    "id": "1381d3a7-e0c1-4e10-8da7-c76ea8d47f0c",
-    "userId": "4abaa3a9-cbc0-424b-98e6-f1839a086f59",
-    "itemId": "1f58363f-3161-4957-bc87-b174e9729f03",
+    "id": "adc328da-ab0d-4d9c-94cd-6c53ec1632d7",
+    "userId": "502fa6d6-7a44-4daf-b04c-948cd3a0564a",
+    "itemId": "8df4eb2e-f4b4-4b49-a14e-1cd87d0e4ddd",
     "value": 1,
-    "createdAt": "2024-12-09T07:25:54.769Z"
+    "createdAt": "2025-10-07T06:49:40.507Z"
   },
   {
-    "id": "a85cfafb-0335-4a44-b4f4-4ff113a4685b",
-    "userId": "dc30c10e-5c9d-48fc-933f-89d79a3ec5ba",
-    "itemId": "e521f926-dbb8-40fe-a54e-f02e77d8c95f",
+    "id": "8c7a56cd-ec2f-4947-a837-cac28bdb5ac4",
+    "userId": "502fa6d6-7a44-4daf-b04c-948cd3a0564a",
+    "itemId": "4390edc7-a3e3-49f3-b5c5-ca02a1940321",
     "value": -1,
-    "createdAt": "2025-04-21T06:25:54.769Z"
+    "createdAt": "2025-09-23T06:49:40.507Z"
   },
   {
-    "id": "1513d450-94f0-41d3-9581-cad6985ee0f9",
-    "userId": "4a480d61-0552-4ab4-a708-e39c12686e78",
-    "itemId": "1f58363f-3161-4957-bc87-b174e9729f03",
-    "value": 1,
-    "createdAt": "2025-03-01T07:25:54.769Z"
-  },
-  {
-    "id": "2483f4a0-38f8-4dea-83e7-e01e0b09eb31",
-    "userId": "f55eec44-c049-4682-a36f-ee0005855faf",
-    "itemId": "e6133feb-e8ef-4d95-a158-2a07577f22aa",
-    "value": 1,
-    "createdAt": "2025-02-18T07:25:54.769Z"
-  },
-  {
-    "id": "9ffb4b74-2d9a-489e-9a91-891a46a18b25",
-    "userId": "43417659-10dd-40e2-ab1d-72d5f71caf3c",
-    "itemId": "6d90d99e-8534-46f2-b0c3-89f1125fe058",
-    "value": 1,
-    "createdAt": "2025-04-26T06:25:54.769Z"
-  },
-  {
-    "id": "9588cfb4-d5d7-4b2d-83e5-45398458785a",
-    "userId": "441005d4-2321-44b8-8b1c-0baa4488cdd7",
-    "itemId": "b75c6462-90fe-4187-abfc-4920ae12d3df",
+    "id": "3d13f7bb-5e01-4eac-9264-4e4cd1e2e119",
+    "userId": "f77623bb-ea52-4de7-a14a-21c4ed178dcf",
+    "itemId": "5539dff3-dbe6-4530-90fd-7c7b317d1286",
     "value": -1,
-    "createdAt": "2025-09-02T06:25:54.769Z"
+    "createdAt": "2025-07-05T06:49:40.507Z"
   },
   {
-    "id": "ad2ba4d9-17f3-4193-a396-3c25528b40d1",
-    "userId": "4abaa3a9-cbc0-424b-98e6-f1839a086f59",
-    "itemId": "b3128c3e-d7c5-402b-9236-85c0830ed2f6",
+    "id": "ac2c6888-30e5-4327-88e0-3f5130fdb51c",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "18f91ac9-4c4c-4155-8fcb-788d4b4fce5e",
     "value": 1,
-    "createdAt": "2025-09-15T06:25:54.769Z"
+    "createdAt": "2024-12-12T07:49:40.507Z"
   },
   {
-    "id": "892e1b08-5bfc-41e1-b322-abbd079ced98",
-    "userId": "43417659-10dd-40e2-ab1d-72d5f71caf3c",
-    "itemId": "7a76e75b-73bd-46d8-ba5f-410634c6d6e9",
-    "value": 1,
-    "createdAt": "2025-03-15T07:25:54.769Z"
-  },
-  {
-    "id": "9d237cde-b4ef-4910-8ce3-d40d26b86477",
-    "userId": "4a105ccc-f505-4057-95ee-ddf32491b04c",
-    "itemId": "e306d359-ce7b-4d41-a6cd-0e4a78044bf2",
+    "id": "62609a4f-f88d-4573-8b95-caf3d5928c85",
+    "userId": "f77623bb-ea52-4de7-a14a-21c4ed178dcf",
+    "itemId": "3dab42c7-89ad-40aa-95e5-c84ba147c243",
     "value": -1,
-    "createdAt": "2025-01-11T07:25:54.769Z"
+    "createdAt": "2025-01-13T07:49:40.507Z"
   },
   {
-    "id": "32a7f6ef-28e0-4ba7-8314-d1cb7c4c7bb4",
-    "userId": "441005d4-2321-44b8-8b1c-0baa4488cdd7",
-    "itemId": "cb563f7a-2b02-41b3-9af3-86e215725f60",
+    "id": "3b1edd86-0b91-4e68-9a2d-807955a77082",
+    "userId": "90e2323c-0bdb-4355-a7d7-f32f8cc47a46",
+    "itemId": "86c33dd1-39a8-4d1f-ad50-d386be1423d0",
     "value": 1,
-    "createdAt": "2025-09-01T06:25:54.769Z"
+    "createdAt": "2025-10-20T06:49:40.507Z"
   },
   {
-    "id": "5010fc84-fa9a-4741-8215-241afbdb55be",
+    "id": "f86b5a30-af3f-455d-b492-386b28f1bd18",
     "userId": null,
-    "itemId": "3c475b10-e8ca-409e-8520-ebbc84f4acc7",
-    "value": 1,
-    "createdAt": "2025-04-29T06:25:54.769Z"
-  },
-  {
-    "id": "4498ed02-44cf-4a42-b37a-9a19daafa9d7",
-    "userId": "dc30c10e-5c9d-48fc-933f-89d79a3ec5ba",
-    "itemId": "73342018-0b6e-41fe-a0db-0dbaa28e9cf8",
+    "itemId": "c27b720f-f24c-4eb4-a0df-d122044a047f",
     "value": -1,
-    "createdAt": "2024-11-23T07:25:54.769Z"
+    "createdAt": "2024-12-15T07:49:40.507Z"
   },
   {
-    "id": "e27aabae-f235-4eae-a770-2c12a9dc2673",
-    "userId": "4abaa3a9-cbc0-424b-98e6-f1839a086f59",
-    "itemId": "b3128c3e-d7c5-402b-9236-85c0830ed2f6",
+    "id": "1965e3ac-cce9-4512-adb6-2b665fc255fd",
+    "userId": "04b67e5a-b097-4b3b-adcd-8f8c3b6f9fba",
+    "itemId": "a9cbed5a-4b2c-4f56-b98d-b229bebf3fee",
     "value": -1,
-    "createdAt": "2025-02-11T07:25:54.769Z"
+    "createdAt": "2025-01-29T07:49:40.507Z"
   },
   {
-    "id": "3cd98a15-af0f-42cd-b024-152766d087d1",
-    "userId": "4a480d61-0552-4ab4-a708-e39c12686e78",
-    "itemId": "73342018-0b6e-41fe-a0db-0dbaa28e9cf8",
-    "value": -1,
-    "createdAt": "2025-09-27T06:25:54.769Z"
-  },
-  {
-    "id": "7777605e-dc62-4c20-90c3-896db1a21839",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "a08c87b5-c456-44d9-854d-1ded61aa5283",
-    "value": 1,
-    "createdAt": "2024-11-30T07:25:54.769Z"
-  },
-  {
-    "id": "f6f8aee0-caae-41bc-99ce-0331cc6640d3",
-    "userId": "46364c6e-1bbc-4995-8275-584ad2a09169",
-    "itemId": "d9d669cf-9a4e-4273-8b22-184c717828e0",
-    "value": 1,
-    "createdAt": "2025-07-06T06:25:54.769Z"
-  },
-  {
-    "id": "af41dd8b-763c-4054-acdb-03eae0473882",
-    "userId": "f6501e52-758e-47bc-b0a0-2c3f6e6e196b",
-    "itemId": "db771622-2382-4da9-8620-05b65e8d1e9a",
-    "value": 1,
-    "createdAt": "2025-10-09T06:25:54.769Z"
-  },
-  {
-    "id": "39a3ac78-eea0-4396-9f35-f10b7d1ac5d1",
-    "userId": "f55eec44-c049-4682-a36f-ee0005855faf",
-    "itemId": "73342018-0b6e-41fe-a0db-0dbaa28e9cf8",
-    "value": -1,
-    "createdAt": "2025-06-28T06:25:54.769Z"
-  },
-  {
-    "id": "2db367f1-eeae-4160-9ec0-4cbeb182f786",
-    "userId": "dc30c10e-5c9d-48fc-933f-89d79a3ec5ba",
-    "itemId": "d9d669cf-9a4e-4273-8b22-184c717828e0",
-    "value": -1,
-    "createdAt": "2025-05-21T06:25:54.769Z"
-  },
-  {
-    "id": "60b94e48-cbb6-4a7c-aa9e-06f6c61ce26a",
-    "userId": "441005d4-2321-44b8-8b1c-0baa4488cdd7",
-    "itemId": "72bc51a1-a782-4c9c-9c8c-06fed5233441",
-    "value": 1,
-    "createdAt": "2025-05-15T06:25:54.769Z"
-  },
-  {
-    "id": "13cd8b18-0c98-4b6e-b13e-e618bce14997",
-    "userId": "4a105ccc-f505-4057-95ee-ddf32491b04c",
-    "itemId": "a1ea79c4-d0fc-431c-9c71-78d15a11115d",
-    "value": 1,
-    "createdAt": "2025-05-30T06:25:54.769Z"
-  },
-  {
-    "id": "441ee64a-d8cf-4eb8-a77e-7cd3b2f86a33",
-    "userId": "4abaa3a9-cbc0-424b-98e6-f1839a086f59",
-    "itemId": "00555057-c331-4cbc-b6a7-5551e3cf196f",
-    "value": 1,
-    "createdAt": "2025-08-18T06:25:54.769Z"
-  },
-  {
-    "id": "ffab7513-29cf-448a-a183-e9f945278157",
-    "userId": "43417659-10dd-40e2-ab1d-72d5f71caf3c",
-    "itemId": "b75c6462-90fe-4187-abfc-4920ae12d3df",
-    "value": -1,
-    "createdAt": "2025-02-09T07:25:54.769Z"
-  },
-  {
-    "id": "1d52d245-4eb5-4d6f-8905-89f2d597507c",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "956aaf8d-ca7d-4b8b-99b3-3444bfb10aa7",
-    "value": 1,
-    "createdAt": "2025-04-13T06:25:54.769Z"
-  },
-  {
-    "id": "1ff1b2f9-6828-40cb-b382-3597286dfaa2",
-    "userId": "f55eec44-c049-4682-a36f-ee0005855faf",
-    "itemId": "6d90d99e-8534-46f2-b0c3-89f1125fe058",
-    "value": -1,
-    "createdAt": "2024-12-01T07:25:54.769Z"
-  },
-  {
-    "id": "2140de7d-4f39-461b-9083-28b743dd7771",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "a08c87b5-c456-44d9-854d-1ded61aa5283",
-    "value": -1,
-    "createdAt": "2025-06-30T06:25:54.769Z"
-  },
-  {
-    "id": "45fb92f5-47c9-4868-bbc9-5662670c65d6",
+    "id": "8397c40b-a764-43d5-b378-35d649d26a1f",
     "userId": null,
-    "itemId": "1f58363f-3161-4957-bc87-b174e9729f03",
-    "value": 1,
-    "createdAt": "2025-09-27T06:25:54.769Z"
-  },
-  {
-    "id": "581eb6da-1461-4ee8-ab40-6123c85e4194",
-    "userId": "4a105ccc-f505-4057-95ee-ddf32491b04c",
-    "itemId": "cb563f7a-2b02-41b3-9af3-86e215725f60",
-    "value": 1,
-    "createdAt": "2025-07-01T06:25:54.769Z"
-  },
-  {
-    "id": "f5af30f5-1728-41af-b701-1e9de6d67c02",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "956aaf8d-ca7d-4b8b-99b3-3444bfb10aa7",
+    "itemId": "86c33dd1-39a8-4d1f-ad50-d386be1423d0",
     "value": -1,
-    "createdAt": "2025-10-04T06:25:54.769Z"
+    "createdAt": "2025-06-17T06:49:40.507Z"
   },
   {
-    "id": "b6eaccda-93b9-4e92-9030-6e982ed01037",
-    "userId": "43417659-10dd-40e2-ab1d-72d5f71caf3c",
-    "itemId": "e6133feb-e8ef-4d95-a158-2a07577f22aa",
-    "value": 1,
-    "createdAt": "2025-03-15T07:25:54.769Z"
-  },
-  {
-    "id": "5dde920b-3fea-43a2-abc7-4fbf5f2410cc",
-    "userId": "dc30c10e-5c9d-48fc-933f-89d79a3ec5ba",
-    "itemId": "6d90d99e-8534-46f2-b0c3-89f1125fe058",
-    "value": -1,
-    "createdAt": "2025-05-13T06:25:54.769Z"
-  },
-  {
-    "id": "02ca70f7-731d-4697-9b2c-cf60a34db647",
-    "userId": "46364c6e-1bbc-4995-8275-584ad2a09169",
-    "itemId": "a8fce2e3-368e-4d61-829e-55885ffc94cb",
-    "value": -1,
-    "createdAt": "2024-12-01T07:25:54.769Z"
-  },
-  {
-    "id": "97035d88-08c8-4a64-adf5-a98930167067",
-    "userId": "441005d4-2321-44b8-8b1c-0baa4488cdd7",
-    "itemId": "d9d669cf-9a4e-4273-8b22-184c717828e0",
-    "value": 1,
-    "createdAt": "2025-04-22T06:25:54.769Z"
-  },
-  {
-    "id": "698824b5-f079-4a32-84c9-334ba91eb1c3",
-    "userId": "46364c6e-1bbc-4995-8275-584ad2a09169",
-    "itemId": "59db25c8-3210-4326-9013-5d06f00f3e85",
-    "value": 1,
-    "createdAt": "2025-07-16T06:25:54.769Z"
-  },
-  {
-    "id": "826bd61c-e985-44e4-8af3-049b499d3583",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "00555057-c331-4cbc-b6a7-5551e3cf196f",
-    "value": 1,
-    "createdAt": "2025-05-25T06:25:54.769Z"
-  },
-  {
-    "id": "650e928b-9ad2-4049-b2dc-ee23ef184847",
-    "userId": "4abaa3a9-cbc0-424b-98e6-f1839a086f59",
-    "itemId": "2e6a9dca-31e2-44ce-972b-8fa3e4c79d99",
-    "value": 1,
-    "createdAt": "2025-01-08T07:25:54.769Z"
-  },
-  {
-    "id": "3093b827-cacd-469b-b90a-7f4df8aebf1d",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "6357cc7f-4961-4c90-89fe-f188f3c0b63e",
-    "value": -1,
-    "createdAt": "2025-05-31T06:25:54.769Z"
-  },
-  {
-    "id": "09d8384d-8dd2-4a75-9ab9-772d12f3a44d",
-    "userId": "f55eec44-c049-4682-a36f-ee0005855faf",
-    "itemId": "ec517fa5-3537-4cbd-91e7-02575df50d49",
-    "value": -1,
-    "createdAt": "2025-10-08T06:25:54.769Z"
-  },
-  {
-    "id": "8f4d6842-5f40-4e7b-8011-c5956cac1e44",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "d9d669cf-9a4e-4273-8b22-184c717828e0",
-    "value": 1,
-    "createdAt": "2025-05-23T06:25:54.769Z"
-  },
-  {
-    "id": "43813ad3-fe5c-46e9-b53f-6ea845edbeec",
-    "userId": "dc30c10e-5c9d-48fc-933f-89d79a3ec5ba",
-    "itemId": "72bc51a1-a782-4c9c-9c8c-06fed5233441",
-    "value": -1,
-    "createdAt": "2025-02-09T07:25:54.769Z"
-  },
-  {
-    "id": "2266bcaf-19a8-4914-8f6b-473474c1dbb0",
-    "userId": "f55eec44-c049-4682-a36f-ee0005855faf",
-    "itemId": "e306d359-ce7b-4d41-a6cd-0e4a78044bf2",
-    "value": 1,
-    "createdAt": "2024-10-29T07:25:54.769Z"
-  },
-  {
-    "id": "5c2ca897-3cfb-4f5c-abd0-6f796231144e",
-    "userId": "4a480d61-0552-4ab4-a708-e39c12686e78",
-    "itemId": "d9d669cf-9a4e-4273-8b22-184c717828e0",
-    "value": 1,
-    "createdAt": "2025-02-24T07:25:54.769Z"
-  },
-  {
-    "id": "edc2e1ba-d6d9-4c27-8fc2-8c33511b6cb7",
+    "id": "e52d9233-d1f8-4dcf-9c82-6bff655f0755",
     "userId": null,
-    "itemId": "fb353239-aa23-4c22-9a83-c0664cfa53df",
-    "value": 1,
-    "createdAt": "2025-06-28T06:25:54.769Z"
+    "itemId": "c0bc2f11-b31a-48b2-984b-cb9c805acff0",
+    "value": -1,
+    "createdAt": "2025-09-23T06:49:40.507Z"
   },
   {
-    "id": "167ce247-0de8-47bc-8d76-8b04a7b01ed4",
-    "userId": "43417659-10dd-40e2-ab1d-72d5f71caf3c",
-    "itemId": "00555057-c331-4cbc-b6a7-5551e3cf196f",
+    "id": "522b5b52-35cb-4949-aef4-9786c39e72db",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "210478de-7e9c-4dd0-b6a8-9f5c6dbb47d6",
     "value": 1,
-    "createdAt": "2025-01-20T07:25:54.769Z"
+    "createdAt": "2025-02-27T07:49:40.507Z"
   },
   {
-    "id": "6a617aea-3991-44c4-b540-db1330b711b9",
-    "userId": "43417659-10dd-40e2-ab1d-72d5f71caf3c",
-    "itemId": "59db25c8-3210-4326-9013-5d06f00f3e85",
+    "id": "2e74e27b-103b-4d69-b24c-7c3f6176fbf3",
+    "userId": "8e1ec2ec-9c1e-40da-9cf4-50cd7a4bc847",
+    "itemId": "0767ea28-f76d-4768-bb8d-9e10d0da7558",
     "value": 1,
-    "createdAt": "2025-01-01T07:25:54.769Z"
+    "createdAt": "2025-02-26T07:49:40.507Z"
   },
   {
-    "id": "4a786687-c0c6-4a38-a7f3-84a223ae9515",
+    "id": "c48c1347-8cb5-4e58-9c50-010a28615abe",
+    "userId": "990d0ee8-e4bf-4a29-adcd-29b051426c4a",
+    "itemId": "4390edc7-a3e3-49f3-b5c5-ca02a1940321",
+    "value": 1,
+    "createdAt": "2025-02-10T07:49:40.507Z"
+  },
+  {
+    "id": "94f39c5f-7aa8-492b-bf8d-3021e81720d5",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "6ea058a8-2cf4-4950-8a35-f53f42b97ca2",
+    "value": -1,
+    "createdAt": "2025-03-17T07:49:40.507Z"
+  },
+  {
+    "id": "5cb04ba8-86f7-43e4-94b0-24bcbe72ebb6",
+    "userId": "c490534c-9d38-4944-9c9c-1a0fd41e3577",
+    "itemId": "383df30b-8711-4d61-92ae-9b84605333cd",
+    "value": 1,
+    "createdAt": "2025-07-04T06:49:40.507Z"
+  },
+  {
+    "id": "513de9e0-cbf3-4a49-a61a-c352645b6ae3",
     "userId": null,
-    "itemId": "80dd7d78-8aea-414e-81f3-8c24292406dd",
+    "itemId": "7fbf4df9-c626-45eb-9057-c3cc4fceb681",
     "value": -1,
-    "createdAt": "2025-03-10T07:25:54.769Z"
+    "createdAt": "2025-10-20T06:49:40.507Z"
   },
   {
-    "id": "9ce22719-449d-4da4-ba74-cf36bf09a81f",
-    "userId": "f6501e52-758e-47bc-b0a0-2c3f6e6e196b",
-    "itemId": "73342018-0b6e-41fe-a0db-0dbaa28e9cf8",
+    "id": "9975ff1d-03b4-4995-813b-7b535d60c023",
+    "userId": "502fa6d6-7a44-4daf-b04c-948cd3a0564a",
+    "itemId": "a9cbed5a-4b2c-4f56-b98d-b229bebf3fee",
+    "value": 1,
+    "createdAt": "2025-07-31T06:49:40.507Z"
+  },
+  {
+    "id": "58d4a524-a03a-4cc6-8464-511edabe7006",
+    "userId": "5643cd80-4db6-4c56-830a-7bea73300cf5",
+    "itemId": "aef9ec6f-9b08-49ac-afb6-4f802b4ac045",
+    "value": 1,
+    "createdAt": "2025-08-12T06:49:40.507Z"
+  },
+  {
+    "id": "933a32c6-15a9-45e7-8170-3be7162211c7",
+    "userId": "77242366-b445-42a8-a358-1553786f2e10",
+    "itemId": "72359c6b-7724-4895-99ca-8da116bb0e6d",
     "value": -1,
-    "createdAt": "2025-07-01T06:25:54.769Z"
+    "createdAt": "2025-09-06T06:49:40.507Z"
   },
   {
-    "id": "cb1b3c0b-6428-446a-b7b8-b0c17bcee92d",
-    "userId": "dc30c10e-5c9d-48fc-933f-89d79a3ec5ba",
-    "itemId": "b3128c3e-d7c5-402b-9236-85c0830ed2f6",
-    "value": -1,
-    "createdAt": "2025-09-16T06:25:54.769Z"
-  },
-  {
-    "id": "0b17c6ea-0503-4142-b304-8b36831b3d69",
-    "userId": "dc30c10e-5c9d-48fc-933f-89d79a3ec5ba",
-    "itemId": "73342018-0b6e-41fe-a0db-0dbaa28e9cf8",
-    "value": 1,
-    "createdAt": "2025-08-18T06:25:54.769Z"
-  },
-  {
-    "id": "c984f767-7458-4ed0-bd7f-3f74e8589167",
-    "userId": "43417659-10dd-40e2-ab1d-72d5f71caf3c",
-    "itemId": "1f58363f-3161-4957-bc87-b174e9729f03",
-    "value": 1,
-    "createdAt": "2025-10-22T06:25:54.769Z"
-  },
-  {
-    "id": "487e1fa8-1d00-4972-b7c9-2de6284de358",
-    "userId": "4a105ccc-f505-4057-95ee-ddf32491b04c",
-    "itemId": "59db25c8-3210-4326-9013-5d06f00f3e85",
-    "value": 1,
-    "createdAt": "2025-08-30T06:25:54.769Z"
-  },
-  {
-    "id": "63c164da-55d9-442c-9d15-3b14305e4fb8",
-    "userId": "4a105ccc-f505-4057-95ee-ddf32491b04c",
-    "itemId": "db771622-2382-4da9-8620-05b65e8d1e9a",
-    "value": -1,
-    "createdAt": "2025-06-20T06:25:54.769Z"
-  },
-  {
-    "id": "049681d9-97ca-4836-934e-4ac750d9e7e4",
-    "userId": "4a480d61-0552-4ab4-a708-e39c12686e78",
-    "itemId": "b3128c3e-d7c5-402b-9236-85c0830ed2f6",
-    "value": 1,
-    "createdAt": "2025-10-16T06:25:54.769Z"
-  },
-  {
-    "id": "05373bbf-0733-4191-8666-50ba475d512a",
+    "id": "b6c7cf0b-0a60-4359-b879-e54841873d30",
     "userId": null,
-    "itemId": "80dd7d78-8aea-414e-81f3-8c24292406dd",
-    "value": 1,
-    "createdAt": "2025-02-23T07:25:54.769Z"
+    "itemId": "7fbf4df9-c626-45eb-9057-c3cc4fceb681",
+    "value": -1,
+    "createdAt": "2025-08-08T06:49:40.507Z"
   },
   {
-    "id": "616aa03f-049d-451a-80e9-5040e1d372db",
+    "id": "8ca5e45c-d454-40af-a779-5cfab7b753e8",
+    "userId": "04b67e5a-b097-4b3b-adcd-8f8c3b6f9fba",
+    "itemId": "3dab42c7-89ad-40aa-95e5-c84ba147c243",
+    "value": -1,
+    "createdAt": "2025-03-28T07:49:40.507Z"
+  },
+  {
+    "id": "f01cb025-94cb-47a2-9d4e-44041b9f485c",
     "userId": null,
-    "itemId": "a5d7cbc2-f325-4838-890a-671cefbb12dd",
+    "itemId": "72359c6b-7724-4895-99ca-8da116bb0e6d",
     "value": 1,
-    "createdAt": "2025-06-13T06:25:54.769Z"
+    "createdAt": "2025-07-14T06:49:40.507Z"
   },
   {
-    "id": "fa384502-f12f-4f52-8ca6-651d2ec67b28",
-    "userId": "4a480d61-0552-4ab4-a708-e39c12686e78",
-    "itemId": "12095c37-af02-4ce1-a53d-964ee532aca6",
-    "value": 1,
-    "createdAt": "2025-06-02T06:25:54.769Z"
-  },
-  {
-    "id": "202fc922-a43a-4174-ad24-c07a32377557",
-    "userId": "f55eec44-c049-4682-a36f-ee0005855faf",
-    "itemId": "b3128c3e-d7c5-402b-9236-85c0830ed2f6",
+    "id": "84d788c7-7fa9-4f54-bd01-4d3657fc60a0",
+    "userId": "502fa6d6-7a44-4daf-b04c-948cd3a0564a",
+    "itemId": "ae179039-d5c7-4727-b028-6d90c985c035",
     "value": -1,
-    "createdAt": "2025-02-19T07:25:54.769Z"
+    "createdAt": "2024-11-27T07:49:40.507Z"
   },
   {
-    "id": "3cc69dfc-b322-40f9-aa95-f174e5937109",
-    "userId": "f6501e52-758e-47bc-b0a0-2c3f6e6e196b",
-    "itemId": "a5d7cbc2-f325-4838-890a-671cefbb12dd",
+    "id": "1725657f-9a3b-4e98-9144-3b8204451795",
+    "userId": "c490534c-9d38-4944-9c9c-1a0fd41e3577",
+    "itemId": "7ac5c6a3-3b8f-45f5-8e21-653953ce036a",
     "value": 1,
-    "createdAt": "2025-02-27T07:25:54.769Z"
+    "createdAt": "2024-12-07T07:49:40.507Z"
   },
   {
-    "id": "d477ca9a-d1a5-4cd6-8fa8-f7179ad802d3",
-    "userId": "4a105ccc-f505-4057-95ee-ddf32491b04c",
-    "itemId": "a5d7cbc2-f325-4838-890a-671cefbb12dd",
+    "id": "12cd0e39-25c4-4b91-aa47-b8b43ac9b977",
+    "userId": "c490534c-9d38-4944-9c9c-1a0fd41e3577",
+    "itemId": "ada4067d-0fa3-4105-bb54-a86e537fd776",
     "value": -1,
-    "createdAt": "2025-01-28T07:25:54.769Z"
+    "createdAt": "2024-12-27T07:49:40.507Z"
   },
   {
-    "id": "246e0e9f-19b0-46a7-8a5b-4c7cf53eb7f8",
-    "userId": "f55eec44-c049-4682-a36f-ee0005855faf",
-    "itemId": "e6133feb-e8ef-4d95-a158-2a07577f22aa",
+    "id": "9ac7b03e-f248-4461-b839-0e266a31777a",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "7ac5c6a3-3b8f-45f5-8e21-653953ce036a",
     "value": 1,
-    "createdAt": "2024-11-07T07:25:54.769Z"
+    "createdAt": "2025-07-08T06:49:40.507Z"
   },
   {
-    "id": "6633f464-db57-46e6-9bfe-66e58ce6b40a",
-    "userId": "43417659-10dd-40e2-ab1d-72d5f71caf3c",
-    "itemId": "cb563f7a-2b02-41b3-9af3-86e215725f60",
-    "value": 1,
-    "createdAt": "2025-07-31T06:25:54.769Z"
-  },
-  {
-    "id": "f3d26a7f-82f5-418d-be16-de1fb35f785b",
+    "id": "a63a1fad-cc8d-452a-a096-2864da1388e2",
     "userId": null,
-    "itemId": "80dd7d78-8aea-414e-81f3-8c24292406dd",
-    "value": 1,
-    "createdAt": "2025-02-17T07:25:54.769Z"
-  },
-  {
-    "id": "399d4593-0d80-4d4d-943a-b6a6fa5af413",
-    "userId": "441005d4-2321-44b8-8b1c-0baa4488cdd7",
-    "itemId": "80dd7d78-8aea-414e-81f3-8c24292406dd",
-    "value": 1,
-    "createdAt": "2025-01-22T07:25:54.769Z"
-  },
-  {
-    "id": "e42a869c-6793-4325-bfd3-71a356ccc400",
-    "userId": "dc30c10e-5c9d-48fc-933f-89d79a3ec5ba",
-    "itemId": "e208be8c-70ad-412a-b6a4-41a315e218f1",
-    "value": 1,
-    "createdAt": "2024-11-27T07:25:54.769Z"
-  },
-  {
-    "id": "eb8c4d6d-eb96-4995-99a0-663c7620fa7f",
-    "userId": "f6501e52-758e-47bc-b0a0-2c3f6e6e196b",
-    "itemId": "73342018-0b6e-41fe-a0db-0dbaa28e9cf8",
+    "itemId": "d3dc763d-db6b-4c43-b085-864598d1d639",
     "value": -1,
-    "createdAt": "2025-01-24T07:25:54.769Z"
+    "createdAt": "2024-12-05T07:49:40.507Z"
   },
   {
-    "id": "61b553ed-56ac-47e5-b2eb-7f400e4a80ce",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "e208be8c-70ad-412a-b6a4-41a315e218f1",
+    "id": "08a7a3c8-ce57-4a9e-9392-7182ae839f72",
+    "userId": "502fa6d6-7a44-4daf-b04c-948cd3a0564a",
+    "itemId": "10fe2dfe-ae30-4eac-b8f4-1caaadc26534",
     "value": 1,
-    "createdAt": "2025-05-18T06:25:54.769Z"
+    "createdAt": "2025-09-11T06:49:40.507Z"
   },
   {
-    "id": "88568c4d-7f0f-4b64-96e8-288793c1209a",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "80dd7d78-8aea-414e-81f3-8c24292406dd",
+    "id": "529e181f-a149-4805-b179-7d25c195e9a8",
+    "userId": "502fa6d6-7a44-4daf-b04c-948cd3a0564a",
+    "itemId": "ada4067d-0fa3-4105-bb54-a86e537fd776",
     "value": 1,
-    "createdAt": "2025-02-26T07:25:54.769Z"
+    "createdAt": "2025-07-31T06:49:40.507Z"
   },
   {
-    "id": "01053cbd-d0f9-4d45-830e-d49952e68d1f",
+    "id": "7f53fe32-0aa7-478b-88b8-cb1c6ddd3d96",
     "userId": null,
-    "itemId": "6357cc7f-4961-4c90-89fe-f188f3c0b63e",
+    "itemId": "8df4eb2e-f4b4-4b49-a14e-1cd87d0e4ddd",
     "value": 1,
-    "createdAt": "2025-09-22T06:25:54.769Z"
+    "createdAt": "2025-06-14T06:49:40.507Z"
   },
   {
-    "id": "675363cd-15f0-4642-9376-87e33a5406f1",
+    "id": "8ef0952b-3d4d-40b3-b356-107af8ad76a4",
+    "userId": "502fa6d6-7a44-4daf-b04c-948cd3a0564a",
+    "itemId": "8495dabd-deb2-48e2-95f1-ec6d74bf9558",
+    "value": 1,
+    "createdAt": "2025-09-23T06:49:40.507Z"
+  },
+  {
+    "id": "71311042-66c8-4f43-b638-a9f02890d391",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "ec2f3e0c-de1b-4aed-b2a2-f8739de0e152",
+    "value": -1,
+    "createdAt": "2025-06-10T06:49:40.507Z"
+  },
+  {
+    "id": "ba470446-dd9c-4de6-b365-fc22d3a6538a",
+    "userId": "502fa6d6-7a44-4daf-b04c-948cd3a0564a",
+    "itemId": "aef9ec6f-9b08-49ac-afb6-4f802b4ac045",
+    "value": 1,
+    "createdAt": "2025-08-24T06:49:40.507Z"
+  },
+  {
+    "id": "0651e9a4-933b-4b08-8f4f-007f09960edf",
+    "userId": "990d0ee8-e4bf-4a29-adcd-29b051426c4a",
+    "itemId": "3dab42c7-89ad-40aa-95e5-c84ba147c243",
+    "value": 1,
+    "createdAt": "2024-11-19T07:49:40.507Z"
+  },
+  {
+    "id": "8005f7bb-f0a1-4c29-b034-0ad6f1ae065f",
+    "userId": "04b67e5a-b097-4b3b-adcd-8f8c3b6f9fba",
+    "itemId": "18f91ac9-4c4c-4155-8fcb-788d4b4fce5e",
+    "value": 1,
+    "createdAt": "2025-07-28T06:49:40.507Z"
+  },
+  {
+    "id": "d20f6c34-f0b0-460f-a8d0-5dfc39f0a558",
     "userId": null,
-    "itemId": "b75c6462-90fe-4187-abfc-4920ae12d3df",
-    "value": -1,
-    "createdAt": "2024-12-10T07:25:54.769Z"
-  },
-  {
-    "id": "de1c9387-3ed1-4841-962e-35b0e94ca500",
-    "userId": "f55eec44-c049-4682-a36f-ee0005855faf",
-    "itemId": "cb563f7a-2b02-41b3-9af3-86e215725f60",
-    "value": -1,
-    "createdAt": "2025-07-07T06:25:54.769Z"
-  },
-  {
-    "id": "7bc03402-cf8f-4d57-ab9b-c57dd320e395",
-    "userId": "46364c6e-1bbc-4995-8275-584ad2a09169",
-    "itemId": "e208be8c-70ad-412a-b6a4-41a315e218f1",
+    "itemId": "8df4eb2e-f4b4-4b49-a14e-1cd87d0e4ddd",
     "value": 1,
-    "createdAt": "2025-01-02T07:25:54.769Z"
+    "createdAt": "2025-02-03T07:49:40.507Z"
   },
   {
-    "id": "d79237f7-38ef-4732-868b-1f20d3c272d7",
-    "userId": "441005d4-2321-44b8-8b1c-0baa4488cdd7",
-    "itemId": "59db25c8-3210-4326-9013-5d06f00f3e85",
-    "value": 1,
-    "createdAt": "2025-07-01T06:25:54.769Z"
-  },
-  {
-    "id": "5297d8ea-7331-4c8b-8985-a181688929f8",
-    "userId": "f55eec44-c049-4682-a36f-ee0005855faf",
-    "itemId": "db771622-2382-4da9-8620-05b65e8d1e9a",
+    "id": "f6ea0bd2-abf2-47ac-af97-e44623c6a32e",
+    "userId": "77242366-b445-42a8-a358-1553786f2e10",
+    "itemId": "8df4eb2e-f4b4-4b49-a14e-1cd87d0e4ddd",
     "value": -1,
-    "createdAt": "2025-01-28T07:25:54.769Z"
+    "createdAt": "2025-03-21T07:49:40.507Z"
   },
   {
-    "id": "9515bda6-26aa-4a13-9b52-08c95934014e",
-    "userId": "dc30c10e-5c9d-48fc-933f-89d79a3ec5ba",
-    "itemId": "b3128c3e-d7c5-402b-9236-85c0830ed2f6",
-    "value": 1,
-    "createdAt": "2025-09-06T06:25:54.769Z"
-  },
-  {
-    "id": "b29bd17a-d9cb-419a-bcb3-fca4cf057b72",
-    "userId": "f6501e52-758e-47bc-b0a0-2c3f6e6e196b",
-    "itemId": "db771622-2382-4da9-8620-05b65e8d1e9a",
-    "value": 1,
-    "createdAt": "2024-10-24T06:25:54.769Z"
-  },
-  {
-    "id": "8d057125-6f72-481c-abf3-538539178826",
-    "userId": "f6501e52-758e-47bc-b0a0-2c3f6e6e196b",
-    "itemId": "e521f926-dbb8-40fe-a54e-f02e77d8c95f",
-    "value": 1,
-    "createdAt": "2025-06-12T06:25:54.769Z"
-  },
-  {
-    "id": "11f9cf7b-a57c-4895-a666-b0929918eeb4",
-    "userId": "4abaa3a9-cbc0-424b-98e6-f1839a086f59",
-    "itemId": "a5d7cbc2-f325-4838-890a-671cefbb12dd",
-    "value": -1,
-    "createdAt": "2025-07-07T06:25:54.769Z"
-  },
-  {
-    "id": "f966c76e-a685-4c4a-8e0e-86b51df32a6a",
-    "userId": "f55eec44-c049-4682-a36f-ee0005855faf",
-    "itemId": "b3128c3e-d7c5-402b-9236-85c0830ed2f6",
-    "value": -1,
-    "createdAt": "2025-05-31T06:25:54.769Z"
-  },
-  {
-    "id": "3fca9ee6-9806-4636-8d47-6590ba4402ae",
+    "id": "55978bf4-64e3-42ba-9b5f-aa1b51ff715a",
     "userId": null,
-    "itemId": "b3128c3e-d7c5-402b-9236-85c0830ed2f6",
+    "itemId": "d1a5ac9b-15e3-47ce-8c90-16c0d7f692cd",
     "value": 1,
-    "createdAt": "2025-01-29T07:25:54.769Z"
+    "createdAt": "2024-12-05T07:49:40.507Z"
   },
   {
-    "id": "70e2fdef-2feb-4e2e-9e63-5edfcfa33b87",
-    "userId": "46364c6e-1bbc-4995-8275-584ad2a09169",
-    "itemId": "fb353239-aa23-4c22-9a83-c0664cfa53df",
-    "value": 1,
-    "createdAt": "2025-02-06T07:25:54.769Z"
-  },
-  {
-    "id": "962b5f5c-367c-4a66-8645-3bac40602398",
-    "userId": "43417659-10dd-40e2-ab1d-72d5f71caf3c",
-    "itemId": "72bc51a1-a782-4c9c-9c8c-06fed5233441",
+    "id": "0ab55e72-2282-4ccc-a499-265f0ec600a5",
+    "userId": "c490534c-9d38-4944-9c9c-1a0fd41e3577",
+    "itemId": "ae179039-d5c7-4727-b028-6d90c985c035",
     "value": -1,
-    "createdAt": "2025-02-07T07:25:54.769Z"
+    "createdAt": "2025-09-05T06:49:40.507Z"
   },
   {
-    "id": "65d2b01e-24ab-4a40-8c86-c91beef6143e",
+    "id": "369aac53-e68c-4a8d-bcec-a587b5790cc9",
+    "userId": "f77623bb-ea52-4de7-a14a-21c4ed178dcf",
+    "itemId": "7ac5c6a3-3b8f-45f5-8e21-653953ce036a",
+    "value": -1,
+    "createdAt": "2025-05-12T06:49:40.507Z"
+  },
+  {
+    "id": "b09d907b-d6bd-4140-a756-e83cc813cf2e",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "aef9ec6f-9b08-49ac-afb6-4f802b4ac045",
+    "value": 1,
+    "createdAt": "2025-07-21T06:49:40.507Z"
+  },
+  {
+    "id": "2acb7bb8-be63-47b6-baf4-742736c58ea9",
+    "userId": "8e1ec2ec-9c1e-40da-9cf4-50cd7a4bc847",
+    "itemId": "ada4067d-0fa3-4105-bb54-a86e537fd776",
+    "value": 1,
+    "createdAt": "2025-06-24T06:49:40.507Z"
+  },
+  {
+    "id": "8c7224d5-d599-435c-b71f-08f2a8b87d0c",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "7ac5c6a3-3b8f-45f5-8e21-653953ce036a",
+    "value": 1,
+    "createdAt": "2025-07-26T06:49:40.507Z"
+  },
+  {
+    "id": "59c622b0-2f17-4d1d-b768-c481e68c9abb",
     "userId": null,
-    "itemId": "db771622-2382-4da9-8620-05b65e8d1e9a",
-    "value": 1,
-    "createdAt": "2025-03-02T07:25:54.769Z"
-  },
-  {
-    "id": "c024c22f-0429-4401-95d5-465b11b4d55e",
-    "userId": "43417659-10dd-40e2-ab1d-72d5f71caf3c",
-    "itemId": "a5d7cbc2-f325-4838-890a-671cefbb12dd",
-    "value": 1,
-    "createdAt": "2024-12-19T07:25:54.769Z"
-  },
-  {
-    "id": "5101eec2-f9ad-4e24-9729-8fcd7e999ecf",
-    "userId": "4abaa3a9-cbc0-424b-98e6-f1839a086f59",
-    "itemId": "72bc51a1-a782-4c9c-9c8c-06fed5233441",
+    "itemId": "0767ea28-f76d-4768-bb8d-9e10d0da7558",
     "value": -1,
-    "createdAt": "2025-09-12T06:25:54.769Z"
+    "createdAt": "2025-10-06T06:49:40.507Z"
   },
   {
-    "id": "8fc2ca7e-4291-4181-b6e8-3db569a4ac90",
-    "userId": "4abaa3a9-cbc0-424b-98e6-f1839a086f59",
-    "itemId": "a8fce2e3-368e-4d61-829e-55885ffc94cb",
+    "id": "6d5b9869-0612-46b3-bbc3-0cc069653932",
+    "userId": "5643cd80-4db6-4c56-830a-7bea73300cf5",
+    "itemId": "98a767ac-bea9-4aaf-870b-b15e3245af12",
     "value": 1,
-    "createdAt": "2025-10-02T06:25:54.769Z"
+    "createdAt": "2025-10-07T06:49:40.507Z"
   },
   {
-    "id": "97276c84-dcec-4e69-9701-4a8892ce05ba",
-    "userId": "441005d4-2321-44b8-8b1c-0baa4488cdd7",
-    "itemId": "7a76e75b-73bd-46d8-ba5f-410634c6d6e9",
+    "id": "900258db-f688-4482-9d7d-5f2441eb4763",
+    "userId": null,
+    "itemId": "01fcd328-2c2c-446c-9398-ee620c873d8f",
+    "value": -1,
+    "createdAt": "2024-12-05T07:49:40.507Z"
+  },
+  {
+    "id": "41f5fb5e-d373-4db7-835c-2d7ade3394de",
+    "userId": "04b67e5a-b097-4b3b-adcd-8f8c3b6f9fba",
+    "itemId": "a9cbed5a-4b2c-4f56-b98d-b229bebf3fee",
+    "value": -1,
+    "createdAt": "2025-09-24T06:49:40.507Z"
+  },
+  {
+    "id": "ab026cd4-db89-40bf-8566-cc2bffebaf72",
+    "userId": "8e1ec2ec-9c1e-40da-9cf4-50cd7a4bc847",
+    "itemId": "c27b720f-f24c-4eb4-a0df-d122044a047f",
+    "value": -1,
+    "createdAt": "2025-09-21T06:49:40.507Z"
+  },
+  {
+    "id": "b39c864e-da31-4180-93f1-021658d67b1a",
+    "userId": "5643cd80-4db6-4c56-830a-7bea73300cf5",
+    "itemId": "73779ca3-19fd-4022-8eb5-0f3c26d3ae42",
     "value": 1,
-    "createdAt": "2025-08-10T06:25:54.770Z"
+    "createdAt": "2025-06-06T06:49:40.507Z"
   },
   {
-    "id": "edf078e3-470f-420b-a37e-3f42eda99098",
-    "userId": "dc30c10e-5c9d-48fc-933f-89d79a3ec5ba",
-    "itemId": "6357cc7f-4961-4c90-89fe-f188f3c0b63e",
+    "id": "8b057c75-8cc8-48d5-887f-2935c1ec624e",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "210478de-7e9c-4dd0-b6a8-9f5c6dbb47d6",
     "value": 1,
-    "createdAt": "2025-01-27T07:25:54.770Z"
+    "createdAt": "2025-02-01T07:49:40.507Z"
   },
   {
-    "id": "f1dffbe6-443f-4289-9854-fdeeebc52082",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "e306d359-ce7b-4d41-a6cd-0e4a78044bf2",
+    "id": "4e5349b7-5c0c-49c8-8302-54be4c4759c0",
+    "userId": "f77623bb-ea52-4de7-a14a-21c4ed178dcf",
+    "itemId": "7ac5c6a3-3b8f-45f5-8e21-653953ce036a",
     "value": -1,
-    "createdAt": "2025-04-02T06:25:54.770Z"
+    "createdAt": "2024-12-12T07:49:40.507Z"
   },
   {
-    "id": "165c88d8-04dd-4b03-8e51-81eb4442d774",
-    "userId": "dc30c10e-5c9d-48fc-933f-89d79a3ec5ba",
-    "itemId": "18c6b3d5-447d-472c-8090-882a5743fe55",
-    "value": -1,
-    "createdAt": "2025-05-08T06:25:54.770Z"
-  },
-  {
-    "id": "3ab0e793-6613-4c5f-a6f2-a9a4ec7de7ef",
-    "userId": "f55eec44-c049-4682-a36f-ee0005855faf",
-    "itemId": "e306d359-ce7b-4d41-a6cd-0e4a78044bf2",
+    "id": "e080ebec-8c68-45b9-a36a-8e5c97d2b774",
+    "userId": null,
+    "itemId": "d1a5ac9b-15e3-47ce-8c90-16c0d7f692cd",
     "value": 1,
-    "createdAt": "2025-02-13T07:25:54.770Z"
+    "createdAt": "2025-04-18T06:49:40.507Z"
   },
   {
-    "id": "dc1e15d1-c5eb-4039-8b3a-0db0d8a65dde",
-    "userId": "441005d4-2321-44b8-8b1c-0baa4488cdd7",
-    "itemId": "cb563f7a-2b02-41b3-9af3-86e215725f60",
-    "value": -1,
-    "createdAt": "2025-10-22T06:25:54.770Z"
-  },
-  {
-    "id": "c609b15a-eb84-4d05-9a0a-3353af0c6d72",
-    "userId": "f6501e52-758e-47bc-b0a0-2c3f6e6e196b",
-    "itemId": "d9d669cf-9a4e-4273-8b22-184c717828e0",
+    "id": "075503ab-08c6-4b78-8abf-a1937095735b",
+    "userId": null,
+    "itemId": "ada4067d-0fa3-4105-bb54-a86e537fd776",
     "value": 1,
-    "createdAt": "2025-09-05T06:25:54.770Z"
+    "createdAt": "2025-06-24T06:49:40.507Z"
   },
   {
-    "id": "2fc21bf2-84cd-422c-948c-14a85ca822b1",
-    "userId": "4abaa3a9-cbc0-424b-98e6-f1839a086f59",
-    "itemId": "7a76e75b-73bd-46d8-ba5f-410634c6d6e9",
+    "id": "4f9ac853-07c7-4e6f-93f3-c9204fa072cf",
+    "userId": "c490534c-9d38-4944-9c9c-1a0fd41e3577",
+    "itemId": "aef9ec6f-9b08-49ac-afb6-4f802b4ac045",
     "value": -1,
-    "createdAt": "2025-04-10T06:25:54.770Z"
+    "createdAt": "2025-03-14T07:49:40.507Z"
   },
   {
-    "id": "5f32ad19-f688-4d7b-93a8-2803d2800efa",
-    "userId": "4a480d61-0552-4ab4-a708-e39c12686e78",
-    "itemId": "a5d7cbc2-f325-4838-890a-671cefbb12dd",
+    "id": "d5831100-ac08-40ab-8f03-71fc14d310e9",
+    "userId": "990d0ee8-e4bf-4a29-adcd-29b051426c4a",
+    "itemId": "d1a5ac9b-15e3-47ce-8c90-16c0d7f692cd",
     "value": -1,
-    "createdAt": "2025-01-12T07:25:54.770Z"
+    "createdAt": "2025-02-02T07:49:40.507Z"
   },
   {
-    "id": "0de7ee1e-31ec-4c4f-906f-c723d3b6b7dc",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "a08c87b5-c456-44d9-854d-1ded61aa5283",
+    "id": "89718fe5-9a40-4fdf-8825-f039409d66c7",
+    "userId": "8e1ec2ec-9c1e-40da-9cf4-50cd7a4bc847",
+    "itemId": "73779ca3-19fd-4022-8eb5-0f3c26d3ae42",
     "value": 1,
-    "createdAt": "2025-03-07T07:25:54.770Z"
+    "createdAt": "2025-04-22T06:49:40.507Z"
   },
   {
-    "id": "70560b39-38d7-42ec-aa95-44a658582f01",
-    "userId": "f6501e52-758e-47bc-b0a0-2c3f6e6e196b",
-    "itemId": "2e6a9dca-31e2-44ce-972b-8fa3e4c79d99",
+    "id": "58901e31-6f74-4b47-ad1d-55f58790aabd",
+    "userId": "990d0ee8-e4bf-4a29-adcd-29b051426c4a",
+    "itemId": "3dab42c7-89ad-40aa-95e5-c84ba147c243",
     "value": -1,
-    "createdAt": "2025-01-29T07:25:54.770Z"
+    "createdAt": "2024-11-26T07:49:40.507Z"
   },
   {
-    "id": "c02e288c-a23e-4a8b-acb3-9cd7a3bc8f2c",
-    "userId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "itemId": "a5d7cbc2-f325-4838-890a-671cefbb12dd",
+    "id": "05932e7c-bf3e-4060-b829-7e59c6ebf504",
+    "userId": "77242366-b445-42a8-a358-1553786f2e10",
+    "itemId": "a9cbed5a-4b2c-4f56-b98d-b229bebf3fee",
+    "value": -1,
+    "createdAt": "2025-09-30T06:49:40.507Z"
+  },
+  {
+    "id": "ecf6b6b7-73dc-457d-a2e2-50f66871a641",
+    "userId": "f77623bb-ea52-4de7-a14a-21c4ed178dcf",
+    "itemId": "210478de-7e9c-4dd0-b6a8-9f5c6dbb47d6",
     "value": 1,
-    "createdAt": "2025-05-23T06:25:54.770Z"
+    "createdAt": "2025-02-08T07:49:40.507Z"
   },
   {
-    "id": "694b664d-ed14-42cb-a4f1-ed25cba04bae",
-    "userId": "46364c6e-1bbc-4995-8275-584ad2a09169",
-    "itemId": "1f58363f-3161-4957-bc87-b174e9729f03",
+    "id": "9ef21e86-ba5b-4d9b-a6aa-7d924b85cc13",
+    "userId": null,
+    "itemId": "3dab42c7-89ad-40aa-95e5-c84ba147c243",
     "value": -1,
-    "createdAt": "2025-03-17T07:25:54.770Z"
+    "createdAt": "2024-11-17T07:49:40.508Z"
+  },
+  {
+    "id": "fc36d87f-1569-4d27-b5df-a1f763a06b89",
+    "userId": "5643cd80-4db6-4c56-830a-7bea73300cf5",
+    "itemId": "18f91ac9-4c4c-4155-8fcb-788d4b4fce5e",
+    "value": -1,
+    "createdAt": "2025-06-02T06:49:40.508Z"
+  },
+  {
+    "id": "965c4ea0-2f80-416c-bc29-a16202e7cd5c",
+    "userId": "90e2323c-0bdb-4355-a7d7-f32f8cc47a46",
+    "itemId": "8df4eb2e-f4b4-4b49-a14e-1cd87d0e4ddd",
+    "value": -1,
+    "createdAt": "2025-05-04T06:49:40.508Z"
+  },
+  {
+    "id": "2fb75f38-3a64-429e-bd5d-cef8b5913283",
+    "userId": "90e2323c-0bdb-4355-a7d7-f32f8cc47a46",
+    "itemId": "84786b6d-d025-4c99-b564-48eeec5623e4",
+    "value": 1,
+    "createdAt": "2025-07-19T06:49:40.508Z"
+  },
+  {
+    "id": "46902f86-ef5a-46ee-9272-3cfa3770a71c",
+    "userId": null,
+    "itemId": "8df4eb2e-f4b4-4b49-a14e-1cd87d0e4ddd",
+    "value": 1,
+    "createdAt": "2024-11-26T07:49:40.508Z"
+  },
+  {
+    "id": "4a92fb61-561d-4987-8f65-3e0f79faca0e",
+    "userId": null,
+    "itemId": "d3dc763d-db6b-4c43-b085-864598d1d639",
+    "value": -1,
+    "createdAt": "2024-11-06T07:49:40.508Z"
+  },
+  {
+    "id": "b9cb7bd9-0240-4b3c-b3aa-388cc7d96c58",
+    "userId": null,
+    "itemId": "4390edc7-a3e3-49f3-b5c5-ca02a1940321",
+    "value": 1,
+    "createdAt": "2024-10-23T06:49:40.508Z"
+  },
+  {
+    "id": "4a88ddab-16a8-4bd6-bddd-20cad65e990d",
+    "userId": null,
+    "itemId": "d1a5ac9b-15e3-47ce-8c90-16c0d7f692cd",
+    "value": -1,
+    "createdAt": "2025-06-01T06:49:40.508Z"
+  },
+  {
+    "id": "9b696857-8046-49dd-b7ae-482d706d79be",
+    "userId": null,
+    "itemId": "4390edc7-a3e3-49f3-b5c5-ca02a1940321",
+    "value": 1,
+    "createdAt": "2024-11-16T07:49:40.508Z"
+  },
+  {
+    "id": "ec9c0fc8-dcbf-43fa-a252-ccd8a968267c",
+    "userId": "990d0ee8-e4bf-4a29-adcd-29b051426c4a",
+    "itemId": "6ea058a8-2cf4-4950-8a35-f53f42b97ca2",
+    "value": 1,
+    "createdAt": "2025-01-17T07:49:40.508Z"
+  },
+  {
+    "id": "62c3b0e3-b25f-4197-be13-9a49a98b20e5",
+    "userId": "f77623bb-ea52-4de7-a14a-21c4ed178dcf",
+    "itemId": "84786b6d-d025-4c99-b564-48eeec5623e4",
+    "value": 1,
+    "createdAt": "2025-06-08T06:49:40.508Z"
+  },
+  {
+    "id": "25579461-86a1-48e3-a6d8-d85fb87200b6",
+    "userId": "77242366-b445-42a8-a358-1553786f2e10",
+    "itemId": "383df30b-8711-4d61-92ae-9b84605333cd",
+    "value": 1,
+    "createdAt": "2025-08-19T06:49:40.508Z"
+  },
+  {
+    "id": "7ca8921f-a4b2-447c-a9a2-4b685a8d99b8",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "0767ea28-f76d-4768-bb8d-9e10d0da7558",
+    "value": 1,
+    "createdAt": "2025-07-28T06:49:40.508Z"
+  },
+  {
+    "id": "e546f1e7-818d-4162-9013-a5bdbce46170",
+    "userId": null,
+    "itemId": "84f5c9de-2c0d-4325-a19a-3174ca5c0a02",
+    "value": -1,
+    "createdAt": "2025-07-15T06:49:40.508Z"
+  },
+  {
+    "id": "8524730f-4088-4323-87b6-5d9d77b0df0e",
+    "userId": "502fa6d6-7a44-4daf-b04c-948cd3a0564a",
+    "itemId": "73779ca3-19fd-4022-8eb5-0f3c26d3ae42",
+    "value": -1,
+    "createdAt": "2024-12-09T07:49:40.508Z"
+  },
+  {
+    "id": "cd0953b2-d60a-4463-8fbb-d1c06f1193be",
+    "userId": "90e2323c-0bdb-4355-a7d7-f32f8cc47a46",
+    "itemId": "4390edc7-a3e3-49f3-b5c5-ca02a1940321",
+    "value": -1,
+    "createdAt": "2025-04-17T06:49:40.508Z"
+  },
+  {
+    "id": "0073377a-dfab-4e6a-a0ac-20cbe16eadf5",
+    "userId": null,
+    "itemId": "18f91ac9-4c4c-4155-8fcb-788d4b4fce5e",
+    "value": -1,
+    "createdAt": "2024-11-13T07:49:40.508Z"
+  },
+  {
+    "id": "1b598f35-79ca-4be7-8a8d-f0871eed3efd",
+    "userId": "502fa6d6-7a44-4daf-b04c-948cd3a0564a",
+    "itemId": "383df30b-8711-4d61-92ae-9b84605333cd",
+    "value": 1,
+    "createdAt": "2025-04-13T06:49:40.508Z"
+  },
+  {
+    "id": "5ff01bfd-295d-4fab-9bfd-2361829655d0",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "d3dc763d-db6b-4c43-b085-864598d1d639",
+    "value": 1,
+    "createdAt": "2025-04-05T06:49:40.508Z"
+  },
+  {
+    "id": "868d8871-5cf3-41a7-ab20-80a0d24fcdb5",
+    "userId": "8e1ec2ec-9c1e-40da-9cf4-50cd7a4bc847",
+    "itemId": "d1a5ac9b-15e3-47ce-8c90-16c0d7f692cd",
+    "value": -1,
+    "createdAt": "2025-02-13T07:49:40.508Z"
+  },
+  {
+    "id": "105295a0-991a-4f95-a2e9-3b54879c1808",
+    "userId": "8e1ec2ec-9c1e-40da-9cf4-50cd7a4bc847",
+    "itemId": "98a767ac-bea9-4aaf-870b-b15e3245af12",
+    "value": 1,
+    "createdAt": "2025-02-09T07:49:40.508Z"
+  },
+  {
+    "id": "88064be7-1918-40b4-9c30-295f8772e988",
+    "userId": "5643cd80-4db6-4c56-830a-7bea73300cf5",
+    "itemId": "84786b6d-d025-4c99-b564-48eeec5623e4",
+    "value": -1,
+    "createdAt": "2025-05-05T06:49:40.508Z"
+  },
+  {
+    "id": "bfe39b06-bd81-4d37-863f-4a433c1124dc",
+    "userId": "f77623bb-ea52-4de7-a14a-21c4ed178dcf",
+    "itemId": "5539dff3-dbe6-4530-90fd-7c7b317d1286",
+    "value": 1,
+    "createdAt": "2024-12-12T07:49:40.508Z"
+  },
+  {
+    "id": "f57419c1-07e7-4603-94c1-b85a59bf447d",
+    "userId": "90e2323c-0bdb-4355-a7d7-f32f8cc47a46",
+    "itemId": "26c556be-e9e2-45c9-839d-3da8913783a6",
+    "value": 1,
+    "createdAt": "2024-12-30T07:49:40.508Z"
+  },
+  {
+    "id": "62645d10-a38f-4884-9fff-f5648a15d6b1",
+    "userId": "502fa6d6-7a44-4daf-b04c-948cd3a0564a",
+    "itemId": "5539dff3-dbe6-4530-90fd-7c7b317d1286",
+    "value": 1,
+    "createdAt": "2025-08-19T06:49:40.508Z"
+  },
+  {
+    "id": "0649d2ba-329b-4b80-a2e3-fd0c660dae59",
+    "userId": "c490534c-9d38-4944-9c9c-1a0fd41e3577",
+    "itemId": "3dab42c7-89ad-40aa-95e5-c84ba147c243",
+    "value": -1,
+    "createdAt": "2024-11-08T07:49:40.508Z"
+  },
+  {
+    "id": "776460a6-d9d2-411c-8765-2e4434452687",
+    "userId": "502fa6d6-7a44-4daf-b04c-948cd3a0564a",
+    "itemId": "8495dabd-deb2-48e2-95f1-ec6d74bf9558",
+    "value": 1,
+    "createdAt": "2025-05-25T06:49:40.508Z"
+  },
+  {
+    "id": "d09c55db-2a77-4635-97af-ad61f0f3cb49",
+    "userId": "c490534c-9d38-4944-9c9c-1a0fd41e3577",
+    "itemId": "98a767ac-bea9-4aaf-870b-b15e3245af12",
+    "value": 1,
+    "createdAt": "2025-07-14T06:49:40.508Z"
+  },
+  {
+    "id": "34e4b309-38ab-45eb-9940-41ccd6f4fa8b",
+    "userId": "90e2323c-0bdb-4355-a7d7-f32f8cc47a46",
+    "itemId": "c27b720f-f24c-4eb4-a0df-d122044a047f",
+    "value": 1,
+    "createdAt": "2025-10-19T06:49:40.508Z"
+  },
+  {
+    "id": "86a3a07d-0173-476d-85f9-b88698a4ef43",
+    "userId": "04b67e5a-b097-4b3b-adcd-8f8c3b6f9fba",
+    "itemId": "ada4067d-0fa3-4105-bb54-a86e537fd776",
+    "value": -1,
+    "createdAt": "2025-10-03T06:49:40.508Z"
+  },
+  {
+    "id": "68cec684-c0c9-4cb7-b287-6c77bca928e6",
+    "userId": null,
+    "itemId": "10fe2dfe-ae30-4eac-b8f4-1caaadc26534",
+    "value": -1,
+    "createdAt": "2024-11-10T07:49:40.508Z"
+  },
+  {
+    "id": "6a32780f-5e65-4dc7-8ac7-9051e738f0e0",
+    "userId": "77242366-b445-42a8-a358-1553786f2e10",
+    "itemId": "18f91ac9-4c4c-4155-8fcb-788d4b4fce5e",
+    "value": 1,
+    "createdAt": "2025-06-09T06:49:40.508Z"
+  },
+  {
+    "id": "a1f70961-7113-4ab2-ba13-2032aced5861",
+    "userId": "5643cd80-4db6-4c56-830a-7bea73300cf5",
+    "itemId": "210478de-7e9c-4dd0-b6a8-9f5c6dbb47d6",
+    "value": 1,
+    "createdAt": "2025-06-08T06:49:40.508Z"
+  },
+  {
+    "id": "f0895809-f489-4745-a617-01c2f21e43ee",
+    "userId": "f77623bb-ea52-4de7-a14a-21c4ed178dcf",
+    "itemId": "26c556be-e9e2-45c9-839d-3da8913783a6",
+    "value": -1,
+    "createdAt": "2025-04-15T06:49:40.508Z"
+  },
+  {
+    "id": "007d5dd0-e246-4e42-a7cd-2ce399c3538d",
+    "userId": "f77623bb-ea52-4de7-a14a-21c4ed178dcf",
+    "itemId": "4390edc7-a3e3-49f3-b5c5-ca02a1940321",
+    "value": 1,
+    "createdAt": "2025-01-18T07:49:40.508Z"
+  },
+  {
+    "id": "efc257d4-ac2c-43fa-be42-f4593ea9aac5",
+    "userId": null,
+    "itemId": "a9cbed5a-4b2c-4f56-b98d-b229bebf3fee",
+    "value": 1,
+    "createdAt": "2025-05-23T06:49:40.508Z"
+  },
+  {
+    "id": "ae2be801-e779-4865-8b74-3154e5cee794",
+    "userId": "502fa6d6-7a44-4daf-b04c-948cd3a0564a",
+    "itemId": "7ac5c6a3-3b8f-45f5-8e21-653953ce036a",
+    "value": -1,
+    "createdAt": "2024-10-23T06:49:40.508Z"
+  },
+  {
+    "id": "d8377b1b-8c57-412c-8eb1-0824c73d1fa0",
+    "userId": "77242366-b445-42a8-a358-1553786f2e10",
+    "itemId": "3dab42c7-89ad-40aa-95e5-c84ba147c243",
+    "value": 1,
+    "createdAt": "2024-11-28T07:49:40.508Z"
+  },
+  {
+    "id": "e060bf7c-e64b-46a4-83fb-e08913883248",
+    "userId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "itemId": "8495dabd-deb2-48e2-95f1-ec6d74bf9558",
+    "value": 1,
+    "createdAt": "2025-05-18T06:49:40.508Z"
+  },
+  {
+    "id": "87340089-0824-4ce5-8eb0-54cd950734b3",
+    "userId": null,
+    "itemId": "3dab42c7-89ad-40aa-95e5-c84ba147c243",
+    "value": -1,
+    "createdAt": "2025-06-12T06:49:40.508Z"
+  },
+  {
+    "id": "96ddc6da-01b2-40ea-ade0-241c7e7ddce4",
+    "userId": "5643cd80-4db6-4c56-830a-7bea73300cf5",
+    "itemId": "01fcd328-2c2c-446c-9398-ee620c873d8f",
+    "value": -1,
+    "createdAt": "2025-02-08T07:49:40.508Z"
+  },
+  {
+    "id": "81bdf2d1-bd38-4d0e-8c4e-087b0a2e4c71",
+    "userId": null,
+    "itemId": "a9cbed5a-4b2c-4f56-b98d-b229bebf3fee",
+    "value": -1,
+    "createdAt": "2024-11-29T07:49:40.508Z"
+  },
+  {
+    "id": "7aa844f5-f268-4580-912c-3d2fdc72aaa9",
+    "userId": "8e1ec2ec-9c1e-40da-9cf4-50cd7a4bc847",
+    "itemId": "210478de-7e9c-4dd0-b6a8-9f5c6dbb47d6",
+    "value": 1,
+    "createdAt": "2025-08-03T06:49:40.508Z"
+  },
+  {
+    "id": "e805b1b9-9d8f-4238-92ae-45b9e38037e6",
+    "userId": "77242366-b445-42a8-a358-1553786f2e10",
+    "itemId": "98a767ac-bea9-4aaf-870b-b15e3245af12",
+    "value": 1,
+    "createdAt": "2024-11-04T07:49:40.508Z"
   }
 ]

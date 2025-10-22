@@ -1,7 +1,7 @@
 {
   "name": "topper.top-backend",
-  "version": "0.1.0",
-  "description": "Backend for TOPPER.top — Universal Rating Platform (MVP scaffold)",
+  "version": "0.0.1",
+  "description": "Backend for TOPPER.top — Universal Rating Platform (Version 0.0.1)",
   "main": "dist/server.js",
   "type": "commonjs",
   "engines": {

@@ -1,4 +1,8 @@
-# Topper.top Testing Guide
+# Topper.top Testing Guide - Version 0.0.1
+
+> **Development Version**: We are currently developing version 0.0.1  
+> **Version Control**: Only Oleg Zai specifies which version we're developing  
+> **Release Authority**: Only Oleg Zai determines when a version is complete and can be released
 
 This guide explains how to test all the functionality of the Topper.top application.
 

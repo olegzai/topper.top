@@ -1,571 +1,563 @@
 [
   {
-    "id": "6d90d99e-8534-46f2-b0c3-89f1125fe058",
-    "title": "Терміново: climate змінює ринок",
+    "id": "18f91ac9-4c4c-4155-8fcb-788d4b4fce5e",
+    "title": "Studiu dezvăluie noi informații despre AI",
     "source": "Community Post",
-    "url": "https://example.test/source/community-post/6d90d99e-8534-46f2-b0c3-89f1125fe058",
-    "authorId": null,
-    "tags": [
-      "fun",
-      "travel",
-      "health"
-    ],
-    "categories": [
-      "58d89a93-24e6-4cba-9b8a-0f59a102376f"
-    ],
-    "lang": "uk",
-    "publishedAt": "2025-01-18T07:25:54.763Z",
-    "createdAt": "2024-12-22T07:25:54.763Z",
-    "score": 0
-  },
-  {
-    "id": "72bc51a1-a782-4c9c-9c8c-06fed5233441",
-    "title": "Терміново: sports змінює ринок",
-    "source": "Facts Daily",
-    "url": "https://example.test/source/facts-daily/72bc51a1-a782-4c9c-9c8c-06fed5233441",
-    "authorId": "4abaa3a9-cbc0-424b-98e6-f1839a086f59",
-    "tags": [
-      "sports",
-      "travel",
-      "fun"
-    ],
-    "categories": [
-      "16c3b95a-b898-40e2-b0a1-782a57bb5e78",
-      "58d89a93-24e6-4cba-9b8a-0f59a102376f"
-    ],
-    "lang": "uk",
-    "publishedAt": "2025-08-07T06:25:54.763Z",
-    "createdAt": "2025-10-03T06:25:54.763Z",
-    "score": -1
-  },
-  {
-    "id": "1f58363f-3161-4957-bc87-b174e9729f03",
-    "title": "How to understand economy in 5 minutes",
-    "source": "Global Times",
-    "url": "https://example.test/source/global-times/1f58363f-3161-4957-bc87-b174e9729f03",
-    "authorId": null,
-    "tags": [
-      "education"
-    ],
-    "categories": [
-      "e4461ffe-4c22-4fda-9fe1-e548db27959f",
-      "a2859556-44d5-474f-b107-c92b82acaab0"
-    ],
-    "lang": "en",
-    "publishedAt": "2025-06-13T06:25:54.763Z",
-    "createdAt": "2025-02-23T07:25:54.763Z",
-    "score": 1
-  },
-  {
-    "id": "3c475b10-e8ca-409e-8520-ebbc84f4acc7",
-    "title": "Breaking: climate changes the market",
-    "source": "Community Post",
-    "url": "https://example.test/source/community-post/3c475b10-e8ca-409e-8520-ebbc84f4acc7",
-    "authorId": null,
-    "tags": [
-      "science"
-    ],
-    "categories": [
-      "16c3b95a-b898-40e2-b0a1-782a57bb5e78",
-      "19fe245b-b494-4755-93f5-95bd9a2adf2a"
-    ],
-    "lang": "en",
-    "publishedAt": "2025-08-29T06:25:54.763Z",
-    "createdAt": "2025-10-02T06:25:54.763Z",
-    "score": 0
-  },
-  {
-    "id": "a08c87b5-c456-44d9-854d-1ded61aa5283",
-    "title": "De ce contează sports azi",
-    "source": "Global Times",
-    "url": "https://example.test/source/global-times/a08c87b5-c456-44d9-854d-1ded61aa5283",
-    "authorId": null,
-    "tags": [
-      "culture"
-    ],
-    "categories": [
-      "e4461ffe-4c22-4fda-9fe1-e548db27959f"
-    ],
-    "lang": "ro",
-    "publishedAt": "2024-12-20T07:25:54.763Z",
-    "createdAt": "2025-03-06T07:25:54.763Z",
-    "score": 2
-  },
-  {
-    "id": "80dd7d78-8aea-414e-81f3-8c24292406dd",
-    "title": "Cum să înțelegi education în 5 minute",
-    "source": "Community Post",
-    "url": "https://example.test/source/community-post/80dd7d78-8aea-414e-81f3-8c24292406dd",
-    "authorId": "4a105ccc-f505-4057-95ee-ddf32491b04c",
-    "tags": [
-      "sports"
-    ],
-    "categories": [
-      "16c3b95a-b898-40e2-b0a1-782a57bb5e78",
-      "f8c3bf2f-06f6-47e9-8b34-a8c7ab15cae2"
-    ],
-    "lang": "ro",
-    "publishedAt": "2025-08-10T06:25:54.763Z",
-    "createdAt": "2025-09-23T06:25:54.763Z",
-    "score": 4
-  },
-  {
-    "id": "956aaf8d-ca7d-4b8b-99b3-3444bfb10aa7",
-    "title": "Why education matters today",
-    "source": "Community Post",
-    "url": "https://example.test/source/community-post/956aaf8d-ca7d-4b8b-99b3-3444bfb10aa7",
-    "authorId": "46364c6e-1bbc-4995-8275-584ad2a09169",
+    "url": "https://example.test/source/community-post/18f91ac9-4c4c-4155-8fcb-788d4b4fce5e",
+    "authorId": "77242366-b445-42a8-a358-1553786f2e10",
     "tags": [
       "politics",
-      "education"
-    ],
-    "categories": [
-      "a2859556-44d5-474f-b107-c92b82acaab0",
-      "58d89a93-24e6-4cba-9b8a-0f59a102376f"
-    ],
-    "lang": "en",
-    "publishedAt": "2025-05-26T06:25:54.766Z",
-    "createdAt": "2025-04-26T06:25:54.766Z",
-    "score": 0
-  },
-  {
-    "id": "7a76e75b-73bd-46d8-ba5f-410634c6d6e9",
-    "title": "10 дивовижних фактів про AI",
-    "source": "Global Times",
-    "url": "https://example.test/source/global-times/7a76e75b-73bd-46d8-ba5f-410634c6d6e9",
-    "authorId": null,
-    "tags": [
       "culture",
-      "tech",
-      "travel"
-    ],
-    "categories": [
-      "a2859556-44d5-474f-b107-c92b82acaab0",
-      "58d89a93-24e6-4cba-9b8a-0f59a102376f"
-    ],
-    "lang": "uk",
-    "publishedAt": "2025-08-19T06:25:54.766Z",
-    "createdAt": "2025-09-13T06:25:54.766Z",
-    "score": 1
-  },
-  {
-    "id": "6357cc7f-4961-4c90-89fe-f188f3c0b63e",
-    "title": "Як зрозуміти education за 5 хвилин",
-    "source": "Global Times",
-    "url": "https://example.test/source/global-times/6357cc7f-4961-4c90-89fe-f188f3c0b63e",
-    "authorId": "43417659-10dd-40e2-ab1d-72d5f71caf3c",
-    "tags": [
-      "science",
-      "politics",
-      "culture"
-    ],
-    "categories": [
-      "e4461ffe-4c22-4fda-9fe1-e548db27959f",
-      "58d89a93-24e6-4cba-9b8a-0f59a102376f"
-    ],
-    "lang": "uk",
-    "publishedAt": "2025-04-03T06:25:54.766Z",
-    "createdAt": "2024-12-16T07:25:54.766Z",
-    "score": 2
-  },
-  {
-    "id": "00555057-c331-4cbc-b6a7-5551e3cf196f",
-    "title": "De ce contează startup azi",
-    "source": "Open Source",
-    "url": "https://example.test/source/open-source/00555057-c331-4cbc-b6a7-5551e3cf196f",
-    "authorId": "dc30c10e-5c9d-48fc-933f-89d79a3ec5ba",
-    "tags": [
-      "fun",
-      "science",
-      "health"
-    ],
-    "categories": [
-      "f8c3bf2f-06f6-47e9-8b34-a8c7ab15cae2"
-    ],
-    "lang": "ro",
-    "publishedAt": "2025-08-21T06:25:54.766Z",
-    "createdAt": "2025-09-26T06:25:54.766Z",
-    "score": 3
-  },
-  {
-    "id": "18c6b3d5-447d-472c-8090-882a5743fe55",
-    "title": "Исследование раскрывает новое о travel",
-    "source": "Global Times",
-    "url": "https://example.test/source/global-times/18c6b3d5-447d-472c-8090-882a5743fe55",
-    "authorId": "4abaa3a9-cbc0-424b-98e6-f1839a086f59",
-    "tags": [
-      "product"
-    ],
-    "categories": [
-      "58d89a93-24e6-4cba-9b8a-0f59a102376f"
-    ],
-    "lang": "ru",
-    "publishedAt": "2025-07-03T06:25:54.766Z",
-    "createdAt": "2025-02-26T07:25:54.766Z",
-    "score": -1
-  },
-  {
-    "id": "fb353239-aa23-4c22-9a83-c0664cfa53df",
-    "title": "10 удивительных фактов про AI",
-    "source": "Open Source",
-    "url": "https://example.test/source/open-source/fb353239-aa23-4c22-9a83-c0664cfa53df",
-    "authorId": "4a105ccc-f505-4057-95ee-ddf32491b04c",
-    "tags": [
-      "startup",
-      "product",
-      "tech",
-      "sports"
-    ],
-    "categories": [
-      "58d89a93-24e6-4cba-9b8a-0f59a102376f",
-      "16c3b95a-b898-40e2-b0a1-782a57bb5e78"
-    ],
-    "lang": "ru",
-    "publishedAt": "2025-03-31T06:25:54.766Z",
-    "createdAt": "2025-02-26T07:25:54.766Z",
-    "score": 2
-  },
-  {
-    "id": "2e6a9dca-31e2-44ce-972b-8fa3e4c79d99",
-    "title": "Как понять economy за 5 минут",
-    "source": "Open Source",
-    "url": "https://example.test/source/open-source/2e6a9dca-31e2-44ce-972b-8fa3e4c79d99",
-    "authorId": null,
-    "tags": [
-      "startup",
-      "science",
-      "health",
-      "tech"
-    ],
-    "categories": [
-      "16c3b95a-b898-40e2-b0a1-782a57bb5e78",
-      "a2859556-44d5-474f-b107-c92b82acaab0"
-    ],
-    "lang": "ru",
-    "publishedAt": "2024-11-24T07:25:54.766Z",
-    "createdAt": "2025-02-02T07:25:54.766Z",
-    "score": -1
-  },
-  {
-    "id": "59db25c8-3210-4326-9013-5d06f00f3e85",
-    "title": "Топ порад по travel, про які ви не знали",
-    "source": "Open Source",
-    "url": "https://example.test/source/open-source/59db25c8-3210-4326-9013-5d06f00f3e85",
-    "authorId": "4abaa3a9-cbc0-424b-98e6-f1839a086f59",
-    "tags": [
-      "travel",
-      "fun",
-      "product"
-    ],
-    "categories": [
-      "a2859556-44d5-474f-b107-c92b82acaab0"
-    ],
-    "lang": "uk",
-    "publishedAt": "2025-09-03T06:25:54.766Z",
-    "createdAt": "2025-03-24T07:25:54.766Z",
-    "score": 4
-  },
-  {
-    "id": "ec517fa5-3537-4cbd-91e7-02575df50d49",
-    "title": "Top tips for AI you didn't know",
-    "source": "Community Post",
-    "url": "https://example.test/source/community-post/ec517fa5-3537-4cbd-91e7-02575df50d49",
-    "authorId": "f55eec44-c049-4682-a36f-ee0005855faf",
-    "tags": [
-      "politics",
-      "health",
-      "product"
-    ],
-    "categories": [
-      "e4461ffe-4c22-4fda-9fe1-e548db27959f"
-    ],
-    "lang": "en",
-    "publishedAt": "2025-04-18T06:25:54.766Z",
-    "createdAt": "2024-11-14T07:25:54.766Z",
-    "score": -3
-  },
-  {
-    "id": "a5d7cbc2-f325-4838-890a-671cefbb12dd",
-    "title": "10 fapte surprinzătoare despre travel",
-    "source": "Facts Daily",
-    "url": "https://example.test/source/facts-daily/a5d7cbc2-f325-4838-890a-671cefbb12dd",
-    "authorId": "4a480d61-0552-4ab4-a708-e39c12686e78",
-    "tags": [
-      "fun"
-    ],
-    "categories": [
-      "19fe245b-b494-4755-93f5-95bd9a2adf2a",
-      "58d89a93-24e6-4cba-9b8a-0f59a102376f"
-    ],
-    "lang": "ro",
-    "publishedAt": "2024-11-26T07:25:54.767Z",
-    "createdAt": "2025-08-19T06:25:54.767Z",
-    "score": 1
-  },
-  {
-    "id": "e6133feb-e8ef-4d95-a158-2a07577f22aa",
-    "title": "Как понять economy за 5 минут",
-    "source": "Example News",
-    "url": "https://example.test/source/example-news/e6133feb-e8ef-4d95-a158-2a07577f22aa",
-    "authorId": null,
-    "tags": [
-      "economy",
-      "politics"
-    ],
-    "categories": [
-      "58d89a93-24e6-4cba-9b8a-0f59a102376f",
-      "16c3b95a-b898-40e2-b0a1-782a57bb5e78"
-    ],
-    "lang": "ru",
-    "publishedAt": "2025-06-15T06:25:54.767Z",
-    "createdAt": "2025-08-15T06:25:54.767Z",
-    "score": 3
-  },
-  {
-    "id": "e581c4ab-6663-43ef-af17-a2c36296656f",
-    "title": "Исследование раскрывает новое о health",
-    "source": "Facts Daily",
-    "url": "https://example.test/source/facts-daily/e581c4ab-6663-43ef-af17-a2c36296656f",
-    "authorId": "f6501e52-758e-47bc-b0a0-2c3f6e6e196b",
-    "tags": [
-      "science",
-      "tech",
-      "economy",
-      "politics"
-    ],
-    "categories": [
-      "e4461ffe-4c22-4fda-9fe1-e548db27959f",
-      "58d89a93-24e6-4cba-9b8a-0f59a102376f"
-    ],
-    "lang": "ru",
-    "publishedAt": "2024-10-27T07:25:54.767Z",
-    "createdAt": "2025-05-07T06:25:54.767Z",
-    "score": -1
-  },
-  {
-    "id": "b75c6462-90fe-4187-abfc-4920ae12d3df",
-    "title": "Why education matters today",
-    "source": "Top Insights",
-    "url": "https://example.test/source/top-insights/b75c6462-90fe-4187-abfc-4920ae12d3df",
-    "authorId": "dc30c10e-5c9d-48fc-933f-89d79a3ec5ba",
-    "tags": [
-      "fun",
-      "culture",
-      "politics"
-    ],
-    "categories": [
-      "19fe245b-b494-4755-93f5-95bd9a2adf2a"
-    ],
-    "lang": "en",
-    "publishedAt": "2025-10-10T06:25:54.767Z",
-    "createdAt": "2025-05-26T06:25:54.767Z",
-    "score": -3
-  },
-  {
-    "id": "e208be8c-70ad-412a-b6a4-41a315e218f1",
-    "title": "Исследование раскрывает новое о AI",
-    "source": "Facts Daily",
-    "url": "https://example.test/source/facts-daily/e208be8c-70ad-412a-b6a4-41a315e218f1",
-    "authorId": "f6501e52-758e-47bc-b0a0-2c3f6e6e196b",
-    "tags": [
-      "tech",
-      "product"
-    ],
-    "categories": [
-      "f8c3bf2f-06f6-47e9-8b34-a8c7ab15cae2",
-      "16c3b95a-b898-40e2-b0a1-782a57bb5e78"
-    ],
-    "lang": "ru",
-    "publishedAt": "2025-01-06T07:25:54.767Z",
-    "createdAt": "2024-12-31T07:25:54.767Z",
-    "score": 4
-  },
-  {
-    "id": "a8fce2e3-368e-4d61-829e-55885ffc94cb",
-    "title": "Top tips for health you didn't know",
-    "source": "Example News",
-    "url": "https://example.test/source/example-news/a8fce2e3-368e-4d61-829e-55885ffc94cb",
-    "authorId": "4a480d61-0552-4ab4-a708-e39c12686e78",
-    "tags": [
-      "sports",
-      "economy",
-      "tech",
-      "science"
-    ],
-    "categories": [
-      "f8c3bf2f-06f6-47e9-8b34-a8c7ab15cae2"
-    ],
-    "lang": "en",
-    "publishedAt": "2025-01-31T07:25:54.767Z",
-    "createdAt": "2025-04-08T06:25:54.767Z",
-    "score": 0
-  },
-  {
-    "id": "cb563f7a-2b02-41b3-9af3-86e215725f60",
-    "title": "Top tips for travel you didn't know",
-    "source": "Facts Daily",
-    "url": "https://example.test/source/facts-daily/cb563f7a-2b02-41b3-9af3-86e215725f60",
-    "authorId": "4abaa3a9-cbc0-424b-98e6-f1839a086f59",
-    "tags": [
-      "health",
-      "travel",
       "startup"
     ],
     "categories": [
-      "f8c3bf2f-06f6-47e9-8b34-a8c7ab15cae2",
-      "19fe245b-b494-4755-93f5-95bd9a2adf2a"
+      "ae5bd6c4-cf10-494a-8b4a-2ae1c7b442c0"
     ],
-    "lang": "en",
-    "publishedAt": "2025-01-31T07:25:54.767Z",
-    "createdAt": "2025-02-09T07:25:54.767Z",
+    "lang": "ro",
+    "publishedAt": "2025-05-11T06:49:40.505Z",
+    "createdAt": "2024-11-22T07:49:40.505Z",
     "score": 2
   },
   {
-    "id": "e306d359-ce7b-4d41-a6cd-0e4a78044bf2",
-    "title": "Breaking: sports schimbă piața",
-    "source": "Global Times",
-    "url": "https://example.test/source/global-times/e306d359-ce7b-4d41-a6cd-0e4a78044bf2",
-    "authorId": null,
+    "id": "72359c6b-7724-4895-99ca-8da116bb0e6d",
+    "title": "Почему sports важно сегодня",
+    "source": "Community Post",
+    "url": "https://example.test/source/community-post/72359c6b-7724-4895-99ca-8da116bb0e6d",
+    "authorId": "04b67e5a-b097-4b3b-adcd-8f8c3b6f9fba",
     "tags": [
-      "startup",
-      "science",
-      "tech",
-      "product"
+      "startup"
     ],
     "categories": [
-      "a2859556-44d5-474f-b107-c92b82acaab0"
+      "e39fdc3d-37ff-449d-b943-f35472d9e27d"
     ],
-    "lang": "ro",
-    "publishedAt": "2024-11-12T07:25:54.767Z",
-    "createdAt": "2025-07-08T06:25:54.767Z",
+    "lang": "ru",
+    "publishedAt": "2024-10-29T07:49:40.505Z",
+    "createdAt": "2024-11-08T07:49:40.505Z",
+    "score": -3
+  },
+  {
+    "id": "26c556be-e9e2-45c9-839d-3da8913783a6",
+    "title": "10 surprising facts about education",
+    "source": "Facts Daily",
+    "url": "https://example.test/source/facts-daily/26c556be-e9e2-45c9-839d-3da8913783a6",
+    "authorId": "502fa6d6-7a44-4daf-b04c-948cd3a0564a",
+    "tags": [
+      "fun",
+      "health",
+      "travel"
+    ],
+    "categories": [
+      "7f633229-c747-4f72-b185-e57eac0580c0",
+      "e39fdc3d-37ff-449d-b943-f35472d9e27d"
+    ],
+    "lang": "en",
+    "publishedAt": "2025-03-31T06:49:40.506Z",
+    "createdAt": "2025-06-01T06:49:40.506Z",
     "score": 0
   },
   {
-    "id": "12095c37-af02-4ce1-a53d-964ee532aca6",
-    "title": "Лучшие советы по travel, о которых вы не знали",
+    "id": "0767ea28-f76d-4768-bb8d-9e10d0da7558",
+    "title": "Дослідження відкриває нове про education",
     "source": "Community Post",
-    "url": "https://example.test/source/community-post/12095c37-af02-4ce1-a53d-964ee532aca6",
-    "authorId": null,
+    "url": "https://example.test/source/community-post/0767ea28-f76d-4768-bb8d-9e10d0da7558",
+    "authorId": "04b67e5a-b097-4b3b-adcd-8f8c3b6f9fba",
     "tags": [
-      "tech",
-      "sports"
+      "science",
+      "startup"
     ],
     "categories": [
-      "19fe245b-b494-4755-93f5-95bd9a2adf2a"
+      "1901d7f3-31d0-477e-ad23-2b16bd4add1f"
     ],
-    "lang": "ru",
-    "publishedAt": "2024-12-06T07:25:54.767Z",
-    "createdAt": "2025-02-11T07:25:54.767Z",
-    "score": 1
+    "lang": "uk",
+    "publishedAt": "2025-09-05T06:49:40.506Z",
+    "createdAt": "2025-06-21T06:49:40.506Z",
+    "score": 3
   },
   {
-    "id": "b3128c3e-d7c5-402b-9236-85c0830ed2f6",
-    "title": "Чому economy важливий сьогодні",
-    "source": "Global Times",
-    "url": "https://example.test/source/global-times/b3128c3e-d7c5-402b-9236-85c0830ed2f6",
-    "authorId": null,
+    "id": "5539dff3-dbe6-4530-90fd-7c7b317d1286",
+    "title": "Как понять climate за 5 минут",
+    "source": "Example News",
+    "url": "https://example.test/source/example-news/5539dff3-dbe6-4530-90fd-7c7b317d1286",
+    "authorId": "04b67e5a-b097-4b3b-adcd-8f8c3b6f9fba",
     "tags": [
+      "travel",
       "education"
     ],
     "categories": [
-      "16c3b95a-b898-40e2-b0a1-782a57bb5e78",
-      "e4461ffe-4c22-4fda-9fe1-e548db27959f"
+      "ae5bd6c4-cf10-494a-8b4a-2ae1c7b442c0"
     ],
-    "lang": "uk",
-    "publishedAt": "2025-02-05T07:25:54.767Z",
-    "createdAt": "2025-10-20T06:25:54.767Z",
+    "lang": "ru",
+    "publishedAt": "2025-10-15T06:49:40.506Z",
+    "createdAt": "2025-02-05T07:49:40.506Z",
     "score": 2
   },
   {
-    "id": "db771622-2382-4da9-8620-05b65e8d1e9a",
-    "title": "Почему travel важно сегодня",
-    "source": "Top Insights",
-    "url": "https://example.test/source/top-insights/db771622-2382-4da9-8620-05b65e8d1e9a",
-    "authorId": "46364c6e-1bbc-4995-8275-584ad2a09169",
+    "id": "383df30b-8711-4d61-92ae-9b84605333cd",
+    "title": "Дослідження відкриває нове про travel",
+    "source": "Open Source",
+    "url": "https://example.test/source/open-source/383df30b-8711-4d61-92ae-9b84605333cd",
+    "authorId": "c490534c-9d38-4944-9c9c-1a0fd41e3577",
     "tags": [
-      "culture"
-    ],
-    "categories": [
-      "f8c3bf2f-06f6-47e9-8b34-a8c7ab15cae2"
-    ],
-    "lang": "ru",
-    "publishedAt": "2025-07-21T06:25:54.767Z",
-    "createdAt": "2025-04-30T06:25:54.767Z",
-    "score": 1
-  },
-  {
-    "id": "e521f926-dbb8-40fe-a54e-f02e77d8c95f",
-    "title": "10 surprising facts about health",
-    "source": "Community Post",
-    "url": "https://example.test/source/community-post/e521f926-dbb8-40fe-a54e-f02e77d8c95f",
-    "authorId": "4a480d61-0552-4ab4-a708-e39c12686e78",
-    "tags": [
-      "politics"
-    ],
-    "categories": [
-      "f8c3bf2f-06f6-47e9-8b34-a8c7ab15cae2",
-      "58d89a93-24e6-4cba-9b8a-0f59a102376f"
-    ],
-    "lang": "en",
-    "publishedAt": "2025-08-05T06:25:54.767Z",
-    "createdAt": "2025-08-04T06:25:54.767Z",
-    "score": -1
-  },
-  {
-    "id": "d9d669cf-9a4e-4273-8b22-184c717828e0",
-    "title": "Як зрозуміти sports за 5 хвилин",
-    "source": "Facts Daily",
-    "url": "https://example.test/source/facts-daily/d9d669cf-9a4e-4273-8b22-184c717828e0",
-    "authorId": "8043f37c-a41f-4a2c-af5e-28dea1409764",
-    "tags": [
-      "product",
-      "health"
-    ],
-    "categories": [
-      "a2859556-44d5-474f-b107-c92b82acaab0"
-    ],
-    "lang": "uk",
-    "publishedAt": "2024-11-26T07:25:54.767Z",
-    "createdAt": "2025-03-21T07:25:54.767Z",
-    "score": 5
-  },
-  {
-    "id": "a1ea79c4-d0fc-431c-9c71-78d15a11115d",
-    "title": "10 fapte surprinzătoare despre travel",
-    "source": "Community Post",
-    "url": "https://example.test/source/community-post/a1ea79c4-d0fc-431c-9c71-78d15a11115d",
-    "authorId": "46364c6e-1bbc-4995-8275-584ad2a09169",
-    "tags": [
-      "culture",
-      "education",
+      "economy",
+      "sports",
       "startup",
       "tech"
     ],
     "categories": [
-      "19fe245b-b494-4755-93f5-95bd9a2adf2a"
+      "498d8fb7-669a-4cf7-bf8b-37ee9f39e93d"
     ],
-    "lang": "ro",
-    "publishedAt": "2025-03-12T07:25:54.767Z",
-    "createdAt": "2025-07-13T06:25:54.767Z",
+    "lang": "uk",
+    "publishedAt": "2025-09-04T06:49:40.506Z",
+    "createdAt": "2025-05-10T06:49:40.506Z",
+    "score": 2
+  },
+  {
+    "id": "aef9ec6f-9b08-49ac-afb6-4f802b4ac045",
+    "title": "Чому education важливий сьогодні",
+    "source": "Top Insights",
+    "url": "https://example.test/source/top-insights/aef9ec6f-9b08-49ac-afb6-4f802b4ac045",
+    "authorId": "8e1ec2ec-9c1e-40da-9cf4-50cd7a4bc847",
+    "tags": [
+      "sports"
+    ],
+    "categories": [
+      "c4434ca3-e236-4a13-9d22-79d58054b6f2"
+    ],
+    "lang": "uk",
+    "publishedAt": "2025-05-17T06:49:40.506Z",
+    "createdAt": "2025-09-29T06:49:40.506Z",
+    "score": 4
+  },
+  {
+    "id": "a9cbed5a-4b2c-4f56-b98d-b229bebf3fee",
+    "title": "Как понять travel за 5 минут",
+    "source": "Example News",
+    "url": "https://example.test/source/example-news/a9cbed5a-4b2c-4f56-b98d-b229bebf3fee",
+    "authorId": "8e1ec2ec-9c1e-40da-9cf4-50cd7a4bc847",
+    "tags": [
+      "travel"
+    ],
+    "categories": [
+      "498d8fb7-669a-4cf7-bf8b-37ee9f39e93d",
+      "7f633229-c747-4f72-b185-e57eac0580c0"
+    ],
+    "lang": "ru",
+    "publishedAt": "2025-04-15T06:49:40.506Z",
+    "createdAt": "2025-05-04T06:49:40.506Z",
+    "score": -3
+  },
+  {
+    "id": "8df4eb2e-f4b4-4b49-a14e-1cd87d0e4ddd",
+    "title": "Топ порад по climate, про які ви не знали",
+    "source": "Open Source",
+    "url": "https://example.test/source/open-source/8df4eb2e-f4b4-4b49-a14e-1cd87d0e4ddd",
+    "authorId": "04b67e5a-b097-4b3b-adcd-8f8c3b6f9fba",
+    "tags": [
+      "fun",
+      "travel",
+      "tech"
+    ],
+    "categories": [
+      "498d8fb7-669a-4cf7-bf8b-37ee9f39e93d",
+      "7f633229-c747-4f72-b185-e57eac0580c0"
+    ],
+    "lang": "uk",
+    "publishedAt": "2025-05-04T06:49:40.506Z",
+    "createdAt": "2025-02-21T07:49:40.506Z",
+    "score": 1
+  },
+  {
+    "id": "84786b6d-d025-4c99-b564-48eeec5623e4",
+    "title": "Лучшие советы по sports, о которых вы не знали",
+    "source": "Community Post",
+    "url": "https://example.test/source/community-post/84786b6d-d025-4c99-b564-48eeec5623e4",
+    "authorId": "5643cd80-4db6-4c56-830a-7bea73300cf5",
+    "tags": [
+      "startup",
+      "health"
+    ],
+    "categories": [
+      "ae5bd6c4-cf10-494a-8b4a-2ae1c7b442c0"
+    ],
+    "lang": "ru",
+    "publishedAt": "2024-12-07T07:49:40.506Z",
+    "createdAt": "2024-12-23T07:49:40.506Z",
     "score": 0
   },
   {
-    "id": "73342018-0b6e-41fe-a0db-0dbaa28e9cf8",
-    "title": "Studiu dezvăluie noi informații despre climate",
+    "id": "d1a5ac9b-15e3-47ce-8c90-16c0d7f692cd",
+    "title": "Як зрозуміти AI за 5 хвилин",
     "source": "Example News",
-    "url": "https://example.test/source/example-news/73342018-0b6e-41fe-a0db-0dbaa28e9cf8",
-    "authorId": "441005d4-2321-44b8-8b1c-0baa4488cdd7",
+    "url": "https://example.test/source/example-news/d1a5ac9b-15e3-47ce-8c90-16c0d7f692cd",
+    "authorId": null,
     "tags": [
-      "product",
+      "health",
+      "education",
+      "sports"
+    ],
+    "categories": [
+      "7f633229-c747-4f72-b185-e57eac0580c0"
+    ],
+    "lang": "uk",
+    "publishedAt": "2025-04-20T06:49:40.506Z",
+    "createdAt": "2025-09-28T06:49:40.506Z",
+    "score": -1
+  },
+  {
+    "id": "84f5c9de-2c0d-4325-a19a-3174ca5c0a02",
+    "title": "10 surprising facts about travel",
+    "source": "Community Post",
+    "url": "https://example.test/source/community-post/84f5c9de-2c0d-4325-a19a-3174ca5c0a02",
+    "authorId": "502fa6d6-7a44-4daf-b04c-948cd3a0564a",
+    "tags": [
+      "travel",
+      "startup",
+      "economy",
       "politics"
     ],
     "categories": [
-      "19fe245b-b494-4755-93f5-95bd9a2adf2a",
-      "a2859556-44d5-474f-b107-c92b82acaab0"
+      "c4434ca3-e236-4a13-9d22-79d58054b6f2",
+      "7f633229-c747-4f72-b185-e57eac0580c0"
+    ],
+    "lang": "en",
+    "publishedAt": "2025-06-17T06:49:40.506Z",
+    "createdAt": "2024-12-02T07:49:40.506Z",
+    "score": -3
+  },
+  {
+    "id": "ae179039-d5c7-4727-b028-6d90c985c035",
+    "title": "Дослідження відкриває нове про startup",
+    "source": "Example News",
+    "url": "https://example.test/source/example-news/ae179039-d5c7-4727-b028-6d90c985c035",
+    "authorId": "f77623bb-ea52-4de7-a14a-21c4ed178dcf",
+    "tags": [
+      "education"
+    ],
+    "categories": [
+      "ae5bd6c4-cf10-494a-8b4a-2ae1c7b442c0",
+      "7f633229-c747-4f72-b185-e57eac0580c0"
+    ],
+    "lang": "uk",
+    "publishedAt": "2025-02-26T07:49:40.506Z",
+    "createdAt": "2025-05-07T06:49:40.506Z",
+    "score": -3
+  },
+  {
+    "id": "86c33dd1-39a8-4d1f-ad50-d386be1423d0",
+    "title": "Почему AI важно сегодня",
+    "source": "Open Source",
+    "url": "https://example.test/source/open-source/86c33dd1-39a8-4d1f-ad50-d386be1423d0",
+    "authorId": null,
+    "tags": [
+      "health"
+    ],
+    "categories": [
+      "c4434ca3-e236-4a13-9d22-79d58054b6f2"
+    ],
+    "lang": "ru",
+    "publishedAt": "2024-11-02T07:49:40.506Z",
+    "createdAt": "2025-09-21T06:49:40.506Z",
+    "score": 0
+  },
+  {
+    "id": "ec2f3e0c-de1b-4aed-b2a2-f8739de0e152",
+    "title": "Почему education важно сегодня",
+    "source": "Facts Daily",
+    "url": "https://example.test/source/facts-daily/ec2f3e0c-de1b-4aed-b2a2-f8739de0e152",
+    "authorId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "tags": [
+      "fun",
+      "education",
+      "sports",
+      "culture"
+    ],
+    "categories": [
+      "498d8fb7-669a-4cf7-bf8b-37ee9f39e93d"
+    ],
+    "lang": "ru",
+    "publishedAt": "2025-04-14T06:49:40.506Z",
+    "createdAt": "2025-03-03T07:49:40.506Z",
+    "score": -2
+  },
+  {
+    "id": "01fcd328-2c2c-446c-9398-ee620c873d8f",
+    "title": "Як зрозуміти health за 5 хвилин",
+    "source": "Facts Daily",
+    "url": "https://example.test/source/facts-daily/01fcd328-2c2c-446c-9398-ee620c873d8f",
+    "authorId": "990d0ee8-e4bf-4a29-adcd-29b051426c4a",
+    "tags": [
+      "health",
+      "product",
+      "sports"
+    ],
+    "categories": [
+      "e39fdc3d-37ff-449d-b943-f35472d9e27d",
+      "c4434ca3-e236-4a13-9d22-79d58054b6f2"
+    ],
+    "lang": "uk",
+    "publishedAt": "2025-09-08T06:49:40.506Z",
+    "createdAt": "2025-10-01T06:49:40.506Z",
+    "score": -1
+  },
+  {
+    "id": "7fbf4df9-c626-45eb-9057-c3cc4fceb681",
+    "title": "De ce contează startup azi",
+    "source": "Open Source",
+    "url": "https://example.test/source/open-source/7fbf4df9-c626-45eb-9057-c3cc4fceb681",
+    "authorId": null,
+    "tags": [
+      "travel",
+      "politics",
+      "tech",
+      "sports"
+    ],
+    "categories": [
+      "c4434ca3-e236-4a13-9d22-79d58054b6f2",
+      "e39fdc3d-37ff-449d-b943-f35472d9e27d"
     ],
     "lang": "ro",
-    "publishedAt": "2025-04-20T06:25:54.767Z",
-    "createdAt": "2025-09-04T06:25:54.767Z",
-    "score": -5
+    "publishedAt": "2024-11-23T07:49:40.506Z",
+    "createdAt": "2024-11-05T07:49:40.506Z",
+    "score": -1
+  },
+  {
+    "id": "210478de-7e9c-4dd0-b6a8-9f5c6dbb47d6",
+    "title": "Как понять economy за 5 минут",
+    "source": "Global Times",
+    "url": "https://example.test/source/global-times/210478de-7e9c-4dd0-b6a8-9f5c6dbb47d6",
+    "authorId": "c490534c-9d38-4944-9c9c-1a0fd41e3577",
+    "tags": [
+      "sports"
+    ],
+    "categories": [
+      "498d8fb7-669a-4cf7-bf8b-37ee9f39e93d"
+    ],
+    "lang": "ru",
+    "publishedAt": "2025-10-04T06:49:40.506Z",
+    "createdAt": "2025-04-10T06:49:40.506Z",
+    "score": 6
+  },
+  {
+    "id": "c0bc2f11-b31a-48b2-984b-cb9c805acff0",
+    "title": "Why travel matters today",
+    "source": "Open Source",
+    "url": "https://example.test/source/open-source/c0bc2f11-b31a-48b2-984b-cb9c805acff0",
+    "authorId": "5643cd80-4db6-4c56-830a-7bea73300cf5",
+    "tags": [
+      "science",
+      "travel"
+    ],
+    "categories": [
+      "1901d7f3-31d0-477e-ad23-2b16bd4add1f"
+    ],
+    "lang": "en",
+    "publishedAt": "2025-08-25T06:49:40.506Z",
+    "createdAt": "2025-09-03T06:49:40.506Z",
+    "score": 0
+  },
+  {
+    "id": "73779ca3-19fd-4022-8eb5-0f3c26d3ae42",
+    "title": "Study reveals new insights into sports",
+    "source": "Global Times",
+    "url": "https://example.test/source/global-times/73779ca3-19fd-4022-8eb5-0f3c26d3ae42",
+    "authorId": "90e2323c-0bdb-4355-a7d7-f32f8cc47a46",
+    "tags": [
+      "health",
+      "fun"
+    ],
+    "categories": [
+      "7f633229-c747-4f72-b185-e57eac0580c0"
+    ],
+    "lang": "en",
+    "publishedAt": "2025-03-15T07:49:40.506Z",
+    "createdAt": "2025-08-21T06:49:40.506Z",
+    "score": 0
+  },
+  {
+    "id": "10fe2dfe-ae30-4eac-b8f4-1caaadc26534",
+    "title": "Cum să înțelegi AI în 5 minute",
+    "source": "Community Post",
+    "url": "https://example.test/source/community-post/10fe2dfe-ae30-4eac-b8f4-1caaadc26534",
+    "authorId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "tags": [
+      "education",
+      "economy"
+    ],
+    "categories": [
+      "7f633229-c747-4f72-b185-e57eac0580c0",
+      "1901d7f3-31d0-477e-ad23-2b16bd4add1f"
+    ],
+    "lang": "ro",
+    "publishedAt": "2025-01-15T07:49:40.506Z",
+    "createdAt": "2025-07-27T06:49:40.506Z",
+    "score": -1
+  },
+  {
+    "id": "6ea058a8-2cf4-4950-8a35-f53f42b97ca2",
+    "title": "Studiu dezvăluie noi informații despre travel",
+    "source": "Example News",
+    "url": "https://example.test/source/example-news/6ea058a8-2cf4-4950-8a35-f53f42b97ca2",
+    "authorId": "8e1ec2ec-9c1e-40da-9cf4-50cd7a4bc847",
+    "tags": [
+      "product",
+      "fun",
+      "culture"
+    ],
+    "categories": [
+      "7f633229-c747-4f72-b185-e57eac0580c0",
+      "1901d7f3-31d0-477e-ad23-2b16bd4add1f"
+    ],
+    "lang": "ro",
+    "publishedAt": "2024-10-29T07:49:40.506Z",
+    "createdAt": "2025-04-02T06:49:40.506Z",
+    "score": 0
+  },
+  {
+    "id": "c27b720f-f24c-4eb4-a0df-d122044a047f",
+    "title": "Исследование раскрывает новое о economy",
+    "source": "Community Post",
+    "url": "https://example.test/source/community-post/c27b720f-f24c-4eb4-a0df-d122044a047f",
+    "authorId": null,
+    "tags": [
+      "economy"
+    ],
+    "categories": [
+      "c4434ca3-e236-4a13-9d22-79d58054b6f2",
+      "ae5bd6c4-cf10-494a-8b4a-2ae1c7b442c0"
+    ],
+    "lang": "ru",
+    "publishedAt": "2025-01-23T07:49:40.506Z",
+    "createdAt": "2024-12-26T07:49:40.506Z",
+    "score": -1
+  },
+  {
+    "id": "d3dc763d-db6b-4c43-b085-864598d1d639",
+    "title": "Breaking: AI schimbă piața",
+    "source": "Global Times",
+    "url": "https://example.test/source/global-times/d3dc763d-db6b-4c43-b085-864598d1d639",
+    "authorId": "990d0ee8-e4bf-4a29-adcd-29b051426c4a",
+    "tags": [
+      "tech"
+    ],
+    "categories": [
+      "c4434ca3-e236-4a13-9d22-79d58054b6f2",
+      "ae5bd6c4-cf10-494a-8b4a-2ae1c7b442c0"
+    ],
+    "lang": "ro",
+    "publishedAt": "2024-12-25T07:49:40.506Z",
+    "createdAt": "2025-09-13T06:49:40.506Z",
+    "score": 1
+  },
+  {
+    "id": "8495dabd-deb2-48e2-95f1-ec6d74bf9558",
+    "title": "Why startup matters today",
+    "source": "Community Post",
+    "url": "https://example.test/source/community-post/8495dabd-deb2-48e2-95f1-ec6d74bf9558",
+    "authorId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "tags": [
+      "tech",
+      "health"
+    ],
+    "categories": [
+      "ae5bd6c4-cf10-494a-8b4a-2ae1c7b442c0"
+    ],
+    "lang": "en",
+    "publishedAt": "2025-04-02T06:49:40.506Z",
+    "createdAt": "2025-10-20T06:49:40.506Z",
+    "score": 4
+  },
+  {
+    "id": "ada4067d-0fa3-4105-bb54-a86e537fd776",
+    "title": "Топ порад по health, про які ви не знали",
+    "source": "Facts Daily",
+    "url": "https://example.test/source/facts-daily/ada4067d-0fa3-4105-bb54-a86e537fd776",
+    "authorId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "tags": [
+      "sports",
+      "startup"
+    ],
+    "categories": [
+      "c4434ca3-e236-4a13-9d22-79d58054b6f2",
+      "ae5bd6c4-cf10-494a-8b4a-2ae1c7b442c0"
+    ],
+    "lang": "uk",
+    "publishedAt": "2025-05-08T06:49:40.506Z",
+    "createdAt": "2024-10-28T07:49:40.506Z",
+    "score": 0
+  },
+  {
+    "id": "98a767ac-bea9-4aaf-870b-b15e3245af12",
+    "title": "Study reveals new insights into startup",
+    "source": "Facts Daily",
+    "url": "https://example.test/source/facts-daily/98a767ac-bea9-4aaf-870b-b15e3245af12",
+    "authorId": "502fa6d6-7a44-4daf-b04c-948cd3a0564a",
+    "tags": [
+      "sports",
+      "fun",
+      "product"
+    ],
+    "categories": [
+      "1901d7f3-31d0-477e-ad23-2b16bd4add1f",
+      "c4434ca3-e236-4a13-9d22-79d58054b6f2"
+    ],
+    "lang": "en",
+    "publishedAt": "2025-02-04T07:49:40.506Z",
+    "createdAt": "2025-10-02T06:49:40.506Z",
+    "score": 6
+  },
+  {
+    "id": "4390edc7-a3e3-49f3-b5c5-ca02a1940321",
+    "title": "Studiu dezvăluie noi informații despre AI",
+    "source": "Open Source",
+    "url": "https://example.test/source/open-source/4390edc7-a3e3-49f3-b5c5-ca02a1940321",
+    "authorId": "f77623bb-ea52-4de7-a14a-21c4ed178dcf",
+    "tags": [
+      "health"
+    ],
+    "categories": [
+      "1901d7f3-31d0-477e-ad23-2b16bd4add1f",
+      "7f633229-c747-4f72-b185-e57eac0580c0"
+    ],
+    "lang": "ro",
+    "publishedAt": "2025-07-24T06:49:40.506Z",
+    "createdAt": "2025-08-06T06:49:40.506Z",
+    "score": 2
+  },
+  {
+    "id": "3dab42c7-89ad-40aa-95e5-c84ba147c243",
+    "title": "Лучшие советы по AI, о которых вы не знали",
+    "source": "Top Insights",
+    "url": "https://example.test/source/top-insights/3dab42c7-89ad-40aa-95e5-c84ba147c243",
+    "authorId": "f77623bb-ea52-4de7-a14a-21c4ed178dcf",
+    "tags": [
+      "sports",
+      "politics"
+    ],
+    "categories": [
+      "ae5bd6c4-cf10-494a-8b4a-2ae1c7b442c0"
+    ],
+    "lang": "ru",
+    "publishedAt": "2025-03-30T06:49:40.506Z",
+    "createdAt": "2025-01-20T07:49:40.506Z",
+    "score": -4
+  },
+  {
+    "id": "7ac5c6a3-3b8f-45f5-8e21-653953ce036a",
+    "title": "Як зрозуміти AI за 5 хвилин",
+    "source": "Facts Daily",
+    "url": "https://example.test/source/facts-daily/7ac5c6a3-3b8f-45f5-8e21-653953ce036a",
+    "authorId": "5cf42861-9cac-4bb4-9df9-cdba9b9e9857",
+    "tags": [
+      "startup",
+      "travel",
+      "science"
+    ],
+    "categories": [
+      "c4434ca3-e236-4a13-9d22-79d58054b6f2"
+    ],
+    "lang": "uk",
+    "publishedAt": "2025-09-21T06:49:40.506Z",
+    "createdAt": "2025-02-24T07:49:40.506Z",
+    "score": 2
   }
 ]
