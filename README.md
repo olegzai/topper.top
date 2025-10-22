@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TOPPER.top — Backend (MVP scaffold)
 
 Welcome — this is the beginner-friendly backend scaffold for TOPPER.top (Universal Rating Platform).
@@ -167,3 +168,7 @@ If you'd rather inspect files first, reply: `show package.json` or `show server.
 If anything is unclear, tell me which line/section or write the number from `Q.md` and `объясни` (for example: `14 объясни`) — I'll explain step-by-step with commands and examples made just for beginners.
 
 Thanks — I'm ready when you are.
+=======
+# TOPPER.top
+
+>>>>>>> origin/main
