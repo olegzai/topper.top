@@ -1,239 +1,397 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TOPPER.top — Dev Docs</title>
-  <style>
-    :root {
-      --bg: #0f1724;
-      --card: #0b1220;
-      --muted: #94a3b8;
-      --accent: #60a5</head>fa;
-      --</title></style>success: #4ade80;
-      --danger: #fb7185;
-      --glass: rgba(255,255,255,0.02);
-      --radius: 10px;
-      color-scheme: dark;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    html,body {
-      height: 100%;
-      margin: 0;
-      background: linear-gradient(180deg,#071023 0%, #081426 60%);
-      color: #e6eef8;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-    .container {
-      max-width: 920px;
-      margin: 32px auto;
-      padding: 24px;
-    }
-    header {
-      display:flex;
-      align-items:center;
-      gap:16px;
-      margin-bottom:18px;
-    }
-    .logo {
-      width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;
-      box-shadow:0 6px 18px rgba(8,12,20,0.6);
-    }
-    h1 { margin:0; font-size:20px; }
-    p.lead { margin:4px 0 0; color:var(--muted); font-size:13px; }
-    .grid {
-      display:grid;
-      grid-template-columns: 1fr 320px;
-      gap:20px;
-      margin-top:18px;
-    }
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding:18px;
-      box-shadow: 0 6px 22px rgba(2,6,23,0.6);
-    }
-    .muted { color: var(--muted); font-size:13px; }
-    .endpoint {
-      display:flex;align-items:center;justify-content:space-between;padding:10px;border-radius:8px;background:var(--glass);margin:10px 0;
-    }
-    .btn {
-      background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent);padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600;
-    }
-    .btn:active { transform:translateY(1px) }
-    pre.cmd {
-      background:#041024;color:#bfe1ff;padding:12px;border-radius:8px;overflow:auto;font-size:13px;
-    }
-    .result {
-      margin-top:8px;padding:10px;border-radius:8px;background:#021225;color:#bfe1ff;font-size:13px;white-space:pre-wrap;word-break:break-word;
-    }
-    footer { margin-top:20px;color:var(--muted);font-size:13px;text-align:center; }
-    a.inline { color:var(--accent); text-decoration:none; }
-    .small { font-size:13px; color:var(--muted) }
-    @media (max-width: 880px) {
-      .grid { grid-template-columns: 1fr; }
-      .logo { width:56px;height:56px }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <div</body> class="logo">TP</div>
-      <div></header>
-        <h1>TOPPER.top — Dev Docs</h1</div>>
-        <p class="lead">Minimal Node</h1> + TypeScript scaffold. Try the API endpoints below or follow quick start steps.</p>
-      </div>
-    </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TOPPER.top — Dev Docs</title>
+    <style>
+      :root {
+        --bg: #0f1724;
+        --card: #0b1220;
+        --muted: #94a3b8;
+        --accent: #60a5fa;
+        --success: #4ade80;
+        --danger: #fb7185;
+        --glass: rgba(255, 255, 255, 0.02);
+        --radius: 10px;
+        color-scheme: dark;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background: linear-gradient(180deg, #071023 0%, #081426 60%);
+        color: #e6eef8;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .container {
+        max-width: 920px;
+        margin: 32px auto;
+        padding: 24px;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+      .logo {
+        width: 64px;
+        height: 64px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--accent), #7c3aed);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        box-shadow: 0 6px 18px rgba(8, 12, 20, 0.6);
+      }
+      h1 {
+        margin: 0;
+        font-size: 20px;
+      }
+      p.lead {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 20px;
+        margin-top: 18px;
+      }
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: 0 6px 22px rgba(2, 6, 23, 0.6);
+      }
+      .muted {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .endpoint {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        border-radius: 8px;
+        background: var(--glass);
+        margin: 10px 0;
+      }
+      .btn {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        color: var(--accent);
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .btn:active {
+        transform: translateY(1px);
+      }
+      pre.cmd {
+        background: #041024;
+        color: #bfe1ff;
+        padding: 12px;
+        border-radius: 8px;
+        overflow: auto;
+        font-size: 13px;
+      }
+      .result {
+        margin-top: 8px;
+        padding: 10px;
+        border-radius: 8px;
+        background: #021225;
+        color: #bfe1ff;
+        font-size: 13px;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+      footer {
+        margin-top: 20px;
+        color: var(--muted);
+        font-size: 13px;
+        text-align: center;
+      }
+      a.inline {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .small {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      @media (max-width: 880px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .logo {
+          width: 56px;
+          height: 56px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">TP</div>
+        <div>
+          <h1>TOPPER.top — Dev Docs</h1>
+          <p class="lead">
+            Minimal Node + TypeScript scaffold. Try the API endpoints below or
+            follow quick start steps.
+          </p>
+        </div>
+      </header>
 
-    <div class="grid">
-      <main class="card" aria-labelledby="quickstart">
-        <h2 id="quickstart">Quick start</h2>
-        <p class="muted">Run locally (no Docker):</p>
-        <div style="margin-top:8px;">
-          <pre class="cmd">npm install
+      <div class="grid">
+        <main class="card" aria-labelledby="quickstart">
+          <h2 id="quickstart">Quick start</h2>
+          <p class="muted">Run locally (no Docker):</p>
+          <div style="margin-top: 8px">
+            <pre class="cmd">
+npm install
 npm run seed
-npm run dev</pre>
-          <p class="small">Open <a class="inline" href="/docs">/docs</a> or the endpoints listed on the right.</p>
-        </div>
-
-        <hr style="opacity:0.06;margin:18px 0;">
-
-        <h3>What this scaffold gives you</h3>
-        <ul class="small"</h3> style="line-height:1.6">
-          <li>Simple HTTP server with endpoints: <code>/api</li>/health</code>, <code>/api/version</code>, <code>/api/info</code></li>
-          <li>Static demo page served from <code>public/</code></li>
-          <li</li></code>>Seed script that creates sample JSON in <code>data/</code></li>
-          <li>Tool</code>ing: TypeScript, ESLint, Prettier, Husky, Vit</li>est and a CI template</li>
-        </ul>
-
-        <h3 style="margin-top:14px">Example usage (fetch)</h3>
-        <pre class="cmd" id="fetchExample">fetch('/api/health').then(r =&gt; r.json()).then(console.log)</pre>
-
-        <h3 style="margin-top:14px">Notes</h3>
-        <p class="muted">The server listens on port <strong>3000</strong> by default. Set <code>PORT</code> env to change it. The seed script writes demo JSON files into</strong></code> <code>data/</code>.</p>
-
-      </main>
-
-      <aside>
-        <div class="</code>card">
-          <h3>Endpoints</h3>
-
-          <div class="</aside>endpoint" style="</h3>flex-direction:column;align-items:flex-start">
-            <div style="display:flex;gap:10px;align-items:center;width:100%;justify-content:space-between">
-              <div>
-                <div style="font-weight:700">GET /api/health</div></div>
-                <div class="muted">Returns status check</div>
-              </div>
-              <div style="display:flex;gap:8px">
-                <button class="btn" onclick="callApi('/api/health')">Call</button>
-                <button class="btn" onclick="copy('/api/health')">Copy</button>
-              </div>
-            </div>
-            <div id="res-/api/health" class="result" aria-live="polite">—</div>
+npm run dev</pre
+            >
+            <p class="small">
+              Open <a class="inline" href="/docs">/docs</a> or the endpoints
+              listed on the right.
+            </p>
           </div>
 
-          <div class="endpoint" style="flex-direction:column;align-items:flex-start">
-            <div style="display:flex;gap:10px;align-items:center;width:100%;justify-content:space-between">
-              <div>
-                <div style="font-weight:700">GET /api/version</div></div>
-                <div class="muted">Reads <code>version.txt</code> or package.json</div>
-              </div>
-              <div style="</code>display:flex;gap:8px">
-                <button class="btn" onclick="callApi('/api/version')">Call</button>
-                <button class="btn" onclick="copy('/api/version')">Copy</button>
-              </div>
-            </div>
-            <div id="res-/api/version" class="result">—</div>
-          </div>
+          <hr style="opacity: 0.06; margin: 18px 0" />
 
-          <div class="endpoint" style="flex-direction:column;align-items:flex-start">
-            <div style="display:flex;gap:10px;align-items:center;width:100%;justify-content:space-between">
-              <div>
-                <div style="font-weight:700">GET /api/info</div>
-                <div class="muted">App name, version and</div> uptime</div>
-              </div>
-              <div style="display:flex;gap:8px">
-                <button class="btn" onclick="callApi('/api/info')">Call</button>
-                <button class="btn" onclick="copy('/api/info')">Copy</button>
-              </div>
-            </div>
-            <div id="res-/api/info" class="result">—</div>
-          </div>
-
-          <hr style="opacity:0.06;margin:12px 0;">
-
-          <h4 style="margin:6px 0">CLI / cURL</h4>
-          <pre class="cmd">curl -s http://localhost:3000/api/health
-curl -s http://localhost:3000/api/version
-curl -s http://localhost:3000/api/info</pre>
-
-          <p class="muted small" style="margin-top:8px">If endpoints return 404, make sure the dev server is running: <code>npm run dev</code>.</p>
-        </div>
-
-        <div class="card</code>" style="margin-top:14px">
-          <h3>Common tasks</h3>
-          <ul class="small" style="line-height:</h3>1.6">
-            <li><strong>Run tests:</strong> <code>npm test</code></li</strong></code>>
-            <li><strong>Lint &amp; format:</strong> <code></strong>npm run lint</code>, <code>npm run format</code</code>></li>
-            <li><strong>Build:</strong> <</code>code>npm run build</code> (output → <code>dist/</strong></code>)</li>
-            <li><strong>Seed data</code>:</strong> <code>npm run seed</code></li></strong>
+          <h3>What this scaffold gives you</h3>
+          <ul class="small" style="line-height: 1.6">
+            <li>
+              Simple HTTP server with endpoints: <code>/api/health</code>,
+              <code>/api/version</code>, <code>/api/info</code>
+            </li>
+            <li>Static demo page served from <code>public/</code></li>
+            <li>Seed script that creates sample JSON in <code>data/</code></li>
+            <li>
+              Tooling: TypeScript, ESLint, Prettier, Husky, Vitest and a CI
+              template
+            </li>
           </ul>
+
+          <h3 style="margin-top: 14px">Example usage (fetch)</h3>
+          <pre class="cmd" id="fetchExample">
+fetch('/api/health').then(r => r.json()).then(console.log)</pre
+          >
+
+          <h3 style="margin-top: 14px">Notes</h3>
+          <p class="muted">
+            The server listens on port <strong>3000</strong> by default. Set
+            <code>PORT</code> env to change it. The seed script writes demo JSON
+            files into <code>data/</code>.
+          </p>
+        </main>
+
+        <aside>
+          <div class="card">
+            <h3>Endpoints</h3>
+
+            <div
+              class="endpoint"
+              style="flex-direction: column; align-items: flex-start"
+            >
+              <div
+                style="
+                  display: flex;
+                  gap: 10px;
+                  align-items: center;
+                  width: 100%;
+                  justify-content: space-between;
+                "
+              >
+                <div>
+                  <div style="font-weight: 700">GET /api/health</div>
+                  <div class="muted">Returns status check</div>
+                </div>
+                <div style="display: flex; gap: 8px">
+                  <button class="btn" onclick="callApi('/api/health')">
+                    Call
+                  </button>
+                  <button class="btn" onclick="copy('/api/health')">
+                    Copy
+                  </button>
+                </div>
+              </div>
+              <div id="res-/api/health" class="result" aria-live="polite">
+                —
+              </div>
+            </div>
+
+            <div
+              class="endpoint"
+              style="flex-direction: column; align-items: flex-start"
+            >
+              <div
+                style="
+                  display: flex;
+                  gap: 10px;
+                  align-items: center;
+                  width: 100%;
+                  justify-content: space-between;
+                "
+              >
+                <div>
+                  <div style="font-weight: 700">GET /api/version</div>
+                  <div class="muted">
+                    Reads <code>version.txt</code> or package.json
+                  </div>
+                </div>
+                <div style="display: flex; gap: 8px">
+                  <button class="btn" onclick="callApi('/api/version')">
+                    Call
+                  </button>
+                  <button class="btn" onclick="copy('/api/version')">
+                    Copy
+                  </button>
+                </div>
+              </div>
+              <div id="res-/api/version" class="result">—</div>
+            </div>
+
+            <div
+              class="endpoint"
+              style="flex-direction: column; align-items: flex-start"
+            >
+              <div
+                style="
+                  display: flex;
+                  gap: 10px;
+                  align-items: center;
+                  width: 100%;
+                  justify-content: space-between;
+                "
+              >
+                <div>
+                  <div style="font-weight: 700">GET /api/info</div>
+                  <div class="muted">App name, version and uptime</div>
+                </div>
+                <div style="display: flex; gap: 8px">
+                  <button class="btn" onclick="callApi('/api/info')">
+                    Call
+                  </button>
+                  <button class="btn" onclick="copy('/api/info')">Copy</button>
+                </div>
+              </div>
+              <div id="res-/api/info" class="result">—</div>
+            </div>
+
+            <hr style="opacity: 0.06; margin: 12px 0" />
+
+            <h4 style="margin: 6px 0">CLI / cURL</h4>
+            <pre class="cmd">
+curl -s http://localhost:3000/api/health
+curl -s http://localhost:3000/api/version
+curl -s http://localhost:3000/api/info</pre
+            >
+
+            <p class="muted small" style="margin-top: 8px">
+              If endpoints return 404, make sure the dev server is running:
+              <code>npm run dev</code>.
+            </p>
+          </div>
+
+          <div class="card" style="margin-top: 14px">
+            <h3>Common tasks</h3>
+            <ul class="small" style="line-height: 1.6">
+              <li><strong>Run tests:</strong> <code>npm test</code></li>
+              <li>
+                <strong>Lint &amp; format:</strong> <code>npm run lint</code>,
+                <code>npm run format</code>
+              </li>
+              <li>
+                <strong>Build:</strong> <code>npm run build</code> (output →
+                <code>dist/</code>)
+              </li>
+              <li><strong>Seed data:</strong> <code>npm run seed</code></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <section class="card" style="margin-top: 18px">
+        <h3>Troubleshooting</h3>
+        <ul class="small" style="line-height: 1.6">
+          <li>
+            If port 3000 is in use, set <code>PORT</code> env before
+            <code>npm run dev</code>.
+          </li>
+          <li>
+            Make sure Node.js &gt;= 18 is installed (project expects modern
+            Node).
+          </li>
+          <li>
+            Check <code>.gitignore</code> to avoid committing
+            <code>.env</code> or local files.
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        <div class="small">
+          Need help? Open an issue or ask for a walkthrough. This is a minimal
+          scaffold intended for learning and iterative improvements.
         </div>
-      </</code>aside>
+      </footer>
     </div>
 
-    <section class="card" style="margin-top:18px">
-      <h3>Troubleshooting</h3>
-      <ul class="small"</h3> style="line-height:1.6">
-        <li>If port 3000 is in use, set <code>PORT</code> env before <code>npm run dev</code>.</li>
-        <</code>li>Make sure Node.js &gt;= 18 is installed (project</code> expects modern Node).</li>
-        <li>Check <code>.gitignore</code> to avoid committing <code>.env</code</li>> or local files.</li>
-      </ul>
-    </section>
-
-    <footer>
-      <div class="small">Need help? Open an issue or</footer> ask for a walkthrough. This is a minimal scaffold intended for learning and iterative improvements.</div>
-    </footer>
-  </div>
-
-  <script>
-    async function callApi(path) {
-      const outEl = document.getElementById('res</script>-' + path);
-      if (!outEl) return;
-      outEl.textContent = 'Loading...';
-      try {
-        const res = await fetch(path, { cache: 'no-store' });
-        const ct = res.headers.get('content-type') || '';
-        if (ct.includes('application/json')) {
-          const data = await res.json();
-          outEl.textContent = JSON.stringify(data, null, 2);
-        } else {
-          const txt = await res.text();
-          outEl.textContent = txt;
+    <script>
+      async function callApi(path) {
+        const outEl = document.getElementById("res-" + path);
+        if (!outEl) return;
+        outEl.textContent = "Loading...";
+        try {
+          const res = await fetch(path, { cache: "no-store" });
+          const ct = res.headers.get("content-type") || "";
+          if (ct.includes("application/json")) {
+            const data = await res.json();
+            outEl.textContent = JSON.stringify(data, null, 2);
+          } else {
+            const txt = await res.text();
+            outEl.textContent = txt;
+          }
+        } catch (err) {
+          outEl.textContent =
+            "Error: " + (err && err.message ? err.message : String(err));
         }
-      } catch (err) {
-        outEl.textContent = 'Error: ' + (err && err.message ? err.message : String(err));
       }
-    }
 
-    function copy(path) {
-      const txt = 'curl -s ' + window.location.origin + path;
-      navigator.clipboard?.writeText(txt).then(() => {
-        alert('Copied: ' + txt);
-      }).catch(() => {
-        prompt('Copy the command below:', txt);
-      });
-    }
+      function copy(path) {
+        const txt = "curl -s " + window.location.origin + path;
+        navigator.clipboard
+          ?.writeText(txt)
+          .then(() => {
+            alert("Copied: " + txt);
+          })
+          .catch(() => {
+            prompt("Copy the command below:", txt);
+          });
+      }
 
-    // auto-check endpoints on load (non-blocking)
-    window.addEventListener('load', () => {
-      [' /api/health','/api/version','/api/info'].forEach((p) => {
-        // guard: some browsers may throw if origin differs (file://), wrap in setTimeout
-        setTimeout(() => { try { callApi(p.trim()); } catch(e) {} }, 200);
+      // auto-check endpoints on load (non-blocking)
+      window.addEventListener("load", () => {
+        ["/api/health", "/api/version", "/api/info"].forEach((p) => {
+          // guard: some browsers may throw if origin differs (file://), wrap in setTimeout
+          setTimeout(() => {
+            try {
+              callApi(p.trim());
+            } catch (e) {}
+          }, 200);
+        });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

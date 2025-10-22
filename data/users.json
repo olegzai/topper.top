@@ -1,0 +1,82 @@
+[
+  {
+    "id": "f6501e52-758e-47bc-b0a0-2c3f6e6e196b",
+    "username": "user1",
+    "displayName": "User 1",
+    "role": "admin",
+    "locale": "ro",
+    "createdAt": "2025-04-19T06:25:54.747Z"
+  },
+  {
+    "id": "43417659-10dd-40e2-ab1d-72d5f71caf3c",
+    "username": "user2",
+    "displayName": "User 2",
+    "role": "user",
+    "locale": "uk",
+    "createdAt": "2024-10-31T07:25:54.762Z"
+  },
+  {
+    "id": "f55eec44-c049-4682-a36f-ee0005855faf",
+    "username": "user3",
+    "displayName": "User 3",
+    "role": "user",
+    "locale": "ro",
+    "createdAt": "2025-06-27T06:25:54.762Z"
+  },
+  {
+    "id": "8043f37c-a41f-4a2c-af5e-28dea1409764",
+    "username": "user4",
+    "displayName": "User 4",
+    "role": "user",
+    "locale": "ru",
+    "createdAt": "2024-12-27T07:25:54.762Z"
+  },
+  {
+    "id": "4abaa3a9-cbc0-424b-98e6-f1839a086f59",
+    "username": "user5",
+    "displayName": "User 5",
+    "role": "user",
+    "locale": "uk",
+    "createdAt": "2025-06-13T06:25:54.762Z"
+  },
+  {
+    "id": "4a480d61-0552-4ab4-a708-e39c12686e78",
+    "username": "user6",
+    "displayName": "User 6",
+    "role": "user",
+    "locale": "ru",
+    "createdAt": "2024-11-14T07:25:54.762Z"
+  },
+  {
+    "id": "441005d4-2321-44b8-8b1c-0baa4488cdd7",
+    "username": "user7",
+    "displayName": "User 7",
+    "role": "user",
+    "locale": "ro",
+    "createdAt": "2025-08-06T06:25:54.762Z"
+  },
+  {
+    "id": "4a105ccc-f505-4057-95ee-ddf32491b04c",
+    "username": "user8",
+    "displayName": "User 8",
+    "role": "user",
+    "locale": "ru",
+    "createdAt": "2025-06-14T06:25:54.762Z"
+  },
+  {
+    "id": "dc30c10e-5c9d-48fc-933f-89d79a3ec5ba",
+    "username": "user9",
+    "displayName": "User 9",
+    "role": "user",
+    "locale": "en",
+    "createdAt": "2025-10-11T06:25:54.763Z"
+  },
+  {
+    "id": "46364c6e-1bbc-4995-8275-584ad2a09169",
+    "username": "user10",
+    "displayName": "User 10",
+    "role": "user",
+    "locale": "ru",
+    "createdAt": "2025-09-01T06:25:54.763Z"
+  }
+]
