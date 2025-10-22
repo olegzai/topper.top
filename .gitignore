@@ -74,8 +74,8 @@ public/build/
 # data/*.sqlite
 
 .obsidian/
-CHAT/
 tmp/
-A.md
-Q.md
 .env
+
+CHAT/Q.md
+CHAT/A.md
