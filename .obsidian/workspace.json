@@ -1,0 +1,205 @@
+{
+  "main": {
+    "id": "2cc5d6c6460982f9",
+    "type": "split",
+    "children": [
+      {
+        "id": "2871ad5e37a56f53",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f6aed9f68db5d1d7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Q.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Q"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6b55cf4f854f1b9c",
+    "type": "split",
+    "children": [
+      {
+        "id": "86088acc70aaa014",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "88c5fc6880f033f3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "50bf781db35564e5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "83f7afd96a69ef1c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "bc30519102038eb6",
+    "type": "split",
+    "children": [
+      {
+        "id": "7f15faf9db0174b7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1b3c6537fc6fd5e1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Q.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Q"
+            }
+          },
+          {
+            "id": "eb3f89df311fb8b8",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Q.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Q"
+            }
+          },
+          {
+            "id": "6fb7582c8e044f35",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "30aefc765c9744b5",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Q.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Q"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "f6aed9f68db5d1d7",
+  "lastOpenFiles": [
+    "README.md",
+    "tsconfig.json",
+    "docker",
+    "tests",
+    "scripts",
+    "data",
+    "public",
+    "src",
+    "package.json",
+    "setup_initial_files_bundle.md",
+    "logs/CHAT/CHAT4.md",
+    "logs/CHAT/CHAT3.md",
+    "logs/CHAT/CHAT2.md",
+    "logs/CHAT/CHAT1.md",
+    "logs/CHAT",
+    "CHAT/CHAT4.md",
+    "CHAT/CHAT2.md",
+    "CHAT/CHAT1.md",
+    "CHAT/CHAT3.md",
+    "logs",
+    "CHAT4.md",
+    "CHAT1.md",
+    "Q.md",
+    "A.md",
+    "CHAT3.md",
+    "CHAT2.md",
+    "README.md.md",
+    "AGENTS.md",
+    "ABOUT.md",
+    "INDEX.md"
+  ]
+}
