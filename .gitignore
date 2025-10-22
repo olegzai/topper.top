@@ -72,3 +72,10 @@ public/build/
 # Optional: ignore data if you don't want to commit local data files
 # data/*.db
 # data/*.sqlite
+
+.obsidian/
+CHAT/
+tmp/
+A.md
+Q.md
+.env
