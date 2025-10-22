@@ -1,36 +1,36 @@
 [
   {
-    "id": "498d8fb7-669a-4cf7-bf8b-37ee9f39e93d",
+    "id": "64cdc4b5-b598-452f-93f9-996f1a6c8639",
     "slug": "facts",
     "name": "Facts",
     "lang": "en"
   },
   {
-    "id": "ae5bd6c4-cf10-494a-8b4a-2ae1c7b442c0",
+    "id": "94bc5b83-6611-4190-a8e2-635992e99c30",
     "slug": "news",
     "name": "News",
     "lang": "ru"
   },
   {
-    "id": "7f633229-c747-4f72-b185-e57eac0580c0",
+    "id": "497cca02-15a1-4762-a2c3-a163da8b6426",
     "slug": "offers",
     "name": "Offers",
     "lang": "ro"
   },
   {
-    "id": "c4434ca3-e236-4a13-9d22-79d58054b6f2",
+    "id": "4e00b713-4abd-413e-bcd6-7320c54fef0f",
     "slug": "ads",
     "name": "Ads",
     "lang": "uk"
   },
   {
-    "id": "1901d7f3-31d0-477e-ad23-2b16bd4add1f",
+    "id": "8bf9ce8e-f640-437d-920b-99b95ee5bffe",
     "slug": "products",
     "name": "Products",
     "lang": "en"
   },
   {
-    "id": "e39fdc3d-37ff-449d-b943-f35472d9e27d",
+    "id": "0014f869-1bfb-4284-b0d3-5efa96cd8977",
     "slug": "opinion",
     "name": "Opinion",
     "lang": "ru"
