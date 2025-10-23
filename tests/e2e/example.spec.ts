@@ -1,4 +1,3 @@
-// e2e/example.spec.ts
 import { test, expect } from '@playwright/test';
 
 test.describe('Topper.top Application', () => {
