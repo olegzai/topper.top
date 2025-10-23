@@ -1,0 +1,9 @@
+# ESLint ignore file
+dist/
+node_modules/
+*.min.js
+build/
+coverage/
+.nyc_output/
+tmp/
+.DS_Store

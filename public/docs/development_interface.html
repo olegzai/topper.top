@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Topper.top - Enhanced Content Browser (With CSS for Development)
+    </title>
+  </head>
+  <body>
+    <!-- Language selector -->
+    <div>
+      <label
+        >Language:
+        <select id="language-selector" onchange="changeLanguage()">
+          <option value="en">English</option>
+          <option value="ru">Russian</option>
+          <option value="uk">Ukrainian</option>
+          <option value="ro">Romanian</option>
+        </select></label
+      >
+    </div>
+
+    <!-- Main Content Display -->
+    <div>
+      <div id="content-display">
+        <div id="content-area">
+          <h3 id="source-title">Loading content...</h3>
+          <p id="content-text">Please wait while content loads...</p>
+          <a id="source-link" href="#" target="_blank">View Source</a>
+        </div>
+
+        <!-- 4 Navigation Buttons -->
+        <div>
+          <button onclick="previousContent()">← Prev</button>
+          <button onclick="downvoteAndNext()">↓ -1 (Not Similar)</button>
+          <button onclick="upvoteAndNext()">↑ +1 (Similar)</button>
+          <button onclick="skipContent()">→ Skip</button>
+        </div>
+      </div>
+
+      <!-- Accordions Section -->
+      <div>
+        <!-- Information Accordion -->
+        <details>
+          <summary>Information</summary>
+          <div id="information-content">
+            <p><strong>Full Content Information:</strong></p>
+            <p><strong>Id:</strong> <span id="info-id"></span></p>
+            <p><strong>Title:</strong> <span id="info-title"></span></p>
+            <p>
+              <strong>Description:</strong> <span id="info-description"></span>
+            </p>
+            <p><strong>URL:</strong> <span id="info-url"></span></p>
+            <p><strong>Score:</strong> <span id="info-score"></span></p>
+            <p><strong>Language:</strong> <span id="info-lang"></span></p>
+            <p><strong>Published:</strong> <span id="info-published"></span></p>
+            <p><strong>Created:</strong> <span id="info-created"></span></p>
+            <p><strong>Tags:</strong> <span id="info-tags"></span></p>
+            <p><strong>Type:</strong> <span id="info-type"></span></p>
+            <p><strong>Category:</strong> <span id="info-category"></span></p>
+          </div>
+        </details>
+
+        <!-- Filters Accordion -->
+        <details>
+          <summary>Filters</summary>
+          <div>
+            <div>
+              <label>Content Types:</label>
+              <div>
+                <label
+                  ><input type="checkbox" name="type-filter" value="news" />
+                  News</label
+                >
+                <label
+                  ><input type="checkbox" name="type-filter" value="events" />
+                  Events</label
+                >
+                <label
+                  ><input type="checkbox" name="type-filter" value="articles" />
+                  Articles</label
+                >
+                <label
+                  ><input type="checkbox" name="type-filter" value="facts" />
+                  Facts</label
+                >
+                <label
+                  ><input type="checkbox" name="type-filter" value="ads" />
+                  Ads</label
+                >
+              </div>
+            </div>
+            <div>
+              <label>Categories:</label>
+              <div>
+                <label
+                  ><input
+                    type="checkbox"
+                    name="category-filter"
+                    value="nature"
+                  />
+                  Nature</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="category-filter"
+                    value="people"
+                  />
+                  People</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="category-filter"
+                    value="health"
+                  />
+                  Health</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="category-filter"
+                    value="sports"
+                  />
+                  Sports</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="category-filter"
+                    value="technology"
+                  />
+                  Technology</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="category-filter"
+                    value="education"
+                  />
+                  Education</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="category-filter"
+                    value="business"
+                  />
+                  Business</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="category-filter"
+                    value="entertainment"
+                  />
+                  Entertainment</label
+                >
+              </div>
+            </div>
+            <div>
+              <label>Countries/Global:</label>
+              <div>
+                <label
+                  ><input
+                    type="checkbox"
+                    name="country-filter"
+                    value="global"
+                  />
+                  Global</label
+                >
+                <label
+                  ><input type="checkbox" name="country-filter" value="ro" />
+                  Romania</label
+                >
+                <label
+                  ><input type="checkbox" name="country-filter" value="ru" />
+                  Russia</label
+                >
+                <label
+                  ><input type="checkbox" name="country-filter" value="ua" />
+                  Ukraine</label
+                >
+                <label
+                  ><input type="checkbox" name="country-filter" value="us" />
+                  USA</label
+                >
+                <label
+                  ><input type="checkbox" name="country-filter" value="uk" />
+                  UK</label
+                >
+                <label
+                  ><input type="checkbox" name="country-filter" value="de" />
+                  Germany</label
+                >
+              </div>
+            </div>
+            <div>
+              <button onclick="applyFilters()">Apply Filters</button>
+              <button onclick="clearFilters()">Clear Filters</button>
+            </div>
+          </div>
+        </details>
+
+        <!-- History Accordion -->
+        <details>
+          <summary>History</summary>
+          <div id="history-content">
+            <h4>Rating History</h4>
+            <div id="rating-history-list"></div>
+            <h4>View History</h4>
+            <div id="view-history-list"></div>
+          </div>
+        </details>
+
+        <!-- Ratings Accordion -->
+        <details>
+          <summary>Ratings</summary>
+          <div id="ratings-content">
+            <!-- Top News Sub-Accordion -->
+            <details>
+              <summary>Top News</summary>
+              <div id="top-news-content">
+                <div id="top-news-display"></div>
+              </div>
+            </details>
+
+            <!-- Top Facts Sub-Accordion -->
+            <details>
+              <summary>Top Facts</summary>
+              <div id="top-facts-content">
+                <div id="top-facts-display"></div>
+              </div>
+            </details>
+
+            <!-- Top Articles Sub-Accordion -->
+            <details>
+              <summary>Top Articles</summary>
+              <div id="top-articles-content">
+                <div id="top-articles-display"></div>
+              </div>
+            </details>
+          </div>
+        </details>
+
+        <!-- Statistics Accordion -->
+        <details>
+          <summary>Statistics</summary>
+          <div id="statistics-content">
+            <!-- Private Statistics Sub-Accordion -->
+            <details>
+              <summary>Private</summary>
+              <div id="private-stats">
+                <p>Total Ratings: <span id="personal-total-ratings">0</span></p>
+                <p>
+                  Positive Ratings:
+                  <span id="personal-positive-ratings">0</span>
+                </p>
+                <p>
+                  Negative Ratings:
+                  <span id="personal-negative-ratings">0</span>
+                </p>
+                <p>
+                  Favorite Categories:
+                  <span id="personal-fav-categories">None</span>
+                </p>
+                <p>
+                  Most Rated Content Type:
+                  <span id="personal-fav-type">-</span>
+                </p>
+                <p>
+                  Engagement Rate:
+                  <span id="personal-engagement-rate">0%</span>
+                </p>
+              </div>
+            </details>
+
+            <!-- Public Statistics Sub-Accordion -->
+            <details>
+              <summary>Public</summary>
+              <div id="public-stats">
+                <p>Total Items: <span id="public-total-items">0</span></p>
+                <p>Total Ratings: <span id="public-total-ratings">0</span></p>
+                <p>
+                  Most Rated Category:
+                  <span id="public-most-rated-category">-</span>
+                </p>
+                <p>
+                  Most Rated Content Type:
+                  <span id="public-most-rated-type">-</span>
+                </p>
+                <p>Average Score: <span id="public-average-score">0</span></p>
+                <p>
+                  Content Diversity Index:
+                  <span id="public-diversity-index">0</span>
+                </p>
+              </div>
+            </details>
+          </div>
+        </details>
+
+        <!-- Settings Accordion -->
+        <details>
+          <summary>Settings</summary>
+          <div>
+            <div>
+              <label
+                ><input
+                  type="checkbox"
+                  id="auto-load"
+                  onchange="toggleAutoLoad()"
+                />
+                Auto-load next content</label
+              >
+            </div>
+            <div>
+              <label
+                >Items per load:
+                <input
+                  type="number"
+                  id="items-per-load"
+                  value="10"
+                  min="1"
+                  max="50"
+                  onchange="updateSettings()"
+              /></label>
+            </div>
+            <div>
+              <label
+                >Auto-switch interval (seconds):
+                <input
+                  type="number"
+                  id="auto-switch-interval"
+                  value="60"
+                  min="5"
+                  max="300"
+                  onchange="updateSettings()"
+              /></label>
+              <p class="help-text">
+                Time before content automatically switches (default: 60 seconds)
+              </p>
+            </div>
+            <div>
+              <button onclick="toggleAutoSwitch()">Enable Auto-Switch</button>
+            </div>
+          </div>
+        </details>
+
+        <!-- About Accordion -->
+        <details>
+          <summary>About</summary>
+          <div>
+            <p>Topper.top - Universal Rating Platform</p>
+            <p>Version: 0.0.1</p>
+            <p>
+              A content rating system that allows users to evaluate and rank
+              content items.
+            </p>
+          </div>
+        </details>
+
+        <!-- Help Accordion (Hidden) -->
+        <details style="display: none">
+          <summary>Help</summary>
+          <div>
+            <h4>How to use this application:</h4>
+            <ul>
+              <li><strong>← Prev</strong>: Go to the previous content item</li>
+              <li>
+                <strong>↓ -1 (Not Similar)</strong>: Dislike the content and get
+                a non-similar item
+              </li>
+              <li>
+                <strong>↑ +1 (Similar)</strong>: Like the content and get a
+                similar item
+              </li>
+              <li>
+                <strong>→ Skip</strong>: Skip the current item without rating
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- FAQ Accordion (Hidden) -->
+        <details style="display: none">
+          <summary>FAQ</summary>
+          <div>
+            <h4>Common questions:</h4>
+            <p>
+              <strong>Q: What is this platform?</strong><br />
+              A: This is a content rating platform where users can browse, rate,
+              and discover content.
+            </p>
+
+            <p>
+              <strong>Q: How are "similar" items determined?</strong><br />
+              A: Similar items are determined based on shared tags and
+              categories.
+            </p>
+          </div>
+        </details>
+
+        <!-- Contact Us Accordion -->
+        <details>
+          <summary>Contact Us</summary>
+          <div>
+            <p>
+              For support or feedback, please contact us at:
+              topper.top@example.com
+            </p>
+          </div>
+        </details>
+
+        <!-- Reset Accordion (Developer Only) -->
+        <details id="developer-reset">
+          <summary>Reset (Developer)</summary>
+          <div>
+            <button onclick="resetCache()">Reset Cache</button>
+            <button onclick="resetAllData()">Reset All Data</button>
+            <button onclick="clearLocalStorage()">Clear Local Storage</button>
+            <button onclick="reloadPage()">Reload Page</button>
+          </div>
+        </details>
+      </div>
+
+      <!-- DEBUG section at the bottom, only visible to developer -->
+      <details
+        id="developer-debug"
+        style="
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: black;
+          color: white;
+          padding: 10px;
+          font-family: monospace;
+          font-size: 12px;
+          z-index: 1000;
+        "
+      >
+        <summary
+          style="background: red; color: white; padding: 5px; cursor: pointer"
+        >
+          DEBUG (Developer Only)
+        </summary>
+        <ul
+          id="debug-log"
+          style="
+            max-height: 200px;
+            overflow-y: auto;
+            margin: 0;
+            padding-left: 20px;
+          "
+        >
+          <li>Application started. Debug log will appear here...</li>
+        </ul>
+      </details>
+    </div>
+
+    <script>
+      // Global state
+      let allItems = [];
+      let currentIndex = -1;
+      let currentContent = null;
+      let currentLanguage = 'en';
+      const debugMessages = [];
+      const ratingHistory = [];
+      const viewHistory = [];
+      const userStats = {
+        totalRatings: 0,
+        positiveRatings: 0,
+        negativeRatings: 0,
+        ratedCategories: {},
+      };
+
+      // Translations object
+      const translations = {
+        en: {
+          language: 'Language',
+          loadingContent: 'Loading content...',
+          errorLoadingContent: 'Error loading content: ',
+          noItemsAvailable: 'No items available',
+          contentDisplay: 'Loading content...',
+          viewSource: 'View Source',
+          navigation: {
+            prev: '← Prev',
+            downvote: '↓ -1 (Not Similar)',
+            upvote: '↑ +1 (Similar)',
+            skip: '→ Skip',
+          },
+          accordions: {
+            information: 'Information',
+            filters: 'Filters',
+            history: 'History',
+            ratings: 'Ratings',
+            statistics: 'Statistics',
+            settings: 'Settings',
+            about: 'About',
+            contact: 'Contact Us',
+            reset: 'Reset (Developer)',
+          },
+          informationContent: {
+            fullInfo: 'Full Content Information:',
+            id: 'Id:',
+            title: 'Title:',
+            description: 'Description:',
+            url: 'URL:',
+            score: 'Score:',
+            language: 'Language:',
+            published: 'Published:',
+            created: 'Created:',
+            tags: 'Tags:',
+            type: 'Type:',
+            category: 'Category:',
+          },
+          filters: {
+            contentTypes: 'Content Types:',
+            categories: 'Categories:',
+            countriesGlobal: 'Countries/Global:',
+            applyFilters: 'Apply Filters',
+            clearFilters: 'Clear Filters',
+            news: 'News',
+            events: 'Events',
+            articles: 'Articles',
+            facts: 'Facts',
+            ads: 'Ads',
+            nature: 'Nature',
+            people: 'People',
+            health: 'Health',
+            sports: 'Sports',
+            technology: 'Technology',
+            education: 'Education',
+            business: 'Business',
+            entertainment: 'Entertainment',
+            global: 'Global',
+            romania: 'Romania',
+            russia: 'Russia',
+            ukraine: 'Ukraine',
+            usa: 'USA',
+            uk: 'UK',
+            germany: 'Germany',
+          },
+          history: {
+            ratingHistory: 'Rating History',
+            viewHistory: 'View History',
+            noRatings: 'No ratings yet',
+            noViews: 'No viewed items yet',
+          },
+          ratings: {
+            topRatings: 'Top Ratings',
+            allTimeTop10: 'All Time Top 10',
+            top10News: 'Top 10 News',
+            top10Technology: 'Top 10 Technology',
+            top10Health: 'Top 10 Health',
+            topRatedItems: 'Top Rated Items:',
+            noTopRated: 'No top-rated items found.',
+            errorLoadingTop: 'Error loading top ratings.',
+          },
+          statistics: {
+            personalStats: 'Personal Statistics',
+            totalRatings: 'Total Ratings:',
+            positiveRatings: 'Positive Ratings:',
+            negativeRatings: 'Negative Ratings:',
+            favoriteCategories: 'Favorite Categories:',
+            none: 'None',
+            publicStats: 'Public Statistics',
+            totalItems: 'Total Items:',
+            totalRatingsPublic: 'Total Ratings:',
+            mostRatedCategory: 'Most Rated Category:',
+            averageScore: 'Average Score:',
+          },
+          settings: {
+            autoLoad: 'Auto-load next content',
+            itemsPerLoad: 'Items per load:',
+          },
+          about: {
+            title: 'Topper.top - Universal Rating Platform',
+            version: 'Version: 0.0.1',
+            description:
+              'A content rating system that allows users to evaluate and rank content items.',
+          },
+          contact: {
+            text: 'For support or feedback, please contact us at: topper.top@example.com',
+          },
+          reset: {
+            resetCache: 'Reset Cache',
+            resetAllData: 'Reset All Data',
+            clearLocalStorage: 'Clear Local Storage',
+            reloadPage: 'Reload Page',
+          },
+          debug: {
+            title: 'DEBUG (Developer Only)',
+          },
+        },
+        ro: {
+          language: 'Limba',
+          loadingContent: 'Se încarcă conținutul...',
+          errorLoadingContent: 'Eroare la încărcarea conținutului: ',
+          noItemsAvailable: 'Nu există articole disponibile',
+          contentDisplay: 'Se încarcă conținutul...',
+          viewSource: 'Vezi sursa',
+          navigation: {
+            prev: '← Înapoi',
+            downvote: '↓ -1 (Nu e similar)',
+            upvote: '↑ +1 (Similar)',
+            skip: '→ Treci peste',
+          },
+          accordions: {
+            information: 'Informații',
+            filters: 'Filtre',
+            history: 'Istoric',
+            ratings: 'Evaluări',
+            statistics: 'Statistici',
+            settings: 'Setări',
+            about: 'Despre',
+            contact: 'Contact',
+            reset: 'Reset (Dezvoltator)',
+          },
+          informationContent: {
+            fullInfo: 'Informații complete despre conținut:',
+            id: 'Id:',
+            title: 'Titlu:',
+            description: 'Descriere:',
+            url: 'URL:',
+            score: 'Scor:',
+            language: 'Limba:',
+            published: 'Publicat:',
+            created: 'Creat:',
+            tags: 'Etichete:',
+            type: 'Tip:',
+            category: 'Categorie:',
+          },
+          filters: {
+            contentTypes: 'Tipuri de conținut:',
+            categories: 'Categorii:',
+            countriesGlobal: 'Țări/Global:',
+            applyFilters: 'Aplică filtrele',
+            clearFilters: 'Șterge filtrele',
+            news: 'Știri',
+            events: 'Evenimente',
+            articles: 'Articole',
+            facts: 'Fapte',
+            ads: 'Reclame',
+            nature: 'Natură',
+            people: 'Oameni',
+            health: 'Sănătate',
+            sports: 'Sport',
+            technology: 'Tehnologie',
+            education: 'Educație',
+            business: 'Afaceri',
+            entertainment: 'Distracție',
+            global: 'Global',
+            romania: 'România',
+            russia: 'Rusia',
+            ukraine: 'Ucraina',
+            usa: 'SUA',
+            uk: 'Marea Britanie',
+            germany: 'Germania',
+          },
+          history: {
+            ratingHistory: 'Istoric Evaluări',
+            viewHistory: 'Istoric Vizualizări',
+            noRatings: 'Nu există evaluări încă',
+            noViews: 'Nu există articole vizualizate încă',
+          },
+          ratings: {
+            topRatings: 'Evaluări de Top',
+            allTimeTop10: 'Top 10 din totdeauna',
+            top10News: 'Top 10 Știri',
+            top10Technology: 'Top 10 Tehnologie',
+            top10Health: 'Top 10 Sănătate',
+            topRatedItems: 'Articole cu cele mai bune evaluări:',
+            noTopRated: 'Nu s-au găsit articole evaluate.',
+            errorLoadingTop: 'Eroare la încărcarea evaluărilor de top.',
+          },
+          statistics: {
+            personalStats: 'Statistici Personale',
+            totalRatings: 'Evaluări Totale:',
+            positiveRatings: 'Evaluări Pozitive:',
+            negativeRatings: 'Evaluări Negative:',
+            favoriteCategories: 'Categorii Favorite:',
+            none: 'Niciuna',
+            publicStats: 'Statistici Publice',
+            totalItems: 'Total Articole:',
+            totalRatingsPublic: 'Total Evaluări:',
+            mostRatedCategory: 'Categoriea Cel Mai Evaluată:',
+            averageScore: 'Scor Mediu:',
+          },
+          settings: {
+            autoLoad: 'Încarcă automat următorul conținut',
+            itemsPerLoad: 'Articole pe pagină:',
+          },
+          about: {
+            title: 'Topper.top - Platformă Universală de Evaluare',
+            version: 'Versiune: 0.0.1',
+            description:
+              'Un sistem de evaluare a conținutului care permite utilizatorilor să evalueze și să clasifice articolele.',
+          },
+          contact: {
+            text: 'Pentru suport sau feedback, vă rugăm să ne contactați la: topper.top@example.com',
+          },
+          reset: {
+            resetCache: 'Resetează Cache-ul',
+            resetAllData: 'Resetează Toate Datele',
+            clearLocalStorage: 'Șterge Local Storage',
+            reloadPage: 'Reîncarcă Pagina',
+          },
+          debug: {
+            title: 'DEBUG (Doar Dezvoltator)',
+          },
+        },
+        ru: {
+          language: 'Язык',
+          loadingContent: 'Загрузка контента...',
+          errorLoadingContent: 'Ошибка загрузки контента: ',
+          noItemsAvailable: 'Нет доступных элементов',
+          contentDisplay: 'Загрузка контента...',
+          viewSource: 'Посмотреть источник',
+          navigation: {
+            prev: '← Назад',
+            downvote: '↓ -1 (Не похоже)',
+            upvote: '↑ +1 (Похожее)',
+            skip: '→ Пропустить',
+          },
+          accordions: {
+            information: 'Информация',
+            filters: 'Фильтры',
+            history: 'История',
+            ratings: 'Рейтинги',
+            statistics: 'Статистика',
+            settings: 'Настройки',
+            about: 'О нас',
+            contact: 'Контакты',
+            reset: 'Сброс (Разработчик)',
+          },
+          informationContent: {
+            fullInfo: 'Полная информация о контенте:',
+            id: 'Ид:',
+            title: 'Название:',
+            description: 'Описание:',
+            url: 'URL:',
+            score: 'Оценка:',
+            language: 'Язык:',
+            published: 'Опубликовано:',
+            created: 'Создано:',
+            tags: 'Теги:',
+            type: 'Тип:',
+            category: 'Категория:',
+          },
+          filters: {
+            contentTypes: 'Типы контента:',
+            categories: 'Категории:',
+            countriesGlobal: 'Страны/Глобальные:',
+            applyFilters: 'Применить фильтры',
+            clearFilters: 'Очистить фильтры',
+            news: 'Новости',
+            events: 'События',
+            articles: 'Статьи',
+            facts: 'Факты',
+            ads: 'Реклама',
+            nature: 'Природа',
+            people: 'Люди',
+            health: 'Здоровье',
+            sports: 'Спорт',
+            technology: 'Технологии',
+            education: 'Образование',
+            business: 'Бизнес',
+            entertainment: 'Развлечения',
+            global: 'Глобальные',
+            romania: 'Румыния',
+            russia: 'Россия',
+            ukraine: 'Украина',
+            usa: 'США',
+            uk: 'Великобритания',
+            germany: 'Германия',
+          },
+          history: {
+            ratingHistory: 'История оценок',
+            viewHistory: 'История просмотра',
+            noRatings: 'Пока нет оценок',
+            noViews: 'Пока нет просмотренных элементов',
+          },
+          ratings: {
+            topRatings: 'Лучшие рейтинги',
+            allTimeTop10: 'Топ 10 за всё время',
+            top10News: 'Топ 10 Новостей',
+            top10Technology: 'Топ 10 Технологий',
+            top10Health: 'Топ 10 Здоровья',
+            topRatedItems: 'Лучшие оценённые элементы:',
+            noTopRated: 'Лучших элементов не найдено.',
+            errorLoadingTop: 'Ошибка загрузки лучших рейтингов.',
+          },
+          statistics: {
+            personalStats: 'Личная статистика',
+            totalRatings: 'Всего оценок:',
+            positiveRatings: 'Положительных оценок:',
+            negativeRatings: 'Отрицательных оценок:',
+            favoriteCategories: 'Любимые категории:',
+            none: 'Нет',
+            publicStats: 'Публичная статистика',
+            totalItems: 'Всего элементов:',
+            totalRatingsPublic: 'Всего оценок:',
+            mostRatedCategory: 'Наиболее оцениваемая категория:',
+            averageScore: 'Средняя оценка:',
+          },
+          settings: {
+            autoLoad: 'Автоматически загружать следующий контент',
+            itemsPerLoad: 'Элементов на загрузку:',
+          },
+          about: {
+            title: 'Topper.top - Универсальная платформа рейтинга',
+            version: 'Версия: 0.0.1',
+            description:
+              'Система оценки контента, которая позволяет пользователям оценивать и ранжировать контент.',
+          },
+          contact: {
+            text: 'Для поддержки или обратной связи, пожалуйста, свяжитесь с нами: topper.top@example.com',
+          },
+          reset: {
+            resetCache: 'Сбросить кэш',
+            resetAllData: 'Сбросить все данные',
+            clearLocalStorage: 'Очистить локальное хранилище',
+            reloadPage: 'Перезагрузить страницу',
+          },
+          debug: {
+            title: 'ОТЛАДКА (Только разработчик)',
+          },
+        },
+        uk: {
+          language: 'Мова',
+          loadingContent: 'Завантаження контенту...',
+          errorLoadingContent: 'Помилка завантаження контенту: ',
+          noItemsAvailable: 'Немає доступних елементів',
+          contentDisplay: 'Завантаження контенту...',
+          viewSource: 'Переглянути джерело',
+          navigation: {
+            prev: '← Назад',
+            downvote: '↓ -1 (Не схоже)',
+            upvote: '↑ +1 (Схоже)',
+            skip: '→ Пропустити',
+          },
+          accordions: {
+            information: 'Інформація',
+            filters: 'Фільтри',
+            history: 'Історія',
+            ratings: 'Рейтинги',
+            statistics: 'Статистика',
+            settings: 'Налаштування',
+            about: 'Про нас',
+            contact: 'Контакти',
+            reset: 'Скидання (Розробник)',
+          },
+          informationContent: {
+            fullInfo: 'Повна інформація про контент:',
+            id: 'Ід:',
+            title: 'Назва:',
+            description: 'Опис:',
+            url: 'URL:',
+            score: 'Оцінка:',
+            language: 'Мова:',
+            published: 'Опубліковано:',
+            created: 'Створено:',
+            tags: 'Теги:',
+            type: 'Тип:',
+            category: 'Категорія:',
+          },
+          filters: {
+            contentTypes: 'Типи контенту:',
+            categories: 'Категорії:',
+            countriesGlobal: 'Країни/Глобальні:',
+            applyFilters: 'Застосувати фільтри',
+            clearFilters: 'Очистити фільтри',
+            news: 'Новини',
+            events: 'Події',
+            articles: 'Статті',
+            facts: 'Факти',
+            ads: 'Реклама',
+            nature: 'Природа',
+            people: 'Люди',
+            health: "Здоров'я",
+            sports: 'Спорт',
+            technology: 'Технології',
+            education: 'Освіта',
+            business: 'Бізнес',
+            entertainment: 'Розваги',
+            global: 'Глобальні',
+            romania: 'Румунія',
+            russia: 'Росія',
+            ukraine: 'Україна',
+            usa: 'США',
+            uk: 'Великобританія',
+            germany: 'Німеччина',
+          },
+          history: {
+            ratingHistory: 'Історія оцінок',
+            viewHistory: 'Історія перегляду',
+            noRatings: 'Ще немає оцінок',
+            noViews: 'Ще немає переглянутих елементів',
+          },
+          ratings: {
+            topRatings: 'Найкращі рейтинги',
+            allTimeTop10: 'Топ 10 за весь час',
+            top10News: 'Топ 10 Новин',
+            top10Technology: 'Топ 10 Технологій',
+            top10Health: "Топ 10 Здоров'я",
+            topRatedItems: 'Найвищі оцінені елементи:',
+            noTopRated: 'Найкращих елементів не знайдено.',
+            errorLoadingTop: 'Помилка завантаження найкращих рейтингів.',
+          },
+          statistics: {
+            personalStats: 'Особиста статистика',
+            totalRatings: 'Усього оцінок:',
+            positiveRatings: 'Позитивних оцінок:',
+            negativeRatings: 'Негативних оцінок:',
+            favoriteCategories: 'Улюблені категорії:',
+            none: 'Немає',
+            publicStats: 'Публічна статистика',
+            totalItems: 'Усього елементів:',
+            totalRatingsPublic: 'Усього оцінок:',
+            mostRatedCategory: 'Найбільш оцінювана категорія:',
+            averageScore: 'Середня оцінка:',
+          },
+          settings: {
+            autoLoad: 'Автоматично завантажувати наступний контент',
+            itemsPerLoad: 'Елементів за завантаження:',
+          },
+          about: {
+            title: 'Topper.top - Універсальна платформа рейтингу',
+            version: 'Версія: 0.0.1',
+            description:
+              'Система оцінки контенту, яка дозволяє користувачам оцінювати та ранжувати контент.',
+          },
+          contact: {
+            text: "Для підтримки або відгуків, будь ласка, зв'яжіться з нами: topper.top@example.com",
+          },
+          reset: {
+            resetCache: 'Скинути кеш',
+            resetAllData: 'Скинути всі дані',
+            clearLocalStorage: 'Очистити локальне сховище',
+            reloadPage: 'Перезавантажити сторінку',
+          },
+          debug: {
+            title: 'НАЛАГОДЖЕННЯ (Лише розробник)',
+          },
+        },
+      };
+
+      // Initialize the application
+      window.onload = function () {
+        logDebug('Application initialized');
+        // Update language selector to show only the 4 required languages
+        updateLanguageSelector();
+        updateInterfaceLanguage();
+        loadContent();
+        updateStatistics();
+      };
+
+      // Update language selector to show only required languages
+      function updateLanguageSelector() {
+        const selector = document.getElementById('language-selector');
+        selector.innerHTML = '';
+        selector.innerHTML += '<option value="en">English</option>';
+        selector.innerHTML += '<option value="ro">Romanian</option>';
+        selector.innerHTML += '<option value="uk">Ukrainian</option>';
+        selector.innerHTML += '<option value="ru">Russian</option>';
+      }
+
+      // Update the interface language based on selected language
+      function updateInterfaceLanguage() {
+        const t = translations[currentLanguage];
+        if (!t) return;
+
+        // Update language selector label
+        const languageLabel =
+          document.querySelector('label[for="language-selector"]') ||
+          document.querySelector('div:first-child label');
+        if (languageLabel) {
+          languageLabel.textContent = t.language + ':';
+          // Need to add the select element back
+          const selectEl = document.getElementById('language-selector');
+          if (selectEl) {
+            languageLabel.appendChild(selectEl);
+          }
+        }
+
+        // Update navigation buttons
+        document.querySelector(
+          'button[onclick="previousContent()"]'
+        ).textContent = t.navigation.prev;
+        document.querySelector(
+          'button[onclick="downvoteAndNext()"]'
+        ).textContent = t.navigation.downvote;
+        document.querySelector(
+          'button[onclick="upvoteAndNext()"]'
+        ).textContent = t.navigation.upvote;
+        document.querySelector('button[onclick="skipContent()"]').textContent =
+          t.navigation.skip;
+
+        // Update accordion summaries
+        document.querySelector('details:nth-child(2) summary').textContent =
+          t.accordions.information;
+        document.querySelector('details:nth-child(3) summary').textContent =
+          t.accordions.filters;
+        document.querySelector('details:nth-child(4) summary').textContent =
+          t.accordions.history;
+        document.querySelector('details:nth-child(5) summary').textContent =
+          t.accordions.ratings;
+        document.querySelector('details:nth-child(6) summary').textContent =
+          t.accordions.statistics;
+        document.querySelector('details:nth-child(7) summary').textContent =
+          t.accordions.settings;
+        document.querySelector('details:nth-child(8) summary').textContent =
+          t.accordions.about;
+        document.querySelector('details:nth-child(9) summary').textContent =
+          t.accordions.contact;
+        document.querySelector('#developer-reset summary').textContent =
+          t.accordions.reset;
+
+        // Update information content labels
+        document.querySelector(
+          '#information-content p:nth-child(1) strong'
+        ).textContent = t.informationContent.fullInfo;
+        updateLabel(
+          document.querySelector('#information-content p:nth-child(2) strong'),
+          t.informationContent.id
+        );
+        updateLabel(
+          document.querySelector('#information-content p:nth-child(3) strong'),
+          t.informationContent.title
+        );
+        updateLabel(
+          document.querySelector('#information-content p:nth-child(4) strong'),
+          t.informationContent.description
+        );
+        updateLabel(
+          document.querySelector('#information-content p:nth-child(5) strong'),
+          t.informationContent.url
+        );
+        updateLabel(
+          document.querySelector('#information-content p:nth-child(6) strong'),
+          t.informationContent.score
+        );
+        updateLabel(
+          document.querySelector('#information-content p:nth-child(7) strong'),
+          t.informationContent.language
+        );
+        updateLabel(
+          document.querySelector('#information-content p:nth-child(8) strong'),
+          t.informationContent.published
+        );
+        updateLabel(
+          document.querySelector('#information-content p:nth-child(9) strong'),
+          t.informationContent.created
+        );
+        updateLabel(
+          document.querySelector('#information-content p:nth-child(10) strong'),
+          t.informationContent.tags
+        );
+        updateLabel(
+          document.querySelector('#information-content p:nth-child(11) strong'),
+          t.informationContent.type
+        );
+        updateLabel(
+          document.querySelector('#information-content p:nth-child(12) strong'),
+          t.informationContent.category
+        );
+
+        // Update filters section
+        document.querySelector(
+          'details:nth-child(3) div div label'
+        ).textContent = t.filters.contentTypes;
+        updateLabelWithInput(
+          'input[name="type-filter"][value="news"]',
+          t.filters.news
+        );
+        updateLabelWithInput(
+          'input[name="type-filter"][value="events"]',
+          t.filters.events
+        );
+        updateLabelWithInput(
+          'input[name="type-filter"][value="articles"]',
+          t.filters.articles
+        );
+        updateLabelWithInput(
+          'input[name="type-filter"][value="facts"]',
+          t.filters.facts
+        );
+        updateLabelWithInput(
+          'input[name="type-filter"][value="ads"]',
+          t.filters.ads
+        );
+
+        // Update category labels
+        const categoryLabels = document.querySelectorAll(
+          'input[name="category-filter"] + span, input[name="category-filter"] + label'
+        );
+        // We need to update the labels for categories
+        const categoryInputs = document.querySelectorAll(
+          'input[name="category-filter"]'
+        );
+        categoryInputs.forEach(input => {
+          const label = input.nextElementSibling;
+          if (label && label.tagName === 'LABEL') {
+            switch (input.value) {
+              case 'nature':
+                updateLabel(label, t.filters.nature);
+                break;
+              case 'people':
+                updateLabel(label, t.filters.people);
+                break;
+              case 'health':
+                updateLabel(label, t.filters.health);
+                break;
+              case 'sports':
+                updateLabel(label, t.filters.sports);
+                break;
+              case 'technology':
+                updateLabel(label, t.filters.technology);
+                break;
+              case 'education':
+                updateLabel(label, t.filters.education);
+                break;
+              case 'business':
+                updateLabel(label, t.filters.business);
+                break;
+              case 'entertainment':
+                updateLabel(label, t.filters.entertainment);
+                break;
+            }
+          }
+        });
+
+        // Update country labels
+        const countryInputs = document.querySelectorAll(
+          'input[name="country-filter"]'
+        );
+        countryInputs.forEach(input => {
+          const label = input.nextElementSibling;
+          if (label && label.tagName === 'LABEL') {
+            switch (input.value) {
+              case 'global':
+                updateLabel(label, t.filters.global);
+                break;
+              case 'ro':
+                updateLabel(label, t.filters.romania);
+                break;
+              case 'ru':
+                updateLabel(label, t.filters.russia);
+                break;
+              case 'ua':
+                updateLabel(label, t.filters.ukraine);
+                break;
+              case 'us':
+                updateLabel(label, t.filters.usa);
+                break;
+              case 'uk':
+                updateLabel(label, t.filters.uk);
+                break;
+              case 'de':
+                updateLabel(label, t.filters.germany);
+                break;
+            }
+          }
+        });
+
+        // Update filter buttons
+        const filterButtons = document.querySelectorAll(
+          'details:nth-child(3) div button'
+        );
+        if (filterButtons.length >= 2) {
+          filterButtons[0].textContent = t.filters.applyFilters;
+          filterButtons[1].textContent = t.filters.clearFilters;
+        }
+
+        // Update history section
+        const historySection = document.querySelector('#history-content');
+        if (historySection) {
+          const h4Elements = historySection.querySelectorAll('h4');
+          if (h4Elements.length >= 2) {
+            h4Elements[0].textContent = t.history.ratingHistory;
+            h4Elements[1].textContent = t.history.viewHistory;
+          }
+        }
+
+        // Update ratings section
+        const ratingsSection = document.querySelector('#ratings-content');
+        if (ratingsSection) {
+          const h4Elements = ratingsSection.querySelectorAll('h4');
+          if (h4Elements.length >= 1) {
+            h4Elements[0].textContent = t.ratings.topRatings;
+          }
+
+          // Update rating buttons
+          const ratingButtons = ratingsSection.querySelectorAll(
+            '#top-ratings-list button'
+          );
+          if (ratingButtons.length >= 4) {
+            ratingButtons[0].textContent = t.ratings.allTimeTop10;
+            ratingButtons[1].textContent = t.ratings.top10News;
+            ratingButtons[2].textContent = t.ratings.top10Technology;
+            ratingButtons[3].textContent = t.ratings.top10Health;
+          }
+        }
+
+        // Update statistics section
+        const statsSection = document.querySelector('#statistics-content');
+        if (statsSection) {
+          const h4Elements = statsSection.querySelectorAll('h4');
+          if (h4Elements.length >= 2) {
+            h4Elements[0].textContent = t.statistics.personalStats;
+            h4Elements[1].textContent = t.statistics.publicStats;
+          }
+
+          updateLabel(
+            document.querySelector('#personal-stats p:nth-child(1) strong'),
+            t.statistics.totalRatings
+          );
+          updateLabel(
+            document.querySelector('#personal-stats p:nth-child(2) strong'),
+            t.statistics.positiveRatings
+          );
+          updateLabel(
+            document.querySelector('#personal-stats p:nth-child(3) strong'),
+            t.statistics.negativeRatings
+          );
+          updateLabel(
+            document.querySelector('#personal-stats p:nth-child(4) strong'),
+            t.statistics.favoriteCategories
+          );
+          updateLabel(
+            document.querySelector('#public-stats p:nth-child(1) strong'),
+            t.statistics.totalItems
+          );
+          updateLabel(
+            document.querySelector('#public-stats p:nth-child(2) strong'),
+            t.statistics.totalRatingsPublic
+          );
+          updateLabel(
+            document.querySelector('#public-stats p:nth-child(3) strong'),
+            t.statistics.mostRatedCategory
+          );
+          updateLabel(
+            document.querySelector('#public-stats p:nth-child(4) strong'),
+            t.statistics.averageScore
+          );
+        }
+
+        // Update settings section
+        const autoLoadLabel = document.querySelector(
+          '#auto-load + span, #auto-load + label'
+        );
+        if (autoLoadLabel) {
+          autoLoadLabel.textContent = t.settings.autoLoad;
+        }
+        const itemsPerLoadLabel = document.querySelector(
+          'label[for="items-per-load"], label:has(#items-per-load)'
+        );
+        if (itemsPerLoadLabel) {
+          itemsPerLoadLabel.textContent = t.settings.itemsPerLoad;
+        }
+
+        // Update about section
+        const aboutSection = document.querySelector('details:nth-child(8) div');
+        if (aboutSection) {
+          const ps = aboutSection.querySelectorAll('p');
+          if (ps.length >= 3) {
+            ps[0].textContent = t.about.title;
+            ps[1].textContent = t.about.version;
+            ps[2].textContent = t.about.description;
+          }
+        }
+
+        // Update contact section
+        const contactSection = document.querySelector(
+          'details:nth-child(9) div p'
+        );
+        if (contactSection) {
+          contactSection.textContent = t.contact.text;
+        }
+
+        // Update reset section
+        const resetButtons = document.querySelectorAll(
+          '#developer-reset div button'
+        );
+        if (resetButtons.length >= 4) {
+          resetButtons[0].textContent = t.reset.resetCache;
+          resetButtons[1].textContent = t.reset.resetAllData;
+          resetButtons[2].textContent = t.reset.clearLocalStorage;
+          resetButtons[3].textContent = t.reset.reloadPage;
+        }
+
+        // Update debug section
+        document.querySelector('#developer-debug summary').textContent =
+          t.debug.title;
+      }
+
+      // Helper function to update label text
+      function updateLabel(element, newText) {
+        if (element) {
+          // Get the text node and replace it
+          const textNodes = [];
+          const walker = document.createTreeWalker(
+            element,
+            NodeFilter.SHOW_TEXT,
+            null,
+            false
+          );
+          let node;
+          while ((node = walker.nextNode())) {
+            textNodes.push(node);
+          }
+
+          if (textNodes.length > 0) {
+            // Replace the text content of the first text node
+            textNodes[0].textContent = newText;
+          }
+        }
+      }
+
+      // Helper function to update label associated with input
+      function updateLabelWithInput(selector, newText) {
+        if (typeof selector === 'string') {
+          const input = document.querySelector(selector);
+          if (input) {
+            const label = input.nextElementSibling;
+            if (label && label.tagName === 'LABEL') {
+              updateLabel(label, newText);
+            }
+          }
+        } else {
+          const input = selector;
+          if (input) {
+            const label = input.nextElementSibling;
+            if (label && label.tagName === 'LABEL') {
+              updateLabel(label, newText);
+            }
+          }
+        }
+      }
+
+      // Load content items
+      async function loadContent() {
+        try {
+          logDebug('Loading content from API...');
+          let url = 'http://localhost:3000/api/items?limit=50';
+          if (currentLanguage) {
+            url += `&lang=${currentLanguage}`;
+          }
+
+          const response = await fetch(url);
+          const data = await response.json();
+
+          if (data.items && data.items.length > 0) {
+            allItems = data.items;
+            currentIndex = 0;
+            showCurrentContent();
+          } else {
+            document.getElementById('content-text').textContent =
+              translations[currentLanguage].noItemsAvailable;
+            logDebug('No items found in API response');
+          }
+        } catch (error) {
+          document.getElementById('content-text').textContent =
+            translations[currentLanguage].errorLoadingContent + error.message;
+          logDebug('Error loading content: ' + error.message);
+        }
+      }
+
+      // Show the current content item
+      function showCurrentContent() {
+        if (allItems.length === 0) {
+          document.getElementById('content-text').textContent =
+            'No content available';
+          return;
+        }
+
+        if (currentIndex < 0) currentIndex = 0;
+        if (currentIndex >= allItems.length) currentIndex = allItems.length - 1;
+
+        currentContent = allItems[currentIndex];
+
+        // Add to view history
+        addToViewHistory(currentContent);
+
+        // Show only first 140 characters of content
+        const contentText =
+          currentContent.description ||
+          currentContent.title ||
+          'No content available';
+        const truncatedText =
+          contentText.length > 140
+            ? contentText.substring(0, 140) + '...'
+            : contentText;
+
+        document.getElementById('content-text').textContent = truncatedText;
+        document.getElementById('source-title').textContent =
+          currentContent.title || currentContent.name || 'Untitled';
+
+        if (currentContent.url) {
+          document.getElementById('source-link').href = currentContent.url;
+          document.getElementById('source-link').textContent = 'View Source';
+          document.getElementById('source-link').style.display = 'block';
+        } else {
+          document.getElementById('source-link').style.display = 'none';
+        }
+
+        // Update information section
+        updateInformationSection();
+
+        logDebug(
+          `Displaying content: ${
+            currentContent.title || currentContent.name || 'Untitled'
+          } (ID: ${currentContent.id})`
+        );
+      }
+
+      // Update information section with full content details
+      function updateInformationSection() {
+        if (!currentContent) return;
+
+        document.getElementById('info-id').textContent =
+          currentContent.id || 'N/A';
+        document.getElementById('info-title').textContent =
+          currentContent.title || currentContent.name || 'Untitled';
+        document.getElementById('info-description').textContent =
+          currentContent.description || 'No description';
+        document.getElementById('info-url').textContent =
+          currentContent.url || 'No URL';
+        document.getElementById('info-score').textContent =
+          currentContent.score !== undefined ? currentContent.score : 'N/A';
+        document.getElementById('info-lang').textContent =
+          currentContent.lang || 'N/A';
+        document.getElementById('info-published').textContent =
+          currentContent.publishedAt || 'N/A';
+        document.getElementById('info-created').textContent =
+          currentContent.createdAt || 'N/A';
+        document.getElementById('info-tags').textContent = Array.isArray(
+          currentContent.tags
+        )
+          ? currentContent.tags.join(', ')
+          : 'No tags';
+        document.getElementById('info-type').textContent =
+          currentContent.type || 'N/A';
+        document.getElementById('info-category').textContent =
+          currentContent.category || 'N/A';
+      }
+
+      // Navigation functions
+      function previousContent() {
+        if (currentIndex > 0) {
+          currentIndex--;
+          showCurrentContent();
+          logDebug('Moved to previous content');
+        } else {
+          logDebug('Already at the first content item');
+        }
+      }
+
+      async function downvoteAndNext() {
+        if (currentContent) {
+          try {
+            logDebug(`Downvoting content ID: ${currentContent.id}`);
+            const response = await fetch('http://localhost:3000/api/ratings', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                itemId: currentContent.id,
+                value: -1,
+              }),
+            });
+
+            const data = await response.json();
+            if (data.error) {
+              logDebug('Error rating item: ' + data.error);
+              return;
+            }
+
+            // Update score in the current content
+            currentContent.score = data.item.score;
+
+            // Add to rating history
+            addToRatingHistory(currentContent.id, -1);
+
+            // Update user statistics
+            updateUserStats(-1);
+
+            // Get a non-similar item
+            const nextItem =
+              data.nextItem || findNonSimilarItem(currentContent);
+            if (nextItem) {
+              // Insert next item after current index and move to it
+              allItems.splice(currentIndex + 1, 0, nextItem);
+              currentIndex++;
+              showCurrentContent();
+              logDebug('Downvoted and moved to non-similar content');
+            } else {
+              // Fallback: just move to next item if available
+              if (currentIndex < allItems.length - 1) {
+                currentIndex++;
+              } else {
+                // If at end, try to load more items
+                await loadContent();
+              }
+              showCurrentContent();
+            }
+          } catch (error) {
+            logDebug('Error during downvote: ' + error.message);
+          }
+        }
+      }
+
+      async function upvoteAndNext() {
+        if (currentContent) {
+          try {
+            logDebug(`Upvoting content ID: ${currentContent.id}`);
+            const response = await fetch('http://localhost:3000/api/ratings', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                itemId: currentContent.id,
+                value: 1,
+              }),
+            });
+
+            const data = await response.json();
+            if (data.error) {
+              logDebug('Error rating item: ' + data.error);
+              return;
+            }
+
+            // Update score in the current content
+            currentContent.score = data.item.score;
+
+            // Add to rating history
+            addToRatingHistory(currentContent.id, 1);
+
+            // Update user statistics
+            updateUserStats(1);
+
+            // Get a similar item
+            const nextItem = data.nextItem || findSimilarItem(currentContent);
+            if (nextItem) {
+              // Insert next item after current index and move to it
+              allItems.splice(currentIndex + 1, 0, nextItem);
+              currentIndex++;
+              showCurrentContent();
+              logDebug('Upvoted and moved to similar content');
+            } else {
+              // Fallback: just move to next item if available
+              if (currentIndex < allItems.length - 1) {
+                currentIndex++;
+              } else {
+                // If at end, try to load more items
+                await loadContent();
+              }
+              showCurrentContent();
+            }
+          } catch (error) {
+            logDebug('Error during upvote: ' + error.message);
+          }
+        }
+      }
+
+      function skipContent() {
+        logDebug('Skipped content without rating');
+        if (currentIndex < allItems.length - 1) {
+          currentIndex++;
+        } else {
+          // If at end, try to load more items
+          loadContent();
+        }
+        showCurrentContent();
+      }
+
+      // Helper functions for finding similar/non-similar items
+      function findSimilarItem(item) {
+        if (!Array.isArray(item.tags) || item.tags.length === 0) {
+          return null;
+        }
+
+        const similar = allItems.find(
+          it =>
+            it.id !== item.id &&
+            Array.isArray(it.tags) &&
+            it.tags.some(t => item.tags.includes(t))
+        );
+
+        return similar;
+      }
+
+      function findNonSimilarItem(item) {
+        if (!Array.isArray(item.tags)) {
+          return null;
+        }
+
+        const notSimilar = allItems.find(
+          it =>
+            it.id !== item.id &&
+            Array.isArray(it.tags) &&
+            !it.tags.some(t => item.tags.includes(t))
+        );
+
+        return notSimilar;
+      }
+
+      // Language change functionality
+      function changeLanguage() {
+        currentLanguage = document.getElementById('language-selector').value;
+        logDebug(`Language changed to: ${currentLanguage}`);
+        updateInterfaceLanguage();
+        loadContent(); // Reload content in the new language
+      }
+
+      // Filter functionality
+      function applyFilters() {
+        const selectedTypes = Array.from(
+          document.querySelectorAll('input[name="type-filter"]:checked')
+        ).map(cb => cb.value);
+        const selectedCategories = Array.from(
+          document.querySelectorAll('input[name="category-filter"]:checked')
+        ).map(cb => cb.value);
+        const selectedCountries = Array.from(
+          document.querySelectorAll('input[name="country-filter"]:checked')
+        ).map(cb => cb.value);
+
+        logDebug(
+          `Applying filters: Types = [${selectedTypes.join(
+            ', '
+          )}], Categories = [${selectedCategories.join(
+            ', '
+          )}], Countries = [${selectedCountries.join(', ')}]`
+        );
+
+        // Reload content with filters
+        let url = 'http://localhost:3000/api/items?limit=50';
+        if (currentLanguage) {
+          url += `&lang=${currentLanguage}`;
+        }
+
+        fetch(url)
+          .then(response => response.json())
+          .then(data => {
+            if (data.items && data.items.length > 0) {
+              // Apply client-side filtering
+              let filteredItems = data.items;
+
+              if (selectedTypes.length > 0) {
+                filteredItems = filteredItems.filter(
+                  item =>
+                    item.type && selectedTypes.includes(item.type.toLowerCase())
+                );
+              }
+
+              if (selectedCategories.length > 0) {
+                filteredItems = filteredItems.filter(
+                  item =>
+                    item.category &&
+                    selectedCategories.includes(item.category.toLowerCase())
+                );
+              }
+
+              if (selectedCountries.length > 0) {
+                filteredItems = filteredItems.filter(item => {
+                  // For country filter, check if item has country property or if 'global' is selected
+                  const hasCountry = item.country;
+                  const isGlobal = selectedCountries.includes('global');
+
+                  if (isGlobal && selectedCountries.length === 1) {
+                    // If only 'global' is selected, show all items (no country property filter)
+                    return true;
+                  } else if (isGlobal && selectedCountries.length > 1) {
+                    // If 'global' and other countries are selected, include items with no country or matching countries
+                    return (
+                      !hasCountry ||
+                      selectedCountries.includes(item.country.toLowerCase())
+                    );
+                  } else {
+                    // If only specific countries are selected, show only those items
+                    return (
+                      hasCountry &&
+                      selectedCountries.includes(item.country.toLowerCase())
+                    );
+                  }
+                });
+              }
+
+              allItems = filteredItems;
+              currentIndex = 0;
+              showCurrentContent();
+              logDebug(`Filters applied: ${filteredItems.length} items match`);
+            } else {
+              document.getElementById('content-text').textContent =
+                'No items match the filters';
+            }
+          })
+          .catch(error => {
+            logDebug('Error applying filters: ' + error.message);
+          });
+      }
+
+      // Clear filters
+      function clearFilters() {
+        const typeCheckboxes = document.querySelectorAll(
+          'input[name="type-filter"]'
+        );
+        const categoryCheckboxes = document.querySelectorAll(
+          'input[name="category-filter"]'
+        );
+        const countryCheckboxes = document.querySelectorAll(
+          'input[name="country-filter"]'
+        );
+
+        typeCheckboxes.forEach(cb => (cb.checked = false));
+        categoryCheckboxes.forEach(cb => (cb.checked = false));
+        countryCheckboxes.forEach(cb => (cb.checked = false));
+
+        loadContent(); // Reload all content
+        logDebug('Filters cleared');
+      }
+
+      // Quick rate function
+      async function quickRate(value) {
+        if (!currentContent) return;
+
+        try {
+          logDebug(
+            `${value === 1 ? 'Upvoting' : 'Downvoting'} content ID: ${
+              currentContent.id
+            }`
+          );
+          const response = await fetch('http://localhost:3000/api/ratings', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              itemId: currentContent.id,
+              value: value,
+            }),
+          });
+
+          const data = await response.json();
+          if (data.error) {
+            logDebug('Error rating item: ' + data.error);
+            return;
+          }
+
+          // Update score in the current content
+          currentContent.score = data.item.score;
+
+          // Add to rating history
+          addToRatingHistory(currentContent.id, value);
+
+          // Update user statistics
+          updateUserStats(value);
+
+          // Update information section to show new score
+          updateInformationSection();
+
+          logDebug(
+            `${value === 1 ? 'Upvoted' : 'Downvoted'} content. New score: ${
+              currentContent.score
+            }`
+          );
+        } catch (error) {
+          logDebug('Error during quick rating: ' + error.message);
+        }
+      }
+
+      // Add to rating history
+      function addToRatingHistory(itemId, value) {
+        const timestamp = new Date().toISOString();
+        ratingHistory.push({
+          itemId: itemId,
+          value: value,
+          timestamp: timestamp,
+        });
+
+        // Update rating history display
+        updateRatingHistoryDisplay();
+      }
+
+      // Add to view history
+      function addToViewHistory(content) {
+        const timestamp = new Date().toISOString();
+        viewHistory.push({
+          itemId: content.id,
+          title: content.title || content.name || 'Untitled',
+          timestamp: timestamp,
+        });
+
+        // Update view history display
+        updateViewHistoryDisplay();
+      }
+
+      // Update rating history display
+      function updateRatingHistoryDisplay() {
+        const container = document.getElementById('rating-history-list');
+        if (!container) return;
+
+        container.innerHTML = '';
+
+        // Show last 10 ratings
+        const recentRatings = ratingHistory.slice(-10);
+
+        if (recentRatings.length === 0) {
+          container.textContent = 'No ratings yet';
+          return;
+        }
+
+        recentRatings.forEach(rating => {
+          const div = document.createElement('div');
+          div.textContent = `${
+            rating.timestamp
+          } - Item: ${rating.itemId.substring(0, 8)}... - Rating: ${
+            rating.value
+          }`;
+          container.appendChild(div);
+        });
+      }
+
+      // Update view history display
+      function updateViewHistoryDisplay() {
+        const container = document.getElementById('view-history-list');
+        if (!container) return;
+
+        container.innerHTML = '';
+
+        // Show last 10 viewed items
+        const recentViews = viewHistory.slice(-10);
+
+        if (recentViews.length === 0) {
+          container.textContent = 'No viewed items yet';
+          return;
+        }
+
+        recentViews.forEach(view => {
+          const div = document.createElement('div');
+          div.textContent = `${view.timestamp} - ${view.title.substring(
+            0,
+            40
+          )}...`;
+          container.appendChild(div);
+        });
+      }
+
+      // Update user statistics
+      function updateUserStats(ratingValue) {
+        userStats.totalRatings++;
+
+        if (ratingValue === 1) {
+          userStats.positiveRatings++;
+        } else {
+          userStats.negativeRatings++;
+        }
+
+        // Track rated categories
+        if (currentContent && currentContent.category) {
+          const category = currentContent.category.toLowerCase();
+          if (!userStats.ratedCategories[category]) {
+            userStats.ratedCategories[category] = 0;
+          }
+          userStats.ratedCategories[category]++;
+        }
+
+        updateStatistics();
+      }
+
+      // Update statistics display
+      function updateStatistics() {
+        // Personal stats
+        document.getElementById('personal-total-ratings').textContent =
+          userStats.totalRatings;
+        document.getElementById('personal-positive-ratings').textContent =
+          userStats.positiveRatings;
+        document.getElementById('personal-negative-ratings').textContent =
+          userStats.negativeRatings;
+
+        // Find favorite category
+        let favoriteCategory = 'None';
+        let maxCount = 0;
+        for (const [category, count] of Object.entries(
+          userStats.ratedCategories
+        )) {
+          if (count > maxCount) {
+            maxCount = count;
+            favoriteCategory = category;
+          }
+        }
+        document.getElementById('personal-fav-categories').textContent =
+          favoriteCategory;
+
+        // Calculate public stats
+        document.getElementById('public-total-items').textContent =
+          allItems.length;
+
+        // Calculate total ratings from rating history
+        document.getElementById('public-total-ratings').textContent =
+          ratingHistory.length;
+
+        // Calculate average score
+        if (allItems.length > 0) {
+          const totalScore = allItems.reduce(
+            (sum, item) => sum + (item.score || 0),
+            0
+          );
+          const avgScore = totalScore / allItems.length;
+          document.getElementById('public-average-score').textContent =
+            avgScore.toFixed(2);
+        }
+      }
+
+      // Settings functionality
+      function toggleAutoLoad() {
+        const autoLoad = document.getElementById('auto-load').checked;
+        logDebug(`Auto-load setting changed to: ${autoLoad}`);
+      }
+
+      function updateSettings() {
+        const itemsPerLoad = document.getElementById('items-per-load').value;
+        logDebug(`Items per load setting changed to: ${itemsPerLoad}`);
+      }
+
+      // Show top rated items
+      async function showTopRated(category = '') {
+        try {
+          let url = `http://localhost:3000/api/leaderboard?limit=10`;
+          if (currentLanguage) {
+            url += `&lang=${currentLanguage}`;
+          }
+
+          const response = await fetch(url);
+          const data = await response.json();
+
+          if (data.items && data.items.length > 0) {
+            // If category filter is applied, filter the results
+            let filteredItems = data.items;
+            if (category) {
+              filteredItems = data.items.filter(
+                item =>
+                  item.category &&
+                  item.category.toLowerCase() === category.toLowerCase()
+              );
+            }
+
+            // Take top 10 after filtering
+            const topItems = filteredItems.slice(0, 10);
+
+            const container = document.getElementById('top-ratings-display');
+            container.innerHTML = '<h5>Top Rated Items:</h5>';
+
+            topItems.forEach((item, index) => {
+              const div = document.createElement('div');
+              div.textContent = `${index + 1}. ${
+                item.title || item.name || 'Untitled'
+              } (Score: ${item.score || 0})`;
+              container.appendChild(div);
+            });
+          } else {
+            document.getElementById('top-ratings-display').innerHTML =
+              '<p>No top-rated items found.</p>';
+          }
+        } catch (error) {
+          logDebug('Error loading top ratings: ' + error.message);
+          document.getElementById('top-ratings-display').innerHTML =
+            '<p>Error loading top ratings.</p>';
+        }
+      }
+
+      // Reset functions for developer
+      function resetCache() {
+        logDebug('Cache reset requested');
+        if (caches) {
+          caches.keys().then(function (names) {
+            for (let name of names) {
+              caches.delete(name);
+            }
+          });
+        }
+        alert('Cache reset completed');
+      }
+
+      function resetAllData() {
+        logDebug('All data reset requested');
+        // Reset all data arrays
+        allItems = [];
+        ratingHistory = [];
+        viewHistory = [];
+        userStats.totalRatings = 0;
+        userStats.positiveRatings = 0;
+        userStats.negativeRatings = 0;
+        userStats.ratedCategories = {};
+
+        // Update displays
+        updateRatingHistoryDisplay();
+        updateViewHistoryDisplay();
+        updateStatistics();
+
+        // Reload content
+        loadContent();
+
+        alert('All data reset completed');
+      }
+
+      function clearLocalStorage() {
+        logDebug('Local storage clear requested');
+        localStorage.clear();
+        sessionStorage.clear();
+        alert('Local storage cleared');
+      }
+
+      function reloadPage() {
+        logDebug('Page reload requested');
+        location.reload();
+      }
+
+      // Debug logging function
+      function logDebug(message) {
+        const timestamp = new Date().toISOString();
+        const logMessage = `[${timestamp}] ${message}`;
+        debugMessages.push(logMessage);
+
+        // Update debug area
+        const debugElement = document.getElementById('debug-log');
+        if (debugElement) {
+          debugElement.textContent = debugMessages.slice(-20).join('\n'); // Show last 20 messages
+        }
+
+        // Log to console as well
+        console.log(logMessage);
+      }
+
+      // Escape HTML function for security
+      function escapeHtml(unsafe) {
+        return unsafe
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+    </script>
+  </body>
+</html>

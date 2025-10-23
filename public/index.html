@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Topper.top - Enhanced Content Browser (With CSS for Development)
+    </title>
+  </head>
+  <body>
+    <h1>TOPPER.top</h1>
+    <!-- Language selector -->
+    <div class="language-selector-container">
+      <label
+        >Language:
+        <select id="language-selector" onchange="changeLanguage()">
+          <option value="en">English</option>
+          <option value="ru">Russian</option>
+          <option value="uk">Ukrainian</option>
+          <option value="ro">Romanian</option>
+        </select></label
+      >
+    </div>
+    <hr />
+    <!-- Main Content Display -->
+    <div id="main-content-container">
+      <div id="content-display">
+        <div id="content-area">
+          <p id="content-text">Please wait while content loads...</p>
+          <a id="source-title" href="#" target="_blank" style="display: block"
+            >Loading content...</a
+          >
+        </div>
+        <hr />
+
+        <!-- 4 Navigation Buttons -->
+        <div id="navigation-buttons">
+          <button id="prev-button" onclick="previousContent()">← Prev</button>
+          <button id="downvote-button" onclick="downvoteAndNext()">
+            ↓ -1 (Not Similar)
+          </button>
+          <button id="upvote-button" onclick="upvoteAndNext()">
+            ↑ +1 (Similar)
+          </button>
+          <button id="skip-button" onclick="skipContent()">→ Skip</button>
+        </div>
+      </div>
+      <hr />
+
+      <!-- Accordions Section -->
+      <div>
+        <!-- Information Accordion -->
+        <details id="information-accordion" open>
+          <summary>Information</summary>
+          <div id="information-content">
+            <ul>
+              <li><strong>Full Content Information:</strong></li>
+              <li><strong>Id:</strong> <span id="info-id"></span></li>
+              <li><strong>Title:</strong> <span id="info-title"></span></li>
+              <li>
+                <strong>Description:</strong>
+                <span id="info-description"></span>
+              </li>
+              <li><strong>URL:</strong> <span id="info-url"></span></li>
+              <li><strong>Score:</strong> <span id="info-score"></span></li>
+              <li><strong>Language:</strong> <span id="info-lang"></span></li>
+              <li>
+                <strong>Published:</strong> <span id="info-published"></span>
+              </li>
+              <li><strong>Created:</strong> <span id="info-created"></span></li>
+              <li><strong>Tags:</strong> <span id="info-tags"></span></li>
+              <li><strong>Type:</strong> <span id="info-type"></span></li>
+              <li>
+                <strong>Category:</strong> <span id="info-category"></span>
+              </li>
+            </ul>
+          </div>
+        </details>
+        <hr />
+        <!-- Filters Accordion -->
+        <details id="filters-accordion" open>
+          <summary>Filters</summary>
+          Фильтрация контента по Категориям и другим параметрам
+          <details id="content-types-accordion" open>
+            <summary>Content Types</summary>
+            <ul id="content-types-options">
+              <li>
+                <label
+                  ><input
+                    id="type-news"
+                    type="checkbox"
+                    name="type-filter"
+                    value="news"
+                  />
+                  News</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="type-events"
+                    type="checkbox"
+                    name="type-filter"
+                    value="events"
+                  />
+                  Events</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="type-articles"
+                    type="checkbox"
+                    name="type-filter"
+                    value="articles"
+                  />
+                  Articles</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="type-facts"
+                    type="checkbox"
+                    name="type-filter"
+                    value="facts"
+                  />
+                  Facts</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="type-ads"
+                    type="checkbox"
+                    name="type-filter"
+                    value="ads"
+                  />
+                  Ads</label
+                >
+              </li>
+            </ul>
+          </details>
+          <details id="categories-accordion" open>
+            <summary>Categories</summary>
+            <ul id="categories-options">
+              <li>
+                <label
+                  ><input
+                    id="cat-nature"
+                    type="checkbox"
+                    name="category-filter"
+                    value="nature"
+                  />
+                  Nature</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="cat-people"
+                    type="checkbox"
+                    name="category-filter"
+                    value="people"
+                  />
+                  People</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="cat-health"
+                    type="checkbox"
+                    name="category-filter"
+                    value="health"
+                  />
+                  Health</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="cat-sports"
+                    type="checkbox"
+                    name="category-filter"
+                    value="sports"
+                  />
+                  Sports</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="cat-technology"
+                    type="checkbox"
+                    name="category-filter"
+                    value="technology"
+                  />
+                  Technology</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="cat-education"
+                    type="checkbox"
+                    name="category-filter"
+                    value="education"
+                  />
+                  Education</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="cat-business"
+                    type="checkbox"
+                    name="category-filter"
+                    value="business"
+                  />
+                  Business</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="cat-entertainment"
+                    type="checkbox"
+                    name="category-filter"
+                    value="entertainment"
+                  />
+                  Entertainment</label
+                >
+              </li>
+            </ul>
+          </details>
+          <details id="countries-accordion" open>
+            <summary>Countries/Global</summary>
+            <ul id="countries-options">
+              <li>
+                <label
+                  ><input
+                    id="country-global"
+                    type="checkbox"
+                    name="country-filter"
+                    value="global"
+                  />
+                  Global</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="country-ro"
+                    type="checkbox"
+                    name="country-filter"
+                    value="ro"
+                  />
+                  Romania</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="country-ru"
+                    type="checkbox"
+                    name="country-filter"
+                    value="ru"
+                  />
+                  Russia</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="country-ua"
+                    type="checkbox"
+                    name="country-filter"
+                    value="ua"
+                  />
+                  Ukraine</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="country-us"
+                    type="checkbox"
+                    name="country-filter"
+                    value="us"
+                  />
+                  USA</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="country-uk"
+                    type="checkbox"
+                    name="country-filter"
+                    value="uk"
+                  />
+                  UK</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="country-de"
+                    type="checkbox"
+                    name="country-filter"
+                    value="de"
+                  />
+                  Germany</label
+                >
+              </li>
+            </ul>
+          </details>
+        </details>
+        <hr />
+
+        <!-- History Accordion -->
+        <details id="history-accordion" open>
+          <summary>History</summary>
+          <div id="history-content">
+            <h4 id="rating-history-title">Rating History</h4>
+            <div id="rating-history-list"></div>
+            <h4 id="view-history-title">View History</h4>
+            <div id="view-history-list"></div>
+          </div>
+        </details>
+        <hr />
+        <!-- Ratings Accordion -->
+        <details id="ratings-accordion" open>
+          <summary>Ratings</summary>
+          <div id="ratings-content">
+            <h4 id="top-ratings-title">Top Ratings</h4>
+            <div id="top-ratings-list">
+              <button id="top-all-time" onclick="showTopRated('')">
+                All Time Top 10
+              </button>
+              <button id="top-news" onclick="showTopRated('news')">
+                Top 10 News
+              </button>
+              <button id="top-technology" onclick="showTopRated('technology')">
+                Top 10 Technology
+              </button>
+              <button id="top-health" onclick="showTopRated('health')">
+                Top 10 Health
+              </button>
+            </div>
+            <div id="top-ratings-display"></div>
+          </div>
+        </details>
+        <hr />
+        <!-- Statistics Accordion -->
+        <details id="statistics-accordion" open>
+          <summary>Statistics</summary>
+          <div id="statistics-content">
+            <!-- Private Statistics Sub-Accordion -->
+            <details>
+              <summary>Private</summary>
+              <div id="private-stats">
+                <ul>
+                  <li id="total-ratings-p">
+                    Total Ratings: <span id="personal-total-ratings">0</span>
+                  </li>
+                  <li id="positive-ratings-p">
+                    Positive Ratings:
+                    <span id="personal-positive-ratings">0</span>
+                  </li>
+                  <li id="negative-ratings-p">
+                    Negative Ratings:
+                    <span id="personal-negative-ratings">0</span>
+                  </li>
+                  <li id="fav-categories-p">
+                    Favorite Categories:
+                    <span id="personal-fav-categories">None</span>
+                  </li>
+                  <li id="fav-type-p">
+                    Most Rated Content Type:
+                    <span id="personal-fav-type">-</span>
+                  </li>
+                  <li id="engagement-rate-p">
+                    Engagement Rate:
+                    <span id="personal-engagement-rate">0%</span>
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <!-- Public Statistics Sub-Accordion -->
+            <details>
+              <summary>Public</summary>
+              <div id="public-stats">
+                <ul>
+                  <li id="total-items-p">
+                    Total Items: <span id="public-total-items">0</span>
+                  </li>
+                  <li id="public-ratings-p">
+                    Total Ratings: <span id="public-total-ratings">0</span>
+                  </li>
+                  <li id="most-rated-category-p">
+                    Most Rated Category:
+                    <span id="public-most-rated-category">-</span>
+                  </li>
+                  <li id="most-rated-type-p">
+                    Most Rated Content Type:
+                    <span id="public-most-rated-type">-</span>
+                  </li>
+                  <li id="average-score-p">
+                    Average Score: <span id="public-average-score">0</span>
+                  </li>
+                  <li id="diversity-index-p">
+                    Content Diversity Index:
+                    <span id="public-diversity-index">0</span>
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </details>
+        <hr />
+        <!-- Settings Accordion -->
+        <details id="settings-accordion" open>
+          <summary>Settings</summary>
+          <div id="settings-content">
+            <div id="auto-load-section">
+              <label
+                ><input
+                  type="checkbox"
+                  id="auto-load"
+                  onchange="toggleAutoLoad()"
+                />
+                Auto-load next content</label
+              >
+            </div>
+            <div id="items-per-load-section">
+              <label
+                >Items per load:
+                <input
+                  type="number"
+                  id="items-per-load"
+                  value="10"
+                  min="1"
+                  max="50"
+                  onchange="updateSettings()"
+              /></label>
+            </div>
+            <div id="auto-switch-interval-section">
+              <label
+                >Auto-switch interval (seconds):
+                <input
+                  type="number"
+                  id="auto-switch-interval"
+                  value="60"
+                  min="5"
+                  max="300"
+                  onchange="updateSettings()"
+              /></label>
+              <p class="help-text">
+                Time before content automatically switches (default: 60 seconds)
+              </p>
+            </div>
+            <div id="auto-switch-section">
+              <button onclick="toggleAutoSwitch()">Enable Auto-Switch</button>
+            </div>
+          </div>
+        </details>
+
+        <!-- About Accordion -->
+        <details id="about-accordion" open>
+          <summary>About</summary>
+          <div id="about-content">
+            <p id="about-platform-name">
+              Topper.top - Universal Rating Platform
+            </p>
+            <p id="about-version">Version: 0.0.1</p>
+            <p id="about-description">
+              A content rating system that allows users to evaluate and rank
+              content items.
+            </p>
+          </div>
+        </details>
+
+        <!-- Help Accordion (Hidden) -->
+        <details id="help-accordion" open style="display: none">
+          <summary>Help</summary>
+          <div id="help-content">
+            <h4 id="help-title">How to use this application:</h4>
+            <ul id="help-list">
+              <li id="help-prev">
+                <strong>← Prev</strong>: Go to the previous content item
+              </li>
+              <li id="help-downvote">
+                <strong>↓ -1 (Not Similar)</strong>: Dislike the content and get
+                a non-similar item
+              </li>
+              <li id="help-upvote">
+                <strong>↑ +1 (Similar)</strong>: Like the content and get a
+                similar item
+              </li>
+              <li id="help-skip">
+                <strong>→ Skip</strong>: Skip the current item without rating
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- FAQ Accordion (Hidden) -->
+        <details id="faq-accordion" open style="display: none">
+          <summary>FAQ</summary>
+          <div id="faq-content">
+            <h4 id="faq-title">Common questions:</h4>
+            <p id="faq-platform">
+              <strong>Q: What is this platform?</strong><br />
+              A: This is a content rating platform where users can browse, rate,
+              and discover content.
+            </p>
+
+            <p id="faq-similar">
+              <strong>Q: How are "similar" items determined?</strong><br />
+              A: Similar items are determined based on shared tags and
+              categories.
+            </p>
+          </div>
+        </details>
+
+        <!-- Contact Us Accordion -->
+        <details id="contact-accordion" open>
+          <summary>Contact Us</summary>
+          <div id="contact-content">
+            <p id="contact-text">
+              For support or feedback, please contact us at:
+              topper.top@example.com
+            </p>
+          </div>
+        </details>
+
+        <!-- Reset Accordion (Developer Only) -->
+        <details id="developer-reset" open>
+          <summary>Reset (Developer)</summary>
+          <div id="developer-reset-content">
+            <button id="reset-cache-button" onclick="resetCache()">
+              Reset Cache
+            </button>
+            <button id="reset-all-data-button" onclick="resetAllData()">
+              Reset All Data
+            </button>
+            <button
+              id="clear-local-storage-button"
+              onclick="clearLocalStorage()"
+            >
+              Clear Local Storage
+            </button>
+            <button id="reload-page-button" onclick="reloadPage()">
+              Reload Page
+            </button>
+          </div>
+        </details>
+      </div>
+
+      <!-- DEBUG section at the bottom, only visible to developer -->
+      <details id="developer-debug" open>
+        <summary>DEBUG (Developer Only)</summary>
+        <ul id="debug-log">
+          <li>Application started. Debug log will appear here...</li>
+        </ul>
+      </details>
+    </div>
+
+    <script type="module" src="js/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+- обновляй README.md, KANBAN.md, docs, versions.txt актуальной информацией

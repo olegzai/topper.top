@@ -1,0 +1,144 @@
+[DEV-ACTION] 2025-10-22T12:23:06.091Z Requesting /api/version
+[ERROR] 2025-10-22T12:23:06.152Z Command failed: curl -s -o /dev/null -w "HTTP Status: %{http_code}\nTime: %{time_total}s\n" http://localhost:3000/api/version
+
+[RESPONSE] 2025-10-22T12:23:06.152Z /api/version: HTTP Status: 000
+Time: 0.000587s
+[DEV-ACTION] 2025-10-22T12:23:10.485Z Requesting /index.html
+[ERROR] 2025-10-22T12:23:10.540Z Command failed: curl -s -o /dev/null -w "HTTP Status: %{http_code}\nTime: %{time_total}s\n" http://localhost:3000/index.html
+
+[RESPONSE] 2025-10-22T12:23:10.540Z /index.html: HTTP Status: 000
+Time: 0.000502s
+[SERVER-OUT] 2025-10-22T12:23:12.087Z 2025-10-22T12:23:12.081Z Server listening on http://localhost:3000
+[DEV-ACTION] 2025-10-22T12:23:12.569Z Requesting /api/version
+[RESPONSE] 2025-10-22T12:23:12.690Z /api/version: HTTP Status: 200
+Time: 0.023371s
+[DEV-ACTION] 2025-10-22T12:23:15.970Z Requesting /api/random
+[RESPONSE] 2025-10-22T12:23:16.081Z /api/random: HTTP Status: 200
+Time: 0.005781s
+[DEV-ACTION] 2025-10-22T12:23:20.863Z Requesting /api/health
+[RESPONSE] 2025-10-22T12:23:20.940Z /api/health: HTTP Status: 200
+Time: 0.001612s
+[DEV-ACTION] 2025-10-22T12:23:24.419Z Requesting /api/items
+[RESPONSE] 2025-10-22T12:23:24.554Z /api/items: HTTP Status: 200
+Time: 0.038826s
+[DEV-ACTION] 2025-10-22T12:23:27.447Z Requesting /api/health
+[RESPONSE] 2025-10-22T12:23:27.587Z /api/health: HTTP Status: 200
+Time: 0.012322s
+[DEV-ACTION] 2025-10-22T12:23:30.104Z Requesting /api/items
+[RESPONSE] 2025-10-22T12:23:30.184Z /api/items: HTTP Status: 200
+Time: 0.004392s
+[DEV-ACTION] 2025-10-22T12:23:32.946Z Requesting /index.html
+[RESPONSE] 2025-10-22T12:23:33.025Z /index.html: HTTP Status: 200
+Time: 0.011218s
+[DEV-ACTION] 2025-10-22T12:23:36.095Z Requesting /api/random
+[RESPONSE] 2025-10-22T12:23:36.176Z /api/random: HTTP Status: 200
+Time: 0.003466s
+[DEV-ACTION] 2025-10-22T12:23:38.312Z Requesting /index.html
+[RESPONSE] 2025-10-22T12:23:38.403Z /index.html: HTTP Status: 200
+Time: 0.004481s
+[DEV-ACTION] 2025-10-22T12:23:43.195Z Requesting /docs.html
+[RESPONSE] 2025-10-22T12:23:43.309Z /docs.html: HTTP Status: 200
+Time: 0.025135s
+[DEV-ACTION] 2025-10-22T12:23:47.685Z Requesting /index.html
+[RESPONSE] 2025-10-22T12:23:47.792Z /index.html: HTTP Status: 200
+Time: 0.005028s
+[DEV-ACTION] 2025-10-22T12:23:51.177Z Requesting /api/items
+[RESPONSE] 2025-10-22T12:23:51.253Z /api/items: HTTP Status: 200
+Time: 0.002812s
+[DEV-ACTION] 2025-10-22T12:23:54.863Z Requesting /api/health
+[RESPONSE] 2025-10-22T12:23:54.956Z /api/health: HTTP Status: 200
+Time: 0.001626s
+[DEV-ACTION] 2025-10-22T12:23:58.242Z Requesting /api/health
+[RESPONSE] 2025-10-22T12:23:58.321Z /api/health: HTTP Status: 200
+Time: 0.001519s
+[DEV-ACTION] 2025-10-22T12:24:01.813Z Requesting /api/health
+[RESPONSE] 2025-10-22T12:24:01.873Z /api/health: HTTP Status: 200
+Time: 0.001569s
+[DEV-ACTION] 2025-10-22T15:31:03.789Z Requesting /index.html
+[RESPONSE] 2025-10-22T15:31:03.896Z /index.html: HTTP Status: 200
+Time: 0.005827s
+[DEV-ACTION] 2025-10-22T15:31:06.184Z Requesting /api/health
+[RESPONSE] 2025-10-22T15:31:06.262Z /api/health: HTTP Status: 200
+Time: 0.004316s
+[DEV-ACTION] 2025-10-22T15:31:11.092Z Requesting /docs.html
+[RESPONSE] 2025-10-22T15:31:11.150Z /docs.html: HTTP Status: 200
+Time: 0.003001s
+[DEV-ACTION] 2025-10-22T15:31:13.164Z Requesting /api/version
+[RESPONSE] 2025-10-22T15:31:13.232Z /api/version: HTTP Status: 200
+Time: 0.002461s
+[DEV-ACTION] 2025-10-22T15:31:16.817Z Requesting /api/items
+[RESPONSE] 2025-10-22T15:31:16.860Z /api/items: HTTP Status: 200
+Time: 0.003737s
+[DEV-ACTION] 2025-10-22T15:31:20.833Z Requesting /api/health
+[RESPONSE] 2025-10-22T15:31:20.886Z /api/health: HTTP Status: 200
+Time: 0.001978s
+[SERVER-OUT] 2025-10-22T15:31:21.436Z 2025-10-22T15:31:21.408Z server error Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at /Users/olegzai/Desktop/olegzai/topper.top/src/api/server.ts:495:9
+    at new Promise (<anonymous>)
+    at startServer (/Users/olegzai/Desktop/olegzai/topper.top/src/api/server.ts:493:10)
+    at /Users/olegzai/Desktop/olegzai/topper.top/src/api/server.ts:541:25
+    at Object.<anonymous> (/Users/olegzai/Desktop/olegzai/topper.top/src/api/server.ts:555:5)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/olegzai/Desktop/olegzai/topper.top/node_modules/ts-node/src/index.ts:1618:23) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+[SERVER-OUT] 2025-10-22T15:31:21.438Z 2025-10-22T15:31:21.438Z Failed to start server Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at /Users/olegzai/Desktop/olegzai/topper.top/src/api/server.ts:495:9
+    at new Promise (<anonymous>)
+    at startServer (/Users/olegzai/Desktop/olegzai/topper.top/src/api/server.ts:493:10)
+    at /Users/olegzai/Desktop/olegzai/topper.top/src/api/server.ts:541:25
+    at Object.<anonymous> (/Users/olegzai/Desktop/olegzai/topper.top/src/api/server.ts:555:5)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/olegzai/Desktop/olegzai/topper.top/node_modules/ts-node/src/index.ts:1618:23) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+[DEV-ACTION] 2025-10-22T15:31:24.400Z Requesting /index.html
+[RESPONSE] 2025-10-22T15:31:24.452Z /index.html: HTTP Status: 200
+Time: 0.001992s
+[DEV-ACTION] 2025-10-22T15:31:27.707Z Requesting /api/random
+[RESPONSE] 2025-10-22T15:31:27.758Z /api/random: HTTP Status: 200
+Time: 0.002815s
+[DEV-ACTION] 2025-10-22T15:31:31.045Z Requesting /api/info
+[RESPONSE] 2025-10-22T15:31:31.094Z /api/info: HTTP Status: 200
+Time: 0.002607s
+[DEV-ACTION] 2025-10-22T15:31:34.671Z Requesting /api/info
+[RESPONSE] 2025-10-22T15:31:34.715Z /api/info: HTTP Status: 200
+Time: 0.005530s
+[DEV-ACTION] 2025-10-22T15:31:37.051Z Requesting /index.html
+[RESPONSE] 2025-10-22T15:31:37.111Z /index.html: HTTP Status: 200
+Time: 0.002722s
+[DEV-ACTION] 2025-10-22T15:31:40.958Z Requesting /index.html
+[RESPONSE] 2025-10-22T15:31:41.006Z /index.html: HTTP Status: 200
+Time: 0.001831s
+[DEV-ACTION] 2025-10-22T15:31:44.888Z Requesting /api/items
+[RESPONSE] 2025-10-22T15:31:44.947Z /api/items: HTTP Status: 200
+Time: 0.004147s
+[DEV-ACTION] 2025-10-22T15:31:47.808Z Requesting /api/version
+[RESPONSE] 2025-10-22T15:31:47.849Z /api/version: HTTP Status: 200
+Time: 0.001025s
+[DEV-ACTION] 2025-10-22T15:31:51.223Z Requesting /api/items
+[RESPONSE] 2025-10-22T15:31:51.273Z /api/items: HTTP Status: 200
+Time: 0.005321s
+[DEV-ACTION] 2025-10-22T15:31:54.601Z Requesting /api/version
+[RESPONSE] 2025-10-22T15:31:54.651Z /api/version: HTTP Status: 200
+Time: 0.001366s
+[DEV-ACTION] 2025-10-22T15:31:56.977Z Requesting /api/info
+[RESPONSE] 2025-10-22T15:31:57.032Z /api/info: HTTP Status: 200
+Time: 0.005584s
+[DEV-ACTION] 2025-10-22T15:32:01.130Z Requesting /api/version
+[RESPONSE] 2025-10-22T15:32:01.189Z /api/version: HTTP Status: 200
+Time: 0.001601s
