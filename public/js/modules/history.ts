@@ -74,9 +74,15 @@ export function updateUserStats(ratingValue) {
 // Add to view history
 export function addToViewHistory(content) {
   const timestamp = new Date().toISOString();
+  const contentTitle =
+    content.contentText ||
+    content.content_text_en ||
+    content.title ||
+    content.name ||
+    'Untitled';
   state.viewHistory.push({
     itemId: content.id,
-    title: content.title || content.name || 'Untitled',
+    title: contentTitle,
     timestamp: timestamp,
   });
 

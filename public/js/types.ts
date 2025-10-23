@@ -6,13 +6,11 @@ export interface Item {
   score?: number;
   publishedAt?: string;
   tags?: string[];
-  name?: string;
-  title?: string;
-  description?: string;
+  contentText?: string; // Using content_text instead of title/description
+  sourceName?: string; // Using source_name instead of separate source field
   url?: string;
   type?: string;
   category?: string;
-  source?: string;
   createdAt?: string;
   authorId?: string | null;
   categories?: string[];

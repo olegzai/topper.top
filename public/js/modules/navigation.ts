@@ -6,7 +6,9 @@ import { state } from './state.js';
 import { showCurrentContent } from './content.js';
 import apiService from '../services/api.service.js';
 import { addToRatingHistory, updateUserStats } from './history.js';
-import { findSmartContent, logDebug } from '../modules/utils.js';
+import { findSmartContent, logDebug } from './utils.js';
+import { updateInformationSection } from './ui.js';
+import type { Item as ApiItem } from '../types/api.types.js';
 
 // Navigation functions
 export function previousContent() {
@@ -20,102 +22,120 @@ export function previousContent() {
 }
 
 export async function downvoteAndNext() {
-  if (state.currentContent) {
-    try {
-      logDebug(`Downvoting content ID: ${state.currentContent.id}`);
-      const data = await apiService.submitRating(state.currentContent.id, -1);
+  const current = state.currentContent as unknown as ApiItem | null;
+  if (!current) {
+    logDebug('No current content to downvote');
+    return;
+  }
 
-      // Update score in the current content
-      if (state.currentContent) {
-        state.currentContent.score = data.item.score;
-      }
+  try {
+    const itemId = current.content_id ?? current.id;
+    logDebug(`Downvoting content ID: ${itemId}`);
 
-      // Add to rating history
-      addToRatingHistory(state.currentContent.id, -1);
+    const data = await apiService.submitRating(itemId, -1);
 
-      // Update user statistics
-      updateUserStats(-1);
+    // Update score in the current content using API response
+    current.content_score = data.item.score ?? current.score;
 
-      // Get a different item using smart selection based on user preferences
-      const nextItem =
-        data.nextItem ||
-        findSmartContent(
-          state.allItems,
-          state.ratingHistory,
-          state.currentLanguage,
-          false
-        );
-      if (nextItem) {
-        // Insert next item after current index and move to it
-        state.allItems.splice(state.currentIndex + 1, 0, nextItem);
+    // Add to rating history
+    addToRatingHistory(itemId, -1);
+
+    // Update user statistics
+    updateUserStats(-1);
+
+    // Select next item using server-provided nextItem or client-side smart selection
+    const nextItem =
+      data.nextItem ??
+      findSmartContent(
+        state.allItems as unknown as ApiItem[],
+        state.ratingHistory as unknown as {
+          itemId: string;
+          value: 1 | -1;
+          timestamp: string;
+        }[],
+        state.currentLanguage,
+        false
+      );
+
+    if (nextItem) {
+      // Insert next item after current index and move to it
+      state.allItems.splice(state.currentIndex + 1, 0, nextItem);
+      state.currentIndex++;
+      showCurrentContent();
+      logDebug(
+        'Downvoted and moved to different content based on user preferences'
+      );
+    } else {
+      // Fallback: move to next item if available
+      if (state.currentIndex < state.allItems.length - 1) {
         state.currentIndex++;
         showCurrentContent();
-        logDebug(
-          'Downvoted and moved to different content based on user preferences'
-        );
       } else {
-        // Fallback: just move to next item if available
-        if (state.currentIndex < state.allItems.length - 1) {
-          state.currentIndex++;
-        } else {
-          // If at end, try to load more items
-          // This would require calling loadContent which we'll need to import later
-        }
+        // If at end and no next item, still refresh display
         showCurrentContent();
       }
-    } catch (error) {
-      logDebug('Error during downvote: ' + error.message);
     }
+  } catch (error) {
+    logDebug('Error during downvote: ' + (error as Error).message);
   }
 }
 
 export async function upvoteAndNext() {
-  if (state.currentContent) {
-    try {
-      logDebug(`Upvoting content ID: ${state.currentContent.id}`);
-      const data = await apiService.submitRating(state.currentContent.id, 1);
+  const current = state.currentContent as unknown as ApiItem | null;
+  if (!current) {
+    logDebug('No current content to upvote');
+    return;
+  }
 
-      // Update score in the current content
-      if (state.currentContent) {
-        state.currentContent.score = data.item.score;
-      }
+  try {
+    const itemId = current.content_id ?? current.id;
+    logDebug(`Upvoting content ID: ${itemId}`);
 
-      // Add to rating history
-      addToRatingHistory(state.currentContent.id, 1);
+    const data = await apiService.submitRating(itemId, 1);
 
-      // Update user statistics
-      updateUserStats(1);
+    // Update score in the current content using API response
+    current.content_score = data.item.score ?? current.score;
 
-      // Get a similar item using smart selection based on user preferences
-      const nextItem =
-        data.nextItem ||
-        findSmartContent(
-          state.allItems,
-          state.ratingHistory,
-          state.currentLanguage,
-          true
-        );
-      if (nextItem) {
-        // Insert next item after current index and move to it
-        state.allItems.splice(state.currentIndex + 1, 0, nextItem);
+    // Add to rating history
+    addToRatingHistory(itemId, 1);
+
+    // Update user statistics
+    updateUserStats(1);
+
+    // Select next item using server-provided nextItem or client-side smart selection
+    const nextItem =
+      data.nextItem ??
+      findSmartContent(
+        state.allItems as unknown as ApiItem[],
+        state.ratingHistory as unknown as {
+          itemId: string;
+          value: 1 | -1;
+          timestamp: string;
+        }[],
+        state.currentLanguage,
+        true
+      );
+
+    if (nextItem) {
+      // Insert next item after current index and move to it
+      state.allItems.splice(state.currentIndex + 1, 0, nextItem);
+      state.currentIndex++;
+      showCurrentContent();
+      logDebug(
+        'Upvoted and moved to similar content based on user preferences'
+      );
+    } else {
+      // Fallback: move to next item if available
+      if (state.currentIndex < state.allItems.length - 1) {
         state.currentIndex++;
         showCurrentContent();
-        logDebug(
-          'Upvoted and moved to similar content based on user preferences'
-        );
       } else {
-        // Fallback: just move to next item if available
-        if (state.currentIndex < state.allItems.length - 1) {
-          state.currentIndex++;
-        } else {
-          // If at end, try to load more items
-          // This would require calling loadContent which we'll need to import later
-        }
+        // End of list - refresh display
         showCurrentContent();
       }
-    } catch (error) {
-      logDebug('Error during upvote: ' + error.message);
     }
+  } catch (error) {
+    logDebug('Error during upvote: ' + (error as Error).message);
   }
 }
 
@@ -131,37 +151,36 @@ export function skipContent() {
 }
 
 // Quick rate function
-export async function quickRate(value) {
-  if (!state.currentContent) return;
+export async function quickRate(value: 1 | -1) {
+  const current = state.currentContent as unknown as ApiItem | null;
+  if (!current) return;
 
   try {
+    const itemId = current.content_id ?? current.id;
     logDebug(
-      `${value === 1 ? 'Upvoting' : 'Downvoting'} content ID: ${
-        state.currentContent.id
-      }`
+      `${value === 1 ? 'Upvoting' : 'Downvoting'} content ID: ${itemId}`
     );
-    const data = await apiService.submitRating(state.currentContent.id, value);
 
-    // Update score in the current content
-    if (state.currentContent) {
-      state.currentContent.score = data.item.score;
-    }
+    const data = await apiService.submitRating(itemId, value);
+
+    // Update score in the current content using API response
+    current.content_score = data.item.score ?? current.score;
 
     // Add to rating history
-    addToRatingHistory(state.currentContent.id, value);
+    addToRatingHistory(itemId, value);
 
     // Update user statistics
     updateUserStats(value);
 
     // Update information section to show new score
-    // This requires importing updateInformationSection from ui.js
+    updateInformationSection(current);
 
     logDebug(
       `${value === 1 ? 'Upvoted' : 'Downvoted'} content. New score: ${
-        state.currentContent.score
+        current.content_score
       }`
     );
   } catch (error) {
-    logDebug('Error during quick rating: ' + error.message);
+    logDebug('Error during quick rating: ' + (error as Error).message);
   }
 }

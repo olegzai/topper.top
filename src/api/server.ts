@@ -24,21 +24,37 @@ import * as fs from 'fs';
 import { promises as fsp } from 'fs';
 import * as path from 'path';
 import { URL } from 'url';
+import { ratingLimiter, apiLimiter } from '../utils/rate-limiter';
 
 type ServerInstance = Server;
 
 interface Item {
-  id: string;
-  lang?: string;
-  score?: number;
-  publishedAt?: string;
-  tags?: string[];
-  name?: string;
-  title?: string;
-  description?: string;
-  url?: string;
-  type?: string;
-  category?: string;
+  content_id: string;
+  content_canonical_text_en: string;
+  content_text_en: string;
+  content_text_ro: string;
+  content_text_ua: string;
+  content_text_ru: string;
+  content_source_name_en: string;
+  content_source_name_ro: string;
+  content_source_name_ua: string;
+  content_source_name_ru: string;
+  content_source_link: string;
+  content_country?: string;
+  content_created_by?: string | null;
+  content_created: string;
+  content_published: string;
+  content_edited?: string;
+  content_type: string;
+  content_category: string;
+  content_subcategory?: string;
+  content_tags: string[];
+  content_votes: number;
+  content_score: number;
+  categories?: string[];
+  lang: string;
+  // Properties added dynamically by the API
+  [key: string]: unknown;
 }
 
 interface Rating {
@@ -223,10 +239,21 @@ function respondJson(res: ServerResponse, obj: unknown, status = 200) {
 
 /** Basic router/handler */
 async function requestHandler(req: IncomingMessage, res: ServerResponse) {
-  // simple CORS for local dev/testing
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  // CORS headers - in production, specify exact origin instead of '*'
+  const origin = req.headers.origin;
+  if (
+    origin &&
+    (origin.startsWith('http://localhost') ||
+      origin.startsWith('http://127.0.0.1') ||
+      process.env.NODE_ENV === 'production')
+  ) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  } else {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3001'); // Default for development
+  }
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
   if (req.method === 'OPTIONS') {
     res.statusCode = 204;
     res.end();
@@ -280,6 +307,31 @@ async function requestHandler(req: IncomingMessage, res: ServerResponse) {
   }
 
   try {
+    // Apply general API rate limiting (except for health checks)
+    if (pathname.startsWith('/api/') && pathname !== '/api/health') {
+      const clientIP =
+        (req.headers['x-forwarded-for'] as string) ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        'unknown';
+      const rateLimitKey = `api_${clientIP}`;
+
+      const rateLimitResult = apiLimiter.check(rateLimitKey, 100); // 100 requests per minute
+      if (!rateLimitResult.allowed) {
+        respondJson(
+          res,
+          {
+            error: 'rate_limit_exceeded',
+            message: `Too many API requests. Try again in ${Math.ceil(
+              (rateLimitResult.resetTime - Date.now()) / 1000
+            )} seconds.`,
+          },
+          429
+        );
+        return;
+      }
+    }
+
     // Basic status/info endpoints
     if (pathname === '/api/health' && req.method === 'GET') {
       respondJson(res, { status: 'ok' });
@@ -319,8 +371,26 @@ async function requestHandler(req: IncomingMessage, res: ServerResponse) {
     // GET /api/items?limit=20&offset=0&lang=ru&sort=top
     if (pathname === '/api/items' && req.method === 'GET') {
       const qp = parsedUrl.searchParams;
-      const limit = Math.min(Number(qp.get('limit') ?? 20), 100);
-      const offset = Math.max(Number(qp.get('offset') ?? 0), 0);
+      const limitParam = qp.get('limit');
+      const offsetParam = qp.get('offset');
+
+      // Validate and sanitize limit
+      let limit = 20; // default
+      if (limitParam !== null) {
+        const parsedLimit = Number(limitParam);
+        if (!isNaN(parsedLimit) && parsedLimit > 0 && parsedLimit <= 100) {
+          limit = Math.min(parsedLimit, 100);
+        }
+      }
+
+      // Validate and sanitize offset
+      let offset = 0; // default
+      if (offsetParam !== null) {
+        const parsedOffset = Number(offsetParam);
+        if (!isNaN(parsedOffset) && parsedOffset >= 0) {
+          offset = Math.max(parsedOffset, 0);
+        }
+      }
       const langParam = qp.get('lang');
       const langFilter = langParam || undefined;
       const sort = qp.get('sort') || 'new';
@@ -329,29 +399,103 @@ async function requestHandler(req: IncomingMessage, res: ServerResponse) {
       let filtered = items;
       if (langFilter) filtered = filtered.filter(i => i.lang === langFilter);
       if (sort === 'top') {
-        filtered = filtered.sort((a, b) => (b.score ?? 0) - (a.score ?? 0));
+        filtered = filtered.sort((a, b) => b.content_score - a.content_score);
       } else {
-        filtered = filtered.sort(
-          (a, b) =>
-            (b.publishedAt ? Date.parse(b.publishedAt) : 0) -
-            (a.publishedAt ? Date.parse(a.publishedAt) : 0)
-        );
+        filtered = filtered.sort((a, b) => {
+          const aTime = a.content_published
+            ? Date.parse(a.content_published)
+            : 0;
+          const bTime = b.content_published
+            ? Date.parse(b.content_published)
+            : 0;
+          // Validate that dates are valid
+          const aValid = !isNaN(aTime);
+          const bValid = !isNaN(bTime);
+          if (!aValid && !bValid) return 0;
+          if (!aValid) return 1;
+          if (!bValid) return -1;
+          return bTime - aTime;
+        });
       }
-      const slice = filtered.slice(offset, offset + limit);
-      respondJson(res, { total: filtered.length, items: slice });
+      // Process items to select appropriate content based on language
+      const processedSlice = filtered
+        .slice(offset, offset + limit)
+        .map(item => {
+          const processedItem = { ...item };
+          // Set contentText and sourceName based on requested language
+          switch (langParam || processedItem.lang) {
+            case 'en':
+              processedItem['contentText'] = processedItem.content_text_en;
+              processedItem['sourceName'] =
+                processedItem.content_source_name_en;
+              break;
+            case 'ro':
+              processedItem['contentText'] = processedItem.content_text_ro;
+              processedItem['sourceName'] =
+                processedItem.content_source_name_ro;
+              break;
+            case 'ua':
+              processedItem['contentText'] = processedItem.content_text_ua;
+              processedItem['sourceName'] =
+                processedItem.content_source_name_ua;
+              break;
+            case 'ru':
+              processedItem['contentText'] = processedItem.content_text_ru;
+              processedItem['sourceName'] =
+                processedItem.content_source_name_ru;
+              break;
+            default:
+              processedItem['contentText'] = processedItem.content_text_en;
+              processedItem['sourceName'] =
+                processedItem.content_source_name_en;
+          }
+          return processedItem;
+        });
+      respondJson(res, { total: filtered.length, items: processedSlice });
       return;
     }
 
     // GET /api/items/:id
     if (pathname.startsWith('/api/items/') && req.method === 'GET') {
-      const id = pathname.replace('/api/items/', '');
+      const rawId = pathname.replace('/api/items/', '');
+      // Validate the ID to prevent potential injection
+      if (!/^[a-zA-Z0-9\-_]+$/.test(rawId)) {
+        respondJson(res, { error: 'invalid_id_format' }, 400);
+        return;
+      }
+      const id = rawId;
       const items = (await readData<Item[]>('items.json')) ?? [];
-      const it = items.find(x => String(x.id) === id);
+      const it = items.find(x => String(x.content_id) === id);
       if (!it) {
         respondJson(res, { error: 'not_found' }, 404);
         return;
       }
-      respondJson(res, { item: it });
+      // Process the item to include appropriate content based on language from query params if available
+      const langParam = parsedUrl.searchParams.get('lang');
+      const processedItem = { ...it };
+      // Set contentText and sourceName based on requested language
+      switch (langParam || processedItem.lang) {
+        case 'en':
+          processedItem['contentText'] = processedItem.content_text_en;
+          processedItem['sourceName'] = processedItem.content_source_name_en;
+          break;
+        case 'ro':
+          processedItem['contentText'] = processedItem.content_text_ro;
+          processedItem['sourceName'] = processedItem.content_source_name_ro;
+          break;
+        case 'ua':
+          processedItem['contentText'] = processedItem.content_text_ua;
+          processedItem['sourceName'] = processedItem.content_source_name_ua;
+          break;
+        case 'ru':
+          processedItem['contentText'] = processedItem.content_text_ru;
+          processedItem['sourceName'] = processedItem.content_source_name_ru;
+          break;
+        default:
+          processedItem['contentText'] = processedItem.content_text_en;
+          processedItem['sourceName'] = processedItem.content_source_name_en;
+      }
+      respondJson(res, { item: processedItem });
       return;
     }
 
@@ -363,13 +507,60 @@ async function requestHandler(req: IncomingMessage, res: ServerResponse) {
         respondJson(res, { error: 'no_items' }, 404);
         return;
       }
-      respondJson(res, { item: pick });
+      // Process the item to include appropriate content
+      const langParam = parsedUrl.searchParams.get('lang');
+      const processedItem = { ...pick };
+      // Set contentText and sourceName based on requested language
+      switch (langParam || processedItem.lang) {
+        case 'en':
+          processedItem['contentText'] = processedItem.content_text_en;
+          processedItem['sourceName'] = processedItem.content_source_name_en;
+          break;
+        case 'ro':
+          processedItem['contentText'] = processedItem.content_text_ro;
+          processedItem['sourceName'] = processedItem.content_source_name_ro;
+          break;
+        case 'ua':
+          processedItem['contentText'] = processedItem.content_text_ua;
+          processedItem['sourceName'] = processedItem.content_source_name_ua;
+          break;
+        case 'ru':
+          processedItem['contentText'] = processedItem.content_text_ru;
+          processedItem['sourceName'] = processedItem.content_source_name_ru;
+          break;
+        default:
+          processedItem['contentText'] = processedItem.content_text_en;
+          processedItem['sourceName'] = processedItem.content_source_name_en;
+      }
+      respondJson(res, { item: processedItem });
       return;
     }
 
     // POST /api/ratings
     // body: { itemId, value: 1|-1, userId? }
     if (pathname === '/api/ratings' && req.method === 'POST') {
+      // Rate limiting for ratings - max 10 requests per minute per IP
+      const clientIP =
+        (req.headers['x-forwarded-for'] as string) ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        'unknown';
+      const rateLimitKey = `rating_${clientIP}`;
+
+      const rateLimitResult = ratingLimiter.check(rateLimitKey, 10);
+      if (!rateLimitResult.allowed) {
+        respondJson(
+          res,
+          {
+            error: 'rate_limit_exceeded',
+            message: `Too many rating requests. Try again in ${Math.ceil(
+              (rateLimitResult.resetTime - Date.now()) / 1000
+            )} seconds.`,
+          },
+          429
+        );
+        return;
+      }
       let body: unknown;
       try {
         body = await readJsonBody();
@@ -382,42 +573,73 @@ async function requestHandler(req: IncomingMessage, res: ServerResponse) {
         body === null ||
         !('itemId' in body) ||
         !('value' in body) ||
-        (body.value !== 1 && body.value !== -1)
+        (body.value !== 1 && body.value !== -1) ||
+        typeof (body as { itemId: unknown }).itemId !== 'string' ||
+        (body as { itemId: string }).itemId.length === 0
       ) {
         respondJson(res, { error: 'invalid_payload' }, 400);
         return;
       }
 
-      // load data
+      // Validate that the item exists before proceeding
       const [items, ratings] = await Promise.all([
         readData<Item[]>('items.json').then(v => v ?? []),
         readData<Rating[]>('ratings.json').then(v => v ?? []),
       ]);
 
+      // Find the item among the loaded items
       const item = items.find(
-        x => String(x.id) === String((body as { itemId: string }).itemId)
+        x =>
+          String(x.content_id) === String((body as { itemId: string }).itemId)
       );
       if (!item) {
         respondJson(res, { error: 'item_not_found' }, 404);
         return;
       }
 
+      // Generate a more secure ID
+      const generateSecureId = (): string => {
+        const timestamp = Date.now().toString(36);
+        const randomPart = Math.random().toString(36).substring(2, 15);
+        const additionalRandom = Math.random().toString(36).substring(2, 15);
+        return `rating_${timestamp}_${randomPart}_${additionalRandom}`;
+      };
+
+      // Validate userId if provided
+      let validatedUserId: string | null = null;
+      if (
+        'userId' in body &&
+        (body as { userId?: string }).userId !== undefined
+      ) {
+        const userId = (body as { userId: string }).userId;
+        // Validate UUID format if provided
+        if (
+          typeof userId === 'string' &&
+          /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
+            userId
+          )
+        ) {
+          validatedUserId = userId;
+        } else {
+          respondJson(res, { error: 'invalid_user_id_format' }, 400);
+          return;
+        }
+      }
+
       // append rating
       const newRating: Rating = {
-        id: `rating_${Date.now()}_${Math.floor(Math.random() * 1000)}`,
-        userId:
-          'userId' in body && (body as { userId?: string }).userId !== undefined
-            ? (body as { userId: string }).userId
-            : null,
+        id: generateSecureId(),
+        userId: validatedUserId,
         itemId: (body as { itemId: string }).itemId,
         value: body.value as 1 | -1,
         createdAt: new Date().toISOString(),
       };
       ratings.push(newRating);
 
-      // recompute score for item
-      const itemScore = (item.score ?? 0) + body.value;
-      item.score = itemScore;
+      // recompute score for item - using current values to prevent race conditions
+      item.content_score = (item.content_score || 0) + body.value;
+      // increment vote count
+      item.content_votes = (item.content_votes || 0) + 1;
 
       // persist both files (best-effort)
       try {
@@ -431,27 +653,68 @@ async function requestHandler(req: IncomingMessage, res: ServerResponse) {
       }
 
       // Determine next item to show based on simple similarity: share any tag -> similar
-      const tags = Array.isArray(item.tags) ? item.tags : [];
+      const tags = Array.isArray(item.content_tags) ? item.content_tags : [];
       const similar = items.find(
         it =>
-          it.id !== item.id &&
-          Array.isArray(it.tags) &&
-          it.tags.some((t: string) => tags.includes(t))
+          it.content_id !== item.content_id &&
+          Array.isArray(it.content_tags) &&
+          it.content_tags.length > 0 &&
+          it.content_tags.some((t: string) => tags.includes(t))
       );
       const notSimilar = items.find(
         it =>
-          it.id !== item.id &&
-          Array.isArray(it.tags) &&
-          !it.tags.some((t: string) => tags.includes(t))
+          it.content_id !== item.content_id &&
+          Array.isArray(it.content_tags) &&
+          it.content_tags.length > 0 &&
+          !it.content_tags.some((t: string) => tags.includes(t))
       );
-      const nextItem =
+      let nextItem =
         body.value === 1
           ? similar ?? pickRandom(items)
           : notSimilar ?? pickRandom(items);
 
+      // Process nextItem to include appropriate content
+      if (nextItem) {
+        const langParam = parsedUrl.searchParams.get('lang');
+        const processedNextItem = { ...nextItem };
+        // Set contentText and sourceName based on requested language
+        switch (langParam || processedNextItem.lang) {
+          case 'en':
+            processedNextItem['contentText'] =
+              processedNextItem.content_text_en;
+            processedNextItem['sourceName'] =
+              processedNextItem.content_source_name_en;
+            break;
+          case 'ro':
+            processedNextItem['contentText'] =
+              processedNextItem.content_text_ro;
+            processedNextItem['sourceName'] =
+              processedNextItem.content_source_name_ro;
+            break;
+          case 'ua':
+            processedNextItem['contentText'] =
+              processedNextItem.content_text_ua;
+            processedNextItem['sourceName'] =
+              processedNextItem.content_source_name_ua;
+            break;
+          case 'ru':
+            processedNextItem['contentText'] =
+              processedNextItem.content_text_ru;
+            processedNextItem['sourceName'] =
+              processedNextItem.content_source_name_ru;
+            break;
+          default:
+            processedNextItem['contentText'] =
+              processedNextItem.content_text_en;
+            processedNextItem['sourceName'] =
+              processedNextItem.content_source_name_en;
+        }
+        nextItem = processedNextItem;
+      }
+
       respondJson(res, {
         rating: newRating,
-        item: { id: item.id, score: item.score },
+        item: { id: item.content_id, score: item.content_score },
         nextItem,
       });
       return;
@@ -468,9 +731,36 @@ async function requestHandler(req: IncomingMessage, res: ServerResponse) {
       if (langFilterLeaderboard)
         list = list.filter(i => i.lang === langFilterLeaderboard);
       list = list
-        .sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
+        .sort((a, b) => b.content_score - a.content_score)
         .slice(0, limit);
-      respondJson(res, { items: list });
+      // Process items to select appropriate content based on language
+      const processedList = list.map(item => {
+        const processedItem = { ...item };
+        // Set contentText and sourceName based on requested language
+        switch (langParam || processedItem.lang) {
+          case 'en':
+            processedItem['contentText'] = processedItem.content_text_en;
+            processedItem['sourceName'] = processedItem.content_source_name_en;
+            break;
+          case 'ro':
+            processedItem['contentText'] = processedItem.content_text_ro;
+            processedItem['sourceName'] = processedItem.content_source_name_ro;
+            break;
+          case 'ua':
+            processedItem['contentText'] = processedItem.content_text_ua;
+            processedItem['sourceName'] = processedItem.content_source_name_ua;
+            break;
+          case 'ru':
+            processedItem['contentText'] = processedItem.content_text_ru;
+            processedItem['sourceName'] = processedItem.content_source_name_ru;
+            break;
+          default:
+            processedItem['contentText'] = processedItem.content_text_en;
+            processedItem['sourceName'] = processedItem.content_source_name_en;
+        }
+        return processedItem;
+      });
+      respondJson(res, { items: processedList });
       return;
     }
 

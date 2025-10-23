@@ -27,11 +27,15 @@ describe('Utility Functions', () => {
 
   describe('findSimilarItems', () => {
     it('should find items with shared tags', () => {
-      const item: Item = { id: '1', tags: ['tag1', 'tag2'] };
+      const item: Item = {
+        id: '1',
+        content_id: 'content-1',
+        tags: ['tag1', 'tag2'],
+      };
       const allItems: Item[] = [
-        { id: '2', tags: ['tag1', 'tag3'] }, // Similar - shares tag1
-        { id: '3', tags: ['tag4', 'tag5'] }, // Not similar
-        { id: '4', tags: ['tag2', 'tag6'] }, // Similar - shares tag2
+        { id: '2', content_id: 'content-2', tags: ['tag1', 'tag3'] }, // Similar - shares tag1
+        { id: '3', content_id: 'content-3', tags: ['tag4', 'tag5'] }, // Not similar
+        { id: '4', content_id: 'content-4', tags: ['tag2', 'tag6'] }, // Similar - shares tag2
       ];
 
       const result = findSimilarItems(item, allItems);
@@ -41,8 +45,10 @@ describe('Utility Functions', () => {
     });
 
     it('should return empty array if no tags', () => {
-      const item: Item = { id: '1' };
-      const allItems: Item[] = [{ id: '2', tags: ['tag1'] }];
+      const item: Item = { id: '1', content_id: 'content-1' };
+      const allItems: Item[] = [
+        { id: '2', content_id: 'content-2', tags: ['tag1'] },
+      ];
 
       const result = findSimilarItems(item, allItems);
       expect(result).toHaveLength(0);
@@ -51,11 +57,15 @@ describe('Utility Functions', () => {
 
   describe('findNonSimilarItems', () => {
     it('should find items without shared tags', () => {
-      const item: Item = { id: '1', tags: ['tag1', 'tag2'] };
+      const item: Item = {
+        id: '1',
+        content_id: 'content-1',
+        tags: ['tag1', 'tag2'],
+      };
       const allItems: Item[] = [
-        { id: '2', tags: ['tag1', 'tag3'] }, // Similar - shares tag1
-        { id: '3', tags: ['tag4', 'tag5'] }, // Not similar
-        { id: '4', tags: ['tag6', 'tag7'] }, // Not similar
+        { id: '2', content_id: 'content-2', tags: ['tag1', 'tag3'] }, // Similar - shares tag1
+        { id: '3', content_id: 'content-3', tags: ['tag4', 'tag5'] }, // Not similar
+        { id: '4', content_id: 'content-4', tags: ['tag6', 'tag7'] }, // Not similar
       ];
 
       const result = findNonSimilarItems(item, allItems);

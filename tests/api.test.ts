@@ -92,30 +92,54 @@ beforeAll(async () => {
 
   const items = [
     {
-      id: 'item_test_1',
-      title: 'Test item 1',
-      source: 'TestSource',
-      url: 'https://example.test/item_test_1',
-      authorId: 'user_test_1',
-      tags: ['test'],
+      content_id: 'item_test_1',
+      content_canonical_text_en: 'Test item 1',
+      content_text_en: 'Test item 1',
+      content_text_ro: 'Element de test 1',
+      content_text_ua: 'Тестовий елемент 1',
+      content_text_ru: 'Тестовый элемент 1',
+      content_source_name_en: 'TestSource',
+      content_source_name_ro: 'Sursa Test',
+      content_source_name_ua: 'Джерело Тест',
+      content_source_name_ru: 'Источник Тест',
+      content_source_link: 'https://example.test/item_test_1',
+      content_country: 'US',
+      content_created_by: 'user_test_1',
+      content_created: new Date().toISOString(),
+      content_published: new Date().toISOString(),
+      content_type: 'news',
+      content_category: 'news',
+      content_subcategory: 'General',
+      content_tags: ['test'],
+      content_votes: 0,
+      content_score: 0,
       categories: ['cat_test_1'],
       lang: 'en',
-      publishedAt: new Date().toISOString(),
-      createdAt: new Date().toISOString(),
-      score: 0,
     },
     {
-      id: 'item_test_2',
-      title: 'Another test item',
-      source: 'TestSource',
-      url: 'https://example.test/item_test_2',
-      authorId: null,
-      tags: ['other'],
+      content_id: 'item_test_2',
+      content_canonical_text_en: 'Another test item',
+      content_text_en: 'Another test item',
+      content_text_ro: 'Alt element de test',
+      content_text_ua: 'Інший тестовий елемент',
+      content_text_ru: 'Другой тестовый элемент',
+      content_source_name_en: 'TestSource',
+      content_source_name_ro: 'Sursa Test',
+      content_source_name_ua: 'Джерело Тест',
+      content_source_name_ru: 'Источник Тест',
+      content_source_link: 'https://example.test/item_test_2',
+      content_country: 'US',
+      content_created_by: null,
+      content_created: new Date().toISOString(),
+      content_published: new Date().toISOString(),
+      content_type: 'news',
+      content_category: 'news',
+      content_subcategory: 'General',
+      content_tags: ['other'],
+      content_votes: 0,
+      content_score: 0,
       categories: ['cat_test_1'],
       lang: 'en',
-      publishedAt: new Date().toISOString(),
-      createdAt: new Date().toISOString(),
-      score: 0,
     },
   ];
 
@@ -200,10 +224,10 @@ test('GET /api/items returns list with test item', async () => {
   expect(typeof body.total).toBe('number');
   expect(Array.isArray(body.items)).toBeTruthy();
   const found = body.items.find(
-    (it: { id: string }) => it.id === 'item_test_1'
+    (it: { content_id: string }) => it.content_id === 'item_test_1'
   );
   expect(found).toBeDefined();
-  expect(found.title).toBe('Test item 1');
+  expect(found.content_canonical_text_en).toBe('Test item 1');
 });
 
 test('GET /api/random returns an item', async () => {
@@ -211,15 +235,15 @@ test('GET /api/random returns an item', async () => {
   expect(res.status).toBe(200);
   const body = await readJsonWithLog(res);
   expect(body).toHaveProperty('item');
-  expect(body.item).toHaveProperty('id');
+  expect(body.item).toHaveProperty('content_id');
 });
 
 test('POST /api/ratings creates rating and updates item score and returns nextItem', async () => {
   // Vote +1 on item_test_1
   const payload = {
-    itemId: 'item_test_1',
+    itemId: 'item_test_1', // This matches content_id in our test data
     value: 1,
-    userId: 'user_test_1',
+    userId: '123e4567-e89b-12d3-a456-426614174000', // Valid UUID format
     currentItemId: 'item_test_1',
   };
   const res = await fetchWithTimeout(
@@ -242,7 +266,7 @@ test('POST /api/ratings creates rating and updates item score and returns nextIt
   expect(body.item.score).toBe(1);
   // nextItem should exist
   expect(body).toHaveProperty('nextItem');
-  expect(body.nextItem).toHaveProperty('id');
+  expect(body.nextItem).toHaveProperty('content_id');
 });
 
 test('GET /api/leaderboard includes our voted item at top', async () => {
@@ -256,7 +280,7 @@ test('GET /api/leaderboard includes our voted item at top', async () => {
   expect(Array.isArray(body.items)).toBeTruthy();
   // Our item_test_1 has score 1, so it should be present
   const found = body.items.find(
-    (it: { id: string }) => it.id === 'item_test_1'
+    (it: { content_id: string }) => it.content_id === 'item_test_1'
   );
   expect(found).toBeDefined();
 });

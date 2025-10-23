@@ -39,18 +39,30 @@ type Category = {
 };
 
 type Item = {
-  id: string;
-  title: string;
-  source: string;
-  url: string;
-  authorId?: string | null;
-  type: string; // Added type field
-  tags: string[];
-  categories: string[];
-  lang: 'en' | 'ru' | 'ro' | 'uk';
-  publishedAt?: string;
-  createdAt: string;
-  score: number;
+  content_id: string;
+  content_canonical_text_en: string;
+  content_text_en: string;
+  content_text_ro: string;
+  content_text_ua: string;
+  content_text_ru: string;
+  content_source_name_en: string;
+  content_source_name_ro: string;
+  content_source_name_ua: string;
+  content_source_name_ru: string;
+  content_source_link: string;
+  content_country?: string;
+  content_created_by?: string | null;
+  content_created: string;
+  content_published: string;
+  content_edited?: string;
+  content_type: string;
+  content_category: string;
+  content_subcategory?: string;
+  content_tags: string[];
+  content_votes: number;
+  content_score: number;
+  categories?: string[];
+  lang: string;
 };
 
 type Rating = {
@@ -258,21 +270,332 @@ async function generate() {
     const pickedCategory = pick(CATEGORY_DEFS);
     const itemType = pickedCategory.slug; // Use one of the category slugs as the type
 
+    // Create content in the main language
+    const content: { [lang: string]: string } = {};
+    content[lang] = title; // Use the generated title as content in the main language
+
+    // Add some sample content in other languages (for demo purposes)
+    const otherLangs = LANGS.filter(l => l !== lang);
+    for (const otherLang of otherLangs) {
+      const otherPool = TITLE_POOLS[otherLang];
+      if (otherPool && otherPool.length > 0) {
+        const otherTemplate = pick(otherPool);
+        const otherSubject = pick([
+          'AI',
+          'climate',
+          'economy',
+          'startup',
+          'education',
+          'health',
+          'sports',
+          'travel',
+        ]);
+        let otherContent = otherTemplate.replace('{X}', otherSubject);
+        // ensure <= 140 chars
+        if (otherContent.length > 140)
+          otherContent = otherContent.slice(0, 137) + '...';
+        content[otherLang] = otherContent;
+      }
+    }
+
+    // Generate content for each language
+    let content_en = title;
+    let content_ro = title;
+    let content_ua = title;
+    let content_ru = title;
+
+    // Generate different content for each language based on the language
+    if (lang === 'en') {
+      content_en = title;
+      // Generate Romanian content
+      const roPool = TITLE_POOLS['ro'];
+      if (roPool && roPool.length > 0) {
+        const roTemplate = pick(roPool);
+        const roSubject = pick([
+          'AI',
+          'climate',
+          'economy',
+          'startup',
+          'education',
+          'health',
+          'sports',
+          'travel',
+        ]);
+        let roContent = roTemplate.replace('{X}', roSubject);
+        if (roContent.length > 140) roContent = roContent.slice(0, 137) + '...';
+        content_ro = roContent;
+      } else {
+        content_ro = title; // fallback to the original title
+      }
+
+      // Generate Ukrainian content
+      const uaPool = TITLE_POOLS['uk'];
+      if (uaPool && uaPool.length > 0) {
+        const uaTemplate = pick(uaPool);
+        const uaSubject = pick([
+          'AI',
+          'climate',
+          'economy',
+          'startup',
+          'education',
+          'health',
+          'sports',
+          'travel',
+        ]);
+        let uaContent = uaTemplate.replace('{X}', uaSubject);
+        if (uaContent.length > 140) uaContent = uaContent.slice(0, 137) + '...';
+        content_ua = uaContent;
+      } else {
+        content_ua = title; // fallback to the original title
+      }
+
+      // Generate Russian content
+      const ruPool = TITLE_POOLS['ru'];
+      if (ruPool && ruPool.length > 0) {
+        const ruTemplate = pick(ruPool);
+        const ruSubject = pick([
+          'AI',
+          'climate',
+          'economy',
+          'startup',
+          'education',
+          'health',
+          'sports',
+          'travel',
+        ]);
+        let ruContent = ruTemplate.replace('{X}', ruSubject);
+        if (ruContent.length > 140) ruContent = ruContent.slice(0, 137) + '...';
+        content_ru = ruContent;
+      } else {
+        content_ru = title; // fallback to the original title
+      }
+    } else if (lang === 'ro') {
+      content_ro = title;
+      // Generate English content
+      const enPool = TITLE_POOLS['en'];
+      if (enPool && enPool.length > 0) {
+        const enTemplate = pick(enPool);
+        const enSubject = pick([
+          'AI',
+          'climate',
+          'economy',
+          'startup',
+          'education',
+          'health',
+          'sports',
+          'travel',
+        ]);
+        let enContent = enTemplate.replace('{X}', enSubject);
+        if (enContent.length > 140) enContent = enContent.slice(0, 137) + '...';
+        content_en = enContent;
+      } else {
+        content_en = title; // fallback to the original title
+      }
+
+      // Generate Ukrainian content
+      const uaPool = TITLE_POOLS['uk'];
+      if (uaPool && uaPool.length > 0) {
+        const uaTemplate = pick(uaPool);
+        const uaSubject = pick([
+          'AI',
+          'climate',
+          'economy',
+          'startup',
+          'education',
+          'health',
+          'sports',
+          'travel',
+        ]);
+        let uaContent = uaTemplate.replace('{X}', uaSubject);
+        if (uaContent.length > 140) uaContent = uaContent.slice(0, 137) + '...';
+        content_ua = uaContent;
+      } else {
+        content_ua = title; // fallback to the original title
+      }
+
+      // Generate Russian content
+      const ruPool = TITLE_POOLS['ru'];
+      if (ruPool && ruPool.length > 0) {
+        const ruTemplate = pick(ruPool);
+        const ruSubject = pick([
+          'AI',
+          'climate',
+          'economy',
+          'startup',
+          'education',
+          'health',
+          'sports',
+          'travel',
+        ]);
+        let ruContent = ruTemplate.replace('{X}', ruSubject);
+        if (ruContent.length > 140) ruContent = ruContent.slice(0, 137) + '...';
+        content_ru = ruContent;
+      } else {
+        content_ru = title; // fallback to the original title
+      }
+    } else if (lang === 'uk') {
+      content_ua = title;
+      // Generate English content
+      const enPool = TITLE_POOLS['en'];
+      if (enPool && enPool.length > 0) {
+        const enTemplate = pick(enPool);
+        const enSubject = pick([
+          'AI',
+          'climate',
+          'economy',
+          'startup',
+          'education',
+          'health',
+          'sports',
+          'travel',
+        ]);
+        let enContent = enTemplate.replace('{X}', enSubject);
+        if (enContent.length > 140) enContent = enContent.slice(0, 137) + '...';
+        content_en = enContent;
+      } else {
+        content_en = title; // fallback to the original title
+      }
+
+      // Generate Romanian content
+      const roPool = TITLE_POOLS['ro'];
+      if (roPool && roPool.length > 0) {
+        const roTemplate = pick(roPool);
+        const roSubject = pick([
+          'AI',
+          'climate',
+          'economy',
+          'startup',
+          'education',
+          'health',
+          'sports',
+          'travel',
+        ]);
+        let roContent = roTemplate.replace('{X}', roSubject);
+        if (roContent.length > 140) roContent = roContent.slice(0, 137) + '...';
+        content_ro = roContent;
+      } else {
+        content_ro = title; // fallback to the original title
+      }
+
+      // Generate Russian content
+      const ruPool = TITLE_POOLS['ru'];
+      if (ruPool && ruPool.length > 0) {
+        const ruTemplate = pick(ruPool);
+        const ruSubject = pick([
+          'AI',
+          'climate',
+          'economy',
+          'startup',
+          'education',
+          'health',
+          'sports',
+          'travel',
+        ]);
+        let ruContent = ruTemplate.replace('{X}', ruSubject);
+        if (ruContent.length > 140) ruContent = ruContent.slice(0, 137) + '...';
+        content_ru = ruContent;
+      } else {
+        content_ru = title; // fallback to the original title
+      }
+    } else {
+      // ru
+      content_ru = title;
+      // Generate English content
+      const enPool = TITLE_POOLS['en'];
+      if (enPool && enPool.length > 0) {
+        const enTemplate = pick(enPool);
+        const enSubject = pick([
+          'AI',
+          'climate',
+          'economy',
+          'startup',
+          'education',
+          'health',
+          'sports',
+          'travel',
+        ]);
+        let enContent = enTemplate.replace('{X}', enSubject);
+        if (enContent.length > 140) enContent = enContent.slice(0, 137) + '...';
+        content_en = enContent;
+      } else {
+        content_en = title; // fallback to the original title
+      }
+
+      // Generate Romanian content
+      const roPool = TITLE_POOLS['ro'];
+      if (roPool && roPool.length > 0) {
+        const roTemplate = pick(roPool);
+        const roSubject = pick([
+          'AI',
+          'climate',
+          'economy',
+          'startup',
+          'education',
+          'health',
+          'sports',
+          'travel',
+        ]);
+        let roContent = roTemplate.replace('{X}', roSubject);
+        if (roContent.length > 140) roContent = roContent.slice(0, 137) + '...';
+        content_ro = roContent;
+      } else {
+        content_ro = title; // fallback to the original title
+      }
+
+      // Generate Ukrainian content
+      const uaPool = TITLE_POOLS['uk'];
+      if (uaPool && uaPool.length > 0) {
+        const uaTemplate = pick(uaPool);
+        const uaSubject = pick([
+          'AI',
+          'climate',
+          'economy',
+          'startup',
+          'education',
+          'health',
+          'sports',
+          'travel',
+        ]);
+        let uaContent = uaTemplate.replace('{X}', uaSubject);
+        if (uaContent.length > 140) uaContent = uaContent.slice(0, 137) + '...';
+        content_ua = uaContent;
+      } else {
+        content_ua = title; // fallback to the original title
+      }
+    }
+
+    // Generate source names in different languages
+    const sourceName_en = source;
+    const sourceName_ro = `Sursa ${source}`;
+    const sourceName_ua = `Джерело ${source}`;
+    const sourceName_ru = `Источник ${source}`;
+
     items.push({
-      id,
-      title,
-      source,
-      url: `https://example.test/source/${encodeURIComponent(
+      content_id: id,
+      content_canonical_text_en: content_en, // Using English as the canonical text
+      content_text_en: content_en,
+      content_text_ro: content_ro,
+      content_text_ua: content_ua,
+      content_text_ru: content_ru,
+      content_source_name_en: sourceName_en,
+      content_source_name_ro: sourceName_ro,
+      content_source_name_ua: sourceName_ua,
+      content_source_name_ru: sourceName_ru,
+      content_source_link: `https://example.test/source/${encodeURIComponent(
         source.toLowerCase().replace(/\s+/g, '-')
       )}/${id}`,
-      authorId: author,
-      type: itemType,
-      tags,
+      content_country: pick(['US', 'RO', 'UA', 'RU']), // Random country codes
+      content_created_by: author,
+      content_created: createdAt,
+      content_published: publishedAt,
+      content_type: itemType, // Use the picked category slug as type
+      content_category: itemType, // Use the same for category
+      content_subcategory: pick(['General', 'Tech', 'Science', 'News']), // Random subcategory
+      content_tags: tags,
+      content_votes: 0,
+      content_score: 0,
       categories: pickCategoryIds(),
-      lang,
-      publishedAt,
-      createdAt,
-      score: 0,
+      lang: lang,
     });
   }
 
@@ -289,7 +612,7 @@ async function generate() {
     ratings.push({
       id,
       userId,
-      itemId: item.id,
+      itemId: item.content_id,
       value,
       createdAt,
     });
@@ -301,7 +624,10 @@ async function generate() {
     scoreMap[r.itemId] = (scoreMap[r.itemId] ?? 0) + r.value;
   }
   for (const it of items) {
-    it.score = scoreMap[it.id] ?? 0;
+    it.content_score = scoreMap[it.content_id] ?? 0;
+    it.content_votes = Object.values(ratings).filter(
+      rating => rating.itemId === it.content_id
+    ).length;
   }
 
   // 6) Settings

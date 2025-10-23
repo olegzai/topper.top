@@ -18,6 +18,10 @@
     "format": "prettier --write \"**/*.{ts,js,json,md,html,css,svelte,scss,less,yaml,yml}\"",
     "test": "vitest --run --reporter verbose",
     "test:watch": "vitest",
+    "test:coverage": "vitest --coverage --run",
+    "test:ui": "vitest --ui",
+    "security:audit": "npm audit --audit-level high",
+    "security:audit:fix": "npm audit fix",
     "seed": "ts-node scripts/seed.ts",
     "clean": "rm -rf dist && rm -rf frontend-dist",
     "prepare": "husky install",
@@ -46,12 +50,14 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.0",
+    "@vitest/coverage-v8": "^1.6.1",
     "concurrently": "^8.2.0",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-import": "^2.28.0",
     "eslint-plugin-react": "^7.33.0",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "fast-check": "^4.3.0",
     "husky": "^8.0.0",
     "jsdom": "^27.0.1",
     "lint-staged": "^13.0.0",
@@ -69,6 +75,9 @@
   },
   "dependencies": {
     "node-fetch": "^2.7.0",
-    "uuid": "^13.0.0"
+    "pino": "^10.1.0",
+    "pino-pretty": "^13.1.2",
+    "uuid": "^13.0.0",
+    "web-vitals": "^5.1.0"
   }
 }

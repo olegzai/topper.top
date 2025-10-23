@@ -1,28 +1,6 @@
 /// <reference lib="dom" />
 // main.js - Main application entry point
 
-// Extend Window interface to include our application functions
-declare global {
-  interface Window {
-    previousContent: () => void;
-    downvoteAndNext: () => void;
-    upvoteAndNext: () => void;
-    skipContent: () => void;
-    quickRate: (rating: number) => void;
-    applyFilters: () => Promise<void>;
-    clearFilters: () => Promise<void>;
-    showTopRated: (category?: string) => Promise<void>;
-    toggleAutoLoad: () => void;
-    updateSettings: () => void;
-    toggleAutoSwitch: () => void;
-    resetCache: () => void;
-    resetAllData: () => void;
-    clearLocalStorage: () => void;
-    reloadPage: () => void;
-    changeLanguage: () => void;
-  }
-}
-
 // Import all modules
 import { state, initializeState } from './modules/state.js';
 import {
@@ -46,12 +24,35 @@ import {
   showTopRated,
   toggleAutoLoad,
   updateSettings,
+  toggleAutoSwitch,
   resetCache,
   resetAllData,
   clearLocalStorage,
   reloadPage,
 } from './modules/ui.js';
 import { logDebug } from './modules/utils.js';
+
+// Extend the global Window interface to properly type functions attached to window
+declare global {
+  interface Window {
+    previousContent: () => void;
+    downvoteAndNext: () => void;
+    upvoteAndNext: () => void;
+    skipContent: () => void;
+    quickRate: (rating: 1 | -1) => void;
+    applyFilters: () => Promise<void>;
+    clearFilters: () => void;
+    showTopRated: (category?: string) => Promise<void>;
+    toggleAutoLoad: () => void;
+    updateSettings: () => void;
+    toggleAutoSwitch: () => void;
+    resetCache: () => void;
+    resetAllData: () => void;
+    clearLocalStorage: () => void;
+    reloadPage: () => void;
+    changeLanguage: () => void;
+  }
+}
 
 // Initialize the application
 window.onload = async function () {
@@ -66,9 +67,19 @@ window.onload = async function () {
     updateInterfaceLanguage(state.currentLanguage);
 
     // Load initial content
-    state.allItems = await apiService.loadContent(state.currentLanguage);
-    state.currentIndex = 0;
-    showCurrentContent();
+    try {
+      state.allItems = await apiService.loadContent(state.currentLanguage);
+      state.currentIndex = 0;
+      showCurrentContent();
+    } catch (error) {
+      console.error('Failed to load initial content:', error);
+      logDebug('Failed to load initial content: ' + (error as Error).message);
+      const contentTextElement = document.getElementById('content-text');
+      if (contentTextElement) {
+        contentTextElement.textContent =
+          'Failed to load content. Please try again later.';
+      }
+    }
 
     // Update statistics
     updateStatistics();
@@ -91,7 +102,11 @@ window.upvoteAndNext = upvoteAndNext;
 window.skipContent = skipContent;
 
 // Quick rate function
-window.quickRate = quickRate;
+window.quickRate = function (rating: 1 | -1): void {
+  (async () => {
+    await quickRate(rating);
+  })();
+};
 
 // Filter functions
 window.applyFilters = async function () {
@@ -122,14 +137,13 @@ window.changeLanguage = function () {
     'language-selector'
   ) as HTMLSelectElement;
   if (languageSelector) {
-    // Ensure the value is one of the allowed languages
-    const validLanguages = ['en', 'ro', 'ru', 'uk'];
+    // Ensure the value is one of the allowed languages (support UI using 'ua' for Ukrainian)
+    const validLanguages = ['en', 'ro', 'ru', 'ua'];
     if (validLanguages.includes(languageSelector.value)) {
-      state.currentLanguage = languageSelector.value as
-        | 'en'
-        | 'ro'
-        | 'ru'
-        | 'uk';
+      // Map UI value 'ua' to internal 'uk' to keep internal typing consistent
+      const selected =
+        languageSelector.value === 'ua' ? 'uk' : languageSelector.value;
+      state.currentLanguage = selected as 'en' | 'ro' | 'ru' | 'uk';
     }
     console.log(`Language changed to: ${state.currentLanguage}`);
     updateInterfaceLanguage(state.currentLanguage);
@@ -144,7 +158,9 @@ window.changeLanguage = function () {
       })
       .catch(error => {
         console.error('Error loading content in new language:', error);
-        logDebug('Error loading content in new language: ' + error.message);
+        logDebug(
+          'Error loading content in new language: ' + (error as Error).message
+        );
       });
   }
 };

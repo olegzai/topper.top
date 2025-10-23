@@ -29,7 +29,7 @@ export const translations = {
       reset: 'Reset (Developer)',
     },
     informationContent: {
-      fullInfo: 'Full Content Information:',
+      fullInfo: '',
       id: 'Id:',
       title: 'Title:',
       description: 'Description:',
@@ -146,7 +146,7 @@ export const translations = {
       reset: 'Reset (Dezvoltator)',
     },
     informationContent: {
-      fullInfo: 'Informații complete despre conținut:',
+      fullInfo: '',
       id: 'Id:',
       title: 'Titlu:',
       description: 'Descriere:',
@@ -263,7 +263,7 @@ export const translations = {
       reset: 'Сброс (Разработчик)',
     },
     informationContent: {
-      fullInfo: 'Полная информация о контенте:',
+      fullInfo: '',
       id: 'Ид:',
       title: 'Название:',
       description: 'Описание:',
@@ -380,7 +380,7 @@ export const translations = {
       reset: 'Скидання (Розробник)',
     },
     informationContent: {
-      fullInfo: 'Повна інформація про контент:',
+      fullInfo: '',
       id: 'Ід:',
       title: 'Назва:',
       description: 'Опис:',

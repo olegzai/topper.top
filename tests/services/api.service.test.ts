@@ -27,8 +27,8 @@ describe('API Service', () => {
 
   it('should handle successful item loading', async () => {
     const mockItems: Item[] = [
-      { id: '1', title: 'Test Item 1', score: 10 },
-      { id: '2', title: 'Test Item 2', score: 5 },
+      { id: '1', content_id: 'content-1', title: 'Test Item 1', score: 10 },
+      { id: '2', content_id: 'content-2', title: 'Test Item 2', score: 5 },
     ];
 
     const mockResponse = {

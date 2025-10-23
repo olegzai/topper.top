@@ -7,7 +7,11 @@ import { Item } from '../types/api.types';
 import { logger } from '../utils/logger';
 
 // Debug logging function
-export function logDebug(message: string) {
+export function logDebug(
+  message: string,
+  meta?: Record<string, unknown>,
+  correlationId?: string
+) {
   const timestamp = new Date().toISOString();
   const logMessage = `[${timestamp}] ${message}`;
 
@@ -33,8 +37,8 @@ export function logDebug(message: string) {
     }
   }
 
-  // Log using structured logger
-  logger.debug(message);
+  // Log using structured logger with correlation ID support
+  logger.debug(message, meta, correlationId);
 }
 
 // Escape HTML function for security

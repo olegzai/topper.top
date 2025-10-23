@@ -1,1 +1,3 @@
-- обновляй README.md, KANBAN.md, docs, versions.txt актуальной информацией
+# AGENTS
+
+## Универсальные инструкции для LLM Agents

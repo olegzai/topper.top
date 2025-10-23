@@ -1,4 +1,4 @@
-# Руководство по Chrome DevTools Protocol (через `chrome-devtools-mcp`) для людей и LLM-агентов
+# chrome-devtools-mcp docs
 
 ## Введение
 

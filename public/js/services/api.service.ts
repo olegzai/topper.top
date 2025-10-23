@@ -14,8 +14,13 @@ class ApiService {
   private readonly baseUrl: string;
   private readonly defaultHeaders: Record<string, string>;
 
-  constructor(baseUrl: string = 'http://localhost:3000') {
-    this.baseUrl = baseUrl;
+  constructor(baseUrl: string = '') {
+    // Use the current origin as default if no base URL is provided
+    this.baseUrl =
+      baseUrl ||
+      (typeof window !== 'undefined'
+        ? window.location.origin
+        : 'http://localhost:3000');
     this.defaultHeaders = {
       'Content-Type': 'application/json',
     };
@@ -130,11 +135,12 @@ class ApiService {
       const data: LeaderboardResponse = await response.json();
 
       // If category filter is applied, filter the results
-      let filteredItems = data.items || [];
+      let filteredItems = Array.isArray(data.items) ? data.items : [];
       if (category) {
-        filteredItems = data.items.filter(
+        filteredItems = filteredItems.filter(
           item =>
             item.category &&
+            typeof item.category === 'string' &&
             item.category.toLowerCase() === category.toLowerCase()
         );
       }

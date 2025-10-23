@@ -13,7 +13,9 @@ export async function showTopRated(currentLanguage, category = '') {
     const allTopItems = await apiService.getTopRated(currentLanguage, category);
 
     // Populate Top News
-    const newsItems = allTopItems.filter(item => item.type === 'news');
+    const newsItems = allTopItems.filter(
+      item => item.content_type === 'news' || item.type === 'news'
+    );
     const newsContainer = document.getElementById('top-news-display');
     if (newsContainer) {
       newsContainer.innerHTML = '<h6>Top News:</h6>';
@@ -21,8 +23,12 @@ export async function showTopRated(currentLanguage, category = '') {
         newsItems.forEach((item, index) => {
           const div = document.createElement('div');
           div.textContent = `${index + 1}. ${
-            item.title || item.name || 'Untitled'
-          } (Score: ${item.score || 0})`;
+            item.contentText ||
+            item.content_text_en ||
+            item.title ||
+            item.name ||
+            'Untitled'
+          } (Score: ${item.content_score || item.score || 0})`;
           newsContainer.appendChild(div);
         });
       } else {
@@ -31,7 +37,9 @@ export async function showTopRated(currentLanguage, category = '') {
     }
 
     // Populate Top Facts
-    const factsItems = allTopItems.filter(item => item.type === 'facts');
+    const factsItems = allTopItems.filter(
+      item => item.content_type === 'facts' || item.type === 'facts'
+    );
     const factsContainer = document.getElementById('top-facts-display');
     if (factsContainer) {
       factsContainer.innerHTML = '<h6>Top Facts:</h6>';
@@ -39,8 +47,12 @@ export async function showTopRated(currentLanguage, category = '') {
         factsItems.forEach((item, index) => {
           const div = document.createElement('div');
           div.textContent = `${index + 1}. ${
-            item.title || item.name || 'Untitled'
-          } (Score: ${item.score || 0})`;
+            item.contentText ||
+            item.content_text_en ||
+            item.title ||
+            item.name ||
+            'Untitled'
+          } (Score: ${item.content_score || item.score || 0})`;
           factsContainer.appendChild(div);
         });
       } else {
@@ -50,7 +62,11 @@ export async function showTopRated(currentLanguage, category = '') {
 
     // Populate Top Articles (using other content types as articles)
     const articlesItems = allTopItems.filter(
-      item => item.type !== 'news' && item.type !== 'facts'
+      item =>
+        item.content_type !== 'news' &&
+        item.content_type !== 'facts' &&
+        item.type !== 'news' &&
+        item.type !== 'facts'
     );
     const articlesContainer = document.getElementById('top-articles-display');
     if (articlesContainer) {
@@ -59,8 +75,12 @@ export async function showTopRated(currentLanguage, category = '') {
         articlesItems.forEach((item, index) => {
           const div = document.createElement('div');
           div.textContent = `${index + 1}. ${
-            item.title || item.name || 'Untitled'
-          } (Score: ${item.score || 0})`;
+            item.contentText ||
+            item.content_text_en ||
+            item.title ||
+            item.name ||
+            'Untitled'
+          } (Score: ${item.content_score || item.score || 0})`;
           articlesContainer.appendChild(div);
         });
       } else {
@@ -115,7 +135,7 @@ export function updateSettings() {
     logDebug(`Auto-switch interval changed to: ${interval} seconds`);
     // If auto-switch is active, update the interval
     if (autoSwitchIntervalId !== null) {
-      clearInterval(autoSwitchIntervalId as unknown as number);
+      clearInterval(autoSwitchIntervalId);
       startAutoSwitchTimer(interval * 1000);
     }
   }
@@ -141,7 +161,7 @@ export function toggleAutoSwitch() {
       logDebug(`Auto-switch enabled with ${interval} second interval`);
     } else {
       // Stop auto-switch
-      clearInterval(autoSwitchIntervalId as unknown as number);
+      clearInterval(autoSwitchIntervalId);
       autoSwitchIntervalId = null;
       switchButton.textContent = 'Enable Auto-Switch';
       logDebug('Auto-switch disabled');
@@ -163,7 +183,7 @@ function startAutoSwitchTimer(interval: number) {
       .catch(err => {
         logDebug('Error importing navigation module: ' + err.message);
       });
-  }, interval) as unknown as number;
+  }, interval) as number;
 }
 
 // Reset functions for developer
@@ -231,45 +251,62 @@ export function updateInformationSection(content) {
   if (!content) return;
 
   const infoIdElement = document.getElementById('info-id');
-  if (infoIdElement) infoIdElement.textContent = content.id || 'N/A';
+  if (infoIdElement)
+    infoIdElement.textContent = content.content_id || content.id || 'N/A';
 
   const infoTitleElement = document.getElementById('info-title');
   if (infoTitleElement)
-    infoTitleElement.textContent = content.title || content.name || 'Untitled';
+    infoTitleElement.textContent =
+      content.contentText ||
+      content.content_text_en ||
+      content.content_canonical_text_en ||
+      'Untitled';
 
+  // Since we removed title/description in favor of content_text, don't display empty description
   const infoDescriptionElement = document.getElementById('info-description');
-  if (infoDescriptionElement)
-    infoDescriptionElement.textContent = content.description || '';
+  if (infoDescriptionElement) infoDescriptionElement.textContent = '';
 
   const infoUrlElement = document.getElementById('info-url');
-  if (infoUrlElement) infoUrlElement.textContent = content.url || 'No URL';
+  if (infoUrlElement)
+    infoUrlElement.textContent =
+      content.content_source_link || content.url || 'No URL';
 
   const infoScoreElement = document.getElementById('info-score');
   if (infoScoreElement)
     infoScoreElement.textContent =
-      content.score !== undefined ? content.score : 'N/A';
+      content.content_score !== undefined
+        ? content.content_score
+        : content.score !== undefined
+        ? content.score
+        : 'N/A';
 
   const infoLangElement = document.getElementById('info-lang');
   if (infoLangElement) infoLangElement.textContent = content.lang || 'N/A';
 
   const infoPublishedElement = document.getElementById('info-published');
   if (infoPublishedElement)
-    infoPublishedElement.textContent = content.publishedAt || 'N/A';
+    infoPublishedElement.textContent =
+      content.content_published || content.publishedAt || 'N/A';
 
   const infoCreatedElement = document.getElementById('info-created');
   if (infoCreatedElement)
-    infoCreatedElement.textContent = content.createdAt || 'N/A';
+    infoCreatedElement.textContent =
+      content.content_created || content.createdAt || 'N/A';
 
   const infoTagsElement = document.getElementById('info-tags');
   if (infoTagsElement)
-    infoTagsElement.textContent = Array.isArray(content.tags)
+    infoTagsElement.textContent = Array.isArray(content.content_tags)
+      ? content.content_tags.join(', ')
+      : Array.isArray(content.tags)
       ? content.tags.join(', ')
       : 'No tags';
 
   const infoTypeElement = document.getElementById('info-type');
-  if (infoTypeElement) infoTypeElement.textContent = content.type || 'N/A';
+  if (infoTypeElement)
+    infoTypeElement.textContent = content.content_type || content.type || 'N/A';
 
   const infoCategoryElement = document.getElementById('info-category');
   if (infoCategoryElement)
-    infoCategoryElement.textContent = content.category || 'N/A';
+    infoCategoryElement.textContent =
+      content.content_category || content.category || 'N/A';
 }

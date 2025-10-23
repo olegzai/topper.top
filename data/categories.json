@@ -1,0 +1,38 @@
+[
+  {
+    "id": "fcda08e6-6866-4ab6-96e9-66bc227f6093",
+    "slug": "facts",
+    "name": "Facts",
+    "lang": "en"
+  },
+  {
+    "id": "75fe38d7-d247-41c4-86ed-42338134efb5",
+    "slug": "news",
+    "name": "News",
+    "lang": "ru"
+  },
+  {
+    "id": "c02e20eb-d65a-43c4-98f1-67a843aab351",
+    "slug": "offers",
+    "name": "Offers",
+    "lang": "ro"
+  },
+  {
+    "id": "fd04342a-5c5b-4289-9cbb-f5f9a05c103b",
+    "slug": "ads",
+    "name": "Ads",
+    "lang": "uk"
+  },
+  {
+    "id": "9c400ac5-927f-4a09-af75-bdf50d6b3373",
+    "slug": "products",
+    "name": "Products",
+    "lang": "en"
+  },
+  {
+    "id": "df5b8be1-4b4f-404b-8c7e-1e8e6fca108d",
+    "slug": "opinion",
+    "name": "Opinion",
+    "lang": "ru"
+  }
+]
