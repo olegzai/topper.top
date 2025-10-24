@@ -6,9 +6,10 @@ import { state } from './state.js';
 import apiService from '../services/api.service.js';
 import { showCurrentContent } from './content.js';
 import { logDebug } from './utils.js';
+import { Item } from '../types/api.types';
 
 // Apply filters
-export async function applyFilters(currentLanguage) {
+export async function applyFilters(currentLanguage: string) {
   const selectedTypes = Array.from(
     document.querySelectorAll('input[name="type-filter"]:checked')
   ).map(cb => (cb as HTMLInputElement).value);
@@ -35,7 +36,7 @@ export async function applyFilters(currentLanguage) {
     }
 
     const response = await fetch(url);
-    const data = await response.json();
+    const data: { items?: Item[]; total?: number } = await response.json();
 
     if (data.items && data.items.length > 0) {
       // Apply client-side filtering
@@ -43,20 +44,21 @@ export async function applyFilters(currentLanguage) {
 
       if (selectedTypes.length > 0) {
         filteredItems = filteredItems.filter(
-          item => item.type && selectedTypes.includes(item.type.toLowerCase())
+          (item: Item) =>
+            item.type && selectedTypes.includes(item.type.toLowerCase())
         );
       }
 
       if (selectedCategories.length > 0) {
         filteredItems = filteredItems.filter(
-          item =>
+          (item: Item) =>
             item.category &&
             selectedCategories.includes(item.category.toLowerCase())
         );
       }
 
       if (selectedCountries.length > 0) {
-        filteredItems = filteredItems.filter(item => {
+        filteredItems = filteredItems.filter((item: Item) => {
           // For country filter, check if item has country property or if 'global' is selected
           const hasCountry = item.country;
           const isGlobal = selectedCountries.includes('global');
@@ -68,12 +70,14 @@ export async function applyFilters(currentLanguage) {
             // If 'global' and other countries are selected, include items with no country or matching countries
             return (
               !hasCountry ||
-              selectedCountries.includes(item.country.toLowerCase())
+              (item.country &&
+                selectedCountries.includes(item.country.toLowerCase()))
             );
           } else {
             // If only specific countries are selected, show only those items
             return (
               hasCountry &&
+              item.country &&
               selectedCountries.includes(item.country.toLowerCase())
             );
           }
@@ -91,7 +95,10 @@ export async function applyFilters(currentLanguage) {
       }
     }
   } catch (error) {
-    logDebug('Error applying filters: ' + error.message);
+    logDebug(
+      'Error applying filters: ' +
+        (error instanceof Error ? error.message : String(error))
+    );
   }
 }
 

@@ -66,4 +66,4 @@ export const defaultLimiter = new RateLimiter(60 * 1000); // 1-minute window
 
 // Specific limiters for different endpoints
 export const apiLimiter = new RateLimiter(60 * 1000); // 1 minute
-export const ratingLimiter = new RateLimiter(60 * 1000); // 1 minute for ratings
+export const rankingLimiter = new RateLimiter(60 * 1000); // 1 minute for rankings

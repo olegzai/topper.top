@@ -2,20 +2,35 @@
 // API Response Type Definitions
 
 export interface Item {
-  id: string;
-  lang?: string;
-  score?: number;
-  publishedAt?: string;
-  tags?: string[];
-  name?: string;
-  title?: string;
-  description?: string;
-  url?: string;
-  type?: string;
-  category?: string;
+  content_id: string;
+  content_canonical_text_en: string;
+  content_text_en: string;
+  content_text_ro: string;
+  content_text_ua: string;
+  content_text_ru: string;
+  content_source_name_en: string;
+  content_source_name_ro: string;
+  content_source_name_ua: string;
+  content_source_name_ru: string;
+  content_source_link: string;
+  content_country?: string;
+  content_created_by?: string | null;
+  content_created: string;
+  content_published: string;
+  content_edited?: string;
+  content_type: string;
+  content_category: string;
+  content_subcategory?: string;
+  content_tags: string[];
+  content_votes: number;
+  content_score: number;
+  categories?: string[];
+  lang: string;
+  // Properties added dynamically by the API
+  [key: string]: unknown;
 }
 
-export interface Rating {
+export interface Ranking {
   id: string;
   userId: string | null;
   itemId: string;
@@ -39,8 +54,8 @@ export interface ItemResponse {
   item: Item;
 }
 
-export interface RatingResponse {
-  rating: Rating;
+export interface RankingResponse {
+  ranking: Ranking;
   item: { id: string; score: number };
   nextItem?: Item;
 }
@@ -68,7 +83,7 @@ export interface RandomItemResponse {
 }
 
 // API Request Types
-export interface RatingRequest {
+export interface RankingRequest {
   itemId: string;
   value: 1 | -1;
   userId?: string;

@@ -238,7 +238,7 @@ test('GET /api/random returns an item', async () => {
   expect(body.item).toHaveProperty('content_id');
 });
 
-test('POST /api/ratings creates rating and updates item score and returns nextItem', async () => {
+test('POST /api/rankings creates ranking and updates item score and returns nextItem', async () => {
   // Vote +1 on item_test_1
   const payload = {
     itemId: 'item_test_1', // This matches content_id in our test data
@@ -247,7 +247,7 @@ test('POST /api/ratings creates rating and updates item score and returns nextIt
     currentItemId: 'item_test_1',
   };
   const res = await fetchWithTimeout(
-    `${baseUrl}/api/ratings`,
+    `${baseUrl}/api/rankings`,
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -257,9 +257,9 @@ test('POST /api/ratings creates rating and updates item score and returns nextIt
   );
   expect(res.status).toBe(200);
   const body = await readJsonWithLog(res);
-  expect(body).toHaveProperty('rating');
-  expect(body.rating.itemId).toBe('item_test_1');
-  expect(body.rating.value).toBe(1);
+  expect(body).toHaveProperty('ranking');
+  expect(body.ranking.itemId).toBe('item_test_1');
+  expect(body.ranking.value).toBe(1);
   expect(body).toHaveProperty('item');
   expect(body.item.id).toBe('item_test_1');
   // item score should be 1 now

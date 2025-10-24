@@ -5,7 +5,7 @@
 import { state } from './state.js';
 import { showCurrentContent } from './content.js';
 import apiService from '../services/api.service.js';
-import { addToRatingHistory, updateUserStats } from './history.js';
+import { addToRankingHistory, updateUserStats } from './history.js';
 import { findSmartContent, logDebug } from './utils.js';
 import { updateInformationSection } from './ui.js';
 import type { Item as ApiItem } from '../types/api.types.js';
@@ -32,13 +32,13 @@ export async function downvoteAndNext() {
     const itemId = current.content_id ?? current.id;
     logDebug(`Downvoting content ID: ${itemId}`);
 
-    const data = await apiService.submitRating(itemId, -1);
+    const data = await apiService.submitRanking(itemId, -1);
 
     // Update score in the current content using API response
     current.content_score = data.item.score ?? current.score;
 
-    // Add to rating history
-    addToRatingHistory(itemId, -1);
+    // Add to ranking history
+    addToRankingHistory(itemId, -1);
 
     // Update user statistics
     updateUserStats(-1);
@@ -48,7 +48,7 @@ export async function downvoteAndNext() {
       data.nextItem ??
       findSmartContent(
         state.allItems as unknown as ApiItem[],
-        state.ratingHistory as unknown as {
+        state.rankingHistory as unknown as {
           itemId: string;
           value: 1 | -1;
           timestamp: string;
@@ -91,13 +91,13 @@ export async function upvoteAndNext() {
     const itemId = current.content_id ?? current.id;
     logDebug(`Upvoting content ID: ${itemId}`);
 
-    const data = await apiService.submitRating(itemId, 1);
+    const data = await apiService.submitRanking(itemId, 1);
 
     // Update score in the current content using API response
     current.content_score = data.item.score ?? current.score;
 
-    // Add to rating history
-    addToRatingHistory(itemId, 1);
+    // Add to ranking history
+    addToRankingHistory(itemId, 1);
 
     // Update user statistics
     updateUserStats(1);
@@ -107,7 +107,7 @@ export async function upvoteAndNext() {
       data.nextItem ??
       findSmartContent(
         state.allItems as unknown as ApiItem[],
-        state.ratingHistory as unknown as {
+        state.rankingHistory as unknown as {
           itemId: string;
           value: 1 | -1;
           timestamp: string;
@@ -161,13 +161,13 @@ export async function quickRate(value: 1 | -1) {
       `${value === 1 ? 'Upvoting' : 'Downvoting'} content ID: ${itemId}`
     );
 
-    const data = await apiService.submitRating(itemId, value);
+    const data = await apiService.submitRanking(itemId, value);
 
     // Update score in the current content using API response
     current.content_score = data.item.score ?? current.score;
 
     // Add to rating history
-    addToRatingHistory(itemId, value);
+    addToRankingHistory(itemId, value);
 
     // Update user statistics
     updateUserStats(value);

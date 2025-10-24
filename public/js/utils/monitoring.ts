@@ -5,12 +5,12 @@ import { logger } from './logger';
 
 export interface ErrorInfo {
   message: string;
-  stack?: string;
-  name?: string;
+  stack?: string | undefined;
+  name?: string | undefined;
   timestamp: number;
-  url?: string;
-  userAgent?: string;
-  meta?: Record<string, unknown>;
+  url?: string | undefined;
+  userAgent?: string | undefined;
+  meta?: Record<string, unknown> | undefined;
 }
 
 export interface PerformanceInfo {
@@ -18,7 +18,7 @@ export interface PerformanceInfo {
   value: number;
   unit: string;
   timestamp: number;
-  meta?: Record<string, unknown>;
+  meta?: Record<string, unknown> | undefined;
 }
 
 class MonitoringService {
@@ -26,7 +26,7 @@ class MonitoringService {
   private performanceMetrics: PerformanceInfo[] = [];
   private maxEntries: number = 1000;
   private remoteLoggingEnabled: boolean = false;
-  private remoteLoggingUrl?: string;
+  private remoteLoggingUrl: string | undefined;
 
   constructor() {
     // Capture unhandled errors
@@ -177,7 +177,7 @@ class MonitoringService {
     if (!this.remoteLoggingUrl) return;
 
     try {
-      await fetch(this.remoteLoggingUrl, {
+      await fetch(this.remoteLoggingUrl!, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -202,7 +202,7 @@ class MonitoringService {
     if (!this.remoteLoggingUrl) return;
 
     try {
-      await fetch(this.remoteLoggingUrl, {
+      await fetch(this.remoteLoggingUrl!, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -259,7 +259,10 @@ class MonitoringService {
       if (!metrics[metric.metricName]) {
         metrics[metric.metricName] = [];
       }
-      metrics[metric.metricName].push(metric);
+      const metricArray = metrics[metric.metricName];
+      if (metricArray) {
+        metricArray.push(metric);
+      }
     });
 
     return {

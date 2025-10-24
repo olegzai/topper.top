@@ -5,12 +5,16 @@
 import { state } from './state.js';
 import apiService from '../services/api.service.js';
 import { logDebug } from './utils.js';
+import { Item } from '../types/api.types';
 
-// Update top rated items display for all categories
-export async function showTopRated(currentLanguage, category = '') {
+// Update top ranked items display for all categories
+export async function showTopRanked(currentLanguage: string, category = '') {
   try {
-    // Load all top rated content at once
-    const allTopItems = await apiService.getTopRated(currentLanguage, category);
+    // Load all top ranked content at once
+    const allTopItems = await apiService.getTopRanked(
+      currentLanguage,
+      category
+    );
 
     // Populate Top News
     const newsItems = allTopItems.filter(
@@ -88,7 +92,10 @@ export async function showTopRated(currentLanguage, category = '') {
       }
     }
   } catch (error) {
-    logDebug('Error loading top ratings: ' + error.message);
+    logDebug(
+      'Error loading top ratings: ' +
+        (error instanceof Error ? error.message : String(error))
+    );
     const newsContainer = document.getElementById('top-news-display');
     if (newsContainer)
       newsContainer.innerHTML = '<p>Error loading top news.</p>';
@@ -205,12 +212,12 @@ export function resetAllData() {
   logDebug('All data reset requested');
   // Reset all data arrays
   state.allItems.length = 0; // Clear array without reassigning
-  state.ratingHistory.length = 0; // Clear array without reassigning
+  state.rankingHistory.length = 0; // Clear array without reassigning
   state.viewHistory.length = 0; // Clear array without reassigning
   state.userStats.totalRatings = 0;
   state.userStats.positiveRatings = 0;
   state.userStats.negativeRatings = 0;
-  state.userStats.ratedCategories = {};
+  state.userStats.rankedCategories = {};
 
   // Update displays
   // These need to be imported from their respective modules
@@ -247,7 +254,7 @@ export function reloadPage() {
 }
 
 // Update information section with full content details
-export function updateInformationSection(content) {
+export function updateInformationSection(content: Item) {
   if (!content) return;
 
   const infoIdElement = document.getElementById('info-id');
@@ -275,9 +282,9 @@ export function updateInformationSection(content) {
   if (infoScoreElement)
     infoScoreElement.textContent =
       content.content_score !== undefined
-        ? content.content_score
+        ? String(content.content_score)
         : content.score !== undefined
-        ? content.score
+        ? String(content.score)
         : 'N/A';
 
   const infoLangElement = document.getElementById('info-lang');
@@ -309,4 +316,28 @@ export function updateInformationSection(content) {
   if (infoCategoryElement)
     infoCategoryElement.textContent =
       content.content_category || content.category || 'N/A';
+
+  const infoSubcategoryElement = document.getElementById('info-subcategory');
+  if (infoSubcategoryElement)
+    infoSubcategoryElement.textContent = content.content_subcategory || 'N/A';
+
+  const infoVotesElement = document.getElementById('info-votes');
+  if (infoVotesElement)
+    infoVotesElement.textContent =
+      content.content_votes !== undefined
+        ? String(content.content_votes)
+        : 'N/A';
+
+  const infoCountryElement = document.getElementById('info-country');
+  if (infoCountryElement)
+    infoCountryElement.textContent = content.content_country || 'N/A';
+
+  const infoCreatedByElement = document.getElementById('info-created-by');
+  if (infoCreatedByElement)
+    infoCreatedByElement.textContent = content.content_created_by || 'N/A';
+
+  const infoSourceNameElement = document.getElementById('info-source-name');
+  if (infoSourceNameElement)
+    infoSourceNameElement.textContent =
+      content.sourceName || content.content_source_name_en || 'N/A';
 }

@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Topper.top API
-  description: Backend API for Topper.top — Universal Rating Platform
+  description: Backend API for Topper.top — Universal Ranking Platform
   version: 0.0.1
 servers:
   - url: http://localhost:3000
@@ -181,7 +181,7 @@ components:
           description: Language code
         score:
           type: number
-          description: Current rating score
+          description: Current ranking score
         publishedAt:
           type: string
           format: date-time
@@ -212,22 +212,22 @@ components:
           description: Category of the item
       required:
         - id
-    Rating:
+    Ranking:
       type: object
       properties:
         id:
           type: string
-          description: Unique identifier for the rating
+          description: Unique identifier for the ranking
         userId:
           type: string
           description: User identifier (or null for anonymous)
         itemId:
           type: string
-          description: ID of the item being rated
+          description: ID of the item being ranked
         value:
           type: integer
           enum: [1, -1]
-          description: Rating value (1 for upvote, -1 for downvote)
+          description: Ranking value (1 for upvote, -1 for downvote)
         createdAt:
           type: string
           format: date-time
@@ -301,28 +301,28 @@ components:
           description: Randomly selected item
       required:
         - item
-    SubmitRatingRequest:
+    SubmitRankingRequest:
       type: object
       properties:
         itemId:
           type: string
-          description: ID of the item to rate
+          description: ID of the item to rank
         value:
           type: integer
           enum: [1, -1]
-          description: Rating value (1 for upvote, -1 for downvote)
+          description: Ranking value (1 for upvote, -1 for downvote)
         userId:
           type: string
           description: Optional user identifier
       required:
         - itemId
         - value
-    SubmitRatingResponse:
+    SubmitRankingResponse:
       type: object
       properties:
-        rating:
-          $ref: '#/components/schemas/Rating'
-          description: The created rating
+        ranking:
+          $ref: '#/components/schemas/Ranking'
+          description: The created ranking
         item:
           type: object
           properties:
@@ -335,7 +335,7 @@ components:
           $ref: '#/components/schemas/Item'
           description: Suggested next item
       required:
-        - rating
+        - ranking
         - item
     LeaderboardResponse:
       type: object

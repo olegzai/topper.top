@@ -4,7 +4,7 @@
 import type {
   Item,
   ItemsResponse,
-  RatingResponse,
+  RankingResponse,
   LeaderboardResponse,
   RandomItemResponse,
 } from '../types/api.types';
@@ -41,7 +41,7 @@ export async function loadContent(currentLanguage?: string): Promise<Item[]> {
 export async function submitRating(
   itemId: string,
   value: 1 | -1
-): Promise<RatingResponse> {
+): Promise<RankingResponse> {
   try {
     const response = await fetch('http://localhost:3000/api/ratings', {
       method: 'POST',
@@ -62,7 +62,7 @@ export async function submitRating(
       throw new Error(errorMessage);
     }
 
-    const data: RatingResponse = await response.json();
+    const data: RankingResponse = await response.json();
 
     return data;
   } catch (error) {
@@ -74,8 +74,8 @@ export async function submitRating(
   }
 }
 
-// Get top rated items
-export async function getTopRated(
+// Get top ranked items
+export async function getTopRanked(
   currentLanguage?: string,
   category: string = ''
 ): Promise<Item[]> {

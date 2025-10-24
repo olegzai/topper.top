@@ -74,7 +74,7 @@ class UserSimulation {
   // Submit rating
   async submitRating(itemId, value) {
     try {
-      const response = await fetch(`${API_BASE_URL}/api/ratings`, {
+      const response = await fetch(`${API_BASE_URL}/api/rankings`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

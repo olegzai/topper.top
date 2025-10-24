@@ -21,7 +21,7 @@ import { applyFilters, clearFilters } from './modules/filters.js';
 
 import { updateStatistics } from './modules/stats.js';
 import {
-  showTopRated,
+  showTopRanked,
   toggleAutoLoad,
   updateSettings,
   toggleAutoSwitch,
@@ -42,7 +42,7 @@ declare global {
     quickRate: (rating: 1 | -1) => void;
     applyFilters: () => Promise<void>;
     clearFilters: () => void;
-    showTopRated: (category?: string) => Promise<void>;
+    showTopRanked: (category?: string) => Promise<void>;
     toggleAutoLoad: () => void;
     updateSettings: () => void;
     toggleAutoSwitch: () => void;
@@ -88,7 +88,10 @@ window.onload = async function () {
     logDebug('Application initialized');
   } catch (error) {
     console.error('Error initializing application:', error);
-    logDebug('Error initializing application: ' + error.message);
+    logDebug(
+      'Error initializing application: ' +
+        (error instanceof Error ? error.message : String(error))
+    );
   }
 };
 
@@ -115,9 +118,9 @@ window.applyFilters = async function () {
 
 window.clearFilters = clearFilters;
 
-// Top rated display functions
-window.showTopRated = async function (category = '') {
-  await showTopRated(state.currentLanguage, category);
+// Top ranked display functions
+window.showTopRanked = async function (category = '') {
+  await showTopRanked(state.currentLanguage, category);
 };
 
 // Settings functions

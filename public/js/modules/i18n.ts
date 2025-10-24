@@ -1,478 +1,9 @@
 /// <reference lib="dom" />
-// modules/i18n.js
-// Internationalization module
+// modules/i18n.ts
+// Internationalization module - Main interface
 
-// Translations object
-export const translations = {
-  en: {
-    language: 'Language',
-    loadingContent: 'Loading content...',
-    errorLoadingContent: 'Error loading content: ',
-    noItemsAvailable: 'No items available',
-    contentDisplay: 'Loading content...',
-    viewSource: 'View Source',
-    navigation: {
-      prev: '← Prev',
-      downvote: '↓ -1 (Not Similar)',
-      upvote: '↑ +1 (Similar)',
-      skip: '→ Skip',
-    },
-    accordions: {
-      information: 'Information',
-      filters: 'Filters',
-      history: 'History',
-      ratings: 'Ratings',
-      statistics: 'Statistics',
-      settings: 'Settings',
-      about: 'About',
-      contact: 'Contact Us',
-      reset: 'Reset (Developer)',
-    },
-    informationContent: {
-      fullInfo: '',
-      id: 'Id:',
-      title: 'Title:',
-      description: 'Description:',
-      url: 'URL:',
-      score: 'Score:',
-      language: 'Language:',
-      published: 'Published:',
-      created: 'Created:',
-      tags: 'Tags:',
-      type: 'Type:',
-      category: 'Category:',
-    },
-    filters: {
-      contentTypes: 'Content Types:',
-      categories: 'Categories:',
-      countriesGlobal: 'Countries/Global:',
-      applyFilters: 'Apply Filters',
-      clearFilters: 'Clear Filters',
-      news: 'News',
-      events: 'Events',
-      articles: 'Articles',
-      facts: 'Facts',
-      ads: 'Ads',
-      nature: 'Nature',
-      people: 'People',
-      health: 'Health',
-      sports: 'Sports',
-      technology: 'Technology',
-      education: 'Education',
-      business: 'Business',
-      entertainment: 'Entertainment',
-      global: 'Global',
-      romania: 'Romania',
-      russia: 'Russia',
-      ukraine: 'Ukraine',
-      usa: 'USA',
-      uk: 'UK',
-      germany: 'Germany',
-    },
-    history: {
-      ratingHistory: 'Rating History',
-      viewHistory: 'View History',
-      noRatings: 'No ratings yet',
-      noViews: 'No viewed items yet',
-    },
-    ratings: {
-      topRatings: 'Top Ratings',
-      allTimeTop10: 'All Time Top 10',
-      top10News: 'Top 10 News',
-      top10Technology: 'Top 10 Technology',
-      top10Health: 'Top 10 Health',
-      topRatedItems: 'Top Rated Items:',
-      noTopRated: 'No top-rated items found.',
-      errorLoadingTop: 'Error loading top ratings.',
-    },
-    statistics: {
-      personalStats: 'Personal Statistics',
-      totalRatings: 'Total Ratings:',
-      positiveRatings: 'Positive Ratings:',
-      negativeRatings: 'Negative Ratings:',
-      favoriteCategories: 'Favorite Categories:',
-      none: 'None',
-      publicStats: 'Public Statistics',
-      totalItems: 'Total Items:',
-      totalRatingsPublic: 'Total Ratings:',
-      mostRatedCategory: 'Most Rated Category:',
-      averageScore: 'Average Score:',
-    },
-    settings: {
-      autoLoad: 'Auto-load next content',
-      itemsPerLoad: 'Items per load:',
-    },
-    about: {
-      title: 'Topper.top - Universal Rating Platform',
-      version: 'Version: 0.0.1',
-      description:
-        'A content rating system that allows users to evaluate and rank content items.',
-    },
-    contact: {
-      text: 'For support or feedback, please contact us at: topper.top@example.com',
-    },
-    reset: {
-      resetCache: 'Reset Cache',
-      resetAllData: 'Reset All Data',
-      clearLocalStorage: 'Clear Local Storage',
-      reloadPage: 'Reload Page',
-    },
-    debug: {
-      title: 'DEBUG (Developer Only)',
-    },
-  },
-  ro: {
-    language: 'Limba',
-    loadingContent: 'Se încarcă conținutul...',
-    errorLoadingContent: 'Eroare la încărcarea conținutului: ',
-    noItemsAvailable: 'Nu există articole disponibile',
-    contentDisplay: 'Se încarcă conținutul...',
-    viewSource: 'Vezi sursa',
-    navigation: {
-      prev: '← Înapoi',
-      downvote: '↓ -1 (Nu e similar)',
-      upvote: '↑ +1 (Similar)',
-      skip: '→ Treci peste',
-    },
-    accordions: {
-      information: 'Informații',
-      filters: 'Filtre',
-      history: 'Istoric',
-      ratings: 'Evaluări',
-      statistics: 'Statistici',
-      settings: 'Setări',
-      about: 'Despre',
-      contact: 'Contact',
-      reset: 'Reset (Dezvoltator)',
-    },
-    informationContent: {
-      fullInfo: '',
-      id: 'Id:',
-      title: 'Titlu:',
-      description: 'Descriere:',
-      url: 'URL:',
-      score: 'Scor:',
-      language: 'Limba:',
-      published: 'Publicat:',
-      created: 'Creat:',
-      tags: 'Etichete:',
-      type: 'Tip:',
-      category: 'Categorie:',
-    },
-    filters: {
-      contentTypes: 'Tipuri de conținut:',
-      categories: 'Categorii:',
-      countriesGlobal: 'Țări/Global:',
-      applyFilters: 'Aplică filtrele',
-      clearFilters: 'Șterge filtrele',
-      news: 'Știri',
-      events: 'Evenimente',
-      articles: 'Articole',
-      facts: 'Fapte',
-      ads: 'Reclame',
-      nature: 'Natură',
-      people: 'Oameni',
-      health: 'Sănătate',
-      sports: 'Sport',
-      technology: 'Tehnologie',
-      education: 'Educație',
-      business: 'Afaceri',
-      entertainment: 'Distracție',
-      global: 'Global',
-      romania: 'România',
-      russia: 'Rusia',
-      ukraine: 'Ucraina',
-      usa: 'SUA',
-      uk: 'Marea Britanie',
-      germany: 'Germania',
-    },
-    history: {
-      ratingHistory: 'Istoric Evaluări',
-      viewHistory: 'Istoric Vizualizări',
-      noRatings: 'Nu există evaluări încă',
-      noViews: 'Nu există articole vizualizate încă',
-    },
-    ratings: {
-      topRatings: 'Evaluări de Top',
-      allTimeTop10: 'Top 10 din totdeauna',
-      top10News: 'Top 10 Știri',
-      top10Technology: 'Top 10 Tehnologie',
-      top10Health: 'Top 10 Sănătate',
-      topRatedItems: 'Articole cu cele mai bune evaluări:',
-      noTopRated: 'Nu s-au găsit articole evaluate.',
-      errorLoadingTop: 'Eroare la încărcarea evaluărilor de top.',
-    },
-    statistics: {
-      personalStats: 'Statistici Personale',
-      totalRatings: 'Evaluări Totale:',
-      positiveRatings: 'Evaluări Pozitive:',
-      negativeRatings: 'Evaluări Negative:',
-      favoriteCategories: 'Categorii Favorite:',
-      none: 'Niciuna',
-      publicStats: 'Statistici Publice',
-      totalItems: 'Total Articole:',
-      totalRatingsPublic: 'Total Evaluări:',
-      mostRatedCategory: 'Categoriea Cel Mai Evaluată:',
-      averageScore: 'Scor Mediu:',
-    },
-    settings: {
-      autoLoad: 'Încarcă automat următorul conținut',
-      itemsPerLoad: 'Articole pe pagină:',
-    },
-    about: {
-      title: 'Topper.top - Platformă Universală de Evaluare',
-      version: 'Versiune: 0.0.1',
-      description:
-        'Un sistem de evaluare a conținutului care permite utilizatorilor să evalueze și să clasifice articolele.',
-    },
-    contact: {
-      text: 'Pentru suport sau feedback, vă rugăm să ne contactați la: topper.top@example.com',
-    },
-    reset: {
-      resetCache: 'Resetează Cache-ul',
-      resetAllData: 'Resetează Toate Datele',
-      clearLocalStorage: 'Șterge Local Storage',
-      reloadPage: 'Reîncarcă Pagina',
-    },
-    debug: {
-      title: 'DEBUG (Doar Dezvoltator)',
-    },
-  },
-  ru: {
-    language: 'Язык',
-    loadingContent: 'Загрузка контента...',
-    errorLoadingContent: 'Ошибка загрузки контента: ',
-    noItemsAvailable: 'Нет доступных элементов',
-    contentDisplay: 'Загрузка контента...',
-    viewSource: 'Посмотреть источник',
-    navigation: {
-      prev: '← Назад',
-      downvote: '↓ -1 (Не похоже)',
-      upvote: '↑ +1 (Похожее)',
-      skip: '→ Пропустить',
-    },
-    accordions: {
-      information: 'Информация',
-      filters: 'Фильтры',
-      history: 'История',
-      ratings: 'Рейтинги',
-      statistics: 'Статистика',
-      settings: 'Настройки',
-      about: 'О нас',
-      contact: 'Контакты',
-      reset: 'Сброс (Разработчик)',
-    },
-    informationContent: {
-      fullInfo: '',
-      id: 'Ид:',
-      title: 'Название:',
-      description: 'Описание:',
-      url: 'URL:',
-      score: 'Оценка:',
-      language: 'Язык:',
-      published: 'Опубликовано:',
-      created: 'Создано:',
-      tags: 'Теги:',
-      type: 'Тип:',
-      category: 'Категория:',
-    },
-    filters: {
-      contentTypes: 'Типы контента:',
-      categories: 'Категории:',
-      countriesGlobal: 'Страны/Глобальные:',
-      applyFilters: 'Применить фильтры',
-      clearFilters: 'Очистить фильтры',
-      news: 'Новости',
-      events: 'События',
-      articles: 'Статьи',
-      facts: 'Факты',
-      ads: 'Реклама',
-      nature: 'Природа',
-      people: 'Люди',
-      health: 'Здоровье',
-      sports: 'Спорт',
-      technology: 'Технологии',
-      education: 'Образование',
-      business: 'Бизнес',
-      entertainment: 'Развлечения',
-      global: 'Глобальные',
-      romania: 'Румыния',
-      russia: 'Россия',
-      ukraine: 'Украина',
-      usa: 'США',
-      uk: 'Великобритания',
-      germany: 'Германия',
-    },
-    history: {
-      ratingHistory: 'История оценок',
-      viewHistory: 'История просмотра',
-      noRatings: 'Пока нет оценок',
-      noViews: 'Пока нет просмотренных элементов',
-    },
-    ratings: {
-      topRatings: 'Лучшие рейтинги',
-      allTimeTop10: 'Топ 10 за всё время',
-      top10News: 'Топ 10 Новостей',
-      top10Technology: 'Топ 10 Технологий',
-      top10Health: 'Топ 10 Здоровья',
-      topRatedItems: 'Лучшие оценённые элементы:',
-      noTopRated: 'Лучших элементов не найдено.',
-      errorLoadingTop: 'Ошибка загрузки лучших рейтингов.',
-    },
-    statistics: {
-      personalStats: 'Личная статистика',
-      totalRatings: 'Всего оценок:',
-      positiveRatings: 'Положительных оценок:',
-      negativeRatings: 'Отрицательных оценок:',
-      favoriteCategories: 'Любимые категории:',
-      none: 'Нет',
-      publicStats: 'Публичная статистика',
-      totalItems: 'Всего элементов:',
-      totalRatingsPublic: 'Всего оценок:',
-      mostRatedCategory: 'Наиболее оцениваемая категория:',
-      averageScore: 'Средняя оценка:',
-    },
-    settings: {
-      autoLoad: 'Автоматически загружать следующий контент',
-      itemsPerLoad: 'Элементов на загрузку:',
-    },
-    about: {
-      title: 'Topper.top - Универсальная платформа рейтинга',
-      version: 'Версия: 0.0.1',
-      description:
-        'Система оценки контента, которая позволяет пользователям оценивать и ранжировать контент.',
-    },
-    contact: {
-      text: 'Для поддержки или обратной связи, пожалуйста, свяжитесь с нами: topper.top@example.com',
-    },
-    reset: {
-      resetCache: 'Сбросить кэш',
-      resetAllData: 'Сбросить все данные',
-      clearLocalStorage: 'Очистить локальное хранилище',
-      reloadPage: 'Перезагрузить страницу',
-    },
-    debug: {
-      title: 'ОТЛАДКА (Только разработчик)',
-    },
-  },
-  uk: {
-    language: 'Мова',
-    loadingContent: 'Завантаження контенту...',
-    errorLoadingContent: 'Помилка завантаження контенту: ',
-    noItemsAvailable: 'Немає доступних елементів',
-    contentDisplay: 'Завантаження контенту...',
-    viewSource: 'Переглянути джерело',
-    navigation: {
-      prev: '← Назад',
-      downvote: '↓ -1 (Не схоже)',
-      upvote: '↑ +1 (Схоже)',
-      skip: '→ Пропустити',
-    },
-    accordions: {
-      information: 'Інформація',
-      filters: 'Фільтри',
-      history: 'Історія',
-      ratings: 'Рейтинги',
-      statistics: 'Статистика',
-      settings: 'Налаштування',
-      about: 'Про нас',
-      contact: 'Контакти',
-      reset: 'Скидання (Розробник)',
-    },
-    informationContent: {
-      fullInfo: '',
-      id: 'Ід:',
-      title: 'Назва:',
-      description: 'Опис:',
-      url: 'URL:',
-      score: 'Оцінка:',
-      language: 'Мова:',
-      published: 'Опубліковано:',
-      created: 'Створено:',
-      tags: 'Теги:',
-      type: 'Тип:',
-      category: 'Категорія:',
-    },
-    filters: {
-      contentTypes: 'Типи контенту:',
-      categories: 'Категорії:',
-      countriesGlobal: 'Країни/Глобальні:',
-      applyFilters: 'Застосувати фільтри',
-      clearFilters: 'Очистити фільтри',
-      news: 'Новини',
-      events: 'Події',
-      articles: 'Статті',
-      facts: 'Факти',
-      ads: 'Реклама',
-      nature: 'Природа',
-      people: 'Люди',
-      health: "Здоров'я",
-      sports: 'Спорт',
-      technology: 'Технології',
-      education: 'Освіта',
-      business: 'Бізнес',
-      entertainment: 'Розваги',
-      global: 'Глобальні',
-      romania: 'Румунія',
-      russia: 'Росія',
-      ukraine: 'Україна',
-      usa: 'США',
-      uk: 'Великобританія',
-      germany: 'Німеччина',
-    },
-    history: {
-      ratingHistory: 'Історія оцінок',
-      viewHistory: 'Історія перегляду',
-      noRatings: 'Ще немає оцінок',
-      noViews: 'Ще немає переглянутих елементів',
-    },
-    ratings: {
-      topRatings: 'Найкращі рейтинги',
-      allTimeTop10: 'Топ 10 за весь час',
-      top10News: 'Топ 10 Новин',
-      top10Technology: 'Топ 10 Технологій',
-      top10Health: "Топ 10 Здоров'я",
-      topRatedItems: 'Найвищі оцінені елементи:',
-      noTopRated: 'Найкращих елементів не знайдено.',
-      errorLoadingTop: 'Помилка завантаження найкращих рейтингів.',
-    },
-    statistics: {
-      personalStats: 'Особиста статистика',
-      totalRatings: 'Усього оцінок:',
-      positiveRatings: 'Позитивних оцінок:',
-      negativeRatings: 'Негативних оцінок:',
-      favoriteCategories: 'Улюблені категорії:',
-      none: 'Немає',
-      publicStats: 'Публічна статистика',
-      totalItems: 'Усього елементів:',
-      totalRatingsPublic: 'Усього оцінок:',
-      mostRatedCategory: 'Найбільш оцінювана категорія:',
-      averageScore: 'Середня оцінка:',
-    },
-    settings: {
-      autoLoad: 'Автоматично завантажувати наступний контент',
-      itemsPerLoad: 'Елементів за завантаження:',
-    },
-    about: {
-      title: 'Topper.top - Універсальна платформа рейтингу',
-      version: 'Версия: 0.0.1',
-      description:
-        'Система оцінки контенту, яка дозволяє користувачам оцінювати та ранжувати контент.',
-    },
-    contact: {
-      text: "Для підтримки або відгуків, будь ласка, зв'яжіться з нами: topper.top@example.com",
-    },
-    reset: {
-      resetCache: 'Скинути кеш',
-      resetAllData: 'Скинути всі дані',
-      clearLocalStorage: 'Очистити локальне сховище',
-      reloadPage: 'Перезавантажити сторінку',
-    },
-    debug: {
-      title: 'НАЛАГОДЖЕННЯ (Лише розробник)',
-    },
-  },
-};
+import { translations } from './translations.js';
+import { updateLabel, updateLabelWithInput } from './i18n-helpers.js';
 
 // Update language selector to show only required languages
 export function updateLanguageSelector() {
@@ -487,8 +18,8 @@ export function updateLanguageSelector() {
 }
 
 // Update the interface language based on selected language
-export function updateInterfaceLanguage(currentLanguage) {
-  const t = translations[currentLanguage];
+export function updateInterfaceLanguage(currentLanguage: string) {
+  const t = translations[currentLanguage as keyof typeof translations];
   if (!t) return;
 
   // Update language selector label
@@ -499,7 +30,7 @@ export function updateInterfaceLanguage(currentLanguage) {
     // Find the text node directly within the label and update it
     for (let i = 0; i < languageLabel.childNodes.length; i++) {
       const node = languageLabel.childNodes[i];
-      if (node.nodeType === Node.TEXT_NODE) {
+      if (node && node.nodeType === Node.TEXT_NODE) {
         node.textContent = t.language + ': '; // Add a space after colon
         break;
       }
@@ -538,7 +69,7 @@ export function updateInterfaceLanguage(currentLanguage) {
   if (historyAccordion) historyAccordion.textContent = t.accordions.history;
 
   const ratingsAccordion = document.querySelector('#ratings-accordion summary');
-  if (ratingsAccordion) ratingsAccordion.textContent = t.accordions.ratings;
+  if (ratingsAccordion) ratingsAccordion.textContent = t.accordions.rankings;
 
   const statsAccordion = document.querySelector(
     '#statistics-accordion summary'
@@ -565,50 +96,53 @@ export function updateInterfaceLanguage(currentLanguage) {
   );
   if (fullInfoLabel) fullInfoLabel.textContent = t.informationContent.fullInfo;
 
-  updateLabel(
-    document.querySelector('#information-content p:nth-child(2) strong'),
-    t.informationContent.id
-  );
-  updateLabel(
-    document.querySelector('#information-content p:nth-child(3) strong'),
-    t.informationContent.title
-  );
-  updateLabel(
-    document.querySelector('#information-content p:nth-child(4) strong'),
-    t.informationContent.description
-  );
-  updateLabel(
-    document.querySelector('#information-content p:nth-child(5) strong'),
-    t.informationContent.url
-  );
-  updateLabel(
-    document.querySelector('#information-content p:nth-child(6) strong'),
-    t.informationContent.score
-  );
-  updateLabel(
-    document.querySelector('#information-content p:nth-child(7) strong'),
-    t.informationContent.language
-  );
-  updateLabel(
-    document.querySelector('#information-content p:nth-child(8) strong'),
-    t.informationContent.published
-  );
-  updateLabel(
-    document.querySelector('#information-content p:nth-child(9) strong'),
-    t.informationContent.created
-  );
-  updateLabel(
-    document.querySelector('#information-content p:nth-child(10) strong'),
-    t.informationContent.tags
-  );
-  updateLabel(
-    document.querySelector('#information-content p:nth-child(11) strong'),
-    t.informationContent.type
-  );
-  updateLabel(
-    document.querySelector('#information-content p:nth-child(12) strong'),
-    t.informationContent.category
-  );
+  const infoContentElement = document.querySelector('#information-content');
+  if (infoContentElement) {
+    updateLabel(
+      infoContentElement.querySelector('p:nth-child(2) strong'),
+      t.informationContent.id
+    );
+    updateLabel(
+      infoContentElement.querySelector('p:nth-child(3) strong'),
+      t.informationContent.title
+    );
+    updateLabel(
+      infoContentElement.querySelector('p:nth-child(4) strong'),
+      t.informationContent.description
+    );
+    updateLabel(
+      infoContentElement.querySelector('p:nth-child(5) strong'),
+      t.informationContent.url
+    );
+    updateLabel(
+      infoContentElement.querySelector('p:nth-child(6) strong'),
+      t.informationContent.score
+    );
+    updateLabel(
+      infoContentElement.querySelector('p:nth-child(7) strong'),
+      t.informationContent.language
+    );
+    updateLabel(
+      infoContentElement.querySelector('p:nth-child(8) strong'),
+      t.informationContent.published
+    );
+    updateLabel(
+      infoContentElement.querySelector('p:nth-child(9) strong'),
+      t.informationContent.created
+    );
+    updateLabel(
+      infoContentElement.querySelector('p:nth-child(10) strong'),
+      t.informationContent.tags
+    );
+    updateLabel(
+      infoContentElement.querySelector('p:nth-child(11) strong'),
+      t.informationContent.type
+    );
+    updateLabel(
+      infoContentElement.querySelector('p:nth-child(12) strong'),
+      t.informationContent.category
+    );
+  }
 
   // Update filters section
   const typesLabel = document.querySelector(
@@ -710,8 +244,10 @@ export function updateInterfaceLanguage(currentLanguage) {
     'details:nth-child(3) div button'
   );
   if (filterButtons.length >= 2) {
-    filterButtons[0].textContent = t.filters.applyFilters;
-    filterButtons[1].textContent = t.filters.clearFilters;
+    const button0 = filterButtons[0] as HTMLElement;
+    const button1 = filterButtons[1] as HTMLElement;
+    if (button0) button0.textContent = t.filters.applyFilters;
+    if (button1) button1.textContent = t.filters.clearFilters;
   }
 
   // Update history section
@@ -719,72 +255,66 @@ export function updateInterfaceLanguage(currentLanguage) {
   if (historySection) {
     const h4Elements = historySection.querySelectorAll('h4');
     if (h4Elements.length >= 2) {
-      h4Elements[0].textContent = t.history.ratingHistory;
-      h4Elements[1].textContent = t.history.viewHistory;
+      const h4Element0 = h4Elements[0] as HTMLElement;
+      const h4Element1 = h4Elements[1] as HTMLElement;
+      if (h4Element0) h4Element0.textContent = t.history.rankingHistory;
+      if (h4Element1) h4Element1.textContent = t.history.viewHistory;
     }
   }
 
-  // Update ratings section
-  const ratingsSection = document.querySelector('#ratings-content');
-  if (ratingsSection) {
-    const h4Elements = ratingsSection.querySelectorAll('h4');
-    if (h4Elements.length >= 1) {
-      h4Elements[0].textContent = t.ratings.topRatings;
-
-      // Update rating buttons
-      const ratingButtons = ratingsSection.querySelectorAll(
-        '#top-ratings-list button'
-      );
-      if (ratingButtons.length >= 4) {
-        ratingButtons[0].textContent = t.ratings.allTimeTop10;
-        ratingButtons[1].textContent = t.ratings.top10News;
-        ratingButtons[2].textContent = t.ratings.top10Technology;
-        ratingButtons[3].textContent = t.ratings.top10Health;
-      }
-    }
-  }
+  // Update rankings section
+  // Removed the buttons All Time Top 10, Top 10 News, Top 10 Technology, Top 10 Health
+  // as per requirements to clean up the rankings accordion
 
   // Update statistics section
   const statsSection = document.querySelector('#statistics-content');
   if (statsSection) {
     const h4Elements = statsSection.querySelectorAll('h4');
     if (h4Elements.length >= 2) {
-      h4Elements[0].textContent = t.statistics.personalStats;
-      h4Elements[1].textContent = t.statistics.publicStats;
+      const h4Element0 = h4Elements[0] as HTMLElement;
+      const h4Element1 = h4Elements[1] as HTMLElement;
+      if (h4Element0) h4Element0.textContent = t.statistics.personalStats;
+      if (h4Element1) h4Element1.textContent = t.statistics.publicStats;
     }
 
-    updateLabel(
-      document.querySelector('#personal-stats p:nth-child(1) strong'),
-      t.statistics.totalRatings
-    );
-    updateLabel(
-      document.querySelector('#personal-stats p:nth-child(2) strong'),
-      t.statistics.positiveRatings
-    );
-    updateLabel(
-      document.querySelector('#personal-stats p:nth-child(3) strong'),
-      t.statistics.negativeRatings
-    );
+    const personalStatsElement = document.querySelector('#personal-stats');
+    if (personalStatsElement) {
+      updateLabel(
+        personalStatsElement.querySelector('p:nth-child(1) strong'),
+        t.statistics.totalRankings
+      );
+      updateLabel(
+        personalStatsElement.querySelector('p:nth-child(2) strong'),
+        t.statistics.positiveRankings
+      );
+      updateLabel(
+        personalStatsElement.querySelector('p:nth-child(3) strong'),
+        t.statistics.negativeRankings
+      );
+    }
     updateLabel(
       document.querySelector('#personal-stats p:nth-child(4) strong'),
       t.statistics.favoriteCategories
     );
-    updateLabel(
-      document.querySelector('#public-stats p:nth-child(1) strong'),
-      t.statistics.totalItems
-    );
-    updateLabel(
-      document.querySelector('#public-stats p:nth-child(2) strong'),
-      t.statistics.totalRatingsPublic
-    );
-    updateLabel(
-      document.querySelector('#public-stats p:nth-child(3) strong'),
-      t.statistics.mostRatedCategory
-    );
-    updateLabel(
-      document.querySelector('#public-stats p:nth-child(4) strong'),
-      t.statistics.averageScore
-    );
+    const publicStatsElement = document.querySelector('#public-stats');
+    if (publicStatsElement) {
+      updateLabel(
+        publicStatsElement.querySelector('p:nth-child(1) strong'),
+        t.statistics.totalItems
+      );
+      updateLabel(
+        publicStatsElement.querySelector('p:nth-child(2) strong'),
+        t.statistics.totalRankingsPublic
+      );
+      updateLabel(
+        publicStatsElement.querySelector('p:nth-child(3) strong'),
+        t.statistics.mostRankedCategory
+      );
+      updateLabel(
+        publicStatsElement.querySelector('p:nth-child(4) strong'),
+        t.statistics.averageScore
+      );
+    }
   }
 
   // Update settings section
@@ -806,9 +336,12 @@ export function updateInterfaceLanguage(currentLanguage) {
   if (aboutSection) {
     const ps = aboutSection.querySelectorAll('p');
     if (ps.length >= 3) {
-      ps[0].textContent = t.about.title;
-      ps[1].textContent = t.about.version;
-      ps[2].textContent = t.about.description;
+      const p0 = ps[0] as HTMLElement;
+      const p1 = ps[1] as HTMLElement;
+      const p2 = ps[2] as HTMLElement;
+      if (p0) p0.textContent = t.about.title;
+      if (p1) p1.textContent = t.about.version;
+      if (p2) p2.textContent = t.about.description;
     }
   }
 
@@ -821,52 +354,17 @@ export function updateInterfaceLanguage(currentLanguage) {
   // Update reset section
   const resetButtons = document.querySelectorAll('#developer-reset div button');
   if (resetButtons.length >= 4) {
-    resetButtons[0].textContent = t.reset.resetCache;
-    resetButtons[1].textContent = t.reset.resetAllData;
-    resetButtons[2].textContent = t.reset.clearLocalStorage;
-    resetButtons[3].textContent = t.reset.reloadPage;
+    const button0 = resetButtons[0] as HTMLElement;
+    const button1 = resetButtons[1] as HTMLElement;
+    const button2 = resetButtons[2] as HTMLElement;
+    const button3 = resetButtons[3] as HTMLElement;
+    if (button0) button0.textContent = t.reset.resetCache;
+    if (button1) button1.textContent = t.reset.resetAllData;
+    if (button2) button2.textContent = t.reset.clearLocalStorage;
+    if (button3) button3.textContent = t.reset.reloadPage;
   }
 
   // Update debug section
   const debugSummary = document.querySelector('#developer-debug summary');
   if (debugSummary) debugSummary.textContent = t.debug.title;
-}
-
-// Helper function to update label text
-function updateLabel(element: Element | null, newText: string) {
-  if (element) {
-    // Get the text node and replace it
-    const textNodes: Text[] = [];
-    const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
-    let node;
-    while ((node = walker.nextNode())) {
-      textNodes.push(node as Text);
-    }
-
-    if (textNodes.length > 0) {
-      // Replace the text content of the first text node
-      textNodes[0].textContent = newText;
-    }
-  }
-}
-
-// Helper function to update label associated with input
-function updateLabelWithInput(selector, newText) {
-  if (typeof selector === 'string') {
-    const input = document.querySelector(selector);
-    if (input) {
-      const label = input.nextElementSibling;
-      if (label && label.tagName === 'LABEL') {
-        updateLabel(label, newText);
-      }
-    }
-  } else {
-    const input = selector;
-    if (input) {
-      const label = input.nextElementSibling;
-      if (label && label.tagName === 'LABEL') {
-        updateLabel(label, newText);
-      }
-    }
-  }
 }

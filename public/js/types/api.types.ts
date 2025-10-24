@@ -38,10 +38,12 @@ export interface Item {
   url?: string;
   type?: string;
   category?: string;
+  country?: string;
+  createdAt?: string;
   tags?: string[];
 }
 
-export interface Rating {
+export interface Ranking {
   id: string;
   userId: string | null;
   itemId: string;
@@ -65,8 +67,8 @@ export interface ItemResponse {
   item: Item;
 }
 
-export interface RatingResponse {
-  rating: Rating;
+export interface RankingResponse {
+  ranking: Ranking;
   item: { id: string; score: number };
   nextItem?: Item;
 }
@@ -94,7 +96,7 @@ export interface RandomItemResponse {
 }
 
 // API Request Types
-export interface RatingRequest {
+export interface RankingRequest {
   itemId: string;
   value: 1 | -1;
   userId?: string;

@@ -5,7 +5,7 @@ export interface PerformanceMetric {
   name: string;
   duration: number; // in milliseconds
   timestamp: number;
-  meta?: Record<string, unknown>;
+  meta?: Record<string, unknown> | undefined;
 }
 
 class PerformanceMonitor {
@@ -93,9 +93,13 @@ class PerformanceMonitor {
     const sortedDurations = metrics.map(m => m.duration).sort((a, b) => a - b);
     const mid = Math.floor(sortedDurations.length / 2);
 
-    return sortedDurations.length % 2 !== 0
-      ? sortedDurations[mid]
-      : (sortedDurations[mid - 1] + sortedDurations[mid]) / 2;
+    if (sortedDurations.length % 2 !== 0) {
+      return sortedDurations[mid] ?? 0;
+    } else {
+      const left = sortedDurations[mid - 1];
+      const right = sortedDurations[mid];
+      return ((left ?? 0) + (right ?? 0)) / 2;
+    }
   }
 
   // Get the slowest execution for a specific operation
@@ -103,7 +107,8 @@ class PerformanceMonitor {
     const metrics = this.getMetrics(name);
     if (metrics.length === 0) return 0;
 
-    return Math.max(...metrics.map(m => m.duration));
+    const durations = metrics.map(m => m.duration);
+    return durations.length > 0 ? Math.max(...durations) : 0;
   }
 
   // Get the fastest execution for a specific operation
@@ -111,7 +116,8 @@ class PerformanceMonitor {
     const metrics = this.getMetrics(name);
     if (metrics.length === 0) return 0;
 
-    return Math.min(...metrics.map(m => m.duration));
+    const durations = metrics.map(m => m.duration);
+    return durations.length > 0 ? Math.min(...durations) : 0;
   }
 
   // Clear all metrics
@@ -149,7 +155,7 @@ class PerformanceMonitor {
 
     // Calculate 95th percentile
     const percentile95Index = Math.floor(0.95 * (durations.length - 1));
-    const percentile95 = durations[percentile95Index];
+    const percentile95 = durations[percentile95Index] ?? 0;
 
     return {
       count,

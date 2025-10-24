@@ -11,8 +11,7 @@
     <h1>TOPPER.top</h1>
     <!-- Language selector -->
     <div class="language-selector-container">
-      <label
-        >Language:
+      <label>
         <select id="language-selector" onchange="changeLanguage()">
           <option value="en">English</option>
           <option value="ru">Russian</option>
@@ -35,14 +34,10 @@
 
         <!-- 4 Navigation Buttons -->
         <div id="navigation-buttons">
-          <button id="prev-button" onclick="previousContent()">← Prev</button>
-          <button id="downvote-button" onclick="downvoteAndNext()">
-            ↓ -1 (Not Similar)
-          </button>
-          <button id="upvote-button" onclick="upvoteAndNext()">
-            ↑ +1 (Similar)
-          </button>
-          <button id="skip-button" onclick="skipContent()">→ Skip</button>
+          <button id="prev-button" onclick="previousContent()">←</button>
+          <button id="downvote-button" onclick="downvoteAndNext()">↓</button>
+          <button id="upvote-button" onclick="upvoteAndNext()">↑</button>
+          <button id="skip-button" onclick="skipContent()">→</button>
         </div>
       </div>
       <hr />
@@ -73,6 +68,19 @@
               <li>
                 <strong>Category:</strong> <span id="info-category"></span>
               </li>
+              <li>
+                <strong>Subcategory:</strong>
+                <span id="info-subcategory"></span>
+              </li>
+              <li><strong>Votes:</strong> <span id="info-votes"></span></li>
+              <li><strong>Country:</strong> <span id="info-country"></span></li>
+              <li>
+                <strong>Created By:</strong> <span id="info-created-by"></span>
+              </li>
+              <li>
+                <strong>Source Name:</strong>
+                <span id="info-source-name"></span>
+              </li>
             </ul>
           </div>
         </details>
@@ -81,6 +89,77 @@
         <details id="filters-accordion" open>
           <summary>Filters</summary>
           Фильтрация контента по Категориям и другим параметрам
+          <details id="format-accordion" open>
+            <summary>Format</summary>
+            <ul id="format-options">
+              <li>
+                <label
+                  ><input
+                    id="format-text"
+                    type="checkbox"
+                    name="format-filter"
+                    value="text"
+                  />
+                  Text</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="format-image"
+                    type="checkbox"
+                    name="format-filter"
+                    value="image"
+                  />
+                  Image</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="format-audio"
+                    type="checkbox"
+                    name="format-filter"
+                    value="audio"
+                  />
+                  Audio</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="format-photo"
+                    type="checkbox"
+                    name="format-filter"
+                    value="photo"
+                  />
+                  Photo</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="format-animation"
+                    type="checkbox"
+                    name="format-filter"
+                    value="animation"
+                  />
+                  Animation</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    id="format-video"
+                    type="checkbox"
+                    name="format-filter"
+                    value="video"
+                  />
+                  Video</label
+                >
+              </li>
+            </ul>
+          </details>
           <details id="content-types-accordion" open>
             <summary>Content Types</summary>
             <ul id="content-types-options">
@@ -323,33 +402,20 @@
         <details id="history-accordion" open>
           <summary>History</summary>
           <div id="history-content">
-            <h4 id="rating-history-title">Rating History</h4>
-            <div id="rating-history-list"></div>
+            <h4 id="ranking-history-title">Ranking History</h4>
+            <div id="ranking-history-list"></div>
             <h4 id="view-history-title">View History</h4>
             <div id="view-history-list"></div>
           </div>
         </details>
         <hr />
-        <!-- Ratings Accordion -->
-        <details id="ratings-accordion" open>
-          <summary>Ratings</summary>
-          <div id="ratings-content">
-            <h4 id="top-ratings-title">Top Ratings</h4>
-            <div id="top-ratings-list">
-              <button id="top-all-time" onclick="showTopRated('')">
-                All Time Top 10
-              </button>
-              <button id="top-news" onclick="showTopRated('news')">
-                Top 10 News
-              </button>
-              <button id="top-technology" onclick="showTopRated('technology')">
-                Top 10 Technology
-              </button>
-              <button id="top-health" onclick="showTopRated('health')">
-                Top 10 Health
-              </button>
-            </div>
-            <div id="top-ratings-display"></div>
+        <!-- Rankings Accordion -->
+        <details id="rankings-accordion" open>
+          <summary>Rankings</summary>
+          <div id="rankings-content">
+            <h4 id="top-rankings-title">Top Rankings</h4>
+            <div id="top-rankings-list"></div>
+            <div id="top-rankings-display"></div>
           </div>
         </details>
         <hr />
@@ -362,23 +428,23 @@
               <summary>Private</summary>
               <div id="private-stats">
                 <ul>
-                  <li id="total-ratings-p">
-                    Total Ratings: <span id="personal-total-ratings">0</span>
+                  <li id="total-rankings-p">
+                    Total Rankings: <span id="personal-total-rankings">0</span>
                   </li>
-                  <li id="positive-ratings-p">
-                    Positive Ratings:
-                    <span id="personal-positive-ratings">0</span>
+                  <li id="positive-rankings-p">
+                    Positive Rankings:
+                    <span id="personal-positive-rankings">0</span>
                   </li>
-                  <li id="negative-ratings-p">
-                    Negative Ratings:
-                    <span id="personal-negative-ratings">0</span>
+                  <li id="negative-rankings-p">
+                    Negative Rankings:
+                    <span id="personal-negative-rankings">0</span>
                   </li>
                   <li id="fav-categories-p">
                     Favorite Categories:
                     <span id="personal-fav-categories">None</span>
                   </li>
                   <li id="fav-type-p">
-                    Most Rated Content Type:
+                    Most Ranked Content Type:
                     <span id="personal-fav-type">-</span>
                   </li>
                   <li id="engagement-rate-p">
@@ -397,16 +463,16 @@
                   <li id="total-items-p">
                     Total Items: <span id="public-total-items">0</span>
                   </li>
-                  <li id="public-ratings-p">
-                    Total Ratings: <span id="public-total-ratings">0</span>
+                  <li id="public-rankings-p">
+                    Total Rankings: <span id="public-total-rankings">0</span>
                   </li>
-                  <li id="most-rated-category-p">
-                    Most Rated Category:
-                    <span id="public-most-rated-category">-</span>
+                  <li id="most-ranked-category-p">
+                    Most Ranked Category:
+                    <span id="public-most-ranked-category">-</span>
                   </li>
-                  <li id="most-rated-type-p">
-                    Most Rated Content Type:
-                    <span id="public-most-rated-type">-</span>
+                  <li id="most-ranked-type-p">
+                    Most Ranked Content Type:
+                    <span id="public-most-ranked-type">-</span>
                   </li>
                   <li id="average-score-p">
                     Average Score: <span id="public-average-score">0</span>
@@ -473,11 +539,11 @@
           <summary>About</summary>
           <div id="about-content">
             <p id="about-platform-name">
-              Topper.top - Universal Rating Platform
+              Topper.top - Universal Ranking Platform
             </p>
             <p id="about-version">Version: 0.0.1</p>
             <p id="about-description">
-              A content rating system that allows users to evaluate and rank
+              A content ranking system that allows users to evaluate and rank
               content items.
             </p>
           </div>
@@ -490,19 +556,16 @@
             <h4 id="help-title">How to use this application:</h4>
             <ul id="help-list">
               <li id="help-prev">
-                <strong>← Prev</strong>: Go to the previous content item
+                <strong>←</strong>: Go to the previous content item
               </li>
               <li id="help-downvote">
-                <strong>↓ -1 (Not Similar)</strong>: Dislike the content and get
-                a non-similar item
+                <strong>↓</strong>: Dislike the content and get a non-similar
+                item
               </li>
               <li id="help-upvote">
-                <strong>↑ +1 (Similar)</strong>: Like the content and get a
-                similar item
+                <strong>↑</strong>: Like the content and get a similar item
               </li>
-              <li id="help-skip">
-                <strong>→ Skip</strong>: Skip the current item without rating
-              </li>
+              <li id="help-skip"><strong>→</strong>: Skip the current item</li>
             </ul>
           </div>
         </details>
@@ -514,8 +577,8 @@
             <h4 id="faq-title">Common questions:</h4>
             <p id="faq-platform">
               <strong>Q: What is this platform?</strong><br />
-              A: This is a content rating platform where users can browse, rate,
-              and discover content.
+              A: This is a content ranking platform where users can browse,
+              rank, and discover content.
             </p>
 
             <p id="faq-similar">

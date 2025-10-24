@@ -30,6 +30,12 @@
     "sourceMap": true,
     "types": ["node"]
   },
-  "include": ["src/**/*", "scripts/**/*", "tests/**/*", "config/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "src/**/*",
+    "scripts/**/*",
+    "tests/**/*",
+    "config/**/*",
+    "public/js/**/*"
+  ],
+  "exclude": ["node_modules", "dist", "dist/**/*"]
 }

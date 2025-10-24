@@ -4,7 +4,7 @@
 import type {
   Item,
   ItemsResponse,
-  RatingResponse,
+  RankingResponse,
   LeaderboardResponse,
   RandomItemResponse,
 } from '../types/api.types';
@@ -63,13 +63,13 @@ class ApiService {
     }
   }
 
-  // Submit rating to API
-  async submitRating(itemId: string, value: 1 | -1): Promise<RatingResponse> {
+  // Submit ranking to API
+  async submitRanking(itemId: string, value: 1 | -1): Promise<RankingResponse> {
     const startTime = Date.now();
-    logger.info('Submitting rating', { itemId, value });
+    logger.info('Submitting ranking', { itemId, value });
 
     try {
-      const response = await fetch(`${this.baseUrl}/api/ratings`, {
+      const response = await fetch(`${this.baseUrl}/api/rankings`, {
         method: 'POST',
         headers: this.defaultHeaders,
         body: JSON.stringify({
@@ -78,7 +78,7 @@ class ApiService {
         }),
       });
 
-      const data: RatingResponse = await response.json();
+      const data: RankingResponse = await response.json();
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
@@ -94,17 +94,17 @@ class ApiService {
       }
 
       const duration = Date.now() - startTime;
-      logger.info('Rating submitted successfully', {
+      logger.info('Ranking submitted successfully', {
         itemId,
         value,
         duration: `${duration}ms`,
-        ratingId: data.rating?.id,
+        rankingId: data.ranking?.id,
       });
 
       return data;
     } catch (error) {
       const duration = Date.now() - startTime;
-      logger.error('Error during rating', {
+      logger.error('Error during ranking', {
         itemId,
         value,
         error: error instanceof Error ? error.message : 'Unknown error',
@@ -114,13 +114,13 @@ class ApiService {
     }
   }
 
-  // Get top rated items
-  async getTopRated(
+  // Get top ranked items
+  async getTopRanked(
     currentLanguage?: string,
     category: string = ''
   ): Promise<Item[]> {
     const startTime = Date.now();
-    logger.info('Loading top rated items', {
+    logger.info('Loading top ranked items', {
       language: currentLanguage,
       category,
     });
@@ -149,7 +149,7 @@ class ApiService {
       const result = filteredItems.slice(0, 10);
       const duration = Date.now() - startTime;
 
-      logger.info('Top rated items loaded successfully', {
+      logger.info('Top ranked items loaded successfully', {
         itemCount: result.length,
         duration: `${duration}ms`,
         url,

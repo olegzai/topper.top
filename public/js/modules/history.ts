@@ -4,75 +4,76 @@
 
 import { state } from './state.js';
 import { updateStatistics } from './stats.js';
+import { Item } from '../types/api.types';
 
-// Add to rating history
-export function addToRatingHistory(itemId: string, value: 1 | -1) {
+// Add to ranking history
+export function addToRankingHistory(itemId: string, value: 1 | -1) {
   const timestamp = new Date().toISOString();
-  // Generate a random ID for the rating since we're on the frontend
-  const ratingId = `rating_${Date.now()}_${Math.random()
+  // Generate a random ID for the ranking since we're on the frontend
+  const rankingId = `ranking_${Date.now()}_${Math.random()
     .toString(36)
     .substr(2, 9)}`;
-  state.ratingHistory.push({
-    id: ratingId,
+  state.rankingHistory.push({
+    id: rankingId,
     userId: null, // For frontend-only tracking
     itemId: itemId,
     value: value,
     timestamp: timestamp,
   });
 
-  // Update rating history display
-  updateRatingHistoryDisplay();
+  // Update ranking history display
+  updateRankingHistoryDisplay();
 }
 
-// Update rating history display
-export function updateRatingHistoryDisplay() {
-  const container = document.getElementById('rating-history-list');
+// Update ranking history display
+export function updateRankingHistoryDisplay() {
+  const container = document.getElementById('ranking-history-list');
   if (!container) return;
 
   container.innerHTML = '';
 
-  // Show last 10 ratings
-  const recentRatings = state.ratingHistory.slice(-10);
+  // Show last 10 rankings
+  const recentRankings = state.rankingHistory.slice(-10);
 
-  if (recentRatings.length === 0) {
-    container.textContent = 'No ratings yet';
+  if (recentRankings.length === 0) {
+    container.textContent = 'No rankings yet';
     return;
   }
 
-  recentRatings.forEach(rating => {
+  recentRankings.forEach(ranking => {
     const div = document.createElement('div');
-    div.textContent = `${rating.timestamp} - Item: ${rating.itemId.substring(
+    div.textContent = `${ranking.timestamp} - Item: ${ranking.itemId.substring(
       0,
       8
-    )}... - Rating: ${rating.value}`;
+    )}... - Ranking: ${ranking.value}`;
     container.appendChild(div);
   });
 }
 
 // Update user statistics
-export function updateUserStats(ratingValue) {
+export function updateUserStats(rankingValue: 1 | -1) {
   state.userStats.totalRatings++;
 
-  if (ratingValue === 1) {
+  if (rankingValue === 1) {
     state.userStats.positiveRatings++;
   } else {
     state.userStats.negativeRatings++;
   }
 
-  // Track rated categories
+  // Track ranked categories
   if (state.currentContent && state.currentContent.category) {
     const category = state.currentContent.category.toLowerCase();
-    if (!state.userStats.ratedCategories[category]) {
-      state.userStats.ratedCategories[category] = 0;
+    if (!state.userStats.rankedCategories[category]) {
+      state.userStats.rankedCategories[category] = 0;
     }
-    state.userStats.ratedCategories[category]++;
+    state.userStats.rankedCategories[category]++;
   }
 
   updateStatistics();
 }
 
 // Add to view history
-export function addToViewHistory(content) {
+export function addToViewHistory(content: Item) {
   const timestamp = new Date().toISOString();
   const contentTitle =
     content.contentText ||

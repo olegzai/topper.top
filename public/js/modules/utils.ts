@@ -116,7 +116,7 @@ export function findNonSimilarItem(
 // Enhanced smart content selection based on user preferences
 export function findSmartContent(
   allItems: Item[],
-  ratingHistory: Array<{ itemId: string; value: 1 | -1; timestamp: string }>,
+  rankingHistory: Array<{ itemId: string; value: 1 | -1; timestamp: string }>,
   currentLanguage: string,
   isPositive: boolean = true // true for similar (positive preference), false for different (negative preference)
 ): Item | undefined {
@@ -132,20 +132,20 @@ export function findSmartContent(
     return allItems[Math.floor(Math.random() * allItems.length)];
   }
 
-  // Analyze user preferences from rating history
-  if (ratingHistory.length > 0) {
-    // Calculate preference weights based on ratings
+  // Analyze user preferences from ranking history
+  if (rankingHistory.length > 0) {
+    // Calculate preference weights based on rankings
     const categoryWeights = new Map<string, number>();
     const typeWeights = new Map<string, number>();
     const tagWeights = new Map<string, number>();
 
-    // Process the rating history to calculate weights
-    for (const rating of ratingHistory) {
-      const item = allItems.find(i => i.id === rating.itemId);
+    // Process the ranking history to calculate weights
+    for (const ranking of rankingHistory) {
+      const item = allItems.find(i => i.id === ranking.itemId);
       if (!item) continue;
 
-      // Calculate multipliers based on rating value
-      const multiplier = rating.value === 1 ? 1 : -1; // Positive rating = prefer, negative rating = avoid
+      // Calculate multipliers based on ranking value
+      const multiplier = ranking.value === 1 ? 1 : -1; // Positive ranking = prefer, negative ranking = avoid
 
       // Add weight to categories
       if (item.category) {
@@ -224,7 +224,7 @@ export function findSmartContent(
     }
   }
 
-  // If no rating history, return a random item from the language-filtered list
+  // If no ranking history, return a random item from the language-filtered list
   return languageFiltered[Math.floor(Math.random() * languageFiltered.length)];
 }
 

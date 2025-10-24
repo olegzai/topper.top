@@ -5,7 +5,7 @@
 import { state } from './state.js';
 import type { Item } from '../types.js';
 import { updateInformationSection } from './ui.js';
-import { updateViewHistoryDisplay } from './history.js';
+import { addToViewHistory } from './history.js';
 import { logDebug } from './utils.js';
 
 /**
@@ -13,8 +13,8 @@ import { logDebug } from './utils.js';
  * It contains the common fields we access in the UI layer.
  */
 export interface ContentLike {
-  id?: string;
-  content_id?: string;
+  id: string;
+  content_id: string;
   content_canonical_text_en?: string;
   content_text_en?: string;
   content_text_ro?: string;
@@ -65,7 +65,9 @@ export function showCurrentContent() {
   state.currentContent = state.allItems[state.currentIndex] as Item;
 
   // Add to view history
-  addToViewHistory(state.currentContent as ContentLike);
+  if (state.currentContent) {
+    addToViewHistory(state.currentContent);
+  }
 
   // Use a local `current` variable to safely access possibly-missing properties
   const current = state.currentContent as ContentLike;
@@ -159,24 +161,4 @@ export function showCurrentContent() {
       'Unknown Source'
     } (ID: ${current?.content_id ?? current?.id ?? 'N/A'})`
   );
-}
-
-// Add to view history
-export function addToViewHistory(content: ContentLike) {
-  const timestamp = new Date().toISOString();
-  const contentTitle =
-    content.contentText ||
-    content.content_text_en ||
-    content.content_canonical_text_en ||
-    content.title ||
-    content.name ||
-    'Untitled';
-  state.viewHistory.push({
-    itemId: content.content_id ?? content.id ?? 'unknown',
-    title: contentTitle,
-    timestamp: timestamp,
-  });
-
-  // Update view history display
-  updateViewHistoryDisplay();
 }

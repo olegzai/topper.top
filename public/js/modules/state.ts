@@ -10,13 +10,13 @@ export const state: ViewState = {
   currentContent: null,
   currentLanguage: 'en',
   debugMessages: [],
-  ratingHistory: [],
+  rankingHistory: [],
   viewHistory: [],
   userStats: {
     totalRatings: 0,
     positiveRatings: 0,
     negativeRatings: 0,
-    ratedCategories: {},
+    rankedCategories: {},
   },
 };
 
@@ -27,12 +27,12 @@ export function initializeState() {
   state.currentContent = null;
   state.currentLanguage = 'en';
   state.debugMessages = [];
-  state.ratingHistory = [];
+  state.rankingHistory = [];
   state.viewHistory = [];
   state.userStats = {
     totalRatings: 0,
     positiveRatings: 0,
     negativeRatings: 0,
-    ratedCategories: {},
+    rankedCategories: {},
   };
 }

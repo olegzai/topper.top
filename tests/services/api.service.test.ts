@@ -63,10 +63,10 @@ describe('API Service', () => {
     expect(result).toEqual([]);
   });
 
-  it('should handle rating submission', async () => {
-    const mockRatingResponse = {
-      rating: {
-        id: 'rate1',
+  it('should handle ranking submission', async () => {
+    const mockRankingResponse = {
+      ranking: {
+        id: 'rank1',
         userId: null,
         itemId: 'item1',
         value: 1,
@@ -76,7 +76,7 @@ describe('API Service', () => {
     };
 
     const mockResponse = {
-      json: vi.fn().mockResolvedValue(mockRatingResponse),
+      json: vi.fn().mockResolvedValue(mockRankingResponse),
       ok: true,
     };
 
@@ -84,11 +84,11 @@ describe('API Service', () => {
       mockResponse as unknown as Response
     );
 
-    const result = await apiService.submitRating('item1', 1);
+    const result = await apiService.submitRanking('item1', 1);
 
-    expect(result).toEqual(mockRatingResponse);
+    expect(result).toEqual(mockRankingResponse);
     expect(global.fetch).toHaveBeenCalledWith(
-      'http://localhost:3000/api/ratings',
+      'http://localhost:3000/api/rankings',
       expect.objectContaining({
         method: 'POST',
         headers: expect.objectContaining({
@@ -119,7 +119,7 @@ describe('API Service', () => {
       mockErrorResponse as unknown as Response
     );
 
-    await expect(apiService.submitRating('invalid-id', 1)).rejects.toThrow(
+    await expect(apiService.submitRanking('invalid-id', 1)).rejects.toThrow(
       'Item not found'
     );
   });

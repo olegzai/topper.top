@@ -2,6 +2,7 @@
 
 export interface Item {
   id: string;
+  content_id: string;
   lang?: string;
   score?: number;
   publishedAt?: string;
@@ -11,12 +12,13 @@ export interface Item {
   url?: string;
   type?: string;
   category?: string;
+  country?: string;
   createdAt?: string;
   authorId?: string | null;
   categories?: string[];
 }
 
-export interface Rating {
+export interface Ranking {
   id: string;
   userId: string | null;
   itemId: string;
@@ -28,7 +30,7 @@ export interface UserStats {
   totalRatings: number;
   positiveRatings: number;
   negativeRatings: number;
-  ratedCategories: { [key: string]: number };
+  rankedCategories: { [key: string]: number };
 }
 
 export interface ViewState {
@@ -37,7 +39,7 @@ export interface ViewState {
   currentContent: Item | null;
   currentLanguage: 'en' | 'ro' | 'ru' | 'uk';
   debugMessages: string[];
-  ratingHistory: Rating[];
+  rankingHistory: Ranking[];
   viewHistory: {
     itemId: string;
     title: string;
@@ -62,8 +64,8 @@ export interface ApiLoadContentResponse {
   total?: number;
 }
 
-export interface ApiRatingResponse {
-  rating: Rating;
+export interface ApiRankingResponse {
+  ranking: Ranking;
   item: { id: string; score: number };
   nextItem?: Item;
 }

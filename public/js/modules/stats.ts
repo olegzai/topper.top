@@ -29,7 +29,7 @@ export function updateStatistics() {
   let favoriteCategory = 'None';
   let maxCount = 0;
   for (const [category, count] of Object.entries(
-    state.userStats.ratedCategories
+    state.userStats.rankedCategories
   )) {
     if (count > maxCount) {
       maxCount = count;
@@ -42,21 +42,21 @@ export function updateStatistics() {
   if (favCategoriesElement) favCategoriesElement.textContent = favoriteCategory;
 
   // Find favorite content type
-  if (state.ratingHistory.length > 0 && state.allItems.length > 0) {
-    // Build a map of content types and their ratings
-    const typeRatings = new Map<string, number>();
+  if (state.rankingHistory.length > 0 && state.allItems.length > 0) {
+    // Build a map of content types and their rankings
+    const typeRankings = new Map<string, number>();
 
-    for (const rating of state.ratingHistory) {
-      const item = state.allItems.find(i => i.id === rating.itemId);
+    for (const ranking of state.rankingHistory) {
+      const item = state.allItems.find(i => i.id === ranking.itemId);
       if (item && item.type) {
-        const current = typeRatings.get(item.type) || 0;
-        typeRatings.set(item.type, current + 1);
+        const current = typeRankings.get(item.type) || 0;
+        typeRankings.set(item.type, current + 1);
       }
     }
 
     let favoriteType = 'None';
     let maxTypeCount = 0;
-    for (const [type, count] of typeRatings) {
+    for (const [type, count] of typeRankings) {
       if (count > maxTypeCount) {
         maxTypeCount = count;
         favoriteType = type;
@@ -74,7 +74,7 @@ export function updateStatistics() {
       const engagementRate =
         state.allItems.length > 0
           ? (
-              (state.ratingHistory.length / state.allItems.length) *
+              (state.rankingHistory.length / state.allItems.length) *
               100
             ).toFixed(2) + '%'
           : '0%';
@@ -93,7 +93,7 @@ export function updateStatistics() {
   );
   if (publicTotalRatingsElement)
     publicTotalRatingsElement.textContent =
-      state.ratingHistory.length.toString();
+      state.rankingHistory.length.toString();
 
   // Calculate average score
   if (state.allItems.length > 0) {
@@ -110,20 +110,20 @@ export function updateStatistics() {
   }
 
   // Find most rated content type globally
-  if (state.ratingHistory.length > 0 && state.allItems.length > 0) {
-    const publicTypeRatings = new Map<string, number>();
+  if (state.rankingHistory.length > 0 && state.allItems.length > 0) {
+    const publicTypeRankings = new Map<string, number>();
 
-    for (const rating of state.ratingHistory) {
-      const item = state.allItems.find(i => i.id === rating.itemId);
+    for (const ranking of state.rankingHistory) {
+      const item = state.allItems.find(i => i.id === ranking.itemId);
       if (item && item.type) {
-        const current = publicTypeRatings.get(item.type) || 0;
-        publicTypeRatings.set(item.type, current + 1);
+        const current = publicTypeRankings.get(item.type) || 0;
+        publicTypeRankings.set(item.type, current + 1);
       }
     }
 
     let mostRatedType = 'None';
     let maxPublicTypeCount = 0;
-    for (const [type, count] of publicTypeRatings) {
+    for (const [type, count] of publicTypeRankings) {
       if (count > maxPublicTypeCount) {
         maxPublicTypeCount = count;
         mostRatedType = type;
