@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.dev
+    ports:
+      - '3000:3000'
+    volumes:
+      # Map the project directory (..) to /app in the container
+      - ..:/app
+      # But exclude node_modules to use the ones in the container
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    # command to override default and ensure proper startup
+    command: ['npm', 'run', 'dev']
+    # restart policy
+    restart: unless-stopped

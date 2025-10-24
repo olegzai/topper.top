@@ -1,0 +1,7 @@
+node_modules/
+dist/
+frontend-dist/
+tmp/
+logs/
+*.log
+.git/

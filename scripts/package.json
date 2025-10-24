@@ -1,0 +1,14 @@
+{
+  "name": "topper-top-user-simulation",
+  "version": "1.0.0",
+  "description": "User simulation script for Topper.top",
+  "main": "user_simulation.js",
+  "scripts": {
+    "simulate": "node user_simulation.js"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7",
+    "uuid": "^8.3.2"
+  },
+  "type": "commonjs"
+}

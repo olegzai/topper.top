@@ -1,0 +1,81 @@
+# Node / TypeScript
+node_modules/
+dist/
+dist-*/          # any alternative build folders
+.cache/
+.vscode/
+.idea/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# TypeScript
+*.tsbuildinfo
+*.d.ts.map
+
+# Testing / Coverage
+coverage/
+coverage-final.json
+.nyc_output/
+.vitest/
+test-results.xml
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+
+# Lint / Formatter caches
+.eslintcache
+.prettier.cache
+
+# Husky / Git hooks (if using local hook state)
+.husky/_
+
+# Lockfiles (optional - keep if you want deterministic installs)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Docker
+docker/.env
+docker-compose.override.yml
+
+# Misc
+*.local
+*.tmp
+*.temp
+
+# IntelliJ / JetBrains
+*.iml
+.idea/
+
+# Logs and runtime
+logs/
+*.pid
+*.seed
+
+# Generated docs/build artifacts
+docs/.vuepress/dist
+public/build/
+
+# Ignore system-specific files created by editors
+*.sublime-workspace
+*.sublime-project
+
+# Optional: ignore data if you don't want to commit local data files
+# data/*.db
+# data/*.sqlite
+
+.obsidian/
+tmp/
+.env
+
+CHAT/Q.md
+CHAT/A.md

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "f5401d63-b5e7-42d7-a6d9-1fee8b61bc61",
+    "username": "user1",
+    "displayName": "User 1",
+    "role": "admin",
+    "locale": "en",
+    "createdAt": "2024-12-28T17:02:49.753Z"
+  },
+  {
+    "id": "ebf58b3b-bf8c-4a2d-8705-ba705c595036",
+    "username": "user2",
+    "displayName": "User 2",
+    "role": "user",
+    "locale": "en",
+    "createdAt": "2025-02-02T17:02:49.780Z"
+  },
+  {
+    "id": "8cedda99-7242-4f6a-830a-fe2529181ca0",
+    "username": "user3",
+    "displayName": "User 3",
+    "role": "user",
+    "locale": "en",
+    "createdAt": "2025-03-14T17:02:49.780Z"
+  },
+  {
+    "id": "3369fb36-c087-4049-a2b0-492054be0f3e",
+    "username": "user4",
+    "displayName": "User 4",
+    "role": "user",
+    "locale": "uk",
+    "createdAt": "2025-05-25T16:02:49.780Z"
+  },
+  {
+    "id": "0563945b-b518-4303-93d6-34546ae3de76",
+    "username": "user5",
+    "displayName": "User 5",
+    "role": "user",
+    "locale": "uk",
+    "createdAt": "2025-07-09T16:02:49.780Z"
+  },
+  {
+    "id": "5e3c5398-5a0b-44d3-a51b-35bb18c2659f",
+    "username": "user6",
+    "displayName": "User 6",
+    "role": "user",
+    "locale": "ro",
+    "createdAt": "2025-01-09T17:02:49.780Z"
+  },
+  {
+    "id": "e8627d82-1b55-464e-9d73-d3879b6c068f",
+    "username": "user7",
+    "displayName": "User 7",
+    "role": "user",
+    "locale": "ro",
+    "createdAt": "2025-03-15T17:02:49.780Z"
+  },
+  {
+    "id": "5a6ddf31-f4f0-42ae-95df-7c249867e9fd",
+    "username": "user8",
+    "displayName": "User 8",
+    "role": "user",
+    "locale": "ro",
+    "createdAt": "2025-06-05T16:02:49.780Z"
+  },
+  {
+    "id": "a084e826-cb36-457c-862a-7b294ec63a2d",
+    "username": "user9",
+    "displayName": "User 9",
+    "role": "user",
+    "locale": "ro",
+    "createdAt": "2025-02-26T17:02:49.780Z"
+  },
+  {
+    "id": "98853f59-9182-4a72-bed5-aae37bd88e2e",
+    "username": "user10",
+    "displayName": "User 10",
+    "role": "user",
+    "locale": "ro",
+    "createdAt": "2025-05-13T16:02:49.780Z"
+  }
+]

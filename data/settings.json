@@ -1,0 +1,10 @@
+{
+  "version": "0.0.1",
+  "seededAt": "2025-10-23T16:02:49.785Z",
+  "counts": {
+    "users": 10,
+    "items": 30,
+    "ratings": 150,
+    "categories": 6
+  }
+}
